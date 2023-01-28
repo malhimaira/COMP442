@@ -2,10 +2,12 @@
 public class Token {
     private TokenType tokenType;
     private String lexeme;
-    private Position p;
+    private Position position;
 
-    public Token() {
-        this.lexeme = "";
+    public Token( String lexeme, TokenType tokenType, Position position) {
+        this.lexeme = lexeme;
+        this.tokenType = tokenType;
+        this.position = position;
     }
 
     // Setters

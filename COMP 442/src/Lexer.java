@@ -3,11 +3,16 @@ import java.util.ArrayList;
 
 public class Lexer {
 
-    private ArrayList<String> TokenSequence;
+    private ArrayList<Token> TokenSequence;
+    public static String reservedWords[] = {"integer", "float", "void", "class", "self",
+            "isa", "while", "if", "then", "else", "read", "write", "return", "localvar", "constructor",
+            "attribute", "function", "public", "private"};
+    public static String operatorWords[] = {"and", "or", "not"};
 
     public Lexer(FileInputStream fileInputStream) {
         //Read char by char
         try {
+            int countRowLine = 1;
             int nextChar;
             int currentPointerChar;
             String lastCharsRead = "";
@@ -94,6 +99,9 @@ public class Lexer {
                         boolean checkIfBlockEnded = false;
                         while (!checkIfBlockEnded) {
                             nextChar = fileInputStream.read();
+                            if ((char) nextChar == '\n' || (char) nextChar == '\r') {
+                                countRowLine++;
+                            }
                             // finds a *
                             if ((char) nextChar == '*') {
                                 lastCharsRead += "*";
@@ -149,27 +157,48 @@ public class Lexer {
                 } else if ((char) currentPointerChar == ',') {
                     // validate and create token for lastcharsread and then create token for ,
                     // reset lastcharsread to "" empty
-                } else if ((char) currentPointerChar == ';') {
-                    // validate and create token for lastcharsread and then create token for ,
-                    // reset lastcharsread to "" empty
+                } // Case of Semicolon
+                else if ((char) currentPointerChar == ';') {
+                    // backtrack to check if no token created from characters before
+                    if (lastCharsRead != "") {
+                        // create and validate ALE (Atomic lexical element) and word token
+                        addALETokenToArrayList(lastCharsRead, countRowLine);
+                    }
+                    TokenSequence.add(new Token(";", TokenType.semicolon, new Position(countRowLine)));
+                    lastCharsRead = "";
+
                 } else if ((char) currentPointerChar == '(') {
                     // validate and create token for lastcharsread and then create token for ,
                     // reset lastcharsread to "" empty
                 } else if ((char) currentPointerChar == ')') {
                     // validate and create token for lastcharsread and then create token for ,
                     // reset lastcharsread to "" empty
-                }else if ((char) currentPointerChar == '}') {
+                } else if ((char) currentPointerChar == '}') {
                     // validate and create token for lastcharsread and then create token for ,
                     // reset lastcharsread to "" empty
                 } else if ((char) currentPointerChar == '{') {
                     // validate and create token for lastcharsread and then create token for ,
                     // reset lastcharsread to "" empty
-                }else if ((char) currentPointerChar == ']') {
+                } else if ((char) currentPointerChar == ']') {
                     // validate and create token for lastcharsread and then create token for ,
                     // reset lastcharsread to "" empty
                 } else if ((char) currentPointerChar == '[') {
                     // validate and create token for lastcharsread and then create token for ,
                     // reset lastcharsread to "" empty
+                } else if ((currentPointerChar >= 48 && currentPointerChar <= 57)
+                        || (currentPointerChar >= 65 && currentPointerChar <= 90)
+                        || (currentPointerChar >= 97 && currentPointerChar <= 122)
+                        || ((char) currentPointerChar == '_')) {
+                    // case of reading a character from an atomic lexical element
+                    lastCharsRead += (char) currentPointerChar;
+                } else if ((char) currentPointerChar == ' ' || (char) currentPointerChar == '\n' || (char) currentPointerChar == '\r') {
+                    if ((char) currentPointerChar == '\n' || (char) currentPointerChar == '\r') {
+                        countRowLine++;
+                    }
+                    // case of definite ending of token
+                    if (lastCharsRead != "") {
+                        addALETokenToArrayList(lastCharsRead, countRowLine);
+                    }
                 }
 
 
@@ -193,6 +222,17 @@ public class Lexer {
 
     }
 
+    public void addALETokenToArrayList(String lastCharsRead, int position) {
+        TokenType tokenType = tokenValidation(lastCharsRead);
+        TokenSequence.add(new Token(lastCharsRead, tokenType, new Position(position)));
+    }
+
+    public TokenType tokenValidation(String lastCharsRead) {
+
+        return TokenType.errorToken;
+    }
+
+
     public boolean validateFloat(String lastCharRead) {
         Boolean b = false;
         return b;
@@ -209,6 +249,11 @@ public class Lexer {
     }
 
     public boolean validateReservedWord(String lastCharRead) {
+        Boolean b = false;
+        return b;
+    }
+
+    public boolean validateOperatorWord(String lastCharRead) {
         Boolean b = false;
         return b;
     }

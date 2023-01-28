@@ -1,12 +1,7 @@
 public enum TokenType {
     id,
-    alphanum,
     integerType,
     floatType,
-    fraction,
-    letter,
-    digit,
-    nonzero,
     doubleEqual,
     angleBrackets,
     lessThan,
@@ -53,5 +48,6 @@ public enum TokenType {
     publicKeyWord,
     privateKeyWord,
     blockComment,
-    inlineComment
+    inlineComment,
+    errorToken
     }
