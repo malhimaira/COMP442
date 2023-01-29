@@ -12,8 +12,9 @@ public class Lexer {
     public static ArrayList<String> operatorWords = new ArrayList<String>(Arrays.asList("and", "or", "not"));
 
     public Lexer(FileInputStream fileInputStream) {
-        //Read char by char
         try {
+            // initialize
+            TokenSequence = new ArrayList<>(10);
             countTokens = 0;
             int countRowLine = 1;
             int nextChar;
@@ -132,7 +133,8 @@ public class Lexer {
                     // Case of Inline Comment
                     if ((char) nextChar == '/') {
                         lastCharsRead = "//";
-                        while ((char) (nextChar = fileInputStream.read()) != '\n' && ((char) nextChar) != '\r') {
+                        while ((char) (nextChar = fileInputStream.read()) != '\n' && ((char) nextChar) != '\r'
+                                && nextChar != 10) {
                             lastCharsRead += (char) nextChar;
                         }
                         TokenSequence.add(new Token(lastCharsRead, TokenType.inlineComment, new Position(countRowLine)));
@@ -144,7 +146,7 @@ public class Lexer {
                         boolean checkIfBlockEnded = false;
                         while (!checkIfBlockEnded) {
                             nextChar = fileInputStream.read();
-                            if ((char) nextChar == '\n' || (char) nextChar == '\r') {
+                            if ((char) nextChar == '\n' || (char) nextChar == '\r' || nextChar == 10) {
                                 countRowLine++;
                             }
                             // finds a *
@@ -193,13 +195,16 @@ public class Lexer {
                         boolean isAFloat = validateFloat(lastCharsRead);
                         if (isAFloat == true) {
                             TokenSequence.add(new Token(lastCharsRead, TokenType.floatType, new Position(countRowLine)));
-                            if ((char) nextChar != ' ' || (char) nextChar != '\n' || (char) nextChar != '\r') {
+                            if ((char) nextChar != ' ' && (char) nextChar != '\n' && (char) nextChar != '\r' && nextChar != 10) {
                                 lastCharsRead = "" + (char) nextChar;
-                            } else if ((char) nextChar == '\n' || (char) nextChar == '\r') {
+                            } else if ((char) nextChar == '\n' || (char) nextChar == '\r' || nextChar == 10) {
                                 countRowLine++;
                             }
 
                         } else {
+                            if ((char) nextChar != ' ' && (char) nextChar != '\n' && (char) nextChar != '\r' && nextChar != 10) {
+                                lastCharsRead = "" + (char) nextChar;
+                            }
                             // call method print error message to file
                         }
                     }
@@ -308,8 +313,8 @@ public class Lexer {
                         || ((char) currentPointerChar == '_')) {
                     // case of reading a character from an atomic lexical element
                     lastCharsRead += (char) currentPointerChar;
-                } else if ((char) currentPointerChar == ' ' || (char) currentPointerChar == '\n' || (char) currentPointerChar == '\r') {
-                    if ((char) currentPointerChar == '\n' || (char) currentPointerChar == '\r') {
+                } else if ((char) currentPointerChar == ' ' || (char) currentPointerChar == '\n' || (char) currentPointerChar == '\r' || currentPointerChar == 10) {
+                    if ((char) currentPointerChar == '\n' || (char) currentPointerChar == '\r' || currentPointerChar == 10) {
                         countRowLine++;
                     }
                     // case of definite ending of token
@@ -367,34 +372,103 @@ public class Lexer {
         return TokenType.errorToken;
     }
 
-    public boolean validateFloat(String lastCharRead) {
-        Boolean b = false;
-        return b;
+    public boolean validateFloat(String f) {
+        float floatToCheck;
+        float x = 1.76e5f;
+
+        // Case of Invalid leading trailing zeros
+        if (f.startsWith("0") || f.endsWith("0") || f.contains("e0")) {
+            //return false if leading or trailing zeros or eo
+            return false;
+        } else {
+            // case of contains e+ or e-
+            if (f.contains("e")) {
+                //left side of e
+                for (int i = 0; i < f.indexOf('e'); i++) {
+                    if (f.charAt(i) == '0' || f.charAt(i) == '1' || f.charAt(i) == '2' || f.charAt(i) == '3'
+                            || f.charAt(i) == '4' || f.charAt(i) == '5' || f.charAt(i) == '6'
+                            || f.charAt(i) == '7' || f.charAt(i) == '8' || f.charAt(i) == '9' || f.charAt(i) == '.') {
+                        continue;
+                    }
+                    return false;
+                }
+
+                // case of right side of e
+                for (int i = f.indexOf('e') + 2; i < f.length() - f.indexOf('e'); i++) {
+                    if (f.charAt(i) == '0' || f.charAt(i) == '1' || f.charAt(i) == '2' || f.charAt(i) == '3'
+                            || f.charAt(i) == '4' || f.charAt(i) == '5' || f.charAt(i) == '6'
+                            || f.charAt(i) == '7' || f.charAt(i) == '8' || f.charAt(i) == '9' || f.charAt(i) == '.') {
+                        continue;
+                    }
+                    return false;
+                }
+
+                if (f.charAt((f.indexOf('e') + 1)) == '+' || f.charAt((f.indexOf('e') + 1)) == '-') {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            // case of no 'e+' or 'e-' in float
+            for (int i = 0; i < f.length(); i++) {
+                if (f.charAt(i) == '0' || f.charAt(i) == '1' || f.charAt(i) == '2' || f.charAt(i) == '3'
+                        || f.charAt(i) == '4' || f.charAt(i) == '5' || f.charAt(i) == '6'
+                        || f.charAt(i) == '7' || f.charAt(i) == '8' || f.charAt(i) == '9' || f.charAt(i) == '.') {
+                    continue;
+                }
+                return false;
+            }
+            return true;
+        }
     }
 
-    public boolean validateInteger(String lastCharRead) {
-        Boolean b = false;
-        return b;
+    public boolean validateInteger(String integ) {
+        // case of leading zero
+        if (integ.startsWith("0") && integ.length() != 1) {
+            return false;
+        }
+        // check each char to be a digit
+        for (int i = 0; i < integ.length(); i++) {
+            if (integ.charAt(i) == '0' || integ.charAt(i) == '1' || integ.charAt(i) == '2' || integ.charAt(i) == '3'
+                    || integ.charAt(i) == '4' || integ.charAt(i) == '5' || integ.charAt(i) == '6'
+                    || integ.charAt(i) == '7' || integ.charAt(i) == '8' || integ.charAt(i) == '9' || integ.charAt(i) == '.') {
+                continue;
+            }
+            return false;
+        }
+        return true;
     }
 
     public boolean validateId(String lastCharRead) {
-        Boolean b = false;
-        return b;
+        try {
+            if (Character.isDigit(lastCharRead.charAt(0)) || (char) (lastCharRead.charAt(0)) == '_') {
+                return false;
+            } else {
+                return true;
+            }
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public boolean validateReservedWord(String lastCharRead) {
-        Boolean b = false;
-        return b;
+        if (reservedWords.contains(lastCharRead)) {
+            return true;
+        }
+        return false;
     }
 
     public boolean validateOperatorWord(String lastCharRead) {
-        Boolean b = false;
-        return b;
+        if (operatorWords.contains(lastCharRead)) {
+            return true;
+        }
+        return false;
     }
 
     public Token getNextToken() {
         Token token = null;
-        if (countTokens!= TokenSequence.size()){
+        if (countTokens != TokenSequence.size()) {
             token = TokenSequence.get(countTokens);
             countTokens++;
             return token;
