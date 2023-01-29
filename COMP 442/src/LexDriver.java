@@ -9,7 +9,7 @@ public class LexDriver {
     public static void main(String[] args) {
         // Open Stream to File
         try {
-            FileInputStream fileInputStream = new FileInputStream("COMP 442/" + args[0]);
+            FileInputStream fileInputStream = new FileInputStream("COMP 442/input&output/" + args[0]);
 
             //Extract filename
             String filetoRead = args[0];
@@ -17,8 +17,8 @@ public class LexDriver {
             String fileName = filetoRead.substring(0, fileExtensionIndex);
 
             // Open print writer for errors
-            PrintWriter printWriterErrors = new PrintWriter(new File("COMP 442/"+fileName + ".outlexerrors"));
-            PrintWriter printWriterTokens = new PrintWriter(new File("COMP 442/"+fileName + ".outlextokens"));
+            PrintWriter printWriterErrors = new PrintWriter(new File("COMP 442/input&output/"+fileName + ".outlexerrors"));
+            PrintWriter printWriterTokens = new PrintWriter(new File("COMP 442/input&output/"+fileName + ".outlextokens"));
 
             // Open Lexer
             Lexer lexer = new Lexer(fileInputStream, printWriterErrors);

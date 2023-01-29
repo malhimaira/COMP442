@@ -208,15 +208,22 @@ public class Lexer {
                             TokenSequence.add(new Token(lastCharsRead, TokenType.floatType, new Position(countRowLine)));
                             if ((char) nextChar != ' ' && (char) nextChar != '\n' && (char) nextChar != '\r') {
                                 lastCharsRead = "" + (char) nextChar;
-                            } else if ((char) nextChar == '\n') {
-                                countRowLine++;
+                            } else{
+                                lastCharsRead = "";
+                                if ((char) nextChar == '\n') {
+                                    countRowLine++;
+                                }
                             }
-
                         } else {
                             // is neither a id or a float
                             printErrorTokens(lastCharsRead,"number",countRowLine);
                             if ((char) nextChar != ' ' && (char) nextChar != '\n' && (char) nextChar != '\r') {
                                 lastCharsRead = "" + (char) nextChar;
+                            } else{
+                                lastCharsRead = "";
+                                if ((char) nextChar == '\n') {
+                                    countRowLine++;
+                                }
                             }
                         }
                     }
@@ -447,15 +454,14 @@ public class Lexer {
 
     public boolean validateInteger(String integ) {
         // case of leading zero
-        if (integ.startsWith("0") && integ.length() != 1) {
-
+        if ((integ.startsWith("0") && integ.length() != 1) ) {
             return false;
         }
         // check each char to be a digit
         for (int i = 0; i < integ.length(); i++) {
             if (integ.charAt(i) == '0' || integ.charAt(i) == '1' || integ.charAt(i) == '2' || integ.charAt(i) == '3'
                     || integ.charAt(i) == '4' || integ.charAt(i) == '5' || integ.charAt(i) == '6'
-                    || integ.charAt(i) == '7' || integ.charAt(i) == '8' || integ.charAt(i) == '9' || integ.charAt(i) == '.') {
+                    || integ.charAt(i) == '7' || integ.charAt(i) == '8' || integ.charAt(i) == '9') {
                 continue;
             }
             return false;
