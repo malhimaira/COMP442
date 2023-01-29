@@ -11,11 +11,13 @@ public class Lexer {
             "isa", "while", "if", "then", "else", "read", "write", "return", "localvar", "constructor",
             "attribute", "function", "public", "private"));
     public static ArrayList<String> operatorWords = new ArrayList<String>(Arrays.asList("and", "or", "not"));
+    private PrintWriter printWriterErrors;
 
     public Lexer(FileInputStream fileInputStream, PrintWriter printWriterErrors) {
         try {
             // initialize
             TokenSequence = new ArrayList<>(10);
+            this.printWriterErrors = printWriterErrors;
             countTokens = 0;
             int countRowLine = 1;
             int nextChar;
@@ -167,7 +169,6 @@ public class Lexer {
                                 if ((char) nextChar == '/') {
                                     // found end of comment
                                     lastCharsRead += "/";
-                                    //make token for comment and add to arraylist
                                     break;
                                 }
                             }
@@ -212,10 +213,11 @@ public class Lexer {
                             }
 
                         } else {
+                            // is neither a id or a float
+                            printErrorTokens(lastCharsRead,"number",countRowLine);
                             if ((char) nextChar != ' ' && (char) nextChar != '\n' && (char) nextChar != '\r') {
                                 lastCharsRead = "" + (char) nextChar;
                             }
-                            // call method print error message to file
                         }
                     }
                 } else if ((char) currentPointerChar == '*') {
@@ -316,7 +318,8 @@ public class Lexer {
                         addALETokenToArrayList(lastCharsRead, countRowLine);
                         lastCharsRead = "";
                     }
-                    // and call method to then print invlaid token in file
+                    // print the invalid char
+                    printErrorTokens(""+(char)currentPointerChar,"character",countRowLine);
                 } else if ((currentPointerChar >= 48 && currentPointerChar <= 57)
                         || (currentPointerChar >= 65 && currentPointerChar <= 90)
                         || (currentPointerChar >= 97 && currentPointerChar <= 122)
@@ -351,6 +354,7 @@ public class Lexer {
             if (lastCharsRead != "") {
                 addALETokenToArrayList(lastCharsRead, countRowLine);
             }
+            printWriterErrors.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -358,11 +362,16 @@ public class Lexer {
 
     public void addALETokenToArrayList(String lastCharsRead, int position) {
         TokenType tokenType = tokenValidation(lastCharsRead);
-        if (tokenType != TokenType.errorToken) {
+        if (tokenType != TokenType.errorTokenId && tokenType != TokenType.errorTokenNumber & tokenType != TokenType.errorTokenChar) {
             TokenSequence.add(new Token(lastCharsRead, tokenType, new Position(position)));
         } else {
-            // call method to print error
-
+            if (tokenType == TokenType.errorTokenId){
+                printErrorTokens(lastCharsRead,"identifier",position);
+            }if (tokenType == TokenType.errorTokenNumber){
+                printErrorTokens(lastCharsRead,"number",position);
+            }if (tokenType == TokenType.errorTokenChar){
+                printErrorTokens(lastCharsRead,"character",position);
+            }
         }
     }
 
@@ -379,12 +388,10 @@ public class Lexer {
         if (validateInteger(lastCharsRead) == true) {
             return TokenType.integerType;
         }
-
         if (validateFloat(lastCharsRead) == true) {
             return TokenType.floatType;
         }
-
-        return TokenType.errorToken;
+        return TokenType.errorTokenNumber;
     }
 
     public boolean validateFloat(String f) {
@@ -492,4 +499,13 @@ public class Lexer {
         return token;
     }
 
+    public void printErrorTokens(String invalidLexeme, String type, int row ){
+        if(type.equals("character")){
+            this.printWriterErrors.write("Lexical error: Invalid character: \""+invalidLexeme+"\": line "+row+".\n");
+        } else if(type.equals("number")){
+            this.printWriterErrors.write("Lexical error: Invalid number: \""+invalidLexeme+"\": line "+row+".\n");
+        } else if(type.equals("identifier")){
+            this.printWriterErrors.write("Lexical error: Invalid identifier: \""+invalidLexeme+"\": line "+row+".\n");
+        }
+    }
 }

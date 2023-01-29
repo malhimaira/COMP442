@@ -49,5 +49,7 @@ public enum TokenType {
     privateKeyWord,
     blockComment,
     inlineComment,
-    errorToken
+    errorTokenId,
+    errorTokenNumber,
+    errorTokenChar
     }

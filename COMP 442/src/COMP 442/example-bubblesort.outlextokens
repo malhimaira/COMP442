@@ -1,0 +1,184 @@
+[blockComment, /* sort the array */, 1]
+[functionKeyWord, function, 2] [id, bubbleSort, 2] [openBracketRound, (, 2] [id, arr, 2] [colon, :, 2] [integerKeyWord, integer, 2] [openBracketSquare, [, 2] [closeBracketSquare, ], 2] [comma, ,, 2] [id, size, 2] [colon, :, 2] [integerKeyWord, integer, 2] [closeBracketRound, ), 2] [lambdaExpression, =>, 2] [voidKeyWord, void, 2]
+[openBracketCurly, {, 3]
+[localvarKeyWord, localvar, 4] [id, n, 4] [colon, :, 4] [integerKeyWord, integer, 4] [semicolon, ;, 4]
+[localvarKeyWord, localvar, 5] [id, i, 5] [colon, :, 5] [integerKeyWord, integer, 5] [semicolon, ;, 5]
+[localvarKeyWord, localvar, 6] [id, j, 6] [colon, :, 6] [integerKeyWord, integer, 6] [semicolon, ;, 6]
+[localvarKeyWord, localvar, 7] [id, temp, 7] [colon, :, 7] [integerKeyWord, integer, 7] [semicolon, ;, 7]
+[id, n, 8] [equals, =, 8] [id, size, 8] [semicolon, ;, 8]
+[id, i, 9] [equals, =, 9] [integerType, 0, 9] [semicolon, ;, 9]
+[id, j, 10] [equals, =, 10] [integerType, 0, 10] [semicolon, ;, 10]
+[id, temp, 11] [equals, =, 11] [integerType, 0, 11] [semicolon, ;, 11]
+[whileKeyWord, while, 12] [openBracketRound, (, 12] [id, i, 12] [lessThan, <, 12] [id, n, 12] [minus, -, 12] [integerType, 1, 12] [closeBracketRound, ), 12] [openBracketCurly, {, 12]
+[whileKeyWord, while, 13] [openBracketRound, (, 13] [id, j, 13] [lessThan, <, 13] [id, n, 13] [minus, -, 13] [id, i, 13] [minus, -, 13] [integerType, 1, 13] [closeBracketRound, ), 13] [openBracketCurly, {, 13]
+[ifKeyWord, if, 14] [openBracketRound, (, 14] [id, arr, 14] [openBracketSquare, [, 14] [id, j, 14] [closeBracketSquare, ], 14] [greaterThan, >, 14] [id, arr, 14] [openBracketSquare, [, 14] [id, j, 14] [plus, +, 14] [integerType, 1, 14] [closeBracketSquare, ], 14] [closeBracketRound, ), 14]
+[thenKeyWord, then, 15] [openBracketCurly, {, 15]
+[inlineComment, // swap temp and arr[i], 16]
+[id, temp, 17] [equals, =, 17] [id, arr, 17] [openBracketSquare, [, 17] [id, j, 17] [closeBracketSquare, ], 17] [semicolon, ;, 17]
+[id, arr, 18] [openBracketSquare, [, 18] [id, j, 18] [closeBracketSquare, ], 18] [equals, =, 18] [id, arr, 18] [openBracketSquare, [, 18] [id, j, 18] [plus, +, 18] [integerType, 1, 18] [closeBracketSquare, ], 18] [semicolon, ;, 18]
+[id, arr, 19] [openBracketSquare, [, 19] [id, j, 19] [plus, +, 19] [integerType, 1, 19] [closeBracketSquare, ], 19] [equals, =, 19] [id, temp, 19] [semicolon, ;, 19]
+[closedBracketCurly, }, 20] [elseKeyWord, else, 20] [semicolon, ;, 20]
+[id, j, 21] [equals, =, 21] [id, j, 21] [plus, +, 21] [integerType, 1, 21] [semicolon, ;, 21]
+[closedBracketCurly, }, 22] [semicolon, ;, 22]
+[id, i, 23] [equals, =, 23] [id, i, 23] [plus, +, 23] [integerType, 1, 23] [semicolon, ;, 23]
+[closedBracketCurly, }, 24] [semicolon, ;, 24]
+[closedBracketCurly, }, 25]
+[blockComment, /* print the array */, 27]
+[functionKeyWord, function, 28]
+[id, printArray, 28] [openBracketRound, (, 28] [id, arr, 28] [colon, :, 28] [integerKeyWord, integer, 28] [openBracketSquare, [, 28] [closeBracketSquare, ], 28] [comma, ,, 28] [id, size, 28] [colon, :, 28] [integerKeyWord, integer, 28] [closeBracketRound, ), 28] [lambdaExpression, =>, 28] [voidKeyWord, void, 28]
+[openBracketCurly, {, 29]
+[localvarKeyWord, localvar, 30] [id, n, 30] [colon, :, 30] [integerKeyWord, integer, 30] [semicolon, ;, 30]
+[localvarKeyWord, localvar, 31] [id, i, 31] [colon, :, 31] [integerKeyWord, integer, 31] [semicolon, ;, 31]
+[id, n, 32] [equals, =, 32] [id, size, 32] [semicolon, ;, 32]
+[id, i, 33] [equals, =, 33] [integerType, 0, 33] [semicolon, ;, 33]
+[whileKeyWord, while, 34] [openBracketRound, (, 34] [id, i, 34] [lessThan, <, 34] [id, n, 34] [closeBracketRound, ), 34] [openBracketCurly, {, 34]
+[writeKeyWord, write, 35] [openBracketRound, (, 35] [id, arr, 35] [openBracketSquare, [, 35] [id, i, 35] [closeBracketSquare, ], 35] [closeBracketRound, ), 35] [semicolon, ;, 35]
+[id, i, 36] [equals, =, 36] [id, i, 36] [plus, +, 36] [integerType, 1, 36] [semicolon, ;, 36]
+[closedBracketCurly, }, 37] [semicolon, ;, 37]
+[closedBracketCurly, }, 38]
+[inlineComment, // main funtion to test above, 40]
+[functionKeyWord, function, 41]
+[id, main, 41] [openBracketRound, (, 41] [closeBracketRound, ), 41] [lambdaExpression, =>, 41]
+[voidKeyWord, void, 42] [openBracketCurly, {, 42]
+[localvarKeyWord, localvar, 43] [id, arr, 43] [colon, :, 43] [integerKeyWord, integer, 43] [openBracketSquare, [, 43] [integerType, 7, 43] [closeBracketSquare, ], 43] [semicolon, ;, 43]
+[id, arr, 44] [openBracketSquare, [, 44] [integerType, 0, 44] [closeBracketSquare, ], 44] [equals, =, 44] [integerType, 64, 44] [semicolon, ;, 44]
+[id, arr, 45] [openBracketSquare, [, 45] [integerType, 1, 45] [closeBracketSquare, ], 45] [equals, =, 45] [integerType, 34, 45] [semicolon, ;, 45]
+[id, arr, 46] [openBracketSquare, [, 46] [integerType, 2, 46] [closeBracketSquare, ], 46] [equals, =, 46] [integerType, 25, 46] [semicolon, ;, 46]
+[id, arr, 47] [openBracketSquare, [, 47] [integerType, 3, 47] [closeBracketSquare, ], 47] [equals, =, 47] [integerType, 12, 47] [semicolon, ;, 47]
+[id, arr, 48] [openBracketSquare, [, 48] [integerType, 4, 48] [closeBracketSquare, ], 48] [equals, =, 48] [integerType, 22, 48] [semicolon, ;, 48]
+[id, arr, 49] [openBracketSquare, [, 49] [integerType, 5, 49] [closeBracketSquare, ], 49] [equals, =, 49] [integerType, 11, 49] [semicolon, ;, 49]
+[id, arr, 50] [openBracketSquare, [, 50] [integerType, 6, 50] [closeBracketSquare, ], 50] [equals, =, 50] [integerType, 90, 50] [semicolon, ;, 50]
+[id, printarray, 51] [openBracketRound, (, 51] [id, arr, 51] [comma, ,, 51] [integerType, 7, 51] [closeBracketRound, ), 51] [semicolon, ;, 51]
+[id, bubbleSort, 52] [openBracketRound, (, 52] [id, arr, 52] [comma, ,, 52] [integerType, 7, 52] [closeBracketRound, ), 52] [semicolon, ;, 52]
+[id, printarray, 53] [openBracketRound, (, 53] [id, arr, 53] [comma, ,, 53] [integerType, 7, 53] [closeBracketRound, ), 53] [semicolon, ;, 53]
+[closedBracketCurly, }, 54]
+[blockComment, /*
+    classes
+    --------------------------------------
+|X| no class declaration
+| | class declaration
+| | multiple class declarations
+| | no data member declaration
+| | data member declaration
+| | multiple data member declaration
+| | no member function declaration
+| | member function declaration
+| | multiple member function declaration
+| | no member
+| | no inherited class
+| | one inherited class
+| | multiple inherited classes
+| | private member specifier
+| | public member specifier
+
+    functions: definitions
+    --------------------------------------
+| | no main function definition
+|X| main function definition
+| | no free function definition
+|X| free function definition
+|X| multiple free function definitions
+|X| no member function definition
+| | member function definition
+| | multiple member function definitions
+|X| return type: void
+| | return type: integer
+| | return type: float
+| | return type: id
+| | return type: array (not allowed)
+
+    functions: formal parameters
+    --------------------------------------
+|X| type: integer
+| | type: float
+| | type: id
+|X| type: 1-dim array 
+| | type: n-dim array
+| | type: array (with size)
+|X| type: array (without size)
+
+    functions: calls
+    --------------------------------------
+|X| free function call
+| | member function call
+| | parameters:0
+| | parameters:1
+|X| parameters:n
+|X| array parameter - 1-dim
+| | array parameter - n-dim
+| | array parameter - with size
+| | array parameter - without size
+| | function call as statement
+| | function call as expression factor
+| | expression as parameter
+
+    variable declaration
+    --------------------------------------
+|X| type: integer
+| | type: float
+| | type: string
+| | type: id
+|X| type: 1-dim array 
+| | type: n-dim array
+|X| type: array (with size)
+| | type: array (without size) (not allowed)
+
+    function body: local variable declarations
+    --------------------------------------
+| | no local variable declarations
+|X| local variable declarations
+| | intertwined statements and variable declarations
+
+    function body: statements
+    --------------------------------------
+| | no statement
+| | 1 statement
+|X| n statements
+|X| if statement
+|X| if: empty then or else blocks
+| | if: 1-statement then or else blocks
+|X| if: n-statements then or else blocks
+|X| while statement
+| | while: empty block
+| | while: 1-statement block
+|X| while: n-statement block
+| | read(<variable>) statement
+|X| write(<expr>) statement
+|X| return(<expr>) statement
+|X| assignment statement
+
+    variable + idnest
+    --------------------------------------
+|X| id
+| | id.id
+| | id.id(id)
+| | id(id).id
+| | id(id).id()
+| | id.id[id]
+| | id[id].id
+| | id[id].id[id]
+| | id.id[id][id]
+| | id[id][id].id
+| | id[id][id].id[id][id]
+| | id(id).id[id]
+| | id(id).id[id][id]
+| | expression as array index
+
+    expressions
+    --------------------------------------
+|X| single variable
+|X| involving addop
+| | involving multop
+|X| involving relop
+| | involving addop + multop
+|X| involving multop + relop
+| | involving addop + multop + relop
+| | involving parentheses
+| | involving nested parentheses
+| | involving not
+| | involving sign
+|X| involving literals
+| | involving variable + idnest
+|X| involving function calls
+| | involving all the above in one expression
+*/, 56]

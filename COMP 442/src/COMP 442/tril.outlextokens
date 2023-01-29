@@ -1,4 +1,4 @@
-[floatType, 123.123, 1] [semicolon, ;, 1]
-[floatType, 123.4345, 2] [semicolon, ;, 2]
-[id, gggsg, 3] [semicolon, ;, 3] [inlineComment, // fghj, 3]
-[integerType, 123, 4]
+[semicolon, ;, 1]
+[semicolon, ;, 2]
+[semicolon, ;, 3] [inlineComment, // fghj, 3]
+[integerType, 123, 5]
