@@ -137,7 +137,7 @@ public class Lexer {
                     if ((char) nextChar == '/') {
                         lastCharsRead = "//";
                         while ((char) (nextChar = fileInputStream.read()) != '\n') {
-                            if((char) nextChar =='\r'){
+                            if ((char) nextChar == '\r') {
                                 continue;
                             }
                             lastCharsRead += (char) nextChar;
@@ -155,7 +155,7 @@ public class Lexer {
 
                         while (!checkIfBlockEnded) {
                             nextChar = fileInputStream.read();
-                            if((char) nextChar =='\r'){
+                            if ((char) nextChar == '\r') {
                                 continue;
                             }
                             if ((char) nextChar == '\n') {
@@ -208,18 +208,18 @@ public class Lexer {
                             TokenSequence.add(new Token(lastCharsRead, TokenType.floatType, new Position(countRowLine)));
                             if ((char) nextChar != ' ' && (char) nextChar != '\n' && (char) nextChar != '\r') {
                                 lastCharsRead = "" + (char) nextChar;
-                            } else{
+                            } else {
                                 lastCharsRead = "";
                                 if ((char) nextChar == '\n') {
                                     countRowLine++;
                                 }
                             }
                         } else {
-                            // is neither a id or a float
-                            printErrorTokens(lastCharsRead,"number",countRowLine);
+                            // is neither an id nor a float
+                            printErrorTokens(lastCharsRead, "number", countRowLine);
                             if ((char) nextChar != ' ' && (char) nextChar != '\n' && (char) nextChar != '\r') {
                                 lastCharsRead = "" + (char) nextChar;
-                            } else{
+                            } else {
                                 lastCharsRead = "";
                                 if ((char) nextChar == '\n') {
                                     countRowLine++;
@@ -326,7 +326,7 @@ public class Lexer {
                         lastCharsRead = "";
                     }
                     // print the invalid char
-                    printErrorTokens(""+(char)currentPointerChar,"character",countRowLine);
+                    printErrorTokens("" + (char) currentPointerChar, "character", countRowLine);
                 } else if ((currentPointerChar >= 48 && currentPointerChar <= 57)
                         || (currentPointerChar >= 65 && currentPointerChar <= 90)
                         || (currentPointerChar >= 97 && currentPointerChar <= 122)
@@ -334,13 +334,13 @@ public class Lexer {
                     // case of reading a character from an atomic lexical element
                     lastCharsRead += (char) currentPointerChar;
                 } else if ((char) currentPointerChar == ' ' || (char) currentPointerChar == '\n') {
-                    if ((char) currentPointerChar == '\n') {
-                        countRowLine++;
-                    }
                     // case of definite ending of token
                     if (lastCharsRead != "") {
                         addALETokenToArrayList(lastCharsRead, countRowLine);
                         lastCharsRead = "";
+                    }
+                    if ((char) currentPointerChar == '\n') {
+                        countRowLine++;
                     }
                 }
                 if (lastCharsRead.equals(";") || lastCharsRead.equals(",") || lastCharsRead.equals(")") || lastCharsRead.equals("]") || lastCharsRead.equals("}")) {
@@ -372,12 +372,14 @@ public class Lexer {
         if (tokenType != TokenType.errorTokenId && tokenType != TokenType.errorTokenNumber & tokenType != TokenType.errorTokenChar) {
             TokenSequence.add(new Token(lastCharsRead, tokenType, new Position(position)));
         } else {
-            if (tokenType == TokenType.errorTokenId){
-                printErrorTokens(lastCharsRead,"identifier",position);
-            }if (tokenType == TokenType.errorTokenNumber){
-                printErrorTokens(lastCharsRead,"number",position);
-            }if (tokenType == TokenType.errorTokenChar){
-                printErrorTokens(lastCharsRead,"character",position);
+            if (tokenType == TokenType.errorTokenId) {
+                printErrorTokens(lastCharsRead, "identifier", position);
+            }
+            if (tokenType == TokenType.errorTokenNumber) {
+                printErrorTokens(lastCharsRead, "number", position);
+            }
+            if (tokenType == TokenType.errorTokenChar) {
+                printErrorTokens(lastCharsRead, "character", position);
             }
         }
     }
@@ -398,19 +400,30 @@ public class Lexer {
         if (validateFloat(lastCharsRead) == true) {
             return TokenType.floatType;
         }
+        return checkifErrorIDorNumber(lastCharsRead);
+    }
+
+    public TokenType checkifErrorIDorNumber(String lastCharsRead){
+        if (lastCharsRead.charAt(0) == '_') {
+            return TokenType.errorTokenId;
+        }
+        for(int i=0;i<lastCharsRead.length();i++){
+            if((int)lastCharsRead.charAt(i) >=65 && (int)lastCharsRead.charAt(i) <=90
+            || (int)lastCharsRead.charAt(i) >=97 && (int)lastCharsRead.charAt(i) <122){
+                return TokenType.errorTokenId;
+            }
+        }
         return TokenType.errorTokenNumber;
     }
 
     public boolean validateFloat(String f) {
-        float floatToCheck;
-        float x = 1.76e5f;
 
-        // Case of Invalid leading trailing zeros
-        if (f.startsWith("0") || f.endsWith("0") || f.contains("e0")) {
+        // Case of Invalid leading or trailing zeros
+        if ((f.startsWith("0") && f.charAt(1) != '.') || f.endsWith("0")) {
             //return false if leading or trailing zeros or eo
             return false;
         } else {
-            // case of contains e+ or e-
+            // case of contains e+ or e- or e
             if (f.contains("e")) {
                 //left side of e
                 for (int i = 0; i < f.indexOf('e'); i++) {
@@ -432,7 +445,30 @@ public class Lexer {
                     return false;
                 }
 
-                if (f.charAt((f.indexOf('e') + 1)) == '+' || f.charAt((f.indexOf('e') + 1)) == '-') {
+                if (f.length() == f.indexOf('e') + 1) {
+                    return false;
+                }
+
+                if (f.charAt((f.indexOf('e') + 1)) == '+' || f.charAt((f.indexOf('e') + 1)) == '-' || f.charAt((f.indexOf('e') + 1)) == '0'
+                        || f.charAt((f.indexOf('e') + 1)) == '1' || f.charAt((f.indexOf('e') + 1)) == '2' || f.charAt((f.indexOf('e') + 1)) == '3'
+                        || f.charAt((f.indexOf('e') + 1)) == '4' || f.charAt((f.indexOf('e') + 1)) == '5' || f.charAt((f.indexOf('e') + 1)) == '6'
+                        || f.charAt((f.indexOf('e') + 1)) == '6' || f.charAt((f.indexOf('e') + 1)) == '7' || f.charAt((f.indexOf('e') + 1)) == '8'
+                        || f.charAt((f.indexOf('e') + 1)) == '9') {
+
+                    // bad case of e+ or e-
+                    if (f.charAt((f.indexOf('e') + 1)) == '+' || f.charAt((f.indexOf('e') + 1)) == '-') {
+                        if (f.length() == f.indexOf('e') + 2 || f.charAt((f.indexOf('e') + 2)) == '0') {
+                            return false;
+                        }
+                    }
+                    // double check trailing zero before e
+                    if (f.charAt((f.indexOf('e') - 1)) == '0') {
+                        return false;
+                    }
+                    // double check leading zero
+                    if (f.charAt((f.indexOf('e') + 1)) == '0' && f.length() != (f.indexOf('e') + 2)) {
+                        return false;
+                    }
                     return true;
                 } else {
                     return false;
@@ -454,7 +490,7 @@ public class Lexer {
 
     public boolean validateInteger(String integ) {
         // case of leading zero
-        if ((integ.startsWith("0") && integ.length() != 1) ) {
+        if ((integ.startsWith("0") && integ.length() != 1)) {
             return false;
         }
         // check each char to be a digit
@@ -482,17 +518,11 @@ public class Lexer {
     }
 
     public boolean validateReservedWord(String lastCharRead) {
-        if (reservedWords.contains(lastCharRead)) {
-            return true;
-        }
-        return false;
+        return reservedWords.contains(lastCharRead);
     }
 
     public boolean validateOperatorWord(String lastCharRead) {
-        if (operatorWords.contains(lastCharRead)) {
-            return true;
-        }
-        return false;
+        return operatorWords.contains(lastCharRead);
     }
 
     public Token getNextToken() {
@@ -505,13 +535,13 @@ public class Lexer {
         return token;
     }
 
-    public void printErrorTokens(String invalidLexeme, String type, int row ){
-        if(type.equals("character")){
-            this.printWriterErrors.write("Lexical error: Invalid character: \""+invalidLexeme+"\": line "+row+".\n");
-        } else if(type.equals("number")){
-            this.printWriterErrors.write("Lexical error: Invalid number: \""+invalidLexeme+"\": line "+row+".\n");
-        } else if(type.equals("identifier")){
-            this.printWriterErrors.write("Lexical error: Invalid identifier: \""+invalidLexeme+"\": line "+row+".\n");
+    public void printErrorTokens(String invalidLexeme, String type, int row) {
+        if (type.equals("character")) {
+            this.printWriterErrors.write("Lexical error: Invalid character: \"" + invalidLexeme + "\": line " + row + ".\n");
+        } else if (type.equals("number")) {
+            this.printWriterErrors.write("Lexical error: Invalid number: \"" + invalidLexeme + "\": line " + row + ".\n");
+        } else if (type.equals("identifier")) {
+            this.printWriterErrors.write("Lexical error: Invalid identifier: \"" + invalidLexeme + "\": line " + row + ".\n");
         }
     }
 }

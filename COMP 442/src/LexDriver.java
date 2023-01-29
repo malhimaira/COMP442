@@ -34,7 +34,7 @@ public class LexDriver {
                 } else if (lastRowChecked == token.getPosition().getRow()) {
                     printWriterTokens.write(" " + token);
                 } else {
-                    lastRowChecked++;
+                    lastRowChecked= token.getPosition().getRow();
                     printWriterTokens.write("\n" + token);
                 }
             }

@@ -1,0 +1,58 @@
+// examples of invalid float
+123.43450;
+0345.1233,
+123.1e+0
+123.1e0
+123.1e+ ;
+123.10e ;
+123.1e+
+123.1e+0
+123.1e-0
+123.1e098
+123.1e
+123.e
+
+// examples of valid float
+123.e134
+123.09
+0.98
+
+// examples of valid integers
+123
+654323456
+75
+
+// examples of invalid integers
+09876
+
+// examples of valid identifiers
+p12s;
+th_shg22
+djsj
+uhsw
+d3
+
+// examples of invalid identifiers error
+_gggsg;
+9a96;
+_8sbna,
+
+// example of invalid char
+@ # $ ' \ ~
+
+// example of bad spacing with valid tokens
+int x=6;
+int x = 6;
+int x= 6;
+
+float[] y=[382.9,234.43,34.9]
+float[] y = [ 382.9 , 234.43 , 34.9]
+
+//example of good spacing for punctuation
+public float cookie(y=3){
+    y = 2;
+    return getcookie(y);}
+
+// example of bad spacing for punctuation
+
+public float cookie(y=3){y=2; return getcookie(y);}
