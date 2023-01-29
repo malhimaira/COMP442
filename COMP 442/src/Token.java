@@ -4,7 +4,7 @@ public class Token {
     private String lexeme;
     private Position position;
 
-    public Token( String lexeme, TokenType tokenType, Position position) {
+    public Token(String lexeme, TokenType tokenType, Position position) {
         this.lexeme = lexeme;
         this.tokenType = tokenType;
         this.position = position;
@@ -19,6 +19,10 @@ public class Token {
         this.lexeme = lexeme;
     }
 
+    public void setPosition(int row) {
+        this.position = new Position(row);
+    }
+
     // Getters
     public TokenType getTokenType() {
         return tokenType;
@@ -28,4 +32,11 @@ public class Token {
         return lexeme;
     }
 
+    public Position getPosition() {
+        return position;
+    }
+
+    public String toString(){
+        return "["+this.getTokenType()+", "+this.getLexeme()+", "+this.position+"]";
+    }
 }

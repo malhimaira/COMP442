@@ -11,7 +11,7 @@ public class LexDriver {
             Lexer lexer = new Lexer(fileInputStream);
             Token token;
             while((token = lexer.getNextToken()) != null){
-                System.out.println(token.getLexeme());
+                System.out.println(token);
             }
 
             lexer.getNextToken();

@@ -338,6 +338,9 @@ public class Lexer {
                     lastCharsRead = "";
                 }
             }
+            if (lastCharsRead != "") {
+                addALETokenToArrayList(lastCharsRead, countRowLine);
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
