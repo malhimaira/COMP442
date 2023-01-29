@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -11,7 +12,7 @@ public class Lexer {
             "attribute", "function", "public", "private"));
     public static ArrayList<String> operatorWords = new ArrayList<String>(Arrays.asList("and", "or", "not"));
 
-    public Lexer(FileInputStream fileInputStream) {
+    public Lexer(FileInputStream fileInputStream, PrintWriter printWriterErrors) {
         try {
             // initialize
             TokenSequence = new ArrayList<>(10);
@@ -133,20 +134,29 @@ public class Lexer {
                     // Case of Inline Comment
                     if ((char) nextChar == '/') {
                         lastCharsRead = "//";
-                        while ((char) (nextChar = fileInputStream.read()) != '\n' && ((char) nextChar) != '\r'
-                                && nextChar != 10) {
+                        while ((char) (nextChar = fileInputStream.read()) != '\n') {
+                            if((char) nextChar =='\r'){
+                                continue;
+                            }
                             lastCharsRead += (char) nextChar;
                         }
                         TokenSequence.add(new Token(lastCharsRead, TokenType.inlineComment, new Position(countRowLine)));
+                        countRowLine++;
                         lastCharsRead = "";
                     }
                     // Case of Block Comment
                     else if ((char) nextChar == '*') {
                         lastCharsRead = "/*";
                         boolean checkIfBlockEnded = false;
+                        // store initial row for token of block comment
+                        int initialRow = countRowLine;
+
                         while (!checkIfBlockEnded) {
                             nextChar = fileInputStream.read();
-                            if ((char) nextChar == '\n' || (char) nextChar == '\r' || nextChar == 10) {
+                            if((char) nextChar =='\r'){
+                                continue;
+                            }
+                            if ((char) nextChar == '\n') {
                                 countRowLine++;
                             }
                             // finds a *
@@ -163,7 +173,7 @@ public class Lexer {
                             }
                             lastCharsRead += (char) nextChar;
                         }
-                        TokenSequence.add(new Token(lastCharsRead, TokenType.blockComment, new Position(countRowLine)));
+                        TokenSequence.add(new Token(lastCharsRead, TokenType.blockComment, new Position(initialRow)));
                         lastCharsRead = "";
                     }
                     // Case of division
@@ -195,14 +205,14 @@ public class Lexer {
                         boolean isAFloat = validateFloat(lastCharsRead);
                         if (isAFloat == true) {
                             TokenSequence.add(new Token(lastCharsRead, TokenType.floatType, new Position(countRowLine)));
-                            if ((char) nextChar != ' ' && (char) nextChar != '\n' && (char) nextChar != '\r' && nextChar != 10) {
+                            if ((char) nextChar != ' ' && (char) nextChar != '\n' && (char) nextChar != '\r') {
                                 lastCharsRead = "" + (char) nextChar;
-                            } else if ((char) nextChar == '\n' || (char) nextChar == '\r' || nextChar == 10) {
+                            } else if ((char) nextChar == '\n') {
                                 countRowLine++;
                             }
 
                         } else {
-                            if ((char) nextChar != ' ' && (char) nextChar != '\n' && (char) nextChar != '\r' && nextChar != 10) {
+                            if ((char) nextChar != ' ' && (char) nextChar != '\n' && (char) nextChar != '\r') {
                                 lastCharsRead = "" + (char) nextChar;
                             }
                             // call method print error message to file
@@ -279,7 +289,7 @@ public class Lexer {
                         addALETokenToArrayList(lastCharsRead, countRowLine);
                         lastCharsRead = "";
                     }
-                    TokenSequence.add(new Token("{", TokenType.openBracketRound, new Position(countRowLine)));
+                    TokenSequence.add(new Token("{", TokenType.openBracketCurly, new Position(countRowLine)));
                 } else if ((char) currentPointerChar == ']') {
                     // backtrack to check if no token created from characters before
                     if (lastCharsRead != "") {
@@ -313,8 +323,8 @@ public class Lexer {
                         || ((char) currentPointerChar == '_')) {
                     // case of reading a character from an atomic lexical element
                     lastCharsRead += (char) currentPointerChar;
-                } else if ((char) currentPointerChar == ' ' || (char) currentPointerChar == '\n' || (char) currentPointerChar == '\r' || currentPointerChar == 10) {
-                    if ((char) currentPointerChar == '\n' || (char) currentPointerChar == '\r' || currentPointerChar == 10) {
+                } else if ((char) currentPointerChar == ' ' || (char) currentPointerChar == '\n') {
+                    if ((char) currentPointerChar == '\n') {
                         countRowLine++;
                     }
                     // case of definite ending of token
@@ -366,12 +376,14 @@ public class Lexer {
         if (validateId(lastCharsRead) == true) {
             return TokenType.id;
         }
-        if (validateFloat(lastCharsRead) == true) {
-            return TokenType.floatType;
-        }
         if (validateInteger(lastCharsRead) == true) {
             return TokenType.integerType;
         }
+
+        if (validateFloat(lastCharsRead) == true) {
+            return TokenType.floatType;
+        }
+
         return TokenType.errorToken;
     }
 
@@ -400,7 +412,7 @@ public class Lexer {
                 for (int i = f.indexOf('e') + 2; i < f.length() - f.indexOf('e'); i++) {
                     if (f.charAt(i) == '0' || f.charAt(i) == '1' || f.charAt(i) == '2' || f.charAt(i) == '3'
                             || f.charAt(i) == '4' || f.charAt(i) == '5' || f.charAt(i) == '6'
-                            || f.charAt(i) == '7' || f.charAt(i) == '8' || f.charAt(i) == '9' || f.charAt(i) == '.') {
+                            || f.charAt(i) == '7' || f.charAt(i) == '8' || f.charAt(i) == '9') {
                         continue;
                     }
                     return false;
@@ -429,6 +441,7 @@ public class Lexer {
     public boolean validateInteger(String integ) {
         // case of leading zero
         if (integ.startsWith("0") && integ.length() != 1) {
+
             return false;
         }
         // check each char to be a digit
