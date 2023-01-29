@@ -16,6 +16,8 @@
 123.e134
 123.09
 0.98
+123.0e134
+2.0
 
 // examples of valid integers
 123

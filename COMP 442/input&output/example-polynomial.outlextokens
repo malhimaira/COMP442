@@ -1,0 +1,192 @@
+[inlineComment, // ====== struct declarations ====== //, 1]
+[classKeyWord, class, 2] [id, POLYNOMIAL, 2] [openBracketCurly, {, 2]
+[publicKeyWord, public, 3] [functionKeyWord, function, 3] [id, evaluate, 3] [colon, :, 3] [openBracketRound, (, 3] [id, x, 3] [colon, :, 3] [floatKeyWord, float, 3] [closeBracketRound, ), 3] [lambdaExpression, =>, 3] [floatKeyWord, float, 3] [semicolon, ;, 3]
+[closedBracketCurly, }, 4] [semicolon, ;, 4]
+[classKeyWord, class, 6] [id, LINEAR, 6] [isaKeyWord, isa, 6] [id, POLYNOMIAL, 6] [openBracketCurly, {, 6]
+[privateKeyWord, private, 7] [attributeKeyWord, attribute, 7] [id, a, 7] [colon, :, 7] [floatKeyWord, float, 7] [semicolon, ;, 7]
+[privateKeyWord, private, 8] [attributeKeyWord, attribute, 8] [id, b, 8] [colon, :, 8] [floatKeyWord, float, 8] [semicolon, ;, 8]
+[publicKeyWord, public, 9] [constructorKeyWord, constructor, 9] [colon, :, 9] [openBracketRound, (, 9] [id, A, 9] [colon, :, 9] [floatKeyWord, float, 9] [comma, ,, 9] [id, B, 9] [colon, :, 9] [floatKeyWord, float, 9] [closeBracketRound, ), 9] [semicolon, ;, 9]
+[publicKeyWord, public, 10] [functionKeyWord, function, 10] [id, evaluate, 10] [colon, :, 10] [openBracketRound, (, 10] [id, x, 10] [colon, :, 10] [floatKeyWord, float, 10] [closeBracketRound, ), 10] [lambdaExpression, =>, 10] [floatKeyWord, float, 10] [semicolon, ;, 10]
+[closedBracketCurly, }, 11] [semicolon, ;, 11]
+[classKeyWord, class, 13] [id, QUADRATIC, 13] [isaKeyWord, isa, 13] [id, POLYNOMIAL, 13] [openBracketCurly, {, 13]
+[privateKeyWord, private, 14] [attributeKeyWord, attribute, 14] [id, a, 14] [colon, :, 14] [floatKeyWord, float, 14] [semicolon, ;, 14]
+[privateKeyWord, private, 15] [attributeKeyWord, attribute, 15] [id, b, 15] [colon, :, 15] [floatKeyWord, float, 15] [semicolon, ;, 15]
+[privateKeyWord, private, 16] [attributeKeyWord, attribute, 16] [id, c, 16] [colon, :, 16] [floatKeyWord, float, 16] [semicolon, ;, 16]
+[publicKeyWord, public, 17] [constructorKeyWord, constructor, 17] [colon, :, 17] [openBracketRound, (, 17] [id, A, 17] [colon, :, 17] [floatKeyWord, float, 17] [comma, ,, 17] [id, B, 17] [colon, :, 17] [floatKeyWord, float, 17] [comma, ,, 17] [id, C, 17] [colon, :, 17] [floatKeyWord, float, 17] [closeBracketRound, ), 17] [semicolon, ;, 17]
+[publicKeyWord, public, 18] [functionKeyWord, function, 18] [id, evaluate, 18] [colon, :, 18] [openBracketRound, (, 18] [id, x, 18] [colon, :, 18] [floatKeyWord, float, 18] [closeBracketRound, ), 18] [lambdaExpression, =>, 18] [floatKeyWord, float, 18] [semicolon, ;, 18]
+[closedBracketCurly, }, 19] [semicolon, ;, 19]
+[inlineComment, // ====== member function implementations ====== //  , 21]
+[functionKeyWord, function, 22] [id, POLYNOMIAL, 22] [doubleColon, ::, 22] [id, evaluate, 22] [openBracketRound, (, 22] [id, x, 22] [colon, :, 22] [floatKeyWord, float, 22] [closeBracketRound, ), 22] [lambdaExpression, =>, 22] [floatKeyWord, float, 22]
+[openBracketCurly, {, 23]
+[returnKeyWord, return, 24] [openBracketRound, (, 24] [integerType, 0, 24] [closeBracketRound, ), 24] [semicolon, ;, 24]
+[closedBracketCurly, }, 25]
+[functionKeyWord, function, 27] [id, QUADRATIC, 27] [doubleColon, ::, 27] [id, evaluate, 27] [openBracketRound, (, 27] [id, x, 27] [colon, :, 27] [floatKeyWord, float, 27] [closeBracketRound, ), 27] [lambdaExpression, =>, 27] [floatKeyWord, float, 27]
+[openBracketCurly, {, 28]
+[localvarKeyWord, localvar, 29] [id, result, 29] [colon, :, 29] [floatKeyWord, float, 29] [semicolon, ;, 29]
+[inlineComment, //Using Horner's method, 30]
+[id, result, 31] [equals, =, 31] [id, a, 31] [semicolon, ;, 31]
+[id, result, 32] [equals, =, 32] [id, result, 32] [multiply, *, 32] [id, x, 32] [plus, +, 32] [id, b, 32] [semicolon, ;, 32]
+[id, result, 33] [equals, =, 33] [id, result, 33] [multiply, *, 33] [id, x, 33] [plus, +, 33] [id, c, 33] [semicolon, ;, 33]
+[returnKeyWord, return, 34] [openBracketRound, (, 34] [id, result, 34] [closeBracketRound, ), 34] [semicolon, ;, 34]
+[closedBracketCurly, }, 35]
+[functionKeyWord, function, 37] [id, QUADRATIC, 37] [doubleColon, ::, 37] [constructorKeyWord, constructor, 37] [openBracketRound, (, 37] [id, A, 37] [colon, :, 37] [floatKeyWord, float, 37] [comma, ,, 37] [id, B, 37] [colon, :, 37] [floatKeyWord, float, 37] [comma, ,, 37] [id, C, 37] [colon, :, 37] [floatKeyWord, float, 37] [closeBracketRound, ), 37]
+[openBracketCurly, {, 38]
+[selfKeyWord, self, 39] [period, ., 39] [id, a, 39] [equals, =, 39] [id, A, 39] [semicolon, ;, 39]
+[selfKeyWord, self, 40] [period, ., 40] [id, b, 40] [equals, =, 40] [id, B, 40] [semicolon, ;, 40]
+[selfKeyWord, self, 41] [period, ., 41] [id, c, 41] [equals, =, 41] [id, C, 41] [semicolon, ;, 41]
+[closedBracketCurly, }, 42]
+[functionKeyWord, function, 44] [id, LINEAR, 44] [doubleColon, ::, 44] [constructorKeyWord, constructor, 44] [openBracketRound, (, 44] [id, A, 44] [colon, :, 44] [floatKeyWord, float, 44] [comma, ,, 44] [id, B, 44] [colon, :, 44] [floatKeyWord, float, 44] [closeBracketRound, ), 44]
+[openBracketCurly, {, 45]
+[selfKeyWord, self, 46] [period, ., 46] [id, a, 46] [equals, =, 46] [id, A, 46] [semicolon, ;, 46]
+[selfKeyWord, self, 47] [period, ., 47] [id, b, 47] [equals, =, 47] [id, B, 47] [semicolon, ;, 47]
+[closedBracketCurly, }, 48]
+[functionKeyWord, function, 50] [id, LINEAR, 50] [doubleColon, ::, 50] [id, evaluate, 50] [openBracketRound, (, 50] [id, x, 50] [colon, :, 50] [floatKeyWord, float, 50] [closeBracketRound, ), 50] [lambdaExpression, =>, 50] [floatKeyWord, float, 50]
+[openBracketCurly, {, 51]
+[localvarKeyWord, localvar, 52] [id, result, 52] [colon, :, 52] [floatKeyWord, float, 52] [semicolon, ;, 52]
+[id, result, 53] [equals, =, 53] [semicolon, ;, 53]
+[id, result, 54] [equals, =, 54] [id, a, 54] [multiply, *, 54] [id, x, 54] [plus, +, 54] [id, b, 54] [semicolon, ;, 54]
+[returnKeyWord, return, 55] [openBracketRound, (, 55] [id, result, 55] [closeBracketRound, ), 55] [semicolon, ;, 55]
+[closedBracketCurly, }, 56]
+[inlineComment, // ====== main ====== //, 58]
+[functionKeyWord, function, 59] [id, main, 59] [openBracketRound, (, 59] [closeBracketRound, ), 59] [lambdaExpression, =>, 59] [voidKeyWord, void, 59]
+[openBracketCurly, {, 60]
+[localvarKeyWord, localvar, 61] [id, f1, 61] [colon, :, 61] [id, LINEAR, 61] [openBracketRound, (, 61] [integerType, 2, 61] [comma, ,, 61] [floatType, 3.5, 61] [closeBracketRound, ), 61] [semicolon, ;, 61]
+[localvarKeyWord, localvar, 62] [id, f2, 62] [colon, :, 62] [id, QUADRATIC, 62] [openBracketRound, (, 62] [minus, -, 62] [comma, ,, 62] [comma, ,, 62] [closeBracketRound, ), 62] [semicolon, ;, 62]
+[localvarKeyWord, localvar, 63] [id, counter, 63] [colon, :, 63] [integerKeyWord, integer, 63] [equals, =, 63] [integerType, 1, 63] [semicolon, ;, 63]
+[whileKeyWord, while, 65] [openBracketRound, (, 65] [id, counter, 65] [lessThanOrEqualTo, <=, 65] [integerType, 10, 65] [closeBracketRound, ), 65]
+[openBracketCurly, {, 66]
+[writeKeyWord, write, 67] [openBracketRound, (, 67] [id, counter, 67] [closeBracketRound, ), 67] [semicolon, ;, 67]
+[writeKeyWord, write, 68] [openBracketRound, (, 68] [id, f1, 68] [period, ., 68] [id, evaluate, 68] [openBracketRound, (, 68] [id, counter, 68] [closeBracketRound, ), 68] [closeBracketRound, ), 68] [semicolon, ;, 68]
+[writeKeyWord, write, 69] [openBracketRound, (, 69] [id, f2, 69] [period, ., 69] [id, evaluate, 69] [openBracketRound, (, 69] [id, counter, 69] [closeBracketRound, ), 69] [closeBracketRound, ), 69] [semicolon, ;, 69]
+[closedBracketCurly, }, 70] [semicolon, ;, 70]
+[closedBracketCurly, }, 71]
+[blockComment, /*
+    classes
+    --------------------------------------
+| | no class declaration
+| | class declaration
+|X| multiple class declarations
+|X| no data member declaration
+|X| data member declaration
+|X| multiple data member declaration
+| | no member function declaration
+|X| member function declaration
+|X| multiple member function declaration
+| | no member
+|X| no inherited class
+|X| one inherited class
+| | multiple inherited classes
+|X| private member specifier
+|X| public member specifier
+
+    functions: definitions
+    --------------------------------------
+| | no main function definition
+|X| main function definition
+|X| no free function definition
+| | free function definition
+| | multiple free function definitions
+| | no member function definition
+|X| member function definition
+|X| multiple member function definitions
+| | return type: void
+| | return type: integer
+|X| return type: float
+|X| return type: id
+| | return type: array (not allowed)
+
+    functions: formal parameters
+    --------------------------------------
+| | type: integer
+|X| type: float
+| | type: id
+| | type: 1-dim array 
+| | type: n-dim array
+| | type: array (with size)
+| | type: array (without size)
+
+    functions: calls
+    --------------------------------------
+| | free function call
+|X| member function call
+| | parameters:0
+|X| parameters:1
+|X| parameters:n
+| | array parameter - 1-dim
+| | array parameter - n-dim
+| | array parameter - with size
+| | array parameter - without size
+| | function call as statement
+|X| function call as expression factor
+| | expression as parameter
+
+    variable declaration
+    --------------------------------------
+| | type: integer
+| | type: float
+| | type: string
+|X| type: id
+| | type: 1-dim array 
+| | type: n-dim array
+| | type: array (with size)
+| | type: array (without size)
+
+    function body: local variable declarations
+    --------------------------------------
+| | no local variable declarations
+|X| local variable declarations
+| | intertwined statements and variable declarations
+
+    function body: statements
+    --------------------------------------
+| | no statement
+| | 1 statement
+|X| n statements
+| | if statement
+| | if: empty then or else blocks
+| | if: 1-statement then or else blocks
+| | if: n-statements then or else blocks
+|X| while statement
+| | while: empty block
+| | while: 1-statement block
+|X| while: n-statement block
+| | read(<variable>) statement
+|X| write(<expr>) statement
+|X| return(<expr>) statement
+|X| assignment statement
+
+    variable + idnest
+    --------------------------------------
+|X| id
+|X| id.id
+|X| id.id(id)
+| | id(id).id
+| | id(id).id()
+| | id.id[id]
+| | id[id].id
+| | id[id].id[id]
+| | id.id[id][id]
+| | id[id][id].id
+| | id[id][id].id[id][id]
+| | id(id).id[id]
+| | id(id).id[id][id]
+| | expression as array index
+
+    expressions
+    --------------------------------------
+| | single variable
+| | involving addop
+| | involving multop
+| | involving relop
+|X| involving addop + multop
+| | involving multop + relop
+| | involving addop + multop + relop
+| | involving parentheses
+| | involving nested parenhteses
+| | involving not
+| | involving sign
+| | involving literals
+|X| involving variable + idnest
+|X| involving function calls
+| | involving all the above in one expression
+*/, 72]
