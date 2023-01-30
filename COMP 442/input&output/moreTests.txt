@@ -1,3 +1,4 @@
+
 // examples of invalid float
 123.43450;
 0345.1233,
@@ -14,7 +15,8 @@
 05.80
 
 // examples of valid float
-123.e134
+120.34e10
+123.1e134
 123.09
 0.98
 123.0e134

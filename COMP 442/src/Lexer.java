@@ -419,7 +419,7 @@ public class Lexer {
     public boolean validateFloat(String f) {
 
         // Case of Invalid leading or trailing zeros
-        if ((f.startsWith("0") && f.charAt(1) != '.') || (f.endsWith("0") && f.charAt(f.length()-2) !='.')) {
+        if ((f.startsWith("0") && f.charAt(1) != '.') || (f.endsWith("0") && f.charAt(f.length()-2) !='.' && !f.contains("e"))) {
             //return false if leading or trailing zeros or eo
             return false;
         } else {

@@ -1,0 +1,32 @@
+[doubleEqual, ==, 1] [plus, +, 1] [or, or, 1] [openBracketRound, (, 1] [semicolon, ;, 1] [id, integerwhilelocalvar, 1]
+[angleBrackets, <>, 2] [minus, -, 2] [and, and, 2] [closeBracketRound, ), 2] [comma, ,, 2] [id, floatif, 2] [constructorKeyWord, constructor, 2]
+[lessThan, <, 3] [id, 	, 3] [multiply, *, 3] [not, not, 3] [openBracketCurly, {, 3] [floatType, ., 3] [id, 	voidthenattribute, 3]
+[greaterThan, >, 4] [divide, /, 4] [id, 	, 4] [closedBracketCurly, }, 4] [colon, :, 4] [id, 	classelsefunction, 4]
+[lessThanOrEqualTo, <=, 5] [equals, =, 5] [id, 	, 5] [openBracketSquare, [, 5] [lambdaExpression, =>, 5] [id, selfreadpublic, 5]
+[greaterThanOrEqualTo, >=, 6] [closeBracketSquare, ], 6] [doubleColon, ::, 6] [id, isawriteprivate, 6]
+[returnKeyWord, return, 7]
+[integerType, 0, 13]
+[integerType, 1, 14]
+[integerType, 10, 15]
+[integerType, 12, 16]
+[integerType, 123, 17]
+[integerType, 12345, 18]
+[floatType, 1.23, 20] [id, 	, 20]
+[floatType, 12.34, 21] [id, 	, 21]
+[floatType, 120.34e10, 22] [id, 	, 22]
+[floatType, 12345.6789e-123, 23] [id, 	, 23]
+[id, abc, 25]
+[id, abc1, 26]
+[id, a1bc, 27]
+[id, abc_1abc, 28]
+[id, abc1_abc, 29]
+[inlineComment, // this is an inline comment, 31]
+[blockComment, /* this is a single line block comment */, 33]
+[blockComment, /* this is a 
+multiple line
+block comment 
+*/, 35]
+[blockComment, /* this is an imbricated 
+/* block comment
+*/, 40]
+[multiply, *, 43] [divide, /, 43] [id, , 43]
