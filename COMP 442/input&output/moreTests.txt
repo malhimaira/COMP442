@@ -54,6 +54,11 @@ int x= 6;
 float[] y=[382.9,234.43,34.9]
 float[] y = [ 382.9 , 234.43 , 34.9]
 
+// example of id.id
+ object.method;
+ int x =object.method();
+
+
 //example of good spacing for punctuation
 public float cookie(y=3){
     y = 2;
