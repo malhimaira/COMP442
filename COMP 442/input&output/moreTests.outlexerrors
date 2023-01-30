@@ -3,10 +3,10 @@ Lexical error: Invalid number: "0345.1233": line 4.
 Lexical error: Invalid number: "123.1e+": line 7.
 Lexical error: Invalid number: "123.10e": line 8.
 Lexical error: Invalid number: "123.1e+": line 9.
-Lexical error: Invalid number: "123.1e098": line 12.
-Lexical error: Invalid number: "123.1e": line 13.
-Lexical error: Invalid number: "123.e": line 14.
-Lexical error: Invalid number: "05.80": line 15.
+Lexical error: Invalid number: "123.1e098": line 10.
+Lexical error: Invalid number: "123.1e": line 11.
+Lexical error: Invalid number: "123.e": line 12.
+Lexical error: Invalid number: "05.80": line 13.
 Lexical error: Invalid number: "09876": line 32.
 Lexical error: Invalid identifier: "_gggsg": line 42.
 Lexical error: Invalid identifier: "9a96": line 43.

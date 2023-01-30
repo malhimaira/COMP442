@@ -477,6 +477,7 @@ public class Lexer {
                         return false;
                     }
                     return true;
+
                 } else {
                     return false;
                 }
