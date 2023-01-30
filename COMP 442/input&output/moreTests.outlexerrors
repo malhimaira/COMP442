@@ -1,11 +1,8 @@
 Lexical error: Invalid number: "123.43450": line 3.
 Lexical error: Invalid number: "0345.1233": line 4.
-Lexical error: Invalid number: "123.1e+0": line 5.
 Lexical error: Invalid number: "123.1e+": line 7.
 Lexical error: Invalid number: "123.10e": line 8.
 Lexical error: Invalid number: "123.1e+": line 9.
-Lexical error: Invalid number: "123.1e+0": line 10.
-Lexical error: Invalid number: "123.1e-0": line 11.
 Lexical error: Invalid number: "123.1e098": line 12.
 Lexical error: Invalid number: "123.1e": line 13.
 Lexical error: Invalid number: "123.e": line 14.

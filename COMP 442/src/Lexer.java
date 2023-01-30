@@ -464,7 +464,7 @@ public class Lexer {
 
                     // bad case of e+ or e-
                     if (f.charAt((f.indexOf('e') + 1)) == '+' || f.charAt((f.indexOf('e') + 1)) == '-') {
-                        if (f.length() == f.indexOf('e') + 2 || f.charAt((f.indexOf('e') + 2)) == '0') {
+                        if (f.length() == f.indexOf('e') + 2 ) {
                             return false;
                         }
                     }
