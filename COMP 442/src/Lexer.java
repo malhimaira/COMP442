@@ -160,7 +160,14 @@ public class Lexer {
                             }
                             if ((char) nextChar == '\n') {
                                 countRowLine++;
+                                lastCharsRead += "\\n";
+                                continue;
                             }
+//                            if ((char) nextChar == '\\') {
+//                                lastCharsRead += "\\";
+//                                lastCharsRead += "\\n";
+//                                continue;
+//                            }
                             // finds a *
                             if ((char) nextChar == '*') {
                                 lastCharsRead += "*";

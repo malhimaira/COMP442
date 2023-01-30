@@ -22,11 +22,6 @@
 [id, abc1_abc, 29]
 [inlineComment, // this is an inline comment, 31]
 [blockComment, /* this is a single line block comment */, 33]
-[blockComment, /* this is a 
-multiple line
-block comment 
-*/, 35]
-[blockComment, /* this is an imbricated 
-/* block comment
-*/, 40]
+[blockComment, /* this is a \nmultiple line\nblock comment \n*/, 35]
+[blockComment, /* this is an imbricated \n/* block comment\n*/, 40]
 [multiply, *, 43] [divide, /, 43] [id, , 43]
