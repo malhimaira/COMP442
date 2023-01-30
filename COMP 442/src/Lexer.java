@@ -546,10 +546,13 @@ public class Lexer {
     public void printErrorTokens(String invalidLexeme, String type, int row) {
         if (type.equals("character")) {
             this.printWriterErrors.write("Lexical error: Invalid character: \"" + invalidLexeme + "\": line " + row + ".\n");
+            TokenSequence.add(new ErrorToken(invalidLexeme, TokenType.errorTokenChar, new Position(row)));
         } else if (type.equals("number")) {
             this.printWriterErrors.write("Lexical error: Invalid number: \"" + invalidLexeme + "\": line " + row + ".\n");
+            TokenSequence.add(new ErrorToken(invalidLexeme, TokenType.errorTokenNumber, new Position(row)));
         } else if (type.equals("identifier")) {
             this.printWriterErrors.write("Lexical error: Invalid identifier: \"" + invalidLexeme + "\": line " + row + ".\n");
+            TokenSequence.add(new ErrorToken(invalidLexeme, TokenType.errorTokenId, new Position(row)));
         }
     }
 }
