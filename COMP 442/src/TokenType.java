@@ -51,5 +51,6 @@ public enum TokenType {
     inlineComment,
     errorTokenId,
     errorTokenNumber,
-    errorTokenChar
+    errorTokenChar,
+    epsilon,
     }

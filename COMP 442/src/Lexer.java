@@ -25,7 +25,7 @@ public class Lexer {
             String lastCharsRead = "";
 
             while ((currentPointerChar = fileInputStream.read()) != -1) {
-
+                lastCharsRead = lastCharsRead.replaceAll("\\s", ""); //remove spaces
                 // Case of Operator or Punctuation
 
                 if ((char) currentPointerChar == '=') {
@@ -340,7 +340,7 @@ public class Lexer {
                         || ((char) currentPointerChar == '_')) {
                     // case of reading a character from an atomic lexical element
                     lastCharsRead += (char) currentPointerChar;
-                } else if ((char) currentPointerChar == ' ' || (char) currentPointerChar == '\n') {
+                } else if ((char) currentPointerChar == ' ' || (char) currentPointerChar == '\n'|| (char) currentPointerChar == '\t') {
                     // case of definite ending of token
                     if (lastCharsRead != "") {
                         addALETokenToArrayList(lastCharsRead, countRowLine);

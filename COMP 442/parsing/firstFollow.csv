@@ -1,0 +1,76 @@
+nonterminal,first set,follow set,nullable,endable
+START,class function,∅,yes,yes
+ARRAYSIZE1,intlit rsqbr,lsqbr semi rpar comma,no,no
+CLASSDECL,class,class function,no,yes
+EXPR1,eq neq lt gt leq geq,semi comma rpar,yes,no
+FUNCDEF,function,class function,no,yes
+FUNCBODY,lcurbr,class function,no,yes
+FUNCHEAD,function,lcurbr,no,no
+FUNCHEAD3,sr lpar,lcurbr,no,no
+FUNCHEAD1,id constructor,lcurbr,no,no
+ASSIGNSTAT,id,∅,no,no
+FUNCTIONCALL,id,∅,no,no
+FUNCALL3,lpar dot,∅,no,no
+FUNCALL4,lpar lsqbr,∅,no,no
+FUNCALL5,dot,∅,yes,no
+FUNCALL2,dot,∅,no,no
+VARIABLE3,lsqbr dot,equal rpar,yes,no
+VARIABLE4,lpar lsqbr,equal rpar,no,no
+VARIABLE5,dot,equal rpar,yes,no
+VARIABLE2,dot,equal rpar,no,no
+FUNCTIONCALLORVARIABLE,id,semi mult div and rsqbr eq neq lt gt leq geq plus minus or comma rpar,no,no
+FUNCTIONCALLORVARIABLE1,lpar dot lsqbr,semi mult div and rsqbr eq neq lt gt leq geq plus minus or comma rpar,yes,no
+FUNCTIONCALLORVARIABLE3,lpar dot lsqbr,semi mult div and rsqbr eq neq lt gt leq geq plus minus or comma rpar,yes,no
+FUNCTIONCALLORVARIABLE2,dot,semi mult div and rsqbr eq neq lt gt leq geq plus minus or comma rpar,yes,no
+IDNEST1,dot,∅,no,no
+IDNEST2,lsqbr lpar,∅,yes,no
+LOCALVARDECL2,semi lpar lsqbr,localvar if while read write return id rcurbr,no,no
+LOCALVARDECL,localvar,localvar if while read write return id rcurbr,no,no
+MEMBERFUNCDECL,function constructor,public private function constructor attribute rcurbr,no,no
+FPARAMS,id,rpar,yes,no
+MEMBERVARDECL,attribute,public private function constructor attribute rcurbr,no,no
+OPTCLASSDECL2,isa,lcurbr,yes,no
+ARITHEXPR,intlit floatlit lpar not id plus minus,semi rsqbr eq neq lt gt leq geq comma rpar,no,no
+RELOP,eq neq lt gt leq geq,intlit floatlit lpar not id plus minus,no,no
+CLASSDECLORFUNCDEF,class function,class function,no,yes
+REPTSTART0,class function,∅,yes,yes
+APARAMSTAIL,comma,comma rpar,no,no
+REPTAPARAMS1,comma,rpar,yes,no
+MEMBERDECL,function constructor attribute,public private function constructor attribute rcurbr,no,no
+REPTCLASSDECL4,public private function constructor attribute,rcurbr,yes,no
+REPTFPARAMS3,lsqbr,rpar comma,yes,no
+FPARAMSTAIL,comma,comma rpar,no,no
+REPTFPARAMS4,comma,rpar,yes,no
+REPTFPARAMSTAIL4,lsqbr,comma rpar,yes,no
+LOCALVARDECLORSTMT,localvar if while read write return id,localvar if while read write return id rcurbr,no,no
+REPTFUNCBODY1,localvar if while read write return id,rcurbr,yes,no
+REPTLOCALVARDECL4,lsqbr,semi,yes,no
+ARRAYSIZE,lsqbr,lsqbr semi rpar comma,no,no
+REPTMEMBERVARDECL4,lsqbr,semi,yes,no
+REPTOPTCLASSDECL22,comma,lcurbr,yes,no
+RETURNTYPE,void integer float id,semi lcurbr,no,no
+ADDOP,plus minus or,intlit floatlit lpar not id plus minus,no,no
+RIGHTRECARITHEXPR,plus minus or,semi rsqbr eq neq lt gt leq geq comma rpar,yes,no
+MULTOP,mult div and,intlit floatlit lpar not id plus minus,no,no
+SIGN,plus minus,intlit floatlit lpar not id plus minus,no,no
+REPTSTATBLOCK1,if while read write return id,rcurbr,yes,no
+STATEMENT,if while read write return id,else semi localvar if while read write return id rcurbr,no,no
+RELEXPR,intlit floatlit lpar not id plus minus,rpar,no,no
+STATBLOCK,lcurbr if while read write return id,else semi,yes,no
+VARIABLE,id,equal rpar,no,no
+FUNCTIONCALLORASIGNSTAT,id,semi,no,no
+ISFUNCTIONCALLORVARIABLE,lpar dot lsqbr equal,semi,no,no
+MIDDLESTATE,lpar dot lsqbr equal,semi,no,no
+AFTERVARIABLE,dot equal,semi,no,no
+APARAMS,intlit floatlit lpar not id plus minus,rpar,yes,no
+AFTERFUNCTIONCALL,dot,semi,yes,no
+INDICE,lsqbr,semi mult div and dot lsqbr equal rsqbr eq neq lt gt leq geq plus minus or comma rpar,no,no
+INDICELOOP,lsqbr,semi mult div and dot equal rsqbr eq neq lt gt leq geq plus minus or comma rpar,yes,no
+ENDASSIGN,equal,semi,no,no
+ASSIGNOP,equal,intlit floatlit lpar not id plus minus,no,no
+EXPR,intlit floatlit lpar not id plus minus,semi comma rpar,no,no
+TERM,intlit floatlit lpar not id plus minus,semi rsqbr eq neq lt gt leq geq plus minus or comma rpar,no,no
+FACTOR,intlit floatlit lpar not id plus minus,semi mult div and rsqbr eq neq lt gt leq geq plus minus or comma rpar,no,no
+RIGHTRECTERM,mult div and,semi rsqbr eq neq lt gt leq geq plus minus or comma rpar,yes,no
+TYPE,integer float id,rpar lcurbr comma lpar lsqbr semi,no,no
+VISIBILITY,public private,function constructor attribute,yes,no
