@@ -108,6 +108,8 @@ public class Parser {
         try {
             //System.out.println("test");
 
+            System.out.println(TokenType.comma);
+            System.out.println();
             FileInputStream fin = new FileInputStream("COMP 442/input&output/example-bubblesort.src");
             pwError = new PrintWriter(new File("COMP 442/input&output/" + filename+ ".outerrors"));
             PrintWriter pwDerivations = new PrintWriter(new File("COMP 442/input&output/" + filename+ ".outderivation"));
@@ -118,7 +120,7 @@ public class Parser {
 
             Token token = lex.getNextToken();
             String top;
-            String[] lookahead;
+            String[] lookahead = new String[]{};;
             //System.out.println(token);
 
             var line = "START";
@@ -148,7 +150,6 @@ public class Parser {
 
                 }else {
 
-                    lookahead = new String[]{};
                 }
 
                 //System.out.println( lookahead.length > 0);
@@ -355,6 +356,9 @@ public class Parser {
                 }
                 case "FLOAT" -> {
                     return "floatKeyWord";
+                }
+                case "COMMA" -> {
+                    return "comma";
                 }
                 case "ID" -> {
                     return "id";
