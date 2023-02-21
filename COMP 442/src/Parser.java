@@ -111,6 +111,8 @@ public class Parser {
             System.out.println(TokenType.comma);
             System.out.println();
             FileInputStream fin = new FileInputStream("COMP 442/input&output/example-bubblesort.src");
+//            FileInputStream fin = new FileInputStream("COMP 442/input&output/example-polynomial.src");
+            FileInputStream fin = new FileInputStream("COMP 442/input&output/.src");
             pwError = new PrintWriter(new File("COMP 442/input&output/" + filename+ ".outerrors"));
             PrintWriter pwDerivations = new PrintWriter(new File("COMP 442/input&output/" + filename+ ".outderivation"));
             lex = new Lexer(fin, pwError);
