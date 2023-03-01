@@ -14,7 +14,8 @@ public class Parser {
     private ArrayList<String> nullable = new ArrayList<>();
     private ArrayList<String> endable = new ArrayList<>();
     String filename="example-bubblesort";
-    //    String filename="parsetest";
+//    String filename="example-polynomial";
+//        String filename="parsetest";
     PrintWriter pwError;
 
     Lexer lex;
@@ -112,7 +113,7 @@ public class Parser {
             System.out.println();
             FileInputStream fin = new FileInputStream("COMP 442/input&output/example-bubblesort.src");
 //            FileInputStream fin = new FileInputStream("COMP 442/input&output/example-polynomial.src");
-            FileInputStream fin = new FileInputStream("COMP 442/input&output/.src");
+//            FileInputStream fin = new FileInputStream("COMP 442/input&output/parsetest.txt");
             pwError = new PrintWriter(new File("COMP 442/input&output/" + filename+ ".outerrors"));
             PrintWriter pwDerivations = new PrintWriter(new File("COMP 442/input&output/" + filename+ ".outderivation"));
             lex = new Lexer(fin, pwError);

@@ -252,17 +252,17 @@ function testingtCool() => void
 
 }
 testingtCool() => void
-{{
+{
 
  localvar cool: integer;
- localvar jonathan   : integer;
+ localvar mai   : integer;
  localvar comp : integer;
 
   cool = cool - 1;
   cool = cool + 1;
   cool = cool > 99;
   cool = cool < 99;
-  cool = comp + jonathan;
-  jonathan = comp + cool * 5;
+  cool = comp + mai;
+  mai = comp + cool * 5;
 
 }
