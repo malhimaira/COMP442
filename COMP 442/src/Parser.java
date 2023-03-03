@@ -14,11 +14,7 @@ public class Parser {
     private ArrayList<String> nullable = new ArrayList<>();
     private ArrayList<String> endable = new ArrayList<>();
     String filename="example-bubblesort";
-//    String filename="example-polynomial";
-//        String filename="parsetest";
-    PrintWriter pwError;
 
-    Lexer lex;
     String[] terminals = {
             "id",
             "integerType",
@@ -104,19 +100,15 @@ public class Parser {
 
     }
 
-    public boolean parse()
+    public boolean parse(PrintWriter pwError, Lexer lex)
     {
         try {
             //System.out.println("test");
 
             System.out.println(TokenType.comma);
             System.out.println();
-            FileInputStream fin = new FileInputStream("COMP 442/input&output/example-bubblesort.src");
-//            FileInputStream fin = new FileInputStream("COMP 442/input&output/example-polynomial.src");
-//            FileInputStream fin = new FileInputStream("COMP 442/input&output/parsetest.txt");
-            pwError = new PrintWriter(new File("COMP 442/input&output/" + filename+ ".outerrors"));
+
             PrintWriter pwDerivations = new PrintWriter(new File("COMP 442/input&output/" + filename+ ".outderivation"));
-            lex = new Lexer(fin, pwError);
 
             s1.push("$");//
             s1.push("START");
@@ -171,7 +163,7 @@ public class Parser {
 
                         // handle error
                         System.out.println("error");
-                        skipError(token);
+                        skipError(token, pwError, lex);
                         hasError = true;
                         return false;
 
@@ -211,7 +203,7 @@ public class Parser {
                     // handle error
 //                    System.out.println(token.getTokenType().name());
                     System.out.println("Error:" + top);
-                    skipError(token);
+                    skipError(token, pwError, lex);
                     hasError = true;
                     return false;
 
@@ -377,7 +369,7 @@ public class Parser {
 
         return "";
     }
-    private Token skipError(Token lookahead) {
+    private Token skipError(Token lookahead, PrintWriter pwError, Lexer lex) {
         System.out.println("syntax error at " + lookahead.getPosition() + "\n");
         pwError.write("syntax error at " + lookahead.getPosition() + "\n");
         String top = s1.peek();
@@ -606,15 +598,5 @@ public class Parser {
         }
         catch (Exception e) {
         }
-    }
-
-    public static void main(String[] args) {
-        Parser p = new Parser();
-        p.Parser();
-        p.parse();
-        System.out.println(p.output);
-
-
-
     }
 }
