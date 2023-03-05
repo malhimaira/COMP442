@@ -63,7 +63,7 @@ IDNEST2 -> REPTIDNEST1  .
 
 INDICE -> lsqbr ARITHEXPR rsqbr  .
 
-LOCALVARDECL -> localvar id colon TYPE ARRAYOROBJECT semi  .
+LOCALVARDECL -> localvar id SACT1 colon TYPE SACT2 ARRAYOROBJECT SACT3 SACT4 semi  .
 
 LOCALVARORSTAT -> LOCALVARDECL  .
 LOCALVARORSTAT -> STATEMENT  .
@@ -173,9 +173,9 @@ STATEMENTIDNEST3 -> dot id STATEMENTIDNEST  .
 
 TERM -> FACTOR RIGHTRECTERM  .
 
-TYPE -> integer  .
-TYPE -> float  .
-TYPE -> id  .
+TYPE -> integer SACT2 .
+TYPE -> float SACT2 .
+TYPE -> id SACT2 .
 
 VARIABLE -> id VARIABLE2  .
 
@@ -190,4 +190,7 @@ VARIDNEST2 -> REPTIDNEST1  .
 VISIBILITY -> public  .
 VISIBILITY -> private  .
 
-
+SACT1 -> .
+SACT2 -> .
+SACT3 -> .
+SACT4 -> .
