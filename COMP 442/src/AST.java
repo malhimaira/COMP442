@@ -5,79 +5,81 @@ import java.util.Stack;
 public class AST {
     AST parentNode;
     ArrayList<AST> childrenNodes;
-    Object concept;
+    Object semanticConcept;
     int treeDepth;
+    static Stack<AST> semanticStack = new Stack<>();
 
-    static Stack<AST> astStack = new Stack<>();
 
-    public void setParentNode(AST parentNode) {
-        this.parentNode = parentNode;
-    }
-
-    public int getTreeDepth() {
-        return treeDepth;
-    }
-
-    public void setTreeDepth(int treeDepth) {
-        this.treeDepth = treeDepth;
-    }
-
-    public AST(AST parentNode, ArrayList<AST> childrenNodes,Object concept, int treeDepth){
+    public AST(AST parentNode, ArrayList<AST> childrenNodes,Object semanticConcept, int treeDepth){
         this.parentNode = parentNode;
         this.childrenNodes = childrenNodes;
-        this.concept = concept;
+        this.semanticConcept = semanticConcept;
         this.treeDepth = treeDepth;
     }
 
     static public AST makeNull(){
-        astStack.push(null);
+        semanticStack.push(null);
         return null;
     }
 
-    static public AST makeNode(Token concept){
-        AST node = new AST(null, null, concept,  0);
-        astStack.push(node);
+    static public AST makeNode(Token semanticConcept){
+        AST node = new AST(null, null, semanticConcept,  0);
+        semanticStack.push(node);
         return node;
     }
 
-    static public AST makeFamily(Object concept, int numOfPops){
+    static public AST makeFamily(Object semanticConcept, int countPop){
         ArrayList<AST> childrenNodes = new ArrayList<>();
-        if(numOfPops != -1){
-            for(int i = 0; i < numOfPops; i++){
-                childrenNodes.add(astStack.pop());
+
+        // pop as many nodes as there are children to form tree
+        if(countPop != -1){
+            for(int i = 0; i < countPop; i++){
+                childrenNodes.add(semanticStack.pop());
             }
         }
         else {
-            while(astStack.peek() != null){
-                childrenNodes.add(astStack.pop());
+            // if no childen left to pop
+            while(semanticStack.peek() != null){
+                // build the tree
+                childrenNodes.add(semanticStack.pop());
             }
-            astStack.pop();
+            semanticStack.pop();
         }
-        AST parentNode = new AST(null, childrenNodes, concept,  0);
 
+        AST parentNode = new AST(null, childrenNodes, semanticConcept,  0);
+
+        // set the parent nide in each of the children nodes of a specific node
         for (var child: parentNode.childrenNodes){
             child.setParentNode(parentNode);
         }
-        parentNode.updateTreeDepth();
+        parentNode.fixTreeDepth();
 
+        // stack requires reverse ordering
         Collections.reverse(childrenNodes);
 
-        astStack.push(parentNode);
+        // add
+        semanticStack.push(parentNode);
 
         return parentNode;
     }
 
-    public void updateTreeDepth(){
+    public void fixTreeDepth(){
         if(this.childrenNodes == null)
             return;
         for (var child: this.childrenNodes){
             child.setTreeDepth(child.getTreeDepth()+1);
-            child.updateTreeDepth();
+            child.fixTreeDepth();
         }
     }
 
-    public static String treeToString(){
-        return astStack.peek().toString();
+    public void setParentNode(AST parentNode) {this.parentNode = parentNode;}
+
+    public int getTreeDepth() {return treeDepth;}
+
+    public void setTreeDepth(int treeDepth) {this.treeDepth = treeDepth;}
+
+    public static String printTree(){
+        return semanticStack.toString();
     }
 
     @Override
@@ -86,7 +88,7 @@ public class AST {
         for(int i=0;i<treeDepth; i++){
             tree.append("|  ");
         }
-        tree.append(concept).append("\n");
+        tree.append(semanticConcept).append("\n");
         if(childrenNodes != null){
             for(var subtree: childrenNodes){
                 tree.append(subtree.toString());

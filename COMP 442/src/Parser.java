@@ -16,7 +16,7 @@ public class Parser {
     private ArrayList<String> nullable = new ArrayList<>();
     private ArrayList<String> endable = new ArrayList<>();
     String filename = "example-bubblesort";
-    FileWriter outASTWriter;
+    FileWriter ASTFileWriter;
 
     String[] terminals = {
             "id",
@@ -85,7 +85,7 @@ public class Parser {
         String commaDel = ",";
 
         try {
-            this.outASTWriter = new FileWriter("COMP 442/input&output/" + filename + ".outast");
+            this.ASTFileWriter = new FileWriter("COMP 442/input&output/" + filename + ".outast");
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
@@ -156,7 +156,6 @@ public class Parser {
                     }
                     s1.pop();
                     top = s1.peek();
-//                    continue;
                 }
 
                 // gets value of the key in the parsing table and stores it in templookahead for the not terminal
@@ -238,10 +237,10 @@ public class Parser {
             pwDerivations.close();
         } catch (Exception e) {
         }
-        System.out.println(AST.treeToString());
+        //System.out.println(AST.treeToString());
         try{
-            outASTWriter.write(AST.treeToString());
-            outASTWriter.close();
+            ASTFileWriter.write(AST.printTree());
+            ASTFileWriter.close();
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
