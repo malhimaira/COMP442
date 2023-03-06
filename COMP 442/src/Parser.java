@@ -1,4 +1,5 @@
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Parser {
@@ -14,6 +15,7 @@ public class Parser {
     private ArrayList<String> nullable = new ArrayList<>();
     private ArrayList<String> endable = new ArrayList<>();
     String filename = "example-bubblesort";
+    PrintWriter outASTWriter;
 
     String[] terminals = {
             "id",
@@ -105,6 +107,7 @@ public class Parser {
             //System.out.println("test");
 
             PrintWriter pwDerivations = new PrintWriter(new File("COMP 442/input&output/" + filename + ".outderivation"));
+            this.outASTWriter = new PrintWriter(new File("COMP 442/input&output/" + filename + ".outast"));
 
             s1.push("$");//
             s1.push("START");
@@ -222,11 +225,15 @@ public class Parser {
                 }
 
             }
+
+
             pwError.close();
             pwDerivations.close();
         } catch (Exception e) {
         }
-
+        System.out.println(AST.treeToString());
+        outASTWriter.write(AST.treeToString());
+        outASTWriter.close();
         return true;
     }
 
@@ -402,7 +409,7 @@ public class Parser {
     }
 
     private void addFirstFollow() {
-        String firstSetFile = "/Users/jonathanjong/Developer/COMP 442 Project/COMP 442/firstFollow.csv";
+        String firstSetFile = "COMP 442/parsing/firstFollow.csv";
         String line = "";
 
         try (BufferedReader br = new BufferedReader(new FileReader(firstSetFile))) {

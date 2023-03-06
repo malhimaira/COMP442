@@ -23,6 +23,10 @@ public class Token {
         this.position = new Position(row);
     }
 
+    public int getIntPosition(){
+        return this.position.getRow();
+    }
+
     // Getters
     public TokenType getTokenType() {
         return tokenType;
