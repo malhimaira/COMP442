@@ -1,1 +1,5 @@
-array Size
+local var
+|  [id, arr, 43]
+|  [integerKeyWord, integer, 43]
+|  array Size
+|  |  [integerType, 7, 43]

@@ -1,3 +1,4 @@
+import javax.sound.midi.Soundbank;
 import java.io.*;
 import java.sql.SQLOutput;
 import java.util.*;
@@ -15,7 +16,7 @@ public class Parser {
     private ArrayList<String> nullable = new ArrayList<>();
     private ArrayList<String> endable = new ArrayList<>();
     String filename = "example-bubblesort";
-    PrintWriter outASTWriter;
+    FileWriter outASTWriter;
 
     String[] terminals = {
             "id",
@@ -83,6 +84,12 @@ public class Parser {
         String line = "";
         String commaDel = ",";
 
+        try {
+            this.outASTWriter = new FileWriter("COMP 442/input&output/" + filename + ".outast");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
         try (BufferedReader br = new BufferedReader(new FileReader(table))) {
             int row = 0;
             var headers = br.readLine().split(",");
@@ -107,7 +114,6 @@ public class Parser {
             //System.out.println("test");
 
             PrintWriter pwDerivations = new PrintWriter(new File("COMP 442/input&output/" + filename + ".outderivation"));
-            this.outASTWriter = new PrintWriter(new File("COMP 442/input&output/" + filename + ".outast"));
 
             s1.push("$");//
             s1.push("START");
@@ -142,10 +148,11 @@ public class Parser {
 
                 if (top.startsWith("SACT")) {
                     switch (top) {
-                        case "SACT1" -> AST.pushNode(previousToken);
-                        case "SACT2" -> AST.pushEmptyNode();
-                        case "SACT3" -> AST.createSubtree("array Size", -1);
-                        case "SACT4" -> AST.createSubtree("var decl", 3);
+                        case "SACT0" -> AST.makeNode(new Token("epsilon", TokenType.epsilon, token.getPosition()));
+                        case "SACT1" -> AST.makeNode(previousToken);
+                        case "SACT2" -> AST.makeNull();
+                        case "SACT3" -> AST.makeFamily("array Size", -1);
+                        case "SACT4" -> AST.makeFamily("local var", 3);
                     }
                     s1.pop();
                     top = s1.peek();
@@ -232,8 +239,12 @@ public class Parser {
         } catch (Exception e) {
         }
         System.out.println(AST.treeToString());
-        outASTWriter.write(AST.treeToString());
-        outASTWriter.close();
+        try{
+            outASTWriter.write(AST.treeToString());
+            outASTWriter.close();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
         return true;
     }
 
