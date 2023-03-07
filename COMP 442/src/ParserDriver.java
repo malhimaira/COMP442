@@ -26,7 +26,7 @@ public class ParserDriver {
 
             //Open Parser
             Parser p = new Parser();
-            p.Parser();
+            p.Parser(filetoRead);
 
             p.parse(pwError, lexer);
             System.out.println(p.output);

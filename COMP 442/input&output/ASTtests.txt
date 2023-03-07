@@ -1,0 +1,15 @@
+class POLYNOMIAL {
+};
+class LINEAR isa POLYNOMIAL {
+};
+class QUADRATIC isa POLYNOMIAL {
+};
+
+function main() => void
+{
+  localvar arr: integer[7];
+  localvar arr: integer[6];
+  localvar arr: integer[2];
+}
+
+

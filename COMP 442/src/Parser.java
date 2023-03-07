@@ -76,7 +76,9 @@ public class Parser {
     };
 
 
-    public void Parser() {
+    public void Parser(String filetoRead) {
+
+        filename = filetoRead;
 
         addFirstFollow();
 
@@ -146,13 +148,18 @@ public class Parser {
                     break;
                 }
 
-                if (top.startsWith("SACT")) {
+                while (top.startsWith("SACT")) {
                     switch (top) {
                         case "SACT0" -> AST.makeNode(new Token("epsilon", TokenType.epsilon, token.getPosition()));
                         case "SACT1" -> AST.makeNode(previousToken);
                         case "SACT2" -> AST.makeNull();
                         case "SACT3" -> AST.makeFamily("array Size", -1);
-                        case "SACT4" -> AST.makeFamily("local var", 3);
+                        case "SACT4" -> AST.makeFamily("local var", -1);
+                        case "SACT5" -> AST.makeFamily("class decl", -1);
+                        case "SACT6" -> AST.makeFamily("memberVar decl", -1);
+                        case "SACT7" -> AST.makeFamily("memberFunc decl", -1);
+                        case "SACT8" -> AST.makeFamily("func decl", -1);
+                        case "SACT9" -> AST.makeFamily("inherit lst", -1);
                     }
                     s1.pop();
                     top = s1.peek();
@@ -166,7 +173,7 @@ public class Parser {
                     lookahead = tempLookahead.split("→")[1].trim().split(" ");
 
                 } else {
-
+                    lookahead = new String[]{};
                 }
 
                 //System.out.println( lookahead.length > 0);
@@ -236,6 +243,7 @@ public class Parser {
             pwError.close();
             pwDerivations.close();
         } catch (Exception e) {
+            System.out.println("here");
         }
         //System.out.println(AST.treeToString());
         try{

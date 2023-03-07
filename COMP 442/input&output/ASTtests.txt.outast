@@ -1,0 +1,27 @@
+[class decl
+|  [id, POLYNOMIAL, 1]
+|  inherit lst
+, class decl
+|  [id, LINEAR, 3]
+|  inherit lst
+|  |  [id, POLYNOMIAL, 3]
+, class decl
+|  [id, QUADRATIC, 5]
+|  inherit lst
+|  |  [id, POLYNOMIAL, 5]
+, local var
+|  [id, arr, 10]
+|  [integerKeyWord, integer, 10]
+|  array Size
+|  |  [integerType, 7, 10]
+, local var
+|  [id, arr, 11]
+|  [integerKeyWord, integer, 11]
+|  array Size
+|  |  [integerType, 6, 11]
+, local var
+|  [id, arr, 12]
+|  [integerKeyWord, integer, 12]
+|  array Size
+|  |  [integerType, 2, 12]
+]

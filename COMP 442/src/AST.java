@@ -31,20 +31,13 @@ public class AST {
     static public AST makeFamily(Object semanticConcept, int countPop){
         ArrayList<AST> childrenNodes = new ArrayList<>();
 
-        // pop as many nodes as there are children to form tree
-        if(countPop != -1){
-            for(int i = 0; i < countPop; i++){
-                childrenNodes.add(semanticStack.pop());
-            }
-        }
-        else {
             // if no childen left to pop
             while(semanticStack.peek() != null){
                 // build the tree
                 childrenNodes.add(semanticStack.pop());
             }
             semanticStack.pop();
-        }
+
 
         AST parentNode = new AST(null, childrenNodes, semanticConcept,  0);
 
