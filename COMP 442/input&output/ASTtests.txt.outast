@@ -36,23 +36,25 @@
 , func def
 |  [id, main, 13]
 |  [voidKeyWord, void, 13]
-, local var
-|  [id, arr, 15]
-|  [integerKeyWord, integer, 15]
-|  array Size
-|  |  [integerType, 7, 15]
-, local var
-|  [id, arr, 16]
-|  [integerKeyWord, integer, 16]
-|  array Size
-|  |  [integerType, 6, 16]
-, local var
-|  [id, arr, 17]
-|  [integerKeyWord, integer, 17]
-|  array Size
-|  |  [integerType, 2, 17]
+, stat block
+|  local var
+|  |  [id, arr, 15]
+|  |  [integerKeyWord, integer, 15]
+|  |  array Size
+|  |  |  [integerType, 7, 15]
+|  local var
+|  |  [id, arr, 16]
+|  |  [integerKeyWord, integer, 16]
+|  |  array Size
+|  |  |  [integerType, 6, 16]
+|  local var
+|  |  [id, arr, 17]
+|  |  [integerKeyWord, integer, 17]
+|  |  array Size
+|  |  |  [integerType, 2, 17]
 , func def
 |  [id, math, 19]
+|  [id, evaluate, 19]
 |  func params
 |  |  [id, a, 19]
 |  |  [floatKeyWord, float, 19]
