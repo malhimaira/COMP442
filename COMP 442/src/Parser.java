@@ -1,6 +1,4 @@
-import javax.sound.midi.Soundbank;
 import java.io.*;
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class Parser {
@@ -15,8 +13,9 @@ public class Parser {
     Stack<String> s1 = new Stack<>();
     private ArrayList<String> nullable = new ArrayList<>();
     private ArrayList<String> endable = new ArrayList<>();
-    String filename = "example-bubblesort";
+    String filename = "";
     FileWriter ASTFileWriter;
+    Stack<AST> ASTstack = new Stack();
 
     String[] terminals = {
             "id",
@@ -88,7 +87,7 @@ public class Parser {
 
         try {
             this.ASTFileWriter = new FileWriter("COMP 442/input&output/" + filename + ".outast");
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
@@ -150,18 +149,18 @@ public class Parser {
 
                 while (top.startsWith("SACT")) {
                     switch (top) {
-                        case "SACT0" -> AST.makeNode(new Token("epsilon", TokenType.epsilon, token.getPosition()));
-                        case "SACT1" -> AST.makeNode(previousToken);
-                        case "SACT2" -> AST.makeNull();
-                        case "SACT3" -> AST.makeFamily("array Size", -1);
-                        case "SACT4" -> AST.makeFamily("local var", -1);
-                        case "SACT5" -> AST.makeFamily("class decl", -1);
-                        case "SACT6" -> AST.makeFamily("memberVar decl", -1);
-                        case "SACT7" -> AST.makeFamily("memberFunc decl", -1);
-                        case "SACT8" -> AST.makeFamily("func decl", -1);
-                        case "SACT9" -> AST.makeFamily("inherit lst", -1);
-                        case "SACT10" -> AST.makeFamily("func params", -1);
-                        case "SACT11" -> AST.makeFamily("return type", -1);
+                        case "SACT0" -> this.makeNode(new Token("epsilon", TokenType.epsilon, token.getPosition()));
+                        case "SACT1" -> this.makeNode(previousToken);
+                        case "SACT2" -> this.makeNull();
+                        case "SACT3" -> this.makeFamily("array Size");
+                        case "SACT4" -> this.makeFamily("local var");
+                        case "SACT5" -> this.makeFamily("class decl");
+                        case "SACT6" -> this.makeFamily("memberVar decl");
+                        case "SACT7" -> this.makeFamily("memberFunc decl");
+                        case "SACT8" -> this.makeFamily("func decl");
+                        case "SACT9" -> this.makeFamily("inherit lst");
+                        case "SACT10" -> this.makeFamily("func params");
+                        case "SACT11" -> this.makeFamily("return type");
                     }
                     s1.pop();
                     top = s1.peek();
@@ -241,20 +240,61 @@ public class Parser {
 
             }
 
-
             pwError.close();
             pwDerivations.close();
         } catch (Exception e) {
             System.out.println("here");
         }
         //System.out.println(AST.treeToString());
-        try{
-            ASTFileWriter.write(AST.printTree());
+        try {
+            ASTFileWriter.write(this.printTree());
             ASTFileWriter.close();
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return true;
+    }
+
+    public AST makeNull(){
+        ASTstack.push(null);
+        return null;
+    };
+
+    public AST makeNode(Token semanticConcept){
+        AST node = new AST(null, null, semanticConcept,  0);
+        ASTstack.push(node);
+        return node;
+    }
+
+    public AST makeFamily(Object semanticConcept){
+        ArrayList<AST> childrenNodes = new ArrayList<>();
+
+        // if no childen left to pop
+        while(ASTstack.peek() != null){
+            // build the tree
+            childrenNodes.add(ASTstack.pop());
+        }
+        ASTstack.pop();
+
+        AST parentNode = new AST(null, childrenNodes, semanticConcept,  0);
+
+        // set the parent node in each of the children nodes of a specific node
+        for (var child: parentNode.childrenNodes){
+            child.setParentNode(parentNode);
+        }
+        parentNode.fixTreeDepth();
+
+        // stack requires reverse ordering
+        Collections.reverse(childrenNodes);
+
+        // add
+        ASTstack.push(parentNode);
+
+        return parentNode;
+    }
+
+    public String printTree(){
+        return ASTstack.toString();
     }
 
     public String convertTerminals(String value) {
