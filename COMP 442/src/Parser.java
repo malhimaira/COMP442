@@ -2,18 +2,20 @@ import java.io.*;
 import java.util.*;
 
 public class Parser {
-    HashMap<String, String[]> hm = new HashMap<String, String[]>();
+
     private Map<String, ArrayList<TokenType>> followSet = new HashMap<>();
     private Map<String, ArrayList<TokenType>> firstSet = new HashMap<>();
-    ArrayList<TokenType> Term = new ArrayList<>();
-    ArrayList<String> nonTerm = new ArrayList<>();
+
     Map<String, String> hash = new HashMap();
     String output = "";
     boolean hasError = false;
+
     Stack<String> s1 = new Stack<>();
     private ArrayList<String> nullable = new ArrayList<>();
     private ArrayList<String> endable = new ArrayList<>();
+
     String filename = "";
+
     FileWriter ASTFileWriter;
     Stack<AST> ASTstack = new Stack();
 
@@ -160,7 +162,6 @@ public class Parser {
                         case "SACT8" -> this.makeFamily("func decl");
                         case "SACT9" -> this.makeFamily("inherit lst");
                         case "SACT10" -> this.makeFamily("func params");
-                        case "SACT11" -> this.makeFamily("return type");
                     }
                     s1.pop();
                     top = s1.peek();
@@ -493,7 +494,7 @@ public class Parser {
                     } else {
                         String valueToAdd = firstSplit[i].toUpperCase();
                         switch (valueToAdd) {
-                            case "RPAR" -> firstVal.add(TokenType.closedBracketCurly);
+                            case "RPAR" -> firstVal.add(TokenType.closeBracketRound);
 
                             case "LPAR" -> firstVal.add(TokenType.openBracketRound);
 

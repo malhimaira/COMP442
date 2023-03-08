@@ -9,40 +9,44 @@
 |  |  [id, tryMethod, 4]
 |  |  func params
 |  |  |  [id, l, 4]
-|  |  |  [id, int, 4]
-|  |  [id, int, 4]
+|  |  |  [integerKeyWord, integer, 4]
+|  |  [integerKeyWord, integer, 4]
 , class decl
 |  [id, QUADRATIC, 6]
 |  inherit lst
 |  |  [id, POLYNOMIAL, 6]
+|  memberFunc decl
+|  |  [id, tryVoidMethod, 7]
+|  |  [voidKeyWord, void, 7]
 |  memberVar decl
-|  |  [id, x, 7]
-|  |  [floatKeyWord, float, 7]
+|  |  [id, x, 8]
+|  |  [floatKeyWord, float, 8]
 |  |  array Size
-|  |  |  [integerType, 5, 7]
+|  |  |  [integerType, 5, 8]
 |  memberVar decl
-|  |  [id, y, 8]
-|  |  [id, int, 8]
+|  |  [id, y, 9]
+|  |  [integerKeyWord, integer, 9]
 |  |  array Size
-|  |  |  [integerType, 2, 8]
+|  |  |  [integerType, 2, 9]
 |  memberVar decl
-|  |  [id, z, 9]
-|  |  [id, id, 9]
+|  |  [id, z, 10]
+|  |  [id, id, 10]
 |  |  array Size
-|  |  |  [integerType, 7, 9]
-, local var
-|  [id, arr, 14]
-|  [integerKeyWord, integer, 14]
-|  array Size
-|  |  [integerType, 7, 14]
+|  |  |  [integerType, 7, 10]
+, [voidKeyWord, void, 13]
 , local var
 |  [id, arr, 15]
 |  [integerKeyWord, integer, 15]
 |  array Size
-|  |  [integerType, 6, 15]
+|  |  [integerType, 7, 15]
 , local var
 |  [id, arr, 16]
 |  [integerKeyWord, integer, 16]
 |  array Size
-|  |  [integerType, 2, 16]
+|  |  [integerType, 6, 16]
+, local var
+|  [id, arr, 17]
+|  [integerKeyWord, integer, 17]
+|  array Size
+|  |  [integerType, 2, 17]
 ]

@@ -1,11 +1,12 @@
 class POLYNOMIAL {
 };
 class LINEAR isa POLYNOMIAL {
-    public function tryMethod: (l: int) => int;
+    public function tryMethod: (l: integer) => integer;
 };
 class QUADRATIC isa POLYNOMIAL {
+    public function tryVoidMethod: () => void;
     public attribute x: float[5];
-    public attribute y: int[2];
+    public attribute y: integer[2];
     public attribute z: id[7];
 };
 
