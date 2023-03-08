@@ -6,6 +6,7 @@
 |  inherit lst
 |  |  [id, POLYNOMIAL, 3]
 |  memberFunc decl
+|  |  [publicKeyWord, public, 4]
 |  |  [id, tryMethod, 4]
 |  |  func params
 |  |  |  [id, l, 4]
@@ -16,19 +17,23 @@
 |  inherit lst
 |  |  [id, POLYNOMIAL, 6]
 |  memberFunc decl
+|  |  [publicKeyWord, public, 7]
 |  |  [id, tryVoidMethod, 7]
 |  |  [voidKeyWord, void, 7]
 |  memberVar decl
+|  |  [publicKeyWord, public, 8]
 |  |  [id, x, 8]
 |  |  [floatKeyWord, float, 8]
 |  |  array Size
 |  |  |  [integerType, 5, 8]
 |  memberVar decl
+|  |  [publicKeyWord, public, 9]
 |  |  [id, y, 9]
 |  |  [integerKeyWord, integer, 9]
 |  |  array Size
 |  |  |  [integerType, 2, 9]
 |  memberVar decl
+|  |  [publicKeyWord, public, 10]
 |  |  [id, z, 10]
 |  |  [id, id, 10]
 |  |  array Size
@@ -57,8 +62,6 @@
 |  [id, evaluate, 19]
 |  func params
 |  |  [id, a, 19]
-|  |  [floatKeyWord, float, 19]
-|  |  [floatKeyWord, float, 19]
 |  |  [floatKeyWord, float, 19]
 |  [floatKeyWord, float, 19]
 ]
