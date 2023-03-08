@@ -162,10 +162,17 @@ public class Parser {
                         case "SACT8" -> this.makeFamily("func def");
                         case "SACT9" -> this.makeFamily("inherit lst");
                         case "SACT10" -> this.makeFamily("func params");
-                        case "SACT11" -> this.makeFamily("stat block");
+                        case "SACT11" -> this.makeFamily("local var + stat block");
                         case "SACT12"  -> this.makeFamily("scope res");
-                        case "SACT13"  -> this.makeFamily("start");
-                        case "SACT14"  -> this.makeFamily("Prog");
+                        case "SACT13"  -> this.makeFamily("stat");
+                        case "SACT14"  -> this.makeFamily("if block");
+                        case "SACT15"  -> this.makeFamily("while block");
+                        case "SACT16"  -> this.makeFamily("read block");
+                        case "SACT17"  -> this.makeFamily("write block");
+                        case "SACT18"  -> this.makeFamily("return stat");
+                        case "SACT19"  -> this.makeFamily("then block");
+                        case "SACT20"  -> this.makeFamily("else stat");
+
                     }
                     s1.pop();
                     top = s1.peek();

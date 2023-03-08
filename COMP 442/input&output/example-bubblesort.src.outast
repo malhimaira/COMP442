@@ -5,7 +5,7 @@
 |  |  [integerKeyWord, integer, 2]
 |  |  [integerKeyWord, integer, 2]
 |  [voidKeyWord, void, 2]
-, stat block
+, local var + stat block
 |  local var
 |  |  [id, n, 4]
 |  |  [integerKeyWord, integer, 4]
@@ -22,6 +22,23 @@
 |  |  [id, temp, 7]
 |  |  [integerKeyWord, integer, 7]
 |  |  array Size
+|  stat
+|  |  [id, n, 8]
+|  stat
+|  |  [id, i, 9]
+|  stat
+|  |  [id, j, 10]
+|  stat
+|  |  [id, temp, 11]
+|  stat
+|  |  while block
+|  |  |  while block
+|  |  |  |  if block
+|  |  |  |  |  [id, temp, 17]
+|  |  |  |  |  [id, arr, 18]
+|  |  |  |  |  [id, arr, 19]
+|  |  |  |  [id, j, 21]
+|  |  |  [id, i, 23]
 , func def
 |  [id, printArray, 28]
 |  func params
@@ -29,22 +46,16 @@
 |  |  [integerKeyWord, integer, 28]
 |  |  [integerKeyWord, integer, 28]
 |  [voidKeyWord, void, 28]
-, stat block
-|  local var
-|  |  [id, n, 30]
-|  |  [integerKeyWord, integer, 30]
-|  |  array Size
-|  local var
-|  |  [id, i, 31]
-|  |  [integerKeyWord, integer, 31]
-|  |  array Size
-, func def
-|  [id, main, 41]
-|  [voidKeyWord, void, 41]
-, stat block
-|  local var
-|  |  [id, arr, 43]
-|  |  [integerKeyWord, integer, 43]
-|  |  array Size
-|  |  |  [integerType, 7, 43]
-]
+, null, local var
+|  [id, n, 30]
+|  [integerKeyWord, integer, 30]
+|  array Size
+, local var
+|  [id, i, 31]
+|  [integerKeyWord, integer, 31]
+|  array Size
+, stat
+|  [id, n, 32]
+, stat
+|  [id, i, 33]
+, null, null, null]
