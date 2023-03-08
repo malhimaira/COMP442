@@ -151,7 +151,6 @@ public class Parser {
 
                 while (top.startsWith("SACT")) {
                     switch (top) {
-                        case "SACT0" -> this.makeNode(new Token("epsilon", TokenType.epsilon, token.getPosition()));
                         case "SACT1" -> this.makeNode(previousToken);
                         case "SACT2" -> this.makeNull();
                         case "SACT3" -> this.makeFamily("array Size");
