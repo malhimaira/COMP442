@@ -6,22 +6,37 @@
 |  inherit lst
 |  |  [id, POLYNOMIAL, 3]
 , class decl
-|  [id, QUADRATIC, 5]
+|  [id, QUADRATIC, 6]
 |  inherit lst
-|  |  [id, POLYNOMIAL, 5]
+|  |  [id, POLYNOMIAL, 6]
+|  memberVar decl
+|  |  [id, x, 7]
+|  |  [floatKeyWord, float, 7]
+|  |  array Size
+|  |  |  [integerType, 5, 7]
+|  memberVar decl
+|  |  [id, y, 8]
+|  |  [id, int, 8]
+|  |  array Size
+|  |  |  [integerType, 2, 8]
+|  memberVar decl
+|  |  [id, z, 9]
+|  |  [id, id, 9]
+|  |  array Size
+|  |  |  [integerType, 7, 9]
 , local var
-|  [id, arr, 10]
-|  [integerKeyWord, integer, 10]
+|  [id, arr, 14]
+|  [integerKeyWord, integer, 14]
 |  array Size
-|  |  [integerType, 7, 10]
+|  |  [integerType, 7, 14]
 , local var
-|  [id, arr, 11]
-|  [integerKeyWord, integer, 11]
+|  [id, arr, 15]
+|  [integerKeyWord, integer, 15]
 |  array Size
-|  |  [integerType, 6, 11]
+|  |  [integerType, 6, 15]
 , local var
-|  [id, arr, 12]
-|  [integerKeyWord, integer, 12]
+|  [id, arr, 16]
+|  [integerKeyWord, integer, 16]
 |  array Size
-|  |  [integerType, 2, 12]
+|  |  [integerType, 2, 16]
 ]

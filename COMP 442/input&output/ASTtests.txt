@@ -1,8 +1,12 @@
 class POLYNOMIAL {
 };
 class LINEAR isa POLYNOMIAL {
+
 };
 class QUADRATIC isa POLYNOMIAL {
+    public attribute x: float[5];
+    public attribute y: int[2];
+    public attribute z: id[7];
 };
 
 function main() => void
