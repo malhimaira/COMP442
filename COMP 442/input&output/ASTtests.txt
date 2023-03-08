@@ -1,7 +1,7 @@
 class POLYNOMIAL {
 };
 class LINEAR isa POLYNOMIAL {
-
+    public function tryMethod: (l: int) => int;
 };
 class QUADRATIC isa POLYNOMIAL {
     public attribute x: float[5];

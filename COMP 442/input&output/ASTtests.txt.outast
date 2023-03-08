@@ -5,6 +5,12 @@
 |  [id, LINEAR, 3]
 |  inherit lst
 |  |  [id, POLYNOMIAL, 3]
+|  memberFunc decl
+|  |  [id, tryMethod, 4]
+|  |  func params
+|  |  |  [id, l, 4]
+|  |  |  [id, int, 4]
+|  |  [id, int, 4]
 , class decl
 |  [id, QUADRATIC, 6]
 |  inherit lst

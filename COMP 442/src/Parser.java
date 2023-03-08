@@ -160,6 +160,8 @@ public class Parser {
                         case "SACT7" -> AST.makeFamily("memberFunc decl", -1);
                         case "SACT8" -> AST.makeFamily("func decl", -1);
                         case "SACT9" -> AST.makeFamily("inherit lst", -1);
+                        case "SACT10" -> AST.makeFamily("func params", -1);
+                        case "SACT11" -> AST.makeFamily("return type", -1);
                     }
                     s1.pop();
                     top = s1.peek();
