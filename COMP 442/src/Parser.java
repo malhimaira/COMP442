@@ -159,7 +159,7 @@ public class Parser {
                         case "SACT5" -> this.makeFamily("class decl");
                         case "SACT6" -> this.makeFamily("memberVar decl");
                         case "SACT7" -> this.makeFamily("memberFunc decl");
-                        case "SACT8" -> this.makeFamily("func decl");
+                        case "SACT8" -> this.makeFamily("func def");
                         case "SACT9" -> this.makeFamily("inherit lst");
                         case "SACT10" -> this.makeFamily("func params");
                     }

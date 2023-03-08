@@ -16,5 +16,9 @@ function main() => void
   localvar arr: integer[6];
   localvar arr: integer[2];
 }
+function math(a: float, b: float, c: float) => float;
+{
+
+}
 
 
