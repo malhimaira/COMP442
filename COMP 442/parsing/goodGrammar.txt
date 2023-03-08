@@ -1,6 +1,6 @@
-ADDOP -> plus  .
-ADDOP -> minus  .
-ADDOP -> or  .
+ADDOP -> plus SACT1 .
+ADDOP -> minus SACT1 .
+ADDOP -> or SACT1 .
 
 APARAMS -> EXPR REPTAPARAMS1  .
 APARAMS ->  .

@@ -32,13 +32,21 @@
 |  |  [id, temp, 11]
 |  stat
 |  |  while block
+|  |  |  [minus, -, 12]
 |  |  |  while block
+|  |  |  |  [minus, -, 13]
+|  |  |  |  [minus, -, 13]
 |  |  |  |  if block
+|  |  |  |  |  [plus, +, 14]
 |  |  |  |  |  [id, temp, 17]
 |  |  |  |  |  [id, arr, 18]
+|  |  |  |  |  [plus, +, 18]
 |  |  |  |  |  [id, arr, 19]
+|  |  |  |  |  [plus, +, 19]
 |  |  |  |  [id, j, 21]
+|  |  |  |  [plus, +, 21]
 |  |  |  [id, i, 23]
+|  |  |  [plus, +, 23]
 , func def
 |  [id, printArray, 28]
 |  func params

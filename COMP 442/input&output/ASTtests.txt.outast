@@ -62,9 +62,13 @@
 |  |  |  read block
 |  stat
 |  |  if block
+|  |  |  [plus, +, 23]
 |  |  |  [id, temp, 26]
 |  |  |  [id, arr, 27]
+|  |  |  [plus, +, 27]
 |  |  |  [id, arr, 28]
+|  |  |  [plus, +, 28]
 |  stat
 |  |  [id, j, 30]
+|  |  [plus, +, 30]
 ]
