@@ -73,7 +73,8 @@ public class Parser {
             "errorTokenId",
             "errorTokenNumber",
             "errorTokenChar",
-            "epsilon"
+            "epsilon",
+            "EOF"
     };
 
 
@@ -81,7 +82,7 @@ public class Parser {
 
         filename = filetoRead;
 
-        addFirstFollow();
+//        addFirstFollow();
 
         String table = "COMP 442/parsing/parsingTable.csv";
         String line = "";
@@ -130,7 +131,7 @@ public class Parser {
             //System.out.println(token);
 
             var line = "START";
-            while (!s1.peek().equals("$") && !s1.peek().equals("eof")) {
+            while (!s1.peek().equals("$") && !s1.peek().equals("EOF")) {
                 //System.out.println(s1);
 
                 while (token.getTokenType() == TokenType.blockComment || token.getTokenType() == TokenType.inlineComment) {
@@ -144,7 +145,7 @@ public class Parser {
                     top = s1.peek();
                 }
 
-                if (top.equals("$") || top.equals("eof")) {
+                if (top.equals("$") || top.equals("EOF")) {
                     System.out.println("end of file");
                     break;
                 }
@@ -254,7 +255,7 @@ public class Parser {
             pwError.close();
             pwDerivations.close();
         } catch (Exception e) {
-            System.out.println("here");
+            System.out.println(e.getMessage());
         }
         //System.out.println(AST.treeToString());
         try {
@@ -499,7 +500,7 @@ public class Parser {
 
                 ArrayList<TokenType> firstVal = new ArrayList<>();
                 for (int i = 0; i < firstSplit.length; i++) {
-                    if (firstSplit[i].contains("∅") || followSplit[i].contains("eof")) {
+                    if (firstSplit[i].contains("∅") || followSplit[i].contains("EOF")) {
                         firstVal.add(TokenType.epsilon);
                     } else {
                         String valueToAdd = firstSplit[i].toUpperCase();
@@ -595,7 +596,7 @@ public class Parser {
 
                 ArrayList<TokenType> followVal = new ArrayList<>();
                 for (int i = 0; i < followSplit.length; i++) {
-                    if (followSplit[i].contains("∅") || followSplit[i].contains("eof")) {
+                    if (followSplit[i].contains("∅") || followSplit[i].contains("EOF")) {
                         followVal.add(TokenType.epsilon);
                     } else {
                         String valueToAdd = followSplit[i].toUpperCase();

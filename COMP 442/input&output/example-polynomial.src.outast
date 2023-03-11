@@ -1,0 +1,110 @@
+[class decl
+|  [id, POLYNOMIAL, 2]
+|  inherit lst
+|  memberFunc decl
+|  |  [publicKeyWord, public, 3]
+|  |  [id, evaluate, 3]
+|  |  func params
+|  |  |  [id, x, 3]
+|  |  |  [floatKeyWord, float, 3]
+|  |  [floatKeyWord, float, 3]
+, class decl
+|  [id, LINEAR, 6]
+|  inherit lst
+|  |  [id, POLYNOMIAL, 6]
+|  memberVar decl
+|  |  [privateKeyWord, private, 7]
+|  |  [id, a, 7]
+|  |  [floatKeyWord, float, 7]
+|  |  array Size
+|  memberVar decl
+|  |  [privateKeyWord, private, 8]
+|  |  [id, b, 8]
+|  |  [floatKeyWord, float, 8]
+|  |  array Size
+|  memberFunc decl
+|  |  [publicKeyWord, public, 9]
+|  |  func params
+|  |  |  [id, A, 9]
+|  |  |  [floatKeyWord, float, 9]
+|  |  |  [floatKeyWord, float, 9]
+|  memberFunc decl
+|  |  [publicKeyWord, public, 10]
+|  |  [id, evaluate, 10]
+|  |  func params
+|  |  |  [id, x, 10]
+|  |  |  [floatKeyWord, float, 10]
+|  |  [floatKeyWord, float, 10]
+, class decl
+|  [id, QUADRATIC, 13]
+|  inherit lst
+|  |  [id, POLYNOMIAL, 13]
+|  memberVar decl
+|  |  [privateKeyWord, private, 14]
+|  |  [id, a, 14]
+|  |  [floatKeyWord, float, 14]
+|  |  array Size
+|  memberVar decl
+|  |  [privateKeyWord, private, 15]
+|  |  [id, b, 15]
+|  |  [floatKeyWord, float, 15]
+|  |  array Size
+|  memberVar decl
+|  |  [privateKeyWord, private, 16]
+|  |  [id, c, 16]
+|  |  [floatKeyWord, float, 16]
+|  |  array Size
+|  memberFunc decl
+|  |  [publicKeyWord, public, 17]
+|  |  func params
+|  |  |  [id, A, 17]
+|  |  |  [floatKeyWord, float, 17]
+|  |  |  [floatKeyWord, float, 17]
+|  |  |  [floatKeyWord, float, 17]
+|  memberFunc decl
+|  |  [publicKeyWord, public, 18]
+|  |  [id, evaluate, 18]
+|  |  func params
+|  |  |  [id, x, 18]
+|  |  |  [floatKeyWord, float, 18]
+|  |  [floatKeyWord, float, 18]
+, func def
+|  [id, POLYNOMIAL, 22]
+|  [id, evaluate, 22]
+|  func params
+|  |  [id, x, 22]
+|  |  [floatKeyWord, float, 22]
+|  [floatKeyWord, float, 22]
+, local var + stat block
+|  stat
+|  |  return stat
+, func def
+|  [id, QUADRATIC, 27]
+|  [id, evaluate, 27]
+|  func params
+|  |  [id, x, 27]
+|  |  [floatKeyWord, float, 27]
+|  [floatKeyWord, float, 27]
+, local var + stat block
+|  local var
+|  |  [id, result, 29]
+|  |  [floatKeyWord, float, 29]
+|  |  array Size
+|  stat
+|  |  [id, result, 31]
+|  stat
+|  |  [id, result, 32]
+|  |  [plus, +, 32]
+|  stat
+|  |  [id, result, 33]
+|  |  [plus, +, 33]
+|  stat
+|  |  return stat
+, func def
+|  [id, QUADRATIC, 37]
+|  func params
+|  |  [id, A, 37]
+|  |  [floatKeyWord, float, 37]
+|  |  [floatKeyWord, float, 37]
+|  |  [floatKeyWord, float, 37]
+, null]

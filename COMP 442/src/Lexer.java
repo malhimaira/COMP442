@@ -7,6 +7,7 @@ public class Lexer {
 
     private ArrayList<Token> TokenSequence;
     private int countTokens;
+    private int lastline;
     public static ArrayList<String> reservedWords = new ArrayList<String>(Arrays.asList("integer", "float", "void", "class", "self",
             "isa", "while", "if", "then", "else", "read", "write", "return", "localvar", "constructor",
             "attribute", "function", "public", "private"));
@@ -369,6 +370,8 @@ public class Lexer {
                 addALETokenToArrayList(lastCharsRead, countRowLine);
             }
             printWriterErrors.close();
+            lastline = countRowLine;
+            TokenSequence.add(new Token("EOF", TokenType.EOF, new Position(lastline)));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

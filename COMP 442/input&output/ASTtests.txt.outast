@@ -38,37 +38,4 @@
 |  |  [id, id, 10]
 |  |  array Size
 |  |  |  [integerType, 7, 10]
-, func def
-|  [id, main, 14]
-|  [voidKeyWord, void, 14]
-, local var + stat block
-|  local var
-|  |  [id, arr, 16]
-|  |  [integerKeyWord, integer, 16]
-|  |  array Size
-|  |  |  [integerType, 7, 16]
-|  local var
-|  |  [id, arr, 17]
-|  |  [integerKeyWord, integer, 17]
-|  |  array Size
-|  |  |  [integerType, 6, 17]
-|  local var
-|  |  [id, arr, 18]
-|  |  [integerKeyWord, integer, 18]
-|  |  array Size
-|  |  |  [integerType, 2, 18]
-|  stat
-|  |  while block
-|  |  |  read block
-|  stat
-|  |  if block
-|  |  |  [plus, +, 23]
-|  |  |  [id, temp, 26]
-|  |  |  [id, arr, 27]
-|  |  |  [plus, +, 27]
-|  |  |  [id, arr, 28]
-|  |  |  [plus, +, 28]
-|  stat
-|  |  [id, j, 30]
-|  |  [plus, +, 30]
 ]

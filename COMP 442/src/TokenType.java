@@ -53,4 +53,5 @@ public enum TokenType {
     errorTokenNumber,
     errorTokenChar,
     epsilon,
+    EOF
     }
