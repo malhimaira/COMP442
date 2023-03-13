@@ -82,7 +82,7 @@ public class Parser {
 
         filename = filetoRead;
 
-//        addFirstFollow();
+        addFirstFollow();
 
         String table = "COMP 442/parsing/parsingTable.csv";
         String line = "";
@@ -163,15 +163,15 @@ public class Parser {
                         case "SACT9" -> this.makeFamily("inherit lst");
                         case "SACT10" -> this.makeFamily("func params");
                         case "SACT11" -> this.makeFamily("local var + stat block");
-                        case "SACT12"  -> this.makeFamily("scope res");
-                        case "SACT13"  -> this.makeFamily("stat");
-                        case "SACT14"  -> this.makeFamily("if block");
-                        case "SACT15"  -> this.makeFamily("while block");
-                        case "SACT16"  -> this.makeFamily("read block");
-                        case "SACT17"  -> this.makeFamily("write block");
-                        case "SACT18"  -> this.makeFamily("return stat");
-                        case "SACT19"  -> this.makeFamily("then block");
-                        case "SACT20"  -> this.makeFamily("else stat");
+                        case "SACT12" -> this.makeFamily("scope res");
+                        case "SACT13" -> this.makeFamily("stat");
+                        case "SACT14" -> this.makeFamily("if block");
+                        case "SACT15" -> this.makeFamily("while block");
+                        case "SACT16" -> this.makeFamily("read block");
+                        case "SACT17" -> this.makeFamily("write block");
+                        case "SACT18" -> this.makeFamily("return stat");
+                        case "SACT19" -> this.makeFamily("then block");
+                        case "SACT20" -> this.makeFamily("else stat");
 
                     }
                     s1.pop();
@@ -239,7 +239,7 @@ public class Parser {
                     //write to file
 
                     output += "START => " + line + "\n";
-                    pwDerivations.write(output);
+
                 } else {
                     // handle error
                     // System.out.println(token.getTokenType().name());
@@ -253,6 +253,7 @@ public class Parser {
             }
 
             pwError.close();
+            pwDerivations.write(output);
             pwDerivations.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -267,31 +268,33 @@ public class Parser {
         return true;
     }
 
-    public AST makeNull(){
+    public AST makeNull() {
         ASTstack.push(null);
         return null;
-    };
+    }
 
-    public AST makeNode(Token semanticConcept){
-        AST node = new AST(null, null, semanticConcept,  0);
+    ;
+
+    public AST makeNode(Token semanticConcept) {
+        AST node = new AST(null, null, semanticConcept, 0);
         ASTstack.push(node);
         return node;
     }
 
-    public AST makeFamily(Object semanticConcept){
+    public AST makeFamily(Object semanticConcept) {
         ArrayList<AST> childrenNodes = new ArrayList<>();
 
         // if no childen left to pop
-        while(ASTstack.peek() != null){
+        while (ASTstack.peek() != null) {
             // build the tree
             childrenNodes.add(ASTstack.pop());
         }
         ASTstack.pop();
 
-        AST parentNode = new AST(null, childrenNodes, semanticConcept,  0);
+        AST parentNode = new AST(null, childrenNodes, semanticConcept, 0);
 
         // set the parent node in each of the children nodes of a specific node
-        for (var child: parentNode.childrenNodes){
+        for (var child : parentNode.childrenNodes) {
             child.setParentNode(parentNode);
         }
         parentNode.fixTreeDepth();
@@ -305,7 +308,7 @@ public class Parser {
         return parentNode;
     }
 
-    public String printTree(){
+    public String printTree() {
         return ASTstack.toString();
     }
 
