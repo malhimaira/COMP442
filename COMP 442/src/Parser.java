@@ -6,7 +6,7 @@ public class Parser {
     private Map<String, ArrayList<TokenType>> followSet = new HashMap<>();
     private Map<String, ArrayList<TokenType>> firstSet = new HashMap<>();
 
-    Map<String, String> hash = new HashMap();
+    Map<String, String> hash = new HashMap<>();
     String output = "";
     boolean hasError = false;
 
@@ -17,7 +17,7 @@ public class Parser {
     String filename = "";
 
     FileWriter ASTFileWriter;
-    Stack<AST> ASTstack = new Stack();
+    Stack<AST> ASTstack = new Stack<>();
 
     String[] terminals = {
             "id",
@@ -82,10 +82,10 @@ public class Parser {
 
         filename = filetoRead;
 
-        addFirstFollow();
+        //addFirstFollow();
 
         String table = "COMP 442/parsing/parsingTable.csv";
-        String line = "";
+        String line;
         String commaDel = ",";
 
         try {
@@ -117,7 +117,7 @@ public class Parser {
         try {
             //System.out.println("test");
 
-            PrintWriter pwDerivations = new PrintWriter(new File("COMP 442/input&output/" + filename + ".outderivation"));
+            PrintWriter pwDerivations = new PrintWriter("COMP 442/input&output/" + filename + ".outderivation");
 
             s1.push("$");//
             s1.push("START");
@@ -126,7 +126,7 @@ public class Parser {
             Token previousToken = token;
 
             String top;
-            String[] lookahead = new String[]{};
+            String[] lookahead;
 
             //System.out.println(token);
 
@@ -273,8 +273,6 @@ public class Parser {
         return null;
     }
 
-    ;
-
     public AST makeNode(Token semanticConcept) {
         AST node = new AST(null, null, semanticConcept, 0);
         ASTstack.push(node);
@@ -305,6 +303,28 @@ public class Parser {
         // add
         ASTstack.push(parentNode);
 
+        return parentNode;
+    }
+
+    public AST makeFamily(Object semanticConcept, int countPop) {
+        ArrayList<AST> childrenNodes = new ArrayList<>();
+
+        // pop as many nodes as there are children to form tree
+        for (int i = 0; i < countPop; i++) {
+            childrenNodes.add(ASTstack.pop());
+        }
+
+        AST parentNode = new AST(null, childrenNodes, semanticConcept, 0);
+
+        // set the parent node in each of the children nodes of a specific node
+        for (var child : parentNode.childrenNodes) {
+            child.setParentNode(parentNode);
+        }
+        parentNode.fixTreeDepth();
+        // stack requires reverse ordering
+        Collections.reverse(childrenNodes);
+        // add
+        ASTstack.push(parentNode);
         return parentNode;
     }
 
@@ -457,7 +477,7 @@ public class Parser {
             }
 
         } catch (Exception e) {
-
+            System.out.println(e.getMessage());
         }
 
         return "";
@@ -485,7 +505,7 @@ public class Parser {
 
     private void addFirstFollow() {
         String firstSetFile = "COMP 442/parsing/firstFollow.csv";
-        String line = "";
+        String line;
 
         try (BufferedReader br = new BufferedReader(new FileReader(firstSetFile))) {
             line = br.readLine();
@@ -598,11 +618,11 @@ public class Parser {
 
 
                 ArrayList<TokenType> followVal = new ArrayList<>();
-                for (int i = 0; i < followSplit.length; i++) {
-                    if (followSplit[i].contains("∅") || followSplit[i].contains("EOF")) {
+                for (String s : followSplit) {
+                    if (s.contains("∅") || s.contains("EOF")) {
                         followVal.add(TokenType.epsilon);
                     } else {
-                        String valueToAdd = followSplit[i].toUpperCase();
+                        String valueToAdd = s.toUpperCase();
                         switch (valueToAdd) {
                             case "RPAR" -> followVal.add(TokenType.closeBracketRound);
 
@@ -691,6 +711,7 @@ public class Parser {
                 }
             }
         } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }
