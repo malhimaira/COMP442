@@ -19,6 +19,8 @@ public class Parser {
     FileWriter ASTFileWriter;
     Stack<AST> ASTstack = new Stack<>();
 
+    ArrayList<SymbolTable> symbolTableList = new ArrayList<>();
+
     String[] terminals = {
             "id",
             "integerType",
@@ -172,6 +174,7 @@ public class Parser {
                         case "SACT18" -> this.makeFamily("return stat");
                         case "SACT19" -> this.makeFamily("then block");
                         case "SACT20" -> this.makeFamily("else stat");
+                        case "SACT21" -> this.makeFamily("prog");
 
                     }
                     s1.pop();
@@ -258,14 +261,27 @@ public class Parser {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
         //System.out.println(AST.treeToString());
+        // Generate AST File
         try {
             ASTFileWriter.write(this.printTree());
             ASTFileWriter.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+        // Generate Symbol Table and Semantic Analysis
+
         return true;
+    }
+
+    public void traverseASTTree() {
+
+    }
+
+    public void printSymbolTable() {
+
     }
 
     public AST makeNull() {
