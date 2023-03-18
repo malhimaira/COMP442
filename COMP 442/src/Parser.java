@@ -90,12 +90,6 @@ public class Parser {
         String line;
         String commaDel = ",";
 
-        try {
-            this.ASTFileWriter = new FileWriter("COMP 442/input&output/" + filename + ".outast");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
         try (BufferedReader br = new BufferedReader(new FileReader(table))) {
             int row = 0;
             var headers = br.readLine().split(",");
@@ -148,7 +142,6 @@ public class Parser {
                 }
 
                 if (top.equals("$") || top.equals("EOF")) {
-                    System.out.println("end of file");
                     break;
                 }
 
@@ -179,6 +172,9 @@ public class Parser {
                     }
                     s1.pop();
                     top = s1.peek();
+                }
+                if (top.equals("$") || top.equals("EOF")) {
+                    break;
                 }
 
                 // gets value of the key in the parsing table and stores it in templookahead for the not terminal
@@ -263,18 +259,13 @@ public class Parser {
         }
 
         //System.out.println(AST.treeToString());
-        // Generate AST File
-        try {
-            ASTFileWriter.write(this.printTree());
-            ASTFileWriter.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
 
         // Generate Symbol Table and Semantic Analysis
 
         return true;
     }
+
+
 
     public void traverseASTTree() {
 
@@ -343,6 +334,18 @@ public class Parser {
         ASTstack.push(parentNode);
         return parentNode;
     }
+
+    public void writeASTTreeToFile(){
+        // Generate AST File
+        try {
+            this.ASTFileWriter = new FileWriter("COMP 442/input&output/" + filename + ".outast");
+            ASTFileWriter.write(this.printTree());
+            ASTFileWriter.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 
     public String printTree() {
         return ASTstack.toString();

@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 public class ParserDriver {
@@ -28,7 +27,14 @@ public class ParserDriver {
             Parser p = new Parser();
             p.Parser(fileName);
 
+            // Parse Tokens and fill AST
             p.parse(pwError, lexer);
+
+            // Generate AST's text file
+            p.writeASTTreeToFile();
+
+            //Generate Symbol Tables
+
             System.out.println(p.output);
 
 
