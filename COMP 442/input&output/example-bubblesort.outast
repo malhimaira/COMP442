@@ -6,48 +6,48 @@
 |  |  |  [integerKeyWord, integer, 2]
 |  |  |  [integerKeyWord, integer, 2]
 |  |  [voidKeyWord, void, 2]
-|  local var + stat block
-|  |  local var
-|  |  |  [id, n, 4]
-|  |  |  [integerKeyWord, integer, 4]
-|  |  |  array Size
-|  |  local var
-|  |  |  [id, i, 5]
-|  |  |  [integerKeyWord, integer, 5]
-|  |  |  array Size
-|  |  local var
-|  |  |  [id, j, 6]
-|  |  |  [integerKeyWord, integer, 6]
-|  |  |  array Size
-|  |  local var
-|  |  |  [id, temp, 7]
-|  |  |  [integerKeyWord, integer, 7]
-|  |  |  array Size
-|  |  stat
-|  |  |  [id, n, 8]
-|  |  stat
-|  |  |  [id, i, 9]
-|  |  stat
-|  |  |  [id, j, 10]
-|  |  stat
-|  |  |  [id, temp, 11]
-|  |  stat
-|  |  |  while block
-|  |  |  |  [minus, -, 12]
+|  |  local var + stat block
+|  |  |  local var
+|  |  |  |  [id, n, 4]
+|  |  |  |  [integerKeyWord, integer, 4]
+|  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, i, 5]
+|  |  |  |  [integerKeyWord, integer, 5]
+|  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, j, 6]
+|  |  |  |  [integerKeyWord, integer, 6]
+|  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, temp, 7]
+|  |  |  |  [integerKeyWord, integer, 7]
+|  |  |  |  array Size
+|  |  |  stat
+|  |  |  |  [id, n, 8]
+|  |  |  stat
+|  |  |  |  [id, i, 9]
+|  |  |  stat
+|  |  |  |  [id, j, 10]
+|  |  |  stat
+|  |  |  |  [id, temp, 11]
+|  |  |  stat
 |  |  |  |  while block
-|  |  |  |  |  [minus, -, 13]
-|  |  |  |  |  [minus, -, 13]
-|  |  |  |  |  if block
-|  |  |  |  |  |  [plus, +, 14]
-|  |  |  |  |  |  [id, temp, 17]
-|  |  |  |  |  |  [id, arr, 18]
-|  |  |  |  |  |  [plus, +, 18]
-|  |  |  |  |  |  [id, arr, 19]
-|  |  |  |  |  |  [plus, +, 19]
-|  |  |  |  |  [id, j, 21]
-|  |  |  |  |  [plus, +, 21]
-|  |  |  |  [id, i, 23]
-|  |  |  |  [plus, +, 23]
+|  |  |  |  |  [minus, -, 12]
+|  |  |  |  |  while block
+|  |  |  |  |  |  [minus, -, 13]
+|  |  |  |  |  |  [minus, -, 13]
+|  |  |  |  |  |  if block
+|  |  |  |  |  |  |  [plus, +, 14]
+|  |  |  |  |  |  |  [id, temp, 17]
+|  |  |  |  |  |  |  [id, arr, 18]
+|  |  |  |  |  |  |  [plus, +, 18]
+|  |  |  |  |  |  |  [id, arr, 19]
+|  |  |  |  |  |  |  [plus, +, 19]
+|  |  |  |  |  |  [id, j, 21]
+|  |  |  |  |  |  [plus, +, 21]
+|  |  |  |  |  [id, i, 23]
+|  |  |  |  |  [plus, +, 23]
 |  func def
 |  |  [id, printArray, 28]
 |  |  func params
@@ -55,51 +55,51 @@
 |  |  |  [integerKeyWord, integer, 28]
 |  |  |  [integerKeyWord, integer, 28]
 |  |  [voidKeyWord, void, 28]
-|  local var + stat block
-|  |  local var
-|  |  |  [id, n, 30]
-|  |  |  [integerKeyWord, integer, 30]
-|  |  |  array Size
-|  |  local var
-|  |  |  [id, i, 31]
-|  |  |  [integerKeyWord, integer, 31]
-|  |  |  array Size
-|  |  stat
-|  |  |  [id, n, 32]
-|  |  stat
-|  |  |  [id, i, 33]
-|  |  stat
-|  |  |  while block
-|  |  |  |  write block
-|  |  |  |  [id, i, 36]
-|  |  |  |  [plus, +, 36]
+|  |  local var + stat block
+|  |  |  local var
+|  |  |  |  [id, n, 30]
+|  |  |  |  [integerKeyWord, integer, 30]
+|  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, i, 31]
+|  |  |  |  [integerKeyWord, integer, 31]
+|  |  |  |  array Size
+|  |  |  stat
+|  |  |  |  [id, n, 32]
+|  |  |  stat
+|  |  |  |  [id, i, 33]
+|  |  |  stat
+|  |  |  |  while block
+|  |  |  |  |  write block
+|  |  |  |  |  [id, i, 36]
+|  |  |  |  |  [plus, +, 36]
 |  func def
 |  |  [id, main, 41]
 |  |  [voidKeyWord, void, 41]
-|  local var + stat block
-|  |  local var
-|  |  |  [id, arr, 43]
-|  |  |  [integerKeyWord, integer, 43]
-|  |  |  array Size
-|  |  |  |  [integerType, 7, 43]
-|  |  stat
-|  |  |  [id, arr, 44]
-|  |  stat
-|  |  |  [id, arr, 45]
-|  |  stat
-|  |  |  [id, arr, 46]
-|  |  stat
-|  |  |  [id, arr, 47]
-|  |  stat
-|  |  |  [id, arr, 48]
-|  |  stat
-|  |  |  [id, arr, 49]
-|  |  stat
-|  |  |  [id, arr, 50]
-|  |  stat
-|  |  |  [id, printarray, 51]
-|  |  stat
-|  |  |  [id, bubbleSort, 52]
-|  |  stat
-|  |  |  [id, printarray, 53]
+|  |  local var + stat block
+|  |  |  local var
+|  |  |  |  [id, arr, 43]
+|  |  |  |  [integerKeyWord, integer, 43]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 7, 43]
+|  |  |  stat
+|  |  |  |  [id, arr, 44]
+|  |  |  stat
+|  |  |  |  [id, arr, 45]
+|  |  |  stat
+|  |  |  |  [id, arr, 46]
+|  |  |  stat
+|  |  |  |  [id, arr, 47]
+|  |  |  stat
+|  |  |  |  [id, arr, 48]
+|  |  |  stat
+|  |  |  |  [id, arr, 49]
+|  |  |  stat
+|  |  |  |  [id, arr, 50]
+|  |  |  stat
+|  |  |  |  [id, printarray, 51]
+|  |  |  stat
+|  |  |  |  [id, bubbleSort, 52]
+|  |  |  stat
+|  |  |  |  [id, printarray, 53]
 ]

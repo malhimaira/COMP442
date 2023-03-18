@@ -1,74 +1,61 @@
-[class decl
-|  [id, POLYNOMIAL, 1]
-|  inherit lst
-, class decl
-|  [id, LINEAR, 3]
-|  inherit lst
-|  |  [id, POLYNOMIAL, 3]
-|  memberFunc decl
-|  |  [publicKeyWord, public, 4]
-|  |  [id, tryMethod, 4]
-|  |  func params
-|  |  |  [id, l, 4]
+[prog
+|  class decl
+|  |  [id, POLYNOMIAL, 1]
+|  |  inherit lst
+|  class decl
+|  |  [id, LINEAR, 3]
+|  |  inherit lst
+|  |  |  [id, POLYNOMIAL, 3]
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 4]
+|  |  |  [id, tryMethod, 4]
+|  |  |  func params
+|  |  |  |  [id, l, 4]
+|  |  |  |  [integerKeyWord, integer, 4]
 |  |  |  [integerKeyWord, integer, 4]
-|  |  [integerKeyWord, integer, 4]
-, class decl
-|  [id, QUADRATIC, 6]
-|  inherit lst
-|  |  [id, POLYNOMIAL, 6]
-|  memberFunc decl
-|  |  [publicKeyWord, public, 7]
-|  |  [id, tryVoidMethod, 7]
-|  |  [voidKeyWord, void, 7]
-|  memberVar decl
-|  |  [publicKeyWord, public, 8]
-|  |  [id, x, 8]
-|  |  [floatKeyWord, float, 8]
-|  |  array Size
-|  |  |  [integerType, 5, 8]
-|  memberVar decl
-|  |  [publicKeyWord, public, 9]
-|  |  [id, y, 9]
-|  |  [integerKeyWord, integer, 9]
-|  |  array Size
-|  |  |  [integerType, 2, 9]
-|  memberVar decl
-|  |  [publicKeyWord, public, 10]
-|  |  [id, z, 10]
-|  |  [id, id, 10]
-|  |  array Size
-|  |  |  [integerType, 7, 10]
-, func def
-|  [id, main, 14]
-|  [voidKeyWord, void, 14]
-, local var + stat block
-|  local var
-|  |  [id, arr, 16]
-|  |  [integerKeyWord, integer, 16]
-|  |  array Size
-|  |  |  [integerType, 7, 16]
-|  local var
-|  |  [id, arr, 17]
-|  |  [integerKeyWord, integer, 17]
-|  |  array Size
-|  |  |  [integerType, 6, 17]
-|  local var
-|  |  [id, arr, 18]
-|  |  [integerKeyWord, integer, 18]
-|  |  array Size
-|  |  |  [integerType, 2, 18]
-|  stat
-|  |  while block
-|  |  |  read block
-|  stat
-|  |  if block
-|  |  |  [plus, +, 23]
-|  |  |  [id, temp, 26]
-|  |  |  [id, arr, 27]
-|  |  |  [plus, +, 27]
-|  |  |  [id, arr, 28]
-|  |  |  [plus, +, 28]
-|  stat
-|  |  [id, j, 30]
-|  |  [plus, +, 30]
+|  class decl
+|  |  [id, QUADRATIC, 6]
+|  |  inherit lst
+|  |  |  [id, POLYNOMIAL, 6]
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 7]
+|  |  |  [id, tryVoidMethod, 7]
+|  |  |  [voidKeyWord, void, 7]
+|  |  memberVar decl
+|  |  |  [publicKeyWord, public, 8]
+|  |  |  [id, x, 8]
+|  |  |  [floatKeyWord, float, 8]
+|  |  |  array Size
+|  |  |  |  [integerType, 5, 8]
+|  |  memberVar decl
+|  |  |  [publicKeyWord, public, 9]
+|  |  |  [id, y, 9]
+|  |  |  [integerKeyWord, integer, 9]
+|  |  |  array Size
+|  |  |  |  [integerType, 2, 9]
+|  |  memberVar decl
+|  |  |  [publicKeyWord, public, 10]
+|  |  |  [id, z, 10]
+|  |  |  [id, id, 10]
+|  |  |  array Size
+|  |  |  |  [integerType, 7, 10]
+|  func def
+|  |  [id, main, 14]
+|  |  [voidKeyWord, void, 14]
+|  |  local var + stat block
+|  |  |  local var
+|  |  |  |  [id, arr, 16]
+|  |  |  |  [integerKeyWord, integer, 16]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 7, 16]
+|  |  |  local var
+|  |  |  |  [id, arr, 17]
+|  |  |  |  [integerKeyWord, integer, 17]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 6, 17]
+|  |  |  local var
+|  |  |  |  [id, arr, 18]
+|  |  |  |  [integerKeyWord, integer, 18]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 18]
 ]

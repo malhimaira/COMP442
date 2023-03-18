@@ -107,7 +107,7 @@ public class Parser {
 
                 row++;
             }
-            System.out.println(hash);
+            //System.out.println(hash);
         } catch (Exception e) {
             e.printStackTrace();
         }

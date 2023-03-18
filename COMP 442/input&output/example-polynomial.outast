@@ -75,9 +75,9 @@
 |  |  [id, x, 22]
 |  |  [floatKeyWord, float, 22]
 |  [floatKeyWord, float, 22]
-, local var + stat block
-|  stat
-|  |  return stat
+|  local var + stat block
+|  |  stat
+|  |  |  return stat
 , func def
 |  [id, QUADRATIC, 27]
 |  [id, evaluate, 27]
@@ -85,26 +85,25 @@
 |  |  [id, x, 27]
 |  |  [floatKeyWord, float, 27]
 |  [floatKeyWord, float, 27]
-, local var + stat block
-|  local var
-|  |  [id, result, 29]
-|  |  [floatKeyWord, float, 29]
-|  |  array Size
-|  stat
-|  |  [id, result, 31]
-|  stat
-|  |  [id, result, 32]
-|  |  [plus, +, 32]
-|  stat
-|  |  [id, result, 33]
-|  |  [plus, +, 33]
-|  stat
-|  |  return stat
-, func def
-|  [id, QUADRATIC, 37]
-|  func params
-|  |  [id, A, 37]
-|  |  [floatKeyWord, float, 37]
-|  |  [floatKeyWord, float, 37]
-|  |  [floatKeyWord, float, 37]
+|  local var + stat block
+|  |  local var
+|  |  |  [id, result, 29]
+|  |  |  [floatKeyWord, float, 29]
+|  |  |  array Size
+|  |  stat
+|  |  |  [id, result, 31]
+|  |  stat
+|  |  |  [id, result, 32]
+|  |  |  [plus, +, 32]
+|  |  stat
+|  |  |  [id, result, 33]
+|  |  |  [plus, +, 33]
+|  |  stat
+|  |  |  return stat
+, null, [id, QUADRATIC, 37]
+, func params
+|  [id, A, 37]
+|  [floatKeyWord, float, 37]
+|  [floatKeyWord, float, 37]
+|  [floatKeyWord, float, 37]
 , null]
