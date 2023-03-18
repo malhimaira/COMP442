@@ -1,4 +1,4 @@
-[class decl
+[null, class decl
 |  [id, POLYNOMIAL, 2]
 |  inherit lst
 |  memberFunc decl

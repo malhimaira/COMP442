@@ -27,10 +27,10 @@ public class ParserDriver {
             Parser p = new Parser();
             p.Parser(fileName);
 
-            // Parse Tokens and fill AST
+            // Parse Tokens and fill ASTNodes.AST
             p.parse(pwError, lexer);
 
-            // Generate AST's text file
+            // Generate ASTNodes.AST's text file
             p.writeASTTreeToFile();
 
             //Generate Symbol Tables

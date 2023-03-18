@@ -1,3 +1,5 @@
+import ASTNodes.AST;
+
 import java.io.*;
 import java.util.*;
 
@@ -258,7 +260,7 @@ public class Parser {
             System.out.println(e.getMessage());
         }
 
-        //System.out.println(AST.treeToString());
+        //System.out.println(ASTNodes.AST.treeToString());
 
         // Generate Symbol Table and Semantic Analysis
 
@@ -336,7 +338,7 @@ public class Parser {
     }
 
     public void writeASTTreeToFile(){
-        // Generate AST File
+        // Generate ASTNodes.AST File
         try {
             this.ASTFileWriter = new FileWriter("COMP 442/input&output/" + filename + ".outast");
             ASTFileWriter.write(this.printTree());

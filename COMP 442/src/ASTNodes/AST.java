@@ -1,10 +1,12 @@
+package ASTNodes;
+
 import java.util.ArrayList;
 
 public class AST {
-    AST parentNode;
-    ArrayList<AST> childrenNodes;
-    Object semanticConcept;
-    int treeDepth;
+    public AST parentNode;
+    public ArrayList<AST> childrenNodes;
+    public Object semanticConcept;
+    public int treeDepth;
 
     public AST(AST parentNode, ArrayList<AST> childrenNodes,Object semanticConcept, int treeDepth){
         this.parentNode = parentNode;
