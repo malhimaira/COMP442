@@ -11,8 +11,8 @@ public class ASTNode {
     public int treeDepth;
 
     // Symbol Tables created by SymbolTableCreation
-    public  SymbolTable      symbolTable             = null;
-    public  SymbolTableEntry symbolTableEntry        = null;
+    public  SymbolTable      m_symtab             = null;
+    public  SymbolTableEntry m_symtabentry        = null;
 
     public ASTNode(ASTNode parentNode, ArrayList<ASTNode> childrenNodes, Object semanticConcept, int treeDepth){
         this.parentNode = parentNode;

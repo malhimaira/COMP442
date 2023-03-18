@@ -33,7 +33,7 @@ public class Driver {
 
             // Parse Tokens and fill ASTNodes.AST
             p.parse(pwError, lexer);
-            System.out.println(p.output);
+            // System.out.println(p.output);
 
             // AST Stack
             Stack<ASTNode> ASTstack = p.ASTstack;

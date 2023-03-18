@@ -1,21 +1,22 @@
 package SymbolTables;
 
+
+import java.util.Vector;
+
 public class SymbolTableEntry {
-    private IdentifierScope scope;
-    private IdentifierType type;
-    private String IdentifierDataType;
-    private String name;
-    private IdentifierEncapsulation encapsulation;
+    public String          m_kind       = null;
+    public String          m_type       = null;
+    public String          m_name       = null;
+    public int             m_size       = 0;
 
-    public SymbolTableEntry(IdentifierScope scope, IdentifierType type, String identifierDataType, String name, IdentifierEncapsulation encapsulation) {
-        this.scope = scope;
-        this.type = type;
-        IdentifierDataType = identifierDataType;
-        this.name = name;
-        this.encapsulation = encapsulation;
-    }
+    public SymbolTable     m_subtable   = null;
 
-    public String ToString(){
-        return "formatted identifier";
+    public SymbolTableEntry() {}
+
+    public SymbolTableEntry(String p_kind, String p_type, String p_name, SymbolTable p_subtable){
+        m_kind = p_kind;
+        m_type = p_type;
+        m_name = p_name;
+        m_subtable = p_subtable;
     }
 }

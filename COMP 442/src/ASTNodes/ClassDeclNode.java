@@ -12,7 +12,6 @@ public class ClassDeclNode extends ASTNode {
 
     @Override
     public void accept(SymbolTableVisitor stv){
-        System.out.println("class decl entry");
         stv.visit(this);
     }
 }

@@ -1,29 +1,61 @@
 package SymbolTables;
 
 import ASTNodes.*;
+import LexerComponents.*;
+
+import java.util.Vector;
 
 public class SymbolTableVisitor {
 
-    public SymbolTableVisitor(){}
+    public SymbolTableVisitor() {}
 
-    public void visit(ASTNode node){
+    public void visit(ASTNode node) {
         System.out.println("symbol table entry string");
-    };
+    }
 
-    public void visit(ProgNode node){
-        System.out.println("prog entry");
-        for (ASTNode child : node.childrenNodes ) {
+    public void visit(ProgNode node) {
+        //System.out.println("prog entry");
+        node.m_symtab = new SymbolTable(0, "global", null);
+        for (ASTNode child : node.childrenNodes) {
+            child.m_symtab = node.m_symtab;
             child.accept(this);
         }
 
-    };
+        // TODO print to file
+    }
 
-    public void visit(ClassDeclNode node){
-        System.out.println("class decl entry");
-    };
+    public void visit(ClassDeclNode node) {
+        //System.out.println("class decl entry");
 
-    public void visit(FuncDefNode node){
+        String classname = ((Token) node.childrenNodes.get(0).semanticConcept).getLexeme();
+
+        SymbolTable localtable = new SymbolTable(1, classname, node.m_symtab);
+        node.m_symtabentry = new ClassEntry(classname,  localtable);
+        node.m_symtab.addEntry(node.m_symtabentry);
+        node.m_symtab = localtable;
+
+        //TODO: children node loop
+    }
+
+    public void visit(FuncDefNode node) {
         System.out.println("func def entry");
-    };
 
+        String ftype = "function";
+        String fname =  ((Token) node.childrenNodes.get(0).semanticConcept).getLexeme();
+        SymbolTable localtable = new SymbolTable(1,fname, node.m_symtab);
+
+        Vector<VarEntry> paramlist = new Vector<VarEntry>();
+
+        if(node.childrenNodes.size() == 4) {
+        for (ASTNode param : node.childrenNodes.get(1).childrenNodes){
+            paramlist.add((VarEntry) node.m_symtabentry);
+        }
+        }
+        node.m_symtabentry = new FuncEntry(ftype, fname, paramlist, localtable);
+        node.m_symtab.addEntry(node.m_symtabentry);
+        node.m_symtab = localtable;
+
+        // TODO children loop
+
+    }
 }

@@ -41,6 +41,10 @@
 |  |  |  |  [integerType, 7, 10]
 |  func def
 |  |  [id, main, 14]
+|  |  func params
+|  |  |  [id, size, 14]
+|  |  |  [integerKeyWord, integer, 14]
+|  |  |  [floatKeyWord, float, 14]
 |  |  [voidKeyWord, void, 14]
 |  |  local var + stat block
 |  |  |  local var
