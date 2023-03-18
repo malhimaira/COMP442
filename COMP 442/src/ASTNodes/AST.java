@@ -44,4 +44,8 @@ public class AST {
         }
         return tree.toString();
     }
+
+    public String symbolTablePrint(){
+        return "symbol table entry string";
+    }
 }

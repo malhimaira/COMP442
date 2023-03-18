@@ -2,14 +2,14 @@ package ASTNodes;
 
 import java.util.ArrayList;
 
-public class ProgNode extends AST {
+public class FuncDefNode extends AST {
 
-    public ProgNode(AST parentNode, ArrayList<AST> childrenNodes, Object semanticConcept, int treeDepth) {
+    public FuncDefNode(AST parentNode, ArrayList<AST> childrenNodes, Object semanticConcept, int treeDepth) {
         super(parentNode, childrenNodes, semanticConcept, treeDepth);
     }
 
     @Override
     public String symbolTablePrint() {
-        return"prog entry";
+        return"class decl entry";
     }
 }
