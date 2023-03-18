@@ -1,5 +1,7 @@
 package ASTNodes;
 
+import SymbolTables.SymbolTableVisitor;
+
 import java.util.ArrayList;
 
 public class ClassDeclNode extends ASTNode {
@@ -9,7 +11,8 @@ public class ClassDeclNode extends ASTNode {
     }
 
     @Override
-    public String symbolTablePrint() {
-        return"class decl entry";
+    public void accept(SymbolTableVisitor stv){
+        System.out.println("class decl entry");
+        stv.visit(this);
     }
 }

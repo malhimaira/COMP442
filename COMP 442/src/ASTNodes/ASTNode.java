@@ -1,12 +1,18 @@
 package ASTNodes;
 
+import SymbolTables.*;
 import java.util.ArrayList;
 
 public class ASTNode {
+
     public ASTNode parentNode;
     public ArrayList<ASTNode> childrenNodes;
     public Object semanticConcept;
     public int treeDepth;
+
+    // Symbol Tables created by SymbolTableCreation
+    public  SymbolTable      symbolTable             = null;
+    public  SymbolTableEntry symbolTableEntry        = null;
 
     public ASTNode(ASTNode parentNode, ArrayList<ASTNode> childrenNodes, Object semanticConcept, int treeDepth){
         this.parentNode = parentNode;
@@ -49,7 +55,7 @@ public class ASTNode {
         return tree.toString();
     }
 
-    public String symbolTablePrint(){
-        return "symbol table entry string";
+    public void accept(SymbolTableVisitor stv){
+        stv.visit(this);
     }
 }

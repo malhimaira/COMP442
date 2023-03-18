@@ -1,5 +1,7 @@
 package ASTNodes;
 
+import SymbolTables.SymbolTableVisitor;
+
 import java.util.ArrayList;
 
 public class ProgNode extends ASTNode {
@@ -9,7 +11,7 @@ public class ProgNode extends ASTNode {
     }
 
     @Override
-    public String symbolTablePrint() {
-        return"prog entry";
+    public void accept(SymbolTableVisitor stv){
+        stv.visit(this);
     }
 }

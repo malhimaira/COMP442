@@ -33,6 +33,7 @@ public class Driver {
 
             // Parse Tokens and fill ASTNodes.AST
             p.parse(pwError, lexer);
+            System.out.println(p.output);
 
             // AST Stack
             Stack<ASTNode> ASTstack = p.ASTstack;
@@ -40,13 +41,9 @@ public class Driver {
             // Generate ASTNodes.AST's text file
             p.writeASTTreeToFile();
 
-
-
             //Generate Symbol Tables
-
-
-            System.out.println(p.output);
-
+            SymbolTableCreation stc = new SymbolTableCreation();
+            Stack<ASTNode> ASTStackWithSymbolTables = stc.generateSymbolTables(ASTstack);
 
         } catch (Exception e) {
             System.out.print(e.getMessage());
