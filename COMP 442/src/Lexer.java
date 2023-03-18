@@ -1,3 +1,4 @@
+import LexerComponents.ErrorToken;
 import LexerComponents.Position;
 import LexerComponents.Token;
 import LexerComponents.TokenType;
