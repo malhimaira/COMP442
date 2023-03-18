@@ -1,4 +1,5 @@
 import ASTNodes.ASTNode;
+import LexerComponents.Token;
 
 import java.io.File;
 import java.io.FileInputStream;

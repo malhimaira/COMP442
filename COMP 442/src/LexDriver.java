@@ -1,4 +1,4 @@
-import com.sun.source.util.SourcePositions;
+import LexerComponents.Token;
 
 import java.io.File;
 import java.io.FileInputStream;

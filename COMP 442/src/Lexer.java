@@ -1,3 +1,7 @@
+import LexerComponents.Position;
+import LexerComponents.Token;
+import LexerComponents.TokenType;
+
 import java.io.FileInputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -49,7 +53,7 @@ public class Lexer {
                     else if ((char) nextChar == '=') {
                         TokenSequence.add(new Token("==", TokenType.doubleEqual, new Position(countRowLine)));
                     }
-                    // Case of Equal Token
+                    // Case of Equal LexerComponents.Token
                     else if ((char) nextChar == ' ') {
                         TokenSequence.add(new Token("=", TokenType.equals, new Position(countRowLine)));
                     } else {

@@ -1,3 +1,7 @@
+package LexerComponents;
+
+import LexerComponents.Position;
+import LexerComponents.TokenType;
 
 public class Token {
     private TokenType tokenType;

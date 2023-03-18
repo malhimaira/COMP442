@@ -1,3 +1,5 @@
+package LexerComponents;
+
 public class Position {
 
     private int row;

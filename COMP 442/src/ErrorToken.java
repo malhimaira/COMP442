@@ -1,4 +1,8 @@
-public class ErrorToken extends Token{
+import LexerComponents.Position;
+import LexerComponents.Token;
+import LexerComponents.TokenType;
+
+public class ErrorToken extends Token {
 
     private String toPrint;
     public ErrorToken(String lexeme, TokenType tokenType, Position position) {

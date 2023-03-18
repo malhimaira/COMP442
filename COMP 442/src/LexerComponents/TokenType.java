@@ -1,3 +1,5 @@
+package LexerComponents;
+
 public enum TokenType {
     id,
     integerType,

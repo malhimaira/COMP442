@@ -1,4 +1,6 @@
 import ASTNodes.*;
+import LexerComponents.Token;
+import LexerComponents.TokenType;
 import SymbolTables.SymbolTable;
 
 import java.io.*;
