@@ -1,9 +1,5 @@
 package LexerComponents;
 
-import LexerComponents.Position;
-import LexerComponents.Token;
-import LexerComponents.TokenType;
-
 public class ErrorToken extends Token {
 
     private String toPrint;
