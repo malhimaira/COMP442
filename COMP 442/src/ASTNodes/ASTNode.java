@@ -2,17 +2,21 @@ package ASTNodes;
 
 import java.util.ArrayList;
 
-public class AST {
-    public AST parentNode;
-    public ArrayList<AST> childrenNodes;
+public class ASTNode {
+    public ASTNode parentNode;
+    public ArrayList<ASTNode> childrenNodes;
     public Object semanticConcept;
     public int treeDepth;
 
-    public AST(AST parentNode, ArrayList<AST> childrenNodes,Object semanticConcept, int treeDepth){
+    public ASTNode(ASTNode parentNode, ArrayList<ASTNode> childrenNodes, Object semanticConcept, int treeDepth){
         this.parentNode = parentNode;
         this.childrenNodes = childrenNodes;
         this.semanticConcept = semanticConcept;
         this.treeDepth = treeDepth;
+    }
+
+    public void setChildrenNodes(ArrayList<ASTNode> childrenNodes) {
+        this.childrenNodes = childrenNodes;
     }
 
     public void fixTreeDepth(){
@@ -24,7 +28,7 @@ public class AST {
         }
     }
 
-    public void setParentNode(AST parentNode) {this.parentNode = parentNode;}
+    public void setParentNode(ASTNode parentNode) {this.parentNode = parentNode;}
 
     public int getTreeDepth() {return treeDepth;}
 

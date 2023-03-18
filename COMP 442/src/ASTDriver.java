@@ -1,8 +1,11 @@
+import ASTNodes.ASTNode;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.PrintWriter;
+import java.util.Stack;
 
-public class ParserDriver {
+public class ASTDriver {
 
     public static void main(String[] args) {
         // Open Stream to File
@@ -27,8 +30,17 @@ public class ParserDriver {
             Parser p = new Parser();
             p.Parser(fileName);
 
-            // Parse Tokens
+            // Parse Tokens and fill ASTNodes.AST
             p.parse(pwError, lexer);
+
+            // AST Stack
+            Stack<ASTNode> ASTstack = p.ASTstack;
+
+            // Generate ASTNodes.AST's text file
+            p.writeASTTreeToFile();
+
+            System.out.println(p.output);
+
 
         } catch (Exception e) {
             System.out.print(e.getMessage());

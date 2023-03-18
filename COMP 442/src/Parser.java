@@ -1,4 +1,5 @@
-import ASTNodes.AST;
+import ASTNodes.*;
+import SymbolTables.SymbolTable;
 
 import java.io.*;
 import java.util.*;
@@ -19,7 +20,7 @@ public class Parser {
     String filename = "";
 
     FileWriter ASTFileWriter;
-    Stack<AST> ASTstack = new Stack<>();
+    Stack<ASTNode> ASTstack = new Stack<>();
 
     ArrayList<SymbolTable> symbolTableList = new ArrayList<>();
 
@@ -153,10 +154,10 @@ public class Parser {
                         case "SACT2" -> this.makeNull();
                         case "SACT3" -> this.makeFamily("array Size");
                         case "SACT4" -> this.makeFamily("local var");
-                        case "SACT5" -> this.makeFamily("class decl");
+                        case "SACT5" -> this.makeFamily(new ClassDeclNode(null,null, "class decl", 0));
                         case "SACT6" -> this.makeFamily("memberVar decl");
                         case "SACT7" -> this.makeFamily("memberFunc decl");
-                        case "SACT8" -> this.makeFamily("func def");
+                        case "SACT8" -> this.makeFamily(new FuncDefNode(null,null, "func def", 0));
                         case "SACT9" -> this.makeFamily("inherit lst");
                         case "SACT10" -> this.makeFamily("func params");
                         case "SACT11" -> this.makeFamily("local var + stat block");
@@ -169,7 +170,7 @@ public class Parser {
                         case "SACT18" -> this.makeFamily("return stat");
                         case "SACT19" -> this.makeFamily("then block");
                         case "SACT20" -> this.makeFamily("else stat");
-                        case "SACT21" -> this.makeFamily("prog");
+                        case "SACT21" -> this.makeFamily(new ProgNode(null,null, "prog", 0));
 
                     }
                     s1.pop();
@@ -277,19 +278,19 @@ public class Parser {
 
     }
 
-    public AST makeNull() {
+    public ASTNode makeNull() {
         ASTstack.push(null);
         return null;
     }
 
-    public AST makeNode(Token semanticConcept) {
-        AST node = new AST(null, null, semanticConcept, 0);
+    public ASTNode makeNode(Token semanticConcept) {
+        ASTNode node = new ASTNode(null, null, semanticConcept, 0);
         ASTstack.push(node);
         return node;
     }
 
-    public AST makeFamily(Object semanticConcept) {
-        ArrayList<AST> childrenNodes = new ArrayList<>();
+    public ASTNode makeFamily(ASTNode parentNode) {
+        ArrayList<ASTNode> childrenNodes = new ArrayList<>();
 
         // if no childen left to pop
         while (ASTstack.peek() != null) {
@@ -298,7 +299,7 @@ public class Parser {
         }
         ASTstack.pop();
 
-        AST parentNode = new AST(null, childrenNodes, semanticConcept, 0);
+       parentNode.setChildrenNodes(childrenNodes);
 
         // set the parent node in each of the children nodes of a specific node
         for (var child : parentNode.childrenNodes) {
@@ -315,15 +316,42 @@ public class Parser {
         return parentNode;
     }
 
-    public AST makeFamily(Object semanticConcept, int countPop) {
-        ArrayList<AST> childrenNodes = new ArrayList<>();
+    public ASTNode makeFamily(Object semanticConcept) {
+        ArrayList<ASTNode> childrenNodes = new ArrayList<>();
+
+        // if no childen left to pop
+        while (ASTstack.peek() != null) {
+            // build the tree
+            childrenNodes.add(ASTstack.pop());
+        }
+        ASTstack.pop();
+
+        ASTNode parentNode = new ASTNode(null, childrenNodes, semanticConcept, 0);
+
+        // set the parent node in each of the children nodes of a specific node
+        for (var child : parentNode.childrenNodes) {
+            child.setParentNode(parentNode);
+        }
+        parentNode.fixTreeDepth();
+
+        // stack requires reverse ordering
+        Collections.reverse(childrenNodes);
+
+        // add
+        ASTstack.push(parentNode);
+
+        return parentNode;
+    }
+
+    public ASTNode makeFamily(Object semanticConcept, int countPop) {
+        ArrayList<ASTNode> childrenNodes = new ArrayList<>();
 
         // pop as many nodes as there are children to form tree
         for (int i = 0; i < countPop; i++) {
             childrenNodes.add(ASTstack.pop());
         }
 
-        AST parentNode = new AST(null, childrenNodes, semanticConcept, 0);
+        ASTNode parentNode = new ASTNode(null, childrenNodes, semanticConcept, 0);
 
         // set the parent node in each of the children nodes of a specific node
         for (var child : parentNode.childrenNodes) {

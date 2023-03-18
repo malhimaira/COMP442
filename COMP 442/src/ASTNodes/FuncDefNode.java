@@ -2,9 +2,9 @@ package ASTNodes;
 
 import java.util.ArrayList;
 
-public class FuncDefNode extends AST {
+public class FuncDefNode extends ASTNode {
 
-    public FuncDefNode(AST parentNode, ArrayList<AST> childrenNodes, Object semanticConcept, int treeDepth) {
+    public FuncDefNode(ASTNode parentNode, ArrayList<ASTNode> childrenNodes, Object semanticConcept, int treeDepth) {
         super(parentNode, childrenNodes, semanticConcept, treeDepth);
     }
 
