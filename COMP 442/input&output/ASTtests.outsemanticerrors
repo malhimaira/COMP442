@@ -4,7 +4,9 @@
 8.1 Multiply declared class: class LINEAR, line 5
 8.1 Multiply declared class: class LINEAR, line 11
 6.2 Undefined member function definition: function undefMethod, line 15
+8.4 Mulitply declared identifier in function: identifier n, line 25
+8.4 Mulitply declared identifier in function: identifier n, line 26
 6.1 Undeclared member function definition: function undeclMethod, line 23
-8.2 Multiply declared function: function tryMethod, line 35
-6.1 Undeclared member function definition: function tryMethod, line 42
-8.2 Multiply declared function: function tryMethod, line 42
+8.2 Multiply declared function: function tryMethod, line 36
+6.1 Undeclared member function definition: function tryMethod, line 43
+8.2 Multiply declared function: function tryMethod, line 43

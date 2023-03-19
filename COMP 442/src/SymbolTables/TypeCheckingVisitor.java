@@ -79,6 +79,23 @@ public class TypeCheckingVisitor{
         for (ASTNode child : node.childrenNodes) {
             child.accept(this);
         }
+
+        // 8.4 Mulitply declared identifier in function
+        int cnt =0;
+        for(ASTNode child : node.parentNode.childrenNodes){
+            if(child instanceof VarDeclNode){
+                String nodememberName = ((Token) node.childrenNodes.get(0).semanticConcept).getLexeme();
+                String nodecomparedmemberName = ((Token) child.childrenNodes.get(0).semanticConcept).getLexeme();
+                if(nodememberName.equals(nodecomparedmemberName)){
+                    cnt++;
+                }
+            }
+        }
+        if (cnt >1){
+            p_error+="8.4 Mulitply declared identifier in function: identifier "
+                    + ((Token) node.childrenNodes.get(0).semanticConcept).getLexeme()
+                    +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
+        }
     }
 
     public void visit(StatBlockNode node){
@@ -94,6 +111,7 @@ public class TypeCheckingVisitor{
     }
 
     public void visit(MemberFuncDefNode node) {
+        // 6.2 Undefined member function definition: function
         boolean isdeclared_6_2 = false;
         for(ASTNode childofProgNode : node.parentNode.parentNode.childrenNodes){
             if(childofProgNode.semanticConcept.equals("func def")){
@@ -122,7 +140,7 @@ public class TypeCheckingVisitor{
     }
 
     public void visit(MemberVarDeclNode node){
-        // 8.3 Mulitply Declared Data Member in Class
+        // 8.3 Mulitply declared data member in class
         int cnt =0;
         for(ASTNode child : node.parentNode.childrenNodes){
             if(child instanceof MemberVarDeclNode){

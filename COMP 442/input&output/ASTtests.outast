@@ -81,64 +81,68 @@
 |  |  |  |  [integerKeyWord, integer, 25]
 |  |  |  |  array Size
 |  |  |  local var
-|  |  |  |  [id, i, 26]
+|  |  |  |  [id, n, 26]
 |  |  |  |  [integerKeyWord, integer, 26]
 |  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, i, 27]
+|  |  |  |  [integerKeyWord, integer, 27]
+|  |  |  |  array Size
 |  |  |  stat
-|  |  |  |  [id, n, 27]
+|  |  |  |  [id, n, 28]
 |  |  |  stat
-|  |  |  |  [id, i, 28]
+|  |  |  |  [id, i, 29]
 |  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  write block
-|  |  |  |  |  [id, i, 31]
-|  |  |  |  |  [plus, +, 31]
+|  |  |  |  |  [id, i, 32]
+|  |  |  |  |  [plus, +, 32]
 |  func def
-|  |  [id, tryMethod, 35]
+|  |  [id, tryMethod, 36]
 |  |  func params
-|  |  |  [id, l, 35]
-|  |  |  [integerKeyWord, integer, 35]
-|  |  |  [id, v, 35]
-|  |  |  [id, id, 35]
-|  |  [integerKeyWord, integer, 35]
+|  |  |  [id, l, 36]
+|  |  |  [integerKeyWord, integer, 36]
+|  |  |  [id, v, 36]
+|  |  |  [id, id, 36]
+|  |  [integerKeyWord, integer, 36]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, arr, 37]
-|  |  |  |  [integerKeyWord, integer, 37]
-|  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 37]
-|  |  |  local var
-|  |  |  |  [id, arr, 38]
+|  |  |  |  [id, ax, 38]
 |  |  |  |  [integerKeyWord, integer, 38]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 38]
+|  |  |  |  |  [integerType, 7, 38]
 |  |  |  local var
-|  |  |  |  [id, arr, 39]
+|  |  |  |  [id, ab, 39]
 |  |  |  |  [integerKeyWord, integer, 39]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 39]
+|  |  |  |  |  [integerType, 6, 39]
+|  |  |  local var
+|  |  |  |  [id, ac, 40]
+|  |  |  |  [integerKeyWord, integer, 40]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 40]
 |  func def
-|  |  [id, tryMethod, 42]
+|  |  [id, tryMethod, 43]
 |  |  func params
-|  |  |  [id, l, 42]
-|  |  |  [integerKeyWord, integer, 42]
-|  |  |  [id, v, 42]
-|  |  |  [id, id, 42]
-|  |  [integerKeyWord, integer, 42]
+|  |  |  [id, l, 43]
+|  |  |  [integerKeyWord, integer, 43]
+|  |  |  [id, v, 43]
+|  |  |  [id, id, 43]
+|  |  [integerKeyWord, integer, 43]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, arr, 44]
-|  |  |  |  [integerKeyWord, integer, 44]
-|  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 44]
-|  |  |  local var
-|  |  |  |  [id, arr, 45]
+|  |  |  |  [id, barr1, 45]
 |  |  |  |  [integerKeyWord, integer, 45]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 45]
+|  |  |  |  |  [integerType, 7, 45]
 |  |  |  local var
-|  |  |  |  [id, arr, 46]
+|  |  |  |  [id, barr2, 46]
 |  |  |  |  [integerKeyWord, integer, 46]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 46]
+|  |  |  |  |  [integerType, 6, 46]
+|  |  |  local var
+|  |  |  |  [id, barr3, 47]
+|  |  |  |  [integerKeyWord, integer, 47]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 47]
 ]

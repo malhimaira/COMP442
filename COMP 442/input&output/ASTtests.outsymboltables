@@ -57,6 +57,7 @@
 |    | param     | arr       | integer   |        |
 |    | param     | size      | integer   |        |
 |    | local var | n         | integer   |        |
+|    | local var | n         | integer   |        |
 |    | local var | i         | integer   |        |
 |    =====================================================
 | function  | tryMethod |           | (integer, id) integer|            |
@@ -65,9 +66,9 @@
 |    =====================================================
 |    | param     | l         | integer   |        |
 |    | param     | v         | id        |        |
-|    | local var | arr       | integer   |        |
-|    | local var | arr       | integer   |        |
-|    | local var | arr       | integer   |        |
+|    | local var | ax        | integer   |        |
+|    | local var | ab        | integer   |        |
+|    | local var | ac        | integer   |        |
 |    =====================================================
 | function  | tryMethod |           | (integer, id) integer|            |
 |    =====================================================
@@ -75,8 +76,8 @@
 |    =====================================================
 |    | param     | l         | integer   |        |
 |    | param     | v         | id        |        |
-|    | local var | arr       | integer   |        |
-|    | local var | arr       | integer   |        |
-|    | local var | arr       | integer   |        |
+|    | local var | barr1     | integer   |        |
+|    | local var | barr2     | integer   |        |
+|    | local var | barr3     | integer   |        |
 |    =====================================================
 =====================================================
