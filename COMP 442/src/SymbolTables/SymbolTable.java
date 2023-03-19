@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class SymbolTable {
     public String m_name = null;
     public ArrayList<SymbolTableEntry> m_symlist = null;
-    public int m_size = 0;
     public int m_tablelevel = 0;
     public SymbolTable m_uppertable = null;
 

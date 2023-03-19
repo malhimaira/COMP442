@@ -12,7 +12,7 @@ public class VarEntry extends SymbolTableEntry {
 		return 	String.format("%-12s" , "| " + m_kind) +
 				String.format("%-12s" , "| " + m_name) + 
 				String.format("%-12s"  , "| " + m_type)+
-				String.format("%-8s"  , "| " + m_size)
+				String.format("%-8s"  , "| " + m_encap)
 		        + "|";
 	}
 }

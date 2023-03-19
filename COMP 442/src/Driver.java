@@ -41,11 +41,11 @@ public class Driver {
             // Generate ASTNodes.AST's text file
             p.writeASTTreeToFile();
 
-            //Generate Symbol Tables
+            //Generate Symbol Tables and write to file
             SymbolTableCreation stc = new SymbolTableCreation();
             Stack<ASTNode> ASTStackWithSymbolTables = stc.generateSymbolTables(ASTstack);
+            stc.writeSymblTablesToFile(fileName, ASTStackWithSymbolTables);
 
-            System.out.println("done");
         } catch (Exception e) {
             System.out.print(e.getMessage());
         }

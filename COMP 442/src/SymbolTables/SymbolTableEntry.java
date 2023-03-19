@@ -7,7 +7,7 @@ public class SymbolTableEntry {
     public String          m_kind       = null;
     public String          m_type       = null;
     public String          m_name       = null;
-    public int             m_size       = 0;
+    public String          m_encap       = "";
 
     public SymbolTable     m_subtable   = null;
 
