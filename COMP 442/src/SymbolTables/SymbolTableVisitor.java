@@ -61,11 +61,15 @@ public class SymbolTableVisitor {
 
         String paramlist = "";
         boolean returntypeneeded = false;
+        int cnt =0;
         for (ASTNode child : node.childrenNodes) {
             if(child instanceof ParamListNode){
                 paramlist = "(";
                 for (ASTNode child2 : child.childrenNodes) {
-                    paramlist += ((Token)child2.semanticConcept).getLexeme()+", ";
+                    if(cnt%2==0) {
+                        paramlist += ((Token) child2.semanticConcept).getLexeme() + ", ";
+                    }
+                    cnt++;
                 }
                 paramlist = paramlist.substring(0,paramlist.length()-2)+")";
                 returntypeneeded = true;
@@ -91,12 +95,17 @@ public class SymbolTableVisitor {
 
     public void visit(ParamListNode node) {
         //System.out.println("pln  entry");
+        int cnt=0;
         for (ASTNode child : node.childrenNodes) {
-            child.m_symtab = node.m_symtab;
-            node.m_symtabentry = new VarEntry("param", ""+((Token)child.semanticConcept).getTokenType(), ((Token)child.semanticConcept).getLexeme());
-            child.m_symtabentry =  node.m_symtabentry;
-            child.m_symtab.addEntry(node.m_symtabentry);
-            child.accept(this);
+            if(cnt%2==0){
+                child.m_symtab = node.m_symtab;
+                node.m_symtabentry = new VarEntry("param", ""+((Token)node.childrenNodes.get(cnt+1).semanticConcept).getLexeme(), ((Token)child.semanticConcept).getLexeme());
+                child.m_symtabentry =  node.m_symtabentry;
+                child.m_symtab.addEntry(node.m_symtabentry);
+                child.accept(this);
+            }
+
+            cnt++;
         }
     }
 

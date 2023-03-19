@@ -17,8 +17,7 @@
 |    |    =====================================================
 |    |    | table: tryMethod                                  |
 |    |    =====================================================
-|    |    | param     | l         | id        |        |
-|    |    | param     | integer   | integerKeyWord|        |
+|    |    | param     | l         | integer   |        |
 |    |    =====================================================
 |    =====================================================
 | class     | QUADRATIC                             |
@@ -35,13 +34,12 @@
 |    | data      | y         | integer   | public |
 |    | data      | z         | id        | public |
 |    =====================================================
-| function  | main      |           | (size, integer, float) void|            |
+| function  | main      |           | (size, qx) void|            |
 |    =====================================================
 |    | table: main                                       |
 |    =====================================================
-|    | param     | size      | id        |        |
-|    | param     | integer   | integerKeyWord|        |
-|    | param     | float     | floatKeyWord|        |
+|    | param     | size      | integer   |        |
+|    | param     | qx        | float     |        |
 |    | local var | arr       | integer   |        |
 |    | local var | arr       | integer   |        |
 |    | local var | arr       | integer   |        |

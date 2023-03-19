@@ -44,6 +44,7 @@
 |  |  func params
 |  |  |  [id, size, 14]
 |  |  |  [integerKeyWord, integer, 14]
+|  |  |  [id, qx, 14]
 |  |  |  [floatKeyWord, float, 14]
 |  |  [voidKeyWord, void, 14]
 |  |  local var + stat block
