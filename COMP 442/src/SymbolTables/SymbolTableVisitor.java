@@ -3,14 +3,12 @@ package SymbolTables;
 import ASTNodes.*;
 import LexerComponents.*;
 
-import java.util.Vector;
-
-public class SymbolTableVisitor {
+public class SymbolTableVisitor{
 
     public SymbolTableVisitor() {}
 
     public void visit(ASTNode node) {
-        System.out.println("symbol table entry string");
+//        System.out.println("symbol table entry string");
     }
 
     public void visit(ProgNode node) {
@@ -53,7 +51,7 @@ public class SymbolTableVisitor {
     }
 
     public void visit(FuncDefNode node) {
-        System.out.println("func def entry");
+//        System.out.println("func def entry");
 
         String ftype = "";
         String fname =  ((Token) node.childrenNodes.get(0).semanticConcept).getLexeme();
@@ -110,7 +108,7 @@ public class SymbolTableVisitor {
     }
 
     public void visit(StatBlockNode node){
-        System.out.println("stat block");
+//        System.out.println("stat block");
         for (ASTNode child : node.childrenNodes ) {
             child.m_symtab = node.m_symtab;
             child.accept(this);
@@ -130,7 +128,7 @@ public class SymbolTableVisitor {
     }
 
     public void visit(MemberFuncDefNode node) {
-        System.out.println("member func def entry");
+//        System.out.println("member func def entry");
 
         String ftype = "";
         String fname =  ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme();

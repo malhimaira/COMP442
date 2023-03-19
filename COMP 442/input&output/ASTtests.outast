@@ -21,7 +21,7 @@
 |  |  |  [id, POLYNOMIAL, 6]
 |  |  memberFunc decl
 |  |  |  [publicKeyWord, public, 7]
-|  |  |  [id, tryVoidMethod, 7]
+|  |  |  [id, undefMethod, 7]
 |  |  |  [voidKeyWord, void, 7]
 |  |  memberVar decl
 |  |  |  [publicKeyWord, public, 8]
@@ -42,13 +42,13 @@
 |  |  |  array Size
 |  |  |  |  [integerType, 7, 10]
 |  func def
-|  |  [id, main, 14]
+|  |  [id, tryMethod, 14]
 |  |  func params
-|  |  |  [id, size, 14]
+|  |  |  [id, l, 14]
 |  |  |  [integerKeyWord, integer, 14]
-|  |  |  [id, qx, 14]
-|  |  |  [floatKeyWord, float, 14]
-|  |  [voidKeyWord, void, 14]
+|  |  |  [id, v, 14]
+|  |  |  [id, id, 14]
+|  |  [integerKeyWord, integer, 14]
 |  |  local var + stat block
 |  |  |  local var
 |  |  |  |  [id, arr, 16]

@@ -1,6 +1,7 @@
 package ASTNodes;
 
 import SymbolTables.SymbolTableVisitor;
+import SymbolTables.TypeCheckingVisitor;
 
 import java.util.ArrayList;
 
@@ -11,7 +12,10 @@ public class FuncDefNode extends ASTNode {
     }
 
     @Override
-    public void accept(SymbolTableVisitor stv){
+    public void accept(SymbolTableVisitor stv) {
         stv.visit(this);
+    }
+    public void accept(TypeCheckingVisitor tcv){
+        tcv.visit(this);
     }
 }

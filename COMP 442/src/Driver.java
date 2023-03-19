@@ -46,6 +46,9 @@ public class Driver {
             Stack<ASTNode> ASTStackWithSymbolTables = stc.generateSymbolTables(ASTstack);
             stc.writeSymblTablesToFile(fileName, ASTStackWithSymbolTables);
 
+            //Type Check AST
+            stc.typeCheckSymbolTables(fileName, ASTStackWithSymbolTables);
+
         } catch (Exception e) {
             System.out.print(e.getMessage());
         }

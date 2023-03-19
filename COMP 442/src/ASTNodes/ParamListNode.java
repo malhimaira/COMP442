@@ -1,6 +1,8 @@
 package ASTNodes;
 
 import SymbolTables.SymbolTableVisitor;
+import SymbolTables.TypeCheckingVisitor;
+
 import java.util.ArrayList;
 
 public class ParamListNode extends ASTNode {
@@ -11,5 +13,8 @@ public class ParamListNode extends ASTNode {
 	
 	public void accept(SymbolTableVisitor p_visitor) {
 		p_visitor.visit(this);
+	}
+	public void accept(TypeCheckingVisitor tcv){
+		tcv.visit(this);
 	}
 }

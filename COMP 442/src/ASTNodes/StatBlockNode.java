@@ -13,4 +13,7 @@ public class StatBlockNode extends ASTNode {
 	public void accept(SymbolTableVisitor p_visitor) {
 		p_visitor.visit(this);
 	}
+	public void accept(TypeCheckingVisitor tcv){
+		tcv.visit(this);
+	}
 }

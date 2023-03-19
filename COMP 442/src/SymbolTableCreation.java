@@ -1,8 +1,8 @@
 import ASTNodes.ASTNode;
 import SymbolTables.SymbolTableVisitor;
+import SymbolTables.TypeCheckingVisitor;
 
 import java.io.PrintWriter;
-import java.sql.SQLOutput;
 import java.util.Stack;
 
 public class SymbolTableCreation {
@@ -13,6 +13,17 @@ public class SymbolTableCreation {
         SymbolTableVisitor stv = new SymbolTableVisitor();
         ASTStack.firstElement().accept(stv);
         return ASTStack;
+    }
+
+    public void typeCheckSymbolTables(String filename, Stack<ASTNode> ASTStack) {
+        try {
+            PrintWriter semanticErrorWriter = new PrintWriter("COMP 442/input&output/" + filename + ".outsemanticerrors");
+            TypeCheckingVisitor tcv = new TypeCheckingVisitor(semanticErrorWriter);
+            ASTStack.firstElement().accept(tcv);
+            semanticErrorWriter.close();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public void writeSymblTablesToFile(String filename, Stack<ASTNode> ASTStackWithSymbolTables) {

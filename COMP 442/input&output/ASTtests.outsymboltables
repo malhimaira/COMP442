@@ -26,21 +26,21 @@
 |    | table: QUADRATIC                                  |
 |    =====================================================
 |    | inherit   | POLYNOMIAL |
-|    | function  | tryVoidMethod|           |           | public     |
+|    | function  | undefMethod|           |           | public     |
 |    |    =====================================================
-|    |    | table: tryVoidMethod                              |
+|    |    | table: undefMethod                                |
 |    |    =====================================================
 |    |    =====================================================
 |    | data      | x         | float     | public |
 |    | data      | y         | integer   | public |
 |    | data      | z         | id        | public |
 |    =====================================================
-| function  | main      |           | (integer, float) void|            |
+| function  | tryMethod |           | (integer, id) integer|            |
 |    =====================================================
-|    | table: main                                       |
+|    | table: tryMethod                                  |
 |    =====================================================
-|    | param     | size      | integer   |        |
-|    | param     | qx        | float     |        |
+|    | param     | l         | integer   |        |
+|    | param     | v         | id        |        |
 |    | local var | arr       | integer   |        |
 |    | local var | arr       | integer   |        |
 |    | local var | arr       | integer   |        |

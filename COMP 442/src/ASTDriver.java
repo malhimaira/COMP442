@@ -40,7 +40,7 @@ public class ASTDriver {
             // Generate ASTNodes.AST's text file
             p.writeASTTreeToFile();
 
-            System.out.println(p.output);
+//            System.out.println(p.output);
 
 
         } catch (Exception e) {

@@ -58,4 +58,7 @@ public class ASTNode {
     public void accept(SymbolTableVisitor stv){
         stv.visit(this);
     }
+    public void accept(TypeCheckingVisitor tcv){
+        tcv.visit(this);
+    }
 }

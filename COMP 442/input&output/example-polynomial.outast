@@ -27,6 +27,7 @@
 |  |  func params
 |  |  |  [id, A, 9]
 |  |  |  [floatKeyWord, float, 9]
+|  |  |  [id, B, 9]
 |  |  |  [floatKeyWord, float, 9]
 |  memberFunc decl
 |  |  [publicKeyWord, public, 10]
@@ -59,7 +60,9 @@
 |  |  func params
 |  |  |  [id, A, 17]
 |  |  |  [floatKeyWord, float, 17]
+|  |  |  [id, B, 17]
 |  |  |  [floatKeyWord, float, 17]
+|  |  |  [id, C, 17]
 |  |  |  [floatKeyWord, float, 17]
 |  memberFunc decl
 |  |  [publicKeyWord, public, 18]
@@ -104,6 +107,8 @@
 , func params
 |  [id, A, 37]
 |  [floatKeyWord, float, 37]
+|  [id, B, 37]
 |  [floatKeyWord, float, 37]
+|  [id, C, 37]
 |  [floatKeyWord, float, 37]
 , null]
