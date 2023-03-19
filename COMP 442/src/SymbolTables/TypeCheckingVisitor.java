@@ -29,6 +29,20 @@ public class TypeCheckingVisitor{
         for (ASTNode child : node.childrenNodes) {
             child.accept(this);
         }
+
+        // 8.1 Check for multiple declared classes
+        int cntFound = 0;
+        for(ASTNode childOfProgNode : node.parentNode.childrenNodes){
+            String classnamefromlist = ((Token)childOfProgNode.childrenNodes.get(0).semanticConcept).getLexeme();
+           if(((Token)node.childrenNodes.get(0).semanticConcept).getLexeme().equals(classnamefromlist)){
+               cntFound++;
+           }
+        }
+        if(cntFound > 1){
+            p_error += "8.1 Multiply declared class: class "
+                    +((Token) node.childrenNodes.get(0).semanticConcept).getLexeme()
+                    +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
+        }
     }
 
     public void visit(FuncDefNode node) {

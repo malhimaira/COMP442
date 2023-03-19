@@ -1,5 +1,12 @@
 class POLYNOMIAL {
+  public function evaluate: (x: float) => float;
 };
+
+class LINEAR isa POLYNOMIAL {
+  private attribute a: float;
+  private attribute b: float;
+};
+
 class LINEAR isa POLYNOMIAL {
     public function tryMethod: (l: integer, v: id) => integer;
 };
