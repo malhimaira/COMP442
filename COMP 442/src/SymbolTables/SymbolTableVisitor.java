@@ -44,8 +44,24 @@ public class SymbolTableVisitor {
         String fname =  ((Token) node.childrenNodes.get(0).semanticConcept).getLexeme();
         SymbolTable localtable = new SymbolTable(1,fname, node.m_symtab);
 
-        Vector<VarEntry> paramlist = new Vector<VarEntry>();
+        String paramlist = "";
+        boolean returntypeneeded = false;
+        for (ASTNode child : node.childrenNodes) {
+            if(child instanceof ParamListNode){
+                paramlist = "(";
+                for (ASTNode child2 : child.childrenNodes) {
+                    paramlist += ((Token)child2.semanticConcept).getLexeme()+", ";
+                }
+                paramlist = paramlist.substring(0,paramlist.length()-2)+")";
+                returntypeneeded = true;
+                continue;
+            }
+            if(returntypeneeded == true){
+                returntypeneeded = false;
+                paramlist += " "+((Token)child.semanticConcept).getLexeme();
+            }
 
+        }
         node.m_symtabentry = new FuncEntry(ftype, fname, paramlist, localtable);
         node.m_symtab.addEntry(node.m_symtabentry);
         node.m_symtab = localtable;
