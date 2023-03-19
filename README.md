@@ -14,6 +14,10 @@ Driver: ASTDriver.java
 **Implelmentation - SymbolTables A4** 
 Driver: Driver.java
 
++ .src code under `COMP 442/.src`
++ input and output files under `COMP 442/inut&output`
++ parsing table and grammar under `COMP 442/parsing`
+
 To run:
 
     (Preffered) IntelliJ
