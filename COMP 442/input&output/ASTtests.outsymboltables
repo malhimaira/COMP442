@@ -35,6 +35,15 @@
 |    | data      | y         | integer   | public |
 |    | data      | z         | id        | public |
 |    =====================================================
+| function  | undeclMethod|           | (integer, integer) void|            |
+|    =====================================================
+|    | table: undeclMethod                               |
+|    =====================================================
+|    | param     | arr       | integer   |        |
+|    | param     | size      | integer   |        |
+|    | local var | n         | integer   |        |
+|    | local var | i         | integer   |        |
+|    =====================================================
 | function  | tryMethod |           | (integer, id) integer|            |
 |    =====================================================
 |    | table: tryMethod                                  |

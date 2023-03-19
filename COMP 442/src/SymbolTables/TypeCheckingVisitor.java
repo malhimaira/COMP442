@@ -35,6 +35,13 @@ public class TypeCheckingVisitor{
         for (ASTNode child : node.childrenNodes) {
             child.accept(this);
         }
+
+        //check for undeclared member function definition 6.1
+        if(node.foundMember == false){
+            p_error += "6.1 Undeclared member function definition: function "
+                    +((Token) node.childrenNodes.get(0).semanticConcept).getLexeme()
+                    +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
+        }
     }
 
     public void visit(VarDeclNode node) {
@@ -62,6 +69,7 @@ public class TypeCheckingVisitor{
                         String funcDefReturn = (((Token) childofProgNode.childrenNodes.get(2).semanticConcept).getLexeme());
                         String nodeDefReturn = ((Token) node.childrenNodes.get(3).semanticConcept).getLexeme();
                         if(funcDefReturn.equals(nodeDefReturn)){
+                            ((FuncDefNode)childofProgNode).foundMember = true;
                             isdeclared_6_2 = true;
                             break;
                         }
@@ -72,7 +80,7 @@ public class TypeCheckingVisitor{
         if(isdeclared_6_2 == false){
             p_error+="6.2 Undefined member function definition: function "
                     + ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme()
-                    +", line "+((Token) node.childrenNodes.get(1).semanticConcept).getPosition();
+                    +", line "+((Token) node.childrenNodes.get(1).semanticConcept).getPosition()+"\n";
         }
     }
 

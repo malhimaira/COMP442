@@ -42,27 +42,53 @@
 |  |  |  array Size
 |  |  |  |  [integerType, 7, 10]
 |  func def
-|  |  [id, tryMethod, 14]
+|  |  [id, undeclMethod, 15]
 |  |  func params
-|  |  |  [id, l, 14]
-|  |  |  [integerKeyWord, integer, 14]
-|  |  |  [id, v, 14]
-|  |  |  [id, id, 14]
-|  |  [integerKeyWord, integer, 14]
+|  |  |  [id, arr, 15]
+|  |  |  [integerKeyWord, integer, 15]
+|  |  |  [id, size, 15]
+|  |  |  [integerKeyWord, integer, 15]
+|  |  [voidKeyWord, void, 15]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, arr, 16]
-|  |  |  |  [integerKeyWord, integer, 16]
-|  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 16]
-|  |  |  local var
-|  |  |  |  [id, arr, 17]
+|  |  |  |  [id, n, 17]
 |  |  |  |  [integerKeyWord, integer, 17]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 17]
 |  |  |  local var
-|  |  |  |  [id, arr, 18]
+|  |  |  |  [id, i, 18]
 |  |  |  |  [integerKeyWord, integer, 18]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 18]
+|  |  |  stat
+|  |  |  |  [id, n, 19]
+|  |  |  stat
+|  |  |  |  [id, i, 20]
+|  |  |  stat
+|  |  |  |  while block
+|  |  |  |  |  write block
+|  |  |  |  |  [id, i, 23]
+|  |  |  |  |  [plus, +, 23]
+|  func def
+|  |  [id, tryMethod, 27]
+|  |  func params
+|  |  |  [id, l, 27]
+|  |  |  [integerKeyWord, integer, 27]
+|  |  |  [id, v, 27]
+|  |  |  [id, id, 27]
+|  |  [integerKeyWord, integer, 27]
+|  |  local var + stat block
+|  |  |  local var
+|  |  |  |  [id, arr, 29]
+|  |  |  |  [integerKeyWord, integer, 29]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 7, 29]
+|  |  |  local var
+|  |  |  |  [id, arr, 30]
+|  |  |  |  [integerKeyWord, integer, 30]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 6, 30]
+|  |  |  local var
+|  |  |  |  [id, arr, 31]
+|  |  |  |  [integerKeyWord, integer, 31]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 31]
 ]

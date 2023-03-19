@@ -1,39 +1,35 @@
 class POLYNOMIAL {
 };
 class LINEAR isa POLYNOMIAL {
-    public function tryMethod: (l: integer) => integer;
+    public function tryMethod: (l: integer, v: id) => integer;
 };
 class QUADRATIC isa POLYNOMIAL {
-    public function tryVoidMethod: () => void;
+    public function undefMethod: () => void;
     public attribute x: float[5];
     public attribute y: integer[2];
     public attribute z: id[7];
 
 };
 
-function main() => void
+/* print the array */
+function undeclMethod(arr: integer[], size: integer) => void
+{
+  localvar n: integer;
+  localvar i: integer;
+  n = size;
+  i = 0;
+  while (i<n) {
+    write(arr[i]);
+      i = i+1;
+  };
+}
+
+function tryMethod(l: integer, v: id) => integer
 {
   localvar arr: integer[7];
   localvar arr: integer[6];
   localvar arr: integer[2];
-  while(counter <= 10)
-    {
-        read(x);
-    };
-    if (arr[j] > arr[j+1])
-            then {
-              // swap temp and arr[i]
-              temp = arr[j];
-              arr[j] = arr[j+1];
-              arr[j+1] = temp;
-            } else ;
-            j = j+1;
-          };
-
-
 }
-function math::evaluate(a: float) => float;
-{
-}
+
 
 
