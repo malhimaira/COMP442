@@ -103,6 +103,12 @@ public class SymbolTableVisitor {
             node.m_symtab.addEntry(node.m_symtabentry);
     }
 
+    public void visit(MemberVarDeclNode node){
+        //System.out.println("var decl node");
+        node.m_symtabentry = new VarEntry("data", ((Token)node.childrenNodes.get(2).semanticConcept).getLexeme(), ""+((Token)node.childrenNodes.get(1).semanticConcept).getLexeme(), ((Token)node.childrenNodes.get(0).semanticConcept).getLexeme());
+        node.m_symtab.addEntry(node.m_symtabentry);
+    }
+
     public void visit(MemberFuncDefNode node) {
         System.out.println("member func def entry");
 

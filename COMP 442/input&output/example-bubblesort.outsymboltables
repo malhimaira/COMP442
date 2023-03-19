@@ -6,28 +6,28 @@
 |    =====================================================
 |    | table: bubbleSort                                 |
 |    =====================================================
-|    | param     | arr       | id        |       |
-|    | param     | integer   | integerKeyWord|       |
-|    | param     | integer   | integerKeyWord|       |
-|    | local var | n         | integer   |       |
-|    | local var | i         | integer   |       |
-|    | local var | j         | integer   |       |
-|    | local var | temp      | integer   |       |
+|    | param     | arr       | id        |        |
+|    | param     | integer   | integerKeyWord|        |
+|    | param     | integer   | integerKeyWord|        |
+|    | local var | n         | integer   |        |
+|    | local var | i         | integer   |        |
+|    | local var | j         | integer   |        |
+|    | local var | temp      | integer   |        |
 |    =====================================================
 | function  | printArray|           | (arr, integer, integer) void|            |
 |    =====================================================
 |    | table: printArray                                 |
 |    =====================================================
-|    | param     | arr       | id        |       |
-|    | param     | integer   | integerKeyWord|       |
-|    | param     | integer   | integerKeyWord|       |
-|    | local var | n         | integer   |       |
-|    | local var | i         | integer   |       |
+|    | param     | arr       | id        |        |
+|    | param     | integer   | integerKeyWord|        |
+|    | param     | integer   | integerKeyWord|        |
+|    | local var | n         | integer   |        |
+|    | local var | i         | integer   |        |
 |    =====================================================
 | function  | main      |           |           |            |
 |    =====================================================
 |    | table: main                                       |
 |    =====================================================
-|    | local var | arr       | integer   |       |
+|    | local var | arr       | integer   |        |
 |    =====================================================
 =====================================================
