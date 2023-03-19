@@ -69,4 +69,18 @@ public class SymbolTableVisitor {
         }
     }
 
+    public void visit(StatBlockNode node){
+        System.out.println("stat block");
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
+    }
+
+    public void visit(VarDeclNode node){
+        //System.out.println("var decl node");
+            node.m_symtabentry = new VarEntry(""+node.semanticConcept, ""+((Token)node.childrenNodes.get(1).semanticConcept).getLexeme(), ((Token)node.childrenNodes.get(0).semanticConcept).getLexeme());
+            node.m_symtab.addEntry(node.m_symtabentry);
+    }
+
 }
