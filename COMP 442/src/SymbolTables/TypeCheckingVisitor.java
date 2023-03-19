@@ -33,10 +33,12 @@ public class TypeCheckingVisitor{
         // 8.1 Check for multiple declared classes
         int cntFound = 0;
         for(ASTNode childOfProgNode : node.parentNode.childrenNodes){
-            String classnamefromlist = ((Token)childOfProgNode.childrenNodes.get(0).semanticConcept).getLexeme();
-           if(((Token)node.childrenNodes.get(0).semanticConcept).getLexeme().equals(classnamefromlist)){
-               cntFound++;
-           }
+            if(childOfProgNode instanceof ClassDeclNode){
+                String classnamefromlist = ((Token)childOfProgNode.childrenNodes.get(0).semanticConcept).getLexeme();
+                   if(((Token)node.childrenNodes.get(0).semanticConcept).getLexeme().equals(classnamefromlist)){
+                       cntFound++;
+                   }
+            }
         }
         if(cntFound > 1){
             p_error += "8.1 Multiply declared class: class "
@@ -50,12 +52,14 @@ public class TypeCheckingVisitor{
             child.accept(this);
         }
 
-        //check for undeclared member function definition 6.1
+        // 6.1 check for undeclared member function definition
         if(node.foundMember == false){
             p_error += "6.1 Undeclared member function definition: function "
                     +((Token) node.childrenNodes.get(0).semanticConcept).getLexeme()
                     +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
         }
+        // 8.2 Multiply Declared Functions
+
     }
 
     public void visit(VarDeclNode node) {
