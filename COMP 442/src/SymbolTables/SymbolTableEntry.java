@@ -19,4 +19,11 @@ public class SymbolTableEntry {
         m_name = p_name;
         m_subtable = p_subtable;
     }
+    public SymbolTableEntry(String p_kind, String p_type, String p_name, SymbolTable p_subtable, String p_encap){
+        m_kind = p_kind;
+        m_type = p_type;
+        m_name = p_name;
+        m_subtable = p_subtable;
+        m_encap = p_encap;
+    }
 }

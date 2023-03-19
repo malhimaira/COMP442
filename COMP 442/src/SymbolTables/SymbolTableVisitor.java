@@ -35,6 +35,10 @@ public class SymbolTableVisitor {
         node.m_symtab = localtable;
 
         //TODO: children node loop
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
     }
 
     public void visit(FuncDefNode node) {
@@ -97,6 +101,44 @@ public class SymbolTableVisitor {
         //System.out.println("var decl node");
             node.m_symtabentry = new VarEntry(""+node.semanticConcept, ""+((Token)node.childrenNodes.get(1).semanticConcept).getLexeme(), ((Token)node.childrenNodes.get(0).semanticConcept).getLexeme());
             node.m_symtab.addEntry(node.m_symtabentry);
+    }
+
+    public void visit(MemberFuncDefNode node) {
+        System.out.println("member func def entry");
+
+        String ftype = "";
+        String fname =  ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme();
+        String fencap = ((Token) node.childrenNodes.get(0).semanticConcept).getLexeme();
+        SymbolTable localtable = new SymbolTable(2,fname, node.m_symtab);
+
+        String paramlist = "";
+        boolean returntypeneeded = false;
+        for (ASTNode child : node.childrenNodes) {
+            if(child instanceof ParamListNode){
+                paramlist = "(";
+                for (ASTNode child2 : child.childrenNodes) {
+                    paramlist += ((Token)child2.semanticConcept).getLexeme()+", ";
+                }
+                paramlist = paramlist.substring(0,paramlist.length()-2)+")";
+                returntypeneeded = true;
+                continue;
+            }
+            if(returntypeneeded == true){
+                returntypeneeded = false;
+                paramlist += " "+((Token)child.semanticConcept).getLexeme();
+            }
+
+        }
+        node.m_symtabentry = new FuncEntry(ftype, fname, paramlist, localtable, fencap);
+        node.m_symtab.addEntry(node.m_symtabentry);
+        node.m_symtab = localtable;
+
+        // TODO children loop
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
+
     }
 
 }
