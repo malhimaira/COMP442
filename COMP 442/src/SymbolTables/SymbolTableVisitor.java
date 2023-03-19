@@ -41,6 +41,17 @@ public class SymbolTableVisitor {
         }
     }
 
+    public void visit(InheritListNode node){
+        if(node.childrenNodes.size()!=0){
+            String fname =  ((Token) node.childrenNodes.get(0).semanticConcept).getLexeme();
+            node.m_symtabentry = new InheritListEntry("","",fname,null);
+            node.m_symtab.addEntry(node.m_symtabentry);
+        }else{
+            node.m_symtabentry = new InheritListEntry("","","none",null);
+            node.m_symtab.addEntry(node.m_symtabentry);
+        }
+    }
+
     public void visit(FuncDefNode node) {
         System.out.println("func def entry");
 

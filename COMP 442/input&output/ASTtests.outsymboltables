@@ -6,41 +6,44 @@
 |    =====================================================
 |    | table: POLYNOMIAL                                 |
 |    =====================================================
+|    | inherit   | none       |
 |    =====================================================
 | class     | LINEAR                                |
 |    =====================================================
 |    | table: LINEAR                                     |
 |    =====================================================
+|    | inherit   | POLYNOMIAL |
 |    | function  | tryMethod |           | (l, integer) integer| public     |
 |    |    =====================================================
 |    |    | table: tryMethod                                  |
 |    |    =====================================================
-|    |    | param     | l         | id        |       |
-|    |    | param     | integer   | integerKeyWord|       |
+|    |    | param     | l         | id        |        |
+|    |    | param     | integer   | integerKeyWord|        |
 |    |    =====================================================
 |    =====================================================
 | class     | QUADRATIC                             |
 |    =====================================================
 |    | table: QUADRATIC                                  |
 |    =====================================================
+|    | inherit   | POLYNOMIAL |
 |    | function  | tryVoidMethod|           |           | public     |
 |    |    =====================================================
 |    |    | table: tryVoidMethod                              |
 |    |    =====================================================
 |    |    =====================================================
-|    | data      | x         | float     | public|
-|    | data      | y         | integer   | public|
-|    | data      | z         | id        | public|
+|    | data      | x         | float     | public |
+|    | data      | y         | integer   | public |
+|    | data      | z         | id        | public |
 |    =====================================================
 | function  | main      |           | (size, integer, float) void|            |
 |    =====================================================
 |    | table: main                                       |
 |    =====================================================
-|    | param     | size      | id        |       |
-|    | param     | integer   | integerKeyWord|       |
-|    | param     | float     | floatKeyWord|       |
-|    | local var | arr       | integer   |       |
-|    | local var | arr       | integer   |       |
-|    | local var | arr       | integer   |       |
+|    | param     | size      | id        |        |
+|    | param     | integer   | integerKeyWord|        |
+|    | param     | float     | floatKeyWord|        |
+|    | local var | arr       | integer   |        |
+|    | local var | arr       | integer   |        |
+|    | local var | arr       | integer   |        |
 |    =====================================================
 =====================================================
