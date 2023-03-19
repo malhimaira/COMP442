@@ -21,6 +21,7 @@
 |    | inherit   | POLYNOMIAL |
 |    | data      | a         | float     | private |
 |    | data      | b         | float     | private |
+|    | data      | b         | float     | private |
 |    =====================================================
 | class     | LINEAR                                |
 |    =====================================================

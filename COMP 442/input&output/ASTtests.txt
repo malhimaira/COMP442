@@ -5,6 +5,7 @@ class POLYNOMIAL {
 class LINEAR isa POLYNOMIAL {
   private attribute a: float;
   private attribute b: float;
+   private attribute b: float;
 };
 
 class LINEAR isa POLYNOMIAL {

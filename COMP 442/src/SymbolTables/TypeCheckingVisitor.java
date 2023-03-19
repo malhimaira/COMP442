@@ -81,6 +81,12 @@ public class TypeCheckingVisitor{
         }
     }
 
+    public void visit(StatBlockNode node){
+        for (ASTNode child : node.childrenNodes ) {
+            child.accept(this);
+        }
+    }
+
     public void visit(ParamListNode node) {
         for (ASTNode child : node.childrenNodes) {
             child.accept(this);
@@ -110,6 +116,25 @@ public class TypeCheckingVisitor{
         }
         if(isdeclared_6_2 == false){
             p_error+="6.2 Undefined member function definition: function "
+                    + ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme()
+                    +", line "+((Token) node.childrenNodes.get(1).semanticConcept).getPosition()+"\n";
+        }
+    }
+
+    public void visit(MemberVarDeclNode node){
+        // 8.3 Mulitply Declared Data Member in Class
+        int cnt =0;
+        for(ASTNode child : node.parentNode.childrenNodes){
+            if(child instanceof MemberVarDeclNode){
+                String nodememberName = ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme();
+                String nodecomparedmemberName = ((Token) child.childrenNodes.get(1).semanticConcept).getLexeme();
+                if(nodememberName.equals(nodecomparedmemberName)){
+                    cnt++;
+                }
+            }
+        }
+        if (cnt >1){
+            p_error+="8.3 Mulitply declared data member in class: data "
                     + ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme()
                     +", line "+((Token) node.childrenNodes.get(1).semanticConcept).getPosition()+"\n";
         }

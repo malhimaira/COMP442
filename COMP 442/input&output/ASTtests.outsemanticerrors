@@ -1,8 +1,10 @@
 6.2 Undefined member function definition: function evaluate, line 2
+8.3 Mulitply declared data member in class: data b, line 7
+8.3 Mulitply declared data member in class: data b, line 8
 8.1 Multiply declared class: class LINEAR, line 5
-8.1 Multiply declared class: class LINEAR, line 10
-6.2 Undefined member function definition: function undefMethod, line 14
-6.1 Undeclared member function definition: function undeclMethod, line 22
-8.2 Multiply declared function: function tryMethod, line 34
-6.1 Undeclared member function definition: function tryMethod, line 41
-8.2 Multiply declared function: function tryMethod, line 41
+8.1 Multiply declared class: class LINEAR, line 11
+6.2 Undefined member function definition: function undefMethod, line 15
+6.1 Undeclared member function definition: function undeclMethod, line 23
+8.2 Multiply declared function: function tryMethod, line 35
+6.1 Undeclared member function definition: function tryMethod, line 42
+8.2 Multiply declared function: function tryMethod, line 42
