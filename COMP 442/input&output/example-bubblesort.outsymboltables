@@ -2,7 +2,7 @@
 =====================================================
 | table: global                                     |
 =====================================================
-| function  | bubbleSort|           | (arr, size) void|            |
+| function  | bubbleSort|           | (integer, integer) void|            |
 |    =====================================================
 |    | table: bubbleSort                                 |
 |    =====================================================
@@ -13,7 +13,7 @@
 |    | local var | j         | integer   |        |
 |    | local var | temp      | integer   |        |
 |    =====================================================
-| function  | printArray|           | (arr, size) void|            |
+| function  | printArray|           | (integer, integer) void|            |
 |    =====================================================
 |    | table: printArray                                 |
 |    =====================================================

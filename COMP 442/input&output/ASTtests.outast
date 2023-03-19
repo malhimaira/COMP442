@@ -12,6 +12,8 @@
 |  |  |  func params
 |  |  |  |  [id, l, 4]
 |  |  |  |  [integerKeyWord, integer, 4]
+|  |  |  |  [id, v, 4]
+|  |  |  |  [id, id, 4]
 |  |  |  [integerKeyWord, integer, 4]
 |  class decl
 |  |  [id, QUADRATIC, 6]

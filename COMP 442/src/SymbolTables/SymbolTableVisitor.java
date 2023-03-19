@@ -66,7 +66,7 @@ public class SymbolTableVisitor {
             if(child instanceof ParamListNode){
                 paramlist = "(";
                 for (ASTNode child2 : child.childrenNodes) {
-                    if(cnt%2==0) {
+                    if(cnt%2==1) {
                         paramlist += ((Token) child2.semanticConcept).getLexeme() + ", ";
                     }
                     cnt++;
@@ -139,11 +139,15 @@ public class SymbolTableVisitor {
 
         String paramlist = "";
         boolean returntypeneeded = false;
+        int cnt = 0;
         for (ASTNode child : node.childrenNodes) {
             if(child instanceof ParamListNode){
                 paramlist = "(";
                 for (ASTNode child2 : child.childrenNodes) {
-                    paramlist += ((Token)child2.semanticConcept).getLexeme()+", ";
+                    if(cnt%2==1) {
+                        paramlist += ((Token) child2.semanticConcept).getLexeme() + ", ";
+                    }
+                    cnt++;
                 }
                 paramlist = paramlist.substring(0,paramlist.length()-2)+")";
                 returntypeneeded = true;

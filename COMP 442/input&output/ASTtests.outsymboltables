@@ -13,11 +13,12 @@
 |    | table: LINEAR                                     |
 |    =====================================================
 |    | inherit   | POLYNOMIAL |
-|    | function  | tryMethod |           | (l, integer) integer| public     |
+|    | function  | tryMethod |           | (integer, id) integer| public     |
 |    |    =====================================================
 |    |    | table: tryMethod                                  |
 |    |    =====================================================
 |    |    | param     | l         | integer   |        |
+|    |    | param     | v         | id        |        |
 |    |    =====================================================
 |    =====================================================
 | class     | QUADRATIC                             |
@@ -34,7 +35,7 @@
 |    | data      | y         | integer   | public |
 |    | data      | z         | id        | public |
 |    =====================================================
-| function  | main      |           | (size, qx) void|            |
+| function  | main      |           | (integer, float) void|            |
 |    =====================================================
 |    | table: main                                       |
 |    =====================================================
