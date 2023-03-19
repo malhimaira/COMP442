@@ -1,0 +1,18 @@
+Files:
+
+1. assigment statement
+
+   assignment4.COMP442-6421.paquet.2023.4.pdf
+   
+3. example files
+
+   example-bubblesort.src                  semantically valid program
+   example-bubblesort.outsymboltables      symbol table output for bubblesort.src
+   example-polynomial.src                  semantically valid program
+   example-polynomial.outsymboltables      symbol table output for polynomial.src
+   polynomialsemanticerrors.src            semantically invalid program
+   
+4. sample attribute grammar solution
+
+   sampleAttributeGrammar.txt
+   

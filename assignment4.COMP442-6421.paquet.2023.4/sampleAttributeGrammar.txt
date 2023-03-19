@@ -1,0 +1,183 @@
+This is an example of a complete/correct attribute grammar that includes semantic action symbols (denoted by #) that is used to generate an AST. 
+Use as an example only if your own attribute grammar was proven to be incorrect during the grading of assignment 3 and you are still struggling with it as you are strating assignment 4. 
+If your AST generation is already working, you may disregards this file. 
+
+Attribute Grammar: 
+==================
+
+START -> #createEpsilon REPTSTART0 #createRoot . 
+ADDOP -> plus . 
+ADDOP -> minus . 
+ADDOP -> or . 
+APARAMS -> EXPR REPTAPARAMS1 . 
+APARAMS -> . 
+APARAMSTAIL -> comma EXPR . 
+ARITHEXPR -> TERM RIGHTRECARITHEXPR . 
+ARITHEXPRFL -> . 
+ARRAYSIZE -> lsqbr ARRAYSIZEFL . 
+ARRAYSIZEFL -> intlit #createDim rsqbr . 
+ARRAYSIZEFL -> #createDimEmpty rsqbr . 
+ASSIGNOP -> equal . 
+ASSIGNSTATORFUNCTIONCALL -> id #createId ASSIGNSTATORFUNCTIONCALLINNER semi . 
+ASSIGNSTATORFUNCTIONCALLASSIGNSTATFL -> dot id #createId ASSIGNSTATORFUNCTIONCALLINNER #createDot . 
+ASSIGNSTATORFUNCTIONCALLASSIGNSTATFL -> ASSIGNOP EXPR #createAssignStat . 
+ASSIGNSTATORFUNCTIONCALLFUNCFL -> dot id #createId ASSIGNSTATORFUNCTIONCALLINNER #createDot . 
+ASSIGNSTATORFUNCTIONCALLFUNCFL -> . 
+ASSIGNSTATORFUNCTIONCALLINNER -> #createEpsilon REPTIDNEST1 #createIndexList #createDataMember ASSIGNSTATORFUNCTIONCALLASSIGNSTATFL . 
+ASSIGNSTATORFUNCTIONCALLINNER -> lpar #createEpsilon APARAMS #createAParams #createFuncCall rpar ASSIGNSTATORFUNCTIONCALLFUNCFL . 
+CLASSDECL -> class id #createId #createEpsilon OPTCLASSDECL2 #createInheritList lcurbr #createEpsilon REPTCLASSDECL4 #createMemberDeclList rcurbr semi #createClassDecl . 
+CLASSDECLORFUNCDEF -> CLASSDECL . 
+CLASSDECLORFUNCDEF -> FUNCDEF . 
+EXPR -> ARITHEXPR EXPRFL . 
+EXPRFL -> RELOP #createRel ARITHEXPR #createRelOp . 
+EXPRFL -> ARITHEXPRFL . 
+FACTOR -> VARORFUNCTIONCALL . 
+FACTOR -> intlit #createNumber . 
+FACTOR -> floatlit #createNumber . 
+FACTOR -> lpar ARITHEXPR rpar .
+FACTOR -> not FACTOR #createNot . 
+FACTOR -> SIGN #createSignVal FACTOR #createSign . 
+FPARAMS -> #createEpsilon id #createId colon TYPE #createType #createEpsilon REPTFPARAMS3 #createDimList #createFParam REPTFPARAMS4 #createFParamsList . 
+FPARAMS -> . 
+FPARAMSTAIL -> comma id #createId colon TYPE #createType #createEpsilon REPTFPARAMSTAIL4 #createDimList #createFParam . 
+FUNCBODY -> lcurbr #createEpsilon REPTFUNCBODY1 rcurbr #createFuncBodyList . 
+FUNCDEF -> FUNCHEAD #migrateToFuncDef FUNCBODY #appendToFuncDef. 
+FUNCHEAD -> #createEpsilon function id #createId FUNCHEADFL1 . 
+FUNCHEADFL1 -> sr FUNCHEADFL2 . 
+FUNCHEADFL1 -> lpar FPARAMS rpar arrow RETURNTYPE #createReturnType #createFuncHead . 
+FUNCHEADFL2 -> constructor #createScope lpar FPARAMS rpar #createFuncHead . 
+FUNCHEADFL2 -> id #createScope lpar FPARAMS rpar arrow RETURNTYPE #createReturnType #createFuncHead . 
+INDICE -> lsqbr ARITHEXPR rsqbr . 
+LOCALVARDECL -> localvar id #createId colon TYPE #createType LOCALVARDECLINNER semi #createVarDecl . 
+LOCALVARDECLINNER -> #createEpsilon REPTLOCALVARDECL4 #createDimList . 
+LOCALVARDECLINNER -> lpar #createEpsilon APARAMS #createAParams rpar . 
+LOCALVARDECLORSTMT -> LOCALVARDECL . 
+LOCALVARDECLORSTMT -> STATEMENT . 
+MEMBERDECL -> MEMBERFUNCDECL . 
+MEMBERDECL -> MEMBERVARDECL . 
+MEMBERFUNCDECL -> function id #createId colon lpar FPARAMS rpar arrow RETURNTYPE #createReturnType semi #createMembFuncDecl . 
+MEMBERFUNCDECL -> constructor colon lpar FPARAMS rpar semi #createMembConstrDecl . 
+MEMBERVARDECL -> attribute id #createId colon TYPE #createType #createEpsilon REPTMEMBERVARDECL4 #createDimList semi #createMembVarDecl . 
+MULTOP -> mult . 
+MULTOP -> div . 
+MULTOP -> and . 
+OPTCLASSDECL2 -> isa id #createId REPTOPTCLASSDECL22 . 
+OPTCLASSDECL2 -> . 
+RELEXPR -> ARITHEXPR RELOP #createRel ARITHEXPR #createRelOp . 
+RELOP -> eq . 
+RELOP -> neq . 
+RELOP -> lt . 
+RELOP -> gt . 
+RELOP -> leq . 
+RELOP -> geq . 
+REPTAPARAMS1 -> APARAMSTAIL REPTAPARAMS1 . 
+REPTAPARAMS1 -> .
+REPTCLASSDECL4 -> VISIBILITY #createVisibility MEMBERDECL REPTCLASSDECL4 . 
+REPTCLASSDECL4 -> . 
+REPTFPARAMS3 -> ARRAYSIZE REPTFPARAMS3 . 
+REPTFPARAMS3 -> . 
+REPTFPARAMS4 -> FPARAMSTAIL REPTFPARAMS4 . 
+REPTFPARAMS4 -> . 
+REPTFPARAMSTAIL4 -> ARRAYSIZE REPTFPARAMSTAIL4 . 
+REPTFPARAMSTAIL4 -> . 
+REPTFUNCBODY1 -> LOCALVARDECLORSTMT REPTFUNCBODY1 . 
+REPTFUNCBODY1 -> . 
+REPTIDNEST1 -> INDICE REPTIDNEST1 . 
+REPTIDNEST1 -> . 
+REPTLOCALVARDECL4 -> ARRAYSIZE REPTLOCALVARDECL4 . 
+REPTLOCALVARDECL4 -> . 
+REPTMEMBERVARDECL4 -> ARRAYSIZE REPTMEMBERVARDECL4 . 
+REPTMEMBERVARDECL4 -> . 
+REPTOPTCLASSDECL22 -> comma id #createId REPTOPTCLASSDECL22 . 
+REPTOPTCLASSDECL22 -> . 
+REPTSTART0 -> CLASSDECLORFUNCDEF REPTSTART0 . 
+REPTSTART0 -> . 
+REPTSTATBLOCK1 -> STATEMENT REPTSTATBLOCK1 . 
+REPTSTATBLOCK1 -> . 
+RETURNTYPE -> TYPE . 
+RETURNTYPE -> void . 
+RIGHTRECARITHEXPR -> . 
+RIGHTRECARITHEXPR -> ADDOP #createAdd TERM #createAddOp RIGHTRECARITHEXPR . 
+RIGHTRECTERM -> . 
+RIGHTRECTERM -> MULTOP #createMult FACTOR #createMultOp RIGHTRECTERM . 
+SIGN -> plus . 
+SIGN -> minus . 
+STATBLOCK -> lcurbr REPTSTATBLOCK1 rcurbr . 
+STATBLOCK -> STATEMENT . 
+STATBLOCK -> . 
+STATEMENT -> if lpar RELEXPR rpar then #createEpsilon STATBLOCK #createStatBlock else #createEpsilon STATBLOCK #createStatBlock semi #createIfStmt . 
+STATEMENT -> while lpar RELEXPR rpar #createEpsilon STATBLOCK #createStatBlock semi #createWhileStmt . 
+STATEMENT -> read lpar VARIABLE rpar semi #createReadStmt . 
+STATEMENT -> write lpar EXPR rpar semi #createWriteStmt . 
+STATEMENT -> return lpar EXPR rpar semi #createReturnStmt . 
+STATEMENT -> ASSIGNSTATORFUNCTIONCALL . 
+TERM -> FACTOR RIGHTRECTERM . 
+TYPE -> integer . 
+TYPE -> float . 
+TYPE -> id .
+VARIABLE -> id #createId VARIABLEINNER . 
+VARIABLEFL -> dot id #createId VARIABLEINNER #createDot . 
+VARIABLEFL -> . 
+VARIABLEINNER -> #createEpsilon REPTIDNEST1 #createIndexList #createDataMember VARIABLEFL . 
+VARIABLEINNER -> lpar #createEpsilon APARAMS #createAParams rpar #createFuncCall dot id #createId VARIABLEINNER #createDot . 
+VARORFUNCTIONCALL -> id #createId VARORFUNCTIONCALLINNER . 
+VARORFUNCTIONCALLFUNCCALLFL -> dot id #createId VARORFUNCTIONCALLINNER #createDot . 
+VARORFUNCTIONCALLFUNCCALLFL -> . 
+VARORFUNCTIONCALLINNER -> #createEpsilon REPTIDNEST1 #createIndexList #createDataMember VARORFUNCTIONCALLVARFL . 
+VARORFUNCTIONCALLINNER -> lpar #createEpsilon APARAMS #createAParams #createFuncCall rpar VARORFUNCTIONCALLFUNCCALLFL . 
+VARORFUNCTIONCALLVARFL -> dot id #createId VARORFUNCTIONCALLINNER #createDot . 
+VARORFUNCTIONCALLVARFL -> . 
+VISIBILITY -> public . 
+VISIBILITY -> private . 
+VISIBILITY -> .
+
+Semantic Actions: 
+=================
+
+#createVisibility: Push(CreateLeaf(visibility, token)) 
+#createDimEmpty: Push(CreateLeaf(dimEmpty, token)) 
+#createDim: Push(CreateLeaf(dim, token)) 
+#createNumber: Push(CreateLeaf(number, token)) 
+#createEpsilon: Push(CreateLeaf(epsilon, token)) 
+#createId: Push(CreateLeaf(id, token)) 
+#createScope: Push(CreateLeaf(scope, token)) 
+#createReturnType: Push(CreateLeaf(returnType, token)) 
+#createType: Push(CreateLeaf(type, token)) 
+#createMult: Push(CreateLeaf(mult, token)) 
+#createAdd: Push(CreateLeaf(add, token)) 
+#createRel: Push(CreateLeaf(rel, token))
+#createSignVal: Push(CreateLeaf(signVal, token)) 
+#createMultOp: Push(CreateSubtree(multOp, Pop, Pop, Pop, Token)) 
+#createAddOp: Push(CreateSubtree(addOp, Pop, Pop, Pop, Token)) 
+#createRelOp: Push(CreateSubtree(relOp, Pop, Pop, Pop, Token)) 
+#createSign: Push(CreateSubtree(sign, Pop, Pop, Token)) 
+#createRoot: Push(CreateSubtree(root, PopUntilEpsilon)) 
+#createInheritList: Push(CreateSubtree(inheritList, PopUntilEpsilon)) 
+#createMemberDeclList: Push(CreateSubtree(declList, PopUntilEpsilon)) 
+#createClassDecl: Push(CreateSubtree(classDecl, Pop, Pop, Pop)) 
+#createMembConstrDecl: Push(SemanticActions.CreateSubtree(constrDecl, Pop, Pop)) 
+#createFParamsList: Push(CreateSubtree(fParamList, PopUntilEpsilon)) 
+#createMembFuncDecl: Push(CreateSubtree(funcDecl, Pop, Pop, Pop, Pop)) 
+#createDimList: Push(CreateSubtree(dimList, PopUntilEpsilon)) 
+#createMembVarDecl: Push(CreateSubtree(mVarDecl, Pop, Pop, Pop, Pop)) 
+#createFParam: Push(CreateSubtree(fParam, Pop, Pop, Pop)) 
+#createAParams: Push(CreateSubtree(aParam, PopUntilEpsilon)) 
+#createVarDecl: Push(CreateSubtree(lVarDecl, Pop, Pop, Pop))] 
+#createIndexList: Push(CreateSubtree(indexList, PopUntilEpsilon)) 
+#createStatBlock: Push(CreateSubtree(statBlock, PopUntilEpsilon)) 
+#createReadStmt: Push(CreateSubtree(readStmt, Pop)) 
+#createWriteStmt: Push(CreateSubtree(writeStmt, Pop)) 
+#createReturnStmt: Push(CreateSubtree(returnStmt, Pop)) 
+#createAssignStmt: Push(CreateSubtree(assignStmt, Pop, Pop)) 
+#createWhileStmt: Push(CreateSubtree(whileStmt, Pop, Pop)) 
+#createIfStmt: Push(CreateSubtree(ifStmt, Pop, Pop, Pop))
+#createNot: Push(CreateSubtree(not, Pop)) 
+#createDot: Push(CreateSubtree(dot, Pop, Pop)) 
+#createDataMember: Push(CreateSubtree(dataMember, Pop, Pop)) 
+#createFuncCall: Push(CreateSubtree(funcCall, Pop, Pop)) 
+#createFuncBodyList: Push(CreateSubtree(funcBody, PopUntilEpsilon)) 
+#migrateToFuncDef: Push(MigrateToFuncDef(funcDef, Pop)) 
+#appendToFuncDef: Push(AppendToFuncDef (funcDef, Pop, Pop)) 
+#createFuncHead: Push(CreateSubtree(funcHead, PopUntilEpsilon))
+
+

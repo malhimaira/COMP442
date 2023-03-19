@@ -4,6 +4,7 @@
 |  |  func params
 |  |  |  [id, arr, 2]
 |  |  |  [integerKeyWord, integer, 2]
+|  |  |  [id, size, 2]
 |  |  |  [integerKeyWord, integer, 2]
 |  |  [voidKeyWord, void, 2]
 |  |  local var + stat block
@@ -53,6 +54,7 @@
 |  |  func params
 |  |  |  [id, arr, 28]
 |  |  |  [integerKeyWord, integer, 28]
+|  |  |  [id, size, 28]
 |  |  |  [integerKeyWord, integer, 28]
 |  |  [voidKeyWord, void, 28]
 |  |  local var + stat block

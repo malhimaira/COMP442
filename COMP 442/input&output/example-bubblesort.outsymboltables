@@ -2,25 +2,23 @@
 =====================================================
 | table: global                                     |
 =====================================================
-| function  | bubbleSort|           | (arr, integer, integer) void|            |
+| function  | bubbleSort|           | (arr, size) void|            |
 |    =====================================================
 |    | table: bubbleSort                                 |
 |    =====================================================
-|    | param     | arr       | id        |        |
-|    | param     | integer   | integerKeyWord|        |
-|    | param     | integer   | integerKeyWord|        |
+|    | param     | arr       | integer   |        |
+|    | param     | size      | integer   |        |
 |    | local var | n         | integer   |        |
 |    | local var | i         | integer   |        |
 |    | local var | j         | integer   |        |
 |    | local var | temp      | integer   |        |
 |    =====================================================
-| function  | printArray|           | (arr, integer, integer) void|            |
+| function  | printArray|           | (arr, size) void|            |
 |    =====================================================
 |    | table: printArray                                 |
 |    =====================================================
-|    | param     | arr       | id        |        |
-|    | param     | integer   | integerKeyWord|        |
-|    | param     | integer   | integerKeyWord|        |
+|    | param     | arr       | integer   |        |
+|    | param     | size      | integer   |        |
 |    | local var | n         | integer   |        |
 |    | local var | i         | integer   |        |
 |    =====================================================
