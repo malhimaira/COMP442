@@ -1,14 +1,18 @@
-# COMP442 Compiler Design
+# COMP442 - Compiler Design 
 Maira Malhi (40128269)
+Winter 2023
 
+**Implelmentation - Lexical Analyzaer A1** 
+Driver: LexDriver.java
 
-**Implelmentation - Lexical Analyzaer A1 ** Driver: LexDriver.java
+**Implelmentation - Parser A2** 
+Driver: ParserDriver.java
 
-**Implelmentation - Parser A2 ** Driver: ParserDriver.java
+**Implelmentation - AST A3** 
+Driver: ASTDriver.java
 
-**Implelmentation - AST A3 ** Driver: ASTDriver.java
-
-**Implelmentation - SymbolTables A4 ** Driver: Driver.java
+**Implelmentation - SymbolTables A4** 
+Driver: Driver.java
 
 To run:
 
