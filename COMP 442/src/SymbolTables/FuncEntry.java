@@ -7,7 +7,7 @@ public class FuncEntry extends SymbolTableEntry {
 	public Vector<VarEntry> m_params   = new Vector<VarEntry>();
 	
 	public FuncEntry(String p_type, String p_name, Vector<VarEntry> p_params, SymbolTable p_table){
-		super(new String("func"), p_type, p_name, p_table);
+		super(new String("function"), p_type, p_name, p_table);
 		m_params = p_params;
 	}
 

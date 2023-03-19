@@ -40,22 +40,33 @@ public class SymbolTableVisitor {
     public void visit(FuncDefNode node) {
         System.out.println("func def entry");
 
-        String ftype = "function";
+        String ftype = "";
         String fname =  ((Token) node.childrenNodes.get(0).semanticConcept).getLexeme();
         SymbolTable localtable = new SymbolTable(1,fname, node.m_symtab);
 
         Vector<VarEntry> paramlist = new Vector<VarEntry>();
 
-        if(node.childrenNodes.size() == 4) {
-        for (ASTNode param : node.childrenNodes.get(1).childrenNodes){
-            paramlist.add((VarEntry) node.m_symtabentry);
-        }
-        }
         node.m_symtabentry = new FuncEntry(ftype, fname, paramlist, localtable);
         node.m_symtab.addEntry(node.m_symtabentry);
         node.m_symtab = localtable;
 
         // TODO children loop
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
 
     }
+
+    public void visit(ParamListNode node) {
+        //System.out.println("pln  entry");
+        for (ASTNode child : node.childrenNodes) {
+            child.m_symtab = node.m_symtab;
+            node.m_symtabentry = new VarEntry("param", ""+((Token)child.semanticConcept).getTokenType(), ((Token)child.semanticConcept).getLexeme());
+            child.m_symtabentry =  node.m_symtabentry;
+            child.m_symtab.addEntry(node.m_symtabentry);
+            child.accept(this);
+        }
+    }
+
 }

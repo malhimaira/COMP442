@@ -4,7 +4,7 @@ import java.util.Vector;
 
 public class VarEntry extends SymbolTableEntry {
 		
-	public VarEntry(String p_kind, String p_type, String p_name, Vector<Integer> p_dims){
+	public VarEntry(String p_kind, String p_type, String p_name){
 		super(p_kind, p_type, p_name, null);
 	}
 		

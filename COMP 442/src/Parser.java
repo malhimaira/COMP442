@@ -161,7 +161,7 @@ public class Parser {
                         case "SACT7" -> this.makeFamily("memberFunc decl");
                         case "SACT8" -> this.makeFamily(new FuncDefNode(null,null, "func def", 0));
                         case "SACT9" -> this.makeFamily("inherit lst");
-                        case "SACT10" -> this.makeFamily("func params");
+                        case "SACT10" -> this.makeFamily(new ParamListNode(null,null, "func params", 0));
                         case "SACT11" -> this.makeFamily("local var + stat block");
                         case "SACT12" -> this.makeFamily("scope res");
                         case "SACT13" -> this.makeFamily("stat");

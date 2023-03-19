@@ -45,6 +45,7 @@ public class Driver {
             SymbolTableCreation stc = new SymbolTableCreation();
             Stack<ASTNode> ASTStackWithSymbolTables = stc.generateSymbolTables(ASTstack);
 
+            System.out.println("done");
         } catch (Exception e) {
             System.out.print(e.getMessage());
         }
