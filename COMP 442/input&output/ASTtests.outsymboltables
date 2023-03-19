@@ -68,4 +68,14 @@
 |    | local var | arr       | integer   |        |
 |    | local var | arr       | integer   |        |
 |    =====================================================
+| function  | tryMethod |           | (integer, id) integer|            |
+|    =====================================================
+|    | table: tryMethod                                  |
+|    =====================================================
+|    | param     | l         | integer   |        |
+|    | param     | v         | id        |        |
+|    | local var | arr       | integer   |        |
+|    | local var | arr       | integer   |        |
+|    | local var | arr       | integer   |        |
+|    =====================================================
 =====================================================

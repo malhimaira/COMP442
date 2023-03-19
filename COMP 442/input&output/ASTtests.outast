@@ -112,4 +112,28 @@
 |  |  |  |  [integerKeyWord, integer, 38]
 |  |  |  |  array Size
 |  |  |  |  |  [integerType, 2, 38]
+|  func def
+|  |  [id, tryMethod, 41]
+|  |  func params
+|  |  |  [id, l, 41]
+|  |  |  [integerKeyWord, integer, 41]
+|  |  |  [id, v, 41]
+|  |  |  [id, id, 41]
+|  |  [integerKeyWord, integer, 41]
+|  |  local var + stat block
+|  |  |  local var
+|  |  |  |  [id, arr, 43]
+|  |  |  |  [integerKeyWord, integer, 43]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 7, 43]
+|  |  |  local var
+|  |  |  |  [id, arr, 44]
+|  |  |  |  [integerKeyWord, integer, 44]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 6, 44]
+|  |  |  local var
+|  |  |  |  [id, arr, 45]
+|  |  |  |  [integerKeyWord, integer, 45]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 45]
 ]

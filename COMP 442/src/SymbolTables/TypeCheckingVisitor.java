@@ -59,7 +59,20 @@ public class TypeCheckingVisitor{
                     +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
         }
         // 8.2 Multiply Declared Functions
-
+        int cntFound = 0;
+        for(ASTNode childOfProgNode : node.parentNode.childrenNodes){
+            if(childOfProgNode instanceof FuncDefNode){
+                String funcnamefromlist = ((Token)childOfProgNode.childrenNodes.get(0).semanticConcept).getLexeme();
+                if(((Token)node.childrenNodes.get(0).semanticConcept).getLexeme().equals(funcnamefromlist)){
+                    cntFound++;
+                }
+            }
+        }
+        if(cntFound > 1){
+            p_error += "8.2 Multiply declared function: function "
+                    +((Token) node.childrenNodes.get(0).semanticConcept).getLexeme()
+                    +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
+        }
     }
 
     public void visit(VarDeclNode node) {

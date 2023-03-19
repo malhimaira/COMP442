@@ -38,5 +38,12 @@ function tryMethod(l: integer, v: id) => integer
   localvar arr: integer[2];
 }
 
+function tryMethod(l: integer, v: id) => integer
+{
+  localvar arr: integer[7];
+  localvar arr: integer[6];
+  localvar arr: integer[2];
+}
+
 
 
