@@ -164,7 +164,7 @@ public class Parser {
                         case "SACT10" -> this.makeFamily(new ParamListNode(null,null, "func params", 0));
                         case "SACT11" -> this.makeFamily(new StatBlockNode(null,null, "local var + stat block", 0));
                         case "SACT12" -> this.makeFamily("scope res");
-                        case "SACT13" -> this.makeFamily("stat");
+                        case "SACT13" -> this.makeFamily(new StatNode(null,null, "stat", 0));
                         case "SACT14" -> this.makeFamily("if block");
                         case "SACT15" -> this.makeFamily("while block");
                         case "SACT16" -> this.makeFamily("read block");

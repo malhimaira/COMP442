@@ -129,58 +129,60 @@
 |  |  |  stat
 |  |  |  |  [id, i, 39]
 |  |  |  stat
+|  |  |  |  [id, cookie, 40]
+|  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  write block
-|  |  |  |  |  [id, i, 42]
-|  |  |  |  |  [plus, +, 42]
+|  |  |  |  |  [id, i, 43]
+|  |  |  |  |  [plus, +, 43]
 |  func def
-|  |  [id, tryMethod, 46]
+|  |  [id, tryMethod, 47]
 |  |  func params
-|  |  |  [id, l, 46]
-|  |  |  [integerKeyWord, integer, 46]
-|  |  |  [id, v, 46]
-|  |  |  [id, id, 46]
-|  |  [integerKeyWord, integer, 46]
+|  |  |  [id, l, 47]
+|  |  |  [integerKeyWord, integer, 47]
+|  |  |  [id, v, 47]
+|  |  |  [id, id, 47]
+|  |  [integerKeyWord, integer, 47]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, undecCls, 48]
-|  |  |  |  [id, BLOCK, 48]
+|  |  |  |  [id, undecCls, 49]
+|  |  |  |  [id, BLOCK, 49]
 |  |  |  |  array Size
 |  |  |  local var
-|  |  |  |  [id, ax, 49]
-|  |  |  |  [integerKeyWord, integer, 49]
-|  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 49]
-|  |  |  local var
-|  |  |  |  [id, ab, 50]
+|  |  |  |  [id, ax, 50]
 |  |  |  |  [integerKeyWord, integer, 50]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 50]
+|  |  |  |  |  [integerType, 7, 50]
 |  |  |  local var
-|  |  |  |  [id, ac, 51]
+|  |  |  |  [id, ab, 51]
 |  |  |  |  [integerKeyWord, integer, 51]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 51]
+|  |  |  |  |  [integerType, 6, 51]
+|  |  |  local var
+|  |  |  |  [id, ac, 52]
+|  |  |  |  [integerKeyWord, integer, 52]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 52]
 |  func def
-|  |  [id, tryMethod, 54]
+|  |  [id, tryMethod, 55]
 |  |  func params
-|  |  |  [id, s, 54]
-|  |  |  [id, id, 54]
-|  |  [integerKeyWord, integer, 54]
+|  |  |  [id, s, 55]
+|  |  |  [id, id, 55]
+|  |  [integerKeyWord, integer, 55]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, barr1, 56]
-|  |  |  |  [integerKeyWord, integer, 56]
-|  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 56]
-|  |  |  local var
-|  |  |  |  [id, barr2, 57]
+|  |  |  |  [id, barr1, 57]
 |  |  |  |  [integerKeyWord, integer, 57]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 57]
+|  |  |  |  |  [integerType, 7, 57]
 |  |  |  local var
-|  |  |  |  [id, barr3, 58]
+|  |  |  |  [id, barr2, 58]
 |  |  |  |  [integerKeyWord, integer, 58]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 58]
+|  |  |  |  |  [integerType, 6, 58]
+|  |  |  local var
+|  |  |  |  [id, barr3, 59]
+|  |  |  |  [integerKeyWord, integer, 59]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 59]
 ]

@@ -132,6 +132,10 @@ public class TypeCheckingVisitor{
 
     }
 
+    public void visit(StatNode node) {
+        System.out.println("stat node");
+    }
+
     public void visit(StatBlockNode node){
         for (ASTNode child : node.childrenNodes ) {
             child.accept(this);
