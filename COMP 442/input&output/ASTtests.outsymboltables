@@ -88,12 +88,11 @@
 |    | local var | ab        | integer   |        |
 |    | local var | ac        | integer   |        |
 |    =====================================================
-| function  | tryMethod |           | (integer, id) integer|            |
+| function  | tryMethod |           | (id) integer|            |
 |    =====================================================
 |    | table: tryMethod                                  |
 |    =====================================================
-|    | param     | l         | integer   |        |
-|    | param     | v         | id        |        |
+|    | param     | s         | id        |        |
 |    | local var | barr1     | integer   |        |
 |    | local var | barr2     | integer   |        |
 |    | local var | barr3     | integer   |        |

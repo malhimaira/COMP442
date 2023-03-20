@@ -48,7 +48,7 @@ function tryMethod(l: integer, v: id) => integer
   localvar ac: integer[2];
 }
 
-function tryMethod(l: integer, v: id) => integer
+function tryMethod(s: id) => integer
 {
   localvar barr1: integer[7];
   localvar barr2: integer[6];

@@ -140,9 +140,7 @@
 |  func def
 |  |  [id, tryMethod, 51]
 |  |  func params
-|  |  |  [id, l, 51]
-|  |  |  [integerKeyWord, integer, 51]
-|  |  |  [id, v, 51]
+|  |  |  [id, s, 51]
 |  |  |  [id, id, 51]
 |  |  [integerKeyWord, integer, 51]
 |  |  local var + stat block

@@ -65,9 +65,9 @@ public class TypeCheckingVisitor{
             if(childOfProgNode instanceof FuncDefNode){
                 String funcnamefromlist = ((Token)childOfProgNode.childrenNodes.get(0).semanticConcept).getLexeme();
                 String nodefuncname = ((Token)node.childrenNodes.get(0).semanticConcept).getLexeme();
-                if(nodefuncname.equals(funcnamefromlist)){
+                if(nodefuncname.equals(funcnamefromlist) && !nodefuncname.equals("main")){
                     String funcDefParamList = childOfProgNode.childrenNodes.get(1).m_symtabentry.toString();
-                    String nodeParamList =node.childrenNodes.get(2).m_symtabentry.toString();
+                    String nodeParamList =node.childrenNodes.get(1).m_symtabentry.toString();
                     if(funcDefParamList.equals(nodeParamList)){
                         cntFound++;
                     } else{
@@ -81,8 +81,8 @@ public class TypeCheckingVisitor{
                     +((Token) node.childrenNodes.get(0).semanticConcept).getLexeme()
                     +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
         }
-        if(overloadFound > 1){
-            p_error += "9.1 Overload free function: function "
+        if(overloadFound > 0){
+            p_error += "[warning] 9.1 Overload free function: function "
                     +((Token) node.childrenNodes.get(0).semanticConcept).getLexeme()
                     +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
         }
