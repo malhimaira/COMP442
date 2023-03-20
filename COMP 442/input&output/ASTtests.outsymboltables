@@ -103,6 +103,7 @@
 |    =====================================================
 |    | param     | l         | integer   |        |
 |    | param     | v         | id        |        |
+|    | local var | undecCls  | BLOCK     |        |
 |    | local var | ax        | integer   |        |
 |    | local var | ab        | integer   |        |
 |    | local var | ac        | integer   |        |

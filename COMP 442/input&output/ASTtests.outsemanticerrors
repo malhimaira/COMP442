@@ -12,6 +12,7 @@
 8.4 Mulitply declared identifier in function: identifier n, line 35
 8.4 Mulitply declared identifier in function: identifier n, line 36
 6.1 Undeclared member function definition: function undeclMethod, line 33
+11.5 Undeclared Class: class BLOCK, line 48
 [warning] 9.1 Overload free function: function tryMethod, line 46
-6.1 Undeclared member function definition: function tryMethod, line 53
-[warning] 9.1 Overload free function: function tryMethod, line 53
+6.1 Undeclared member function definition: function tryMethod, line 54
+[warning] 9.1 Overload free function: function tryMethod, line 54

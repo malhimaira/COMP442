@@ -45,6 +45,7 @@ function undeclMethod(arr: integer[], size: integer) => void
 
 function tryMethod(l: integer, v: id) => integer
 {
+  localvar undecCls: BLOCK;
   localvar ax: integer[7];
   localvar ab: integer[6];
   localvar ac: integer[2];

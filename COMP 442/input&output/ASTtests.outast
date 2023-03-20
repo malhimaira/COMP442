@@ -143,40 +143,44 @@
 |  |  [integerKeyWord, integer, 46]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, ax, 48]
-|  |  |  |  [integerKeyWord, integer, 48]
+|  |  |  |  [id, undecCls, 48]
+|  |  |  |  [id, BLOCK, 48]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 48]
 |  |  |  local var
-|  |  |  |  [id, ab, 49]
+|  |  |  |  [id, ax, 49]
 |  |  |  |  [integerKeyWord, integer, 49]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 49]
+|  |  |  |  |  [integerType, 7, 49]
 |  |  |  local var
-|  |  |  |  [id, ac, 50]
+|  |  |  |  [id, ab, 50]
 |  |  |  |  [integerKeyWord, integer, 50]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 50]
+|  |  |  |  |  [integerType, 6, 50]
+|  |  |  local var
+|  |  |  |  [id, ac, 51]
+|  |  |  |  [integerKeyWord, integer, 51]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 51]
 |  func def
-|  |  [id, tryMethod, 53]
+|  |  [id, tryMethod, 54]
 |  |  func params
-|  |  |  [id, s, 53]
-|  |  |  [id, id, 53]
-|  |  [integerKeyWord, integer, 53]
+|  |  |  [id, s, 54]
+|  |  |  [id, id, 54]
+|  |  [integerKeyWord, integer, 54]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, barr1, 55]
-|  |  |  |  [integerKeyWord, integer, 55]
-|  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 55]
-|  |  |  local var
-|  |  |  |  [id, barr2, 56]
+|  |  |  |  [id, barr1, 56]
 |  |  |  |  [integerKeyWord, integer, 56]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 56]
+|  |  |  |  |  [integerType, 7, 56]
 |  |  |  local var
-|  |  |  |  [id, barr3, 57]
+|  |  |  |  [id, barr2, 57]
 |  |  |  |  [integerKeyWord, integer, 57]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 57]
+|  |  |  |  |  [integerType, 6, 57]
+|  |  |  local var
+|  |  |  |  [id, barr3, 58]
+|  |  |  |  [integerKeyWord, integer, 58]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 58]
 ]

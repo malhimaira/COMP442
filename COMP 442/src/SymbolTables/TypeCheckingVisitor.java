@@ -109,6 +109,27 @@ public class TypeCheckingVisitor{
                     + ((Token) node.childrenNodes.get(0).semanticConcept).getLexeme()
                     +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
         }
+
+        // 11.5 Undeclared class
+        if(((Token) node.childrenNodes.get(1).semanticConcept).getTokenType().equals(TokenType.id)){
+            boolean foundClass = false;
+            String classToFind = ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme();
+            for(ASTNode childOfProgNode : node.parentNode.parentNode.parentNode.childrenNodes){
+                if(childOfProgNode instanceof ClassDeclNode){
+                    String classNameFromProgChild = ((Token) childOfProgNode.childrenNodes.get(0).semanticConcept).getLexeme();
+                    if(classToFind.equals(classNameFromProgChild)){
+                        foundClass = true;
+                        break;
+                    }
+                }
+            }
+            if(foundClass == false){
+                p_error+="11.5 Undeclared Class: class "
+                        + ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme()
+                        +", line "+((Token) node.childrenNodes.get(1).semanticConcept).getPosition()+"\n";
+            }
+        }
+
     }
 
     public void visit(StatBlockNode node){
