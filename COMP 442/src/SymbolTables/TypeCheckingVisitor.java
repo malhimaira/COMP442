@@ -174,6 +174,31 @@ public class TypeCheckingVisitor{
                     + ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme()
                     +", line "+((Token) node.childrenNodes.get(1).semanticConcept).getPosition()+"\n";
         }
+
+        // 9.3 Overridden member function
+        boolean overridefound = false;
+        if(node.parentNode.childrenNodes.get(1).childrenNodes.size()!=0){
+            String inheritedClassName = ((Token)node.parentNode.childrenNodes.get(1).childrenNodes.get(0).semanticConcept).getLexeme();
+            if(!inheritedClassName.equals("none")){
+                for(ASTNode childOfProgNode : node.parentNode.parentNode.childrenNodes){
+                    String childofprognodeName = ((Token) childOfProgNode.childrenNodes.get(0).semanticConcept).getLexeme();
+                    if(inheritedClassName.equals(childofprognodeName)){
+                        for(ASTNode child2 : childOfProgNode.childrenNodes){
+                            if(child2 instanceof MemberFuncDefNode){
+                                if(child2.m_symtabentry.toString().equals(node.m_symtabentry.toString())){
+                                    overridefound = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if(overridefound == true){
+            p_error+="[warning] 9.3 Overridding member function "
+                    + ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme()
+                    +", line "+((Token) node.childrenNodes.get(1).semanticConcept).getPosition()+"\n";
+        }
     }
 
     public void visit(MemberVarDeclNode node){

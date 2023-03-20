@@ -7,10 +7,11 @@
 8.1 Multiply declared class: class LINEAR, line 6
 8.1 Multiply declared class: class LINEAR, line 12
 6.2 Undefined member function definition: function undefMethod, line 16
-6.2 Undefined member function definition: function rando, line 28
-8.4 Mulitply declared identifier in function: identifier n, line 34
+[warning] 9.3 Overridding member function tryMethod, line 25
+6.2 Undefined member function definition: function rando, line 29
 8.4 Mulitply declared identifier in function: identifier n, line 35
-6.1 Undeclared member function definition: function undeclMethod, line 32
-[warning] 9.1 Overload free function: function tryMethod, line 45
-6.1 Undeclared member function definition: function tryMethod, line 52
-[warning] 9.1 Overload free function: function tryMethod, line 52
+8.4 Mulitply declared identifier in function: identifier n, line 36
+6.1 Undeclared member function definition: function undeclMethod, line 33
+[warning] 9.1 Overload free function: function tryMethod, line 46
+6.1 Undeclared member function definition: function tryMethod, line 53
+[warning] 9.1 Overload free function: function tryMethod, line 53

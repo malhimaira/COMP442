@@ -14,6 +14,7 @@ class LINEAR isa POLYNOMIAL {
 };
 class QUADRATIC isa POLYNOMIAL {
     public function undefMethod: () => void;
+    public function tryMethod: (l: integer, v: id) => integer;
     public attribute x: float[5];
     public attribute y: integer[2];
     public attribute z: id[7];
@@ -21,7 +22,7 @@ class QUADRATIC isa POLYNOMIAL {
 };
 
 class QUAD isa QUADRATIC {
-  private attribute a: float;
+  public function tryMethod: (l: integer, v: id) => integer;
 };
 
 class RANDO {
