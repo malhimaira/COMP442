@@ -58,18 +58,31 @@ public class TypeCheckingVisitor{
                     +((Token) node.childrenNodes.get(0).semanticConcept).getLexeme()
                     +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
         }
-        // 8.2 Multiply Declared Functions
+        // 8.2 Multiply Declared Functions and 9.1 Overload free function
         int cntFound = 0;
+        int overloadFound =0;
         for(ASTNode childOfProgNode : node.parentNode.childrenNodes){
             if(childOfProgNode instanceof FuncDefNode){
                 String funcnamefromlist = ((Token)childOfProgNode.childrenNodes.get(0).semanticConcept).getLexeme();
-                if(((Token)node.childrenNodes.get(0).semanticConcept).getLexeme().equals(funcnamefromlist)){
-                    cntFound++;
+                String nodefuncname = ((Token)node.childrenNodes.get(0).semanticConcept).getLexeme();
+                if(nodefuncname.equals(funcnamefromlist)){
+                    String funcDefParamList = childOfProgNode.childrenNodes.get(1).m_symtabentry.toString();
+                    String nodeParamList =node.childrenNodes.get(2).m_symtabentry.toString();
+                    if(funcDefParamList.equals(nodeParamList)){
+                        cntFound++;
+                    } else{
+                        overloadFound++;
+                    }
                 }
             }
         }
         if(cntFound > 1){
             p_error += "8.2 Multiply declared function: function "
+                    +((Token) node.childrenNodes.get(0).semanticConcept).getLexeme()
+                    +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
+        }
+        if(overloadFound > 1){
+            p_error += "9.1 Overload free function: function "
                     +((Token) node.childrenNodes.get(0).semanticConcept).getLexeme()
                     +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
         }
@@ -156,6 +169,11 @@ public class TypeCheckingVisitor{
                     + ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme()
                     +", line "+((Token) node.childrenNodes.get(1).semanticConcept).getPosition()+"\n";
         }
+
+        // 8.5 [warning] Shadowed inherited data member
+        //check if it inherits
+        String inheritedClassName = ((Token)node.parentNode.childrenNodes.get(1).childrenNodes.get(0).semanticConcept).getLexeme();
+        if(!inheritedClassName.equals("none")){}
     }
 
 }

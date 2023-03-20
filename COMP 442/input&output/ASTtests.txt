@@ -19,6 +19,14 @@ class QUADRATIC isa POLYNOMIAL {
 
 };
 
+class QUAD isa QUADRATIC {
+  private attribute a: float;
+};
+
+class RANDO {
+  private function rando: () => void;
+};
+
 /* print the array */
 function undeclMethod(arr: integer[], size: integer) => void
 {

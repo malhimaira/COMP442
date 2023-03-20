@@ -67,82 +67,98 @@
 |  |  |  [id, id, 18]
 |  |  |  array Size
 |  |  |  |  [integerType, 7, 18]
+|  class decl
+|  |  [id, QUAD, 22]
+|  |  inherit lst
+|  |  |  [id, QUADRATIC, 22]
+|  |  memberVar decl
+|  |  |  [privateKeyWord, private, 23]
+|  |  |  [id, a, 23]
+|  |  |  [floatKeyWord, float, 23]
+|  |  |  array Size
+|  class decl
+|  |  [id, RANDO, 26]
+|  |  inherit lst
+|  |  memberFunc decl
+|  |  |  [privateKeyWord, private, 27]
+|  |  |  [id, rando, 27]
+|  |  |  [voidKeyWord, void, 27]
 |  func def
-|  |  [id, undeclMethod, 23]
+|  |  [id, undeclMethod, 31]
 |  |  func params
-|  |  |  [id, arr, 23]
-|  |  |  [integerKeyWord, integer, 23]
-|  |  |  [id, size, 23]
-|  |  |  [integerKeyWord, integer, 23]
-|  |  [voidKeyWord, void, 23]
+|  |  |  [id, arr, 31]
+|  |  |  [integerKeyWord, integer, 31]
+|  |  |  [id, size, 31]
+|  |  |  [integerKeyWord, integer, 31]
+|  |  [voidKeyWord, void, 31]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, n, 25]
-|  |  |  |  [integerKeyWord, integer, 25]
+|  |  |  |  [id, n, 33]
+|  |  |  |  [integerKeyWord, integer, 33]
 |  |  |  |  array Size
 |  |  |  local var
-|  |  |  |  [id, n, 26]
-|  |  |  |  [integerKeyWord, integer, 26]
+|  |  |  |  [id, n, 34]
+|  |  |  |  [integerKeyWord, integer, 34]
 |  |  |  |  array Size
 |  |  |  local var
-|  |  |  |  [id, i, 27]
-|  |  |  |  [integerKeyWord, integer, 27]
+|  |  |  |  [id, i, 35]
+|  |  |  |  [integerKeyWord, integer, 35]
 |  |  |  |  array Size
 |  |  |  stat
-|  |  |  |  [id, n, 28]
+|  |  |  |  [id, n, 36]
 |  |  |  stat
-|  |  |  |  [id, i, 29]
+|  |  |  |  [id, i, 37]
 |  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  write block
-|  |  |  |  |  [id, i, 32]
-|  |  |  |  |  [plus, +, 32]
+|  |  |  |  |  [id, i, 40]
+|  |  |  |  |  [plus, +, 40]
 |  func def
-|  |  [id, tryMethod, 36]
+|  |  [id, tryMethod, 44]
 |  |  func params
-|  |  |  [id, l, 36]
-|  |  |  [integerKeyWord, integer, 36]
-|  |  |  [id, v, 36]
-|  |  |  [id, id, 36]
-|  |  [integerKeyWord, integer, 36]
+|  |  |  [id, l, 44]
+|  |  |  [integerKeyWord, integer, 44]
+|  |  |  [id, v, 44]
+|  |  |  [id, id, 44]
+|  |  [integerKeyWord, integer, 44]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, ax, 38]
-|  |  |  |  [integerKeyWord, integer, 38]
-|  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 38]
-|  |  |  local var
-|  |  |  |  [id, ab, 39]
-|  |  |  |  [integerKeyWord, integer, 39]
-|  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 39]
-|  |  |  local var
-|  |  |  |  [id, ac, 40]
-|  |  |  |  [integerKeyWord, integer, 40]
-|  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 40]
-|  func def
-|  |  [id, tryMethod, 43]
-|  |  func params
-|  |  |  [id, l, 43]
-|  |  |  [integerKeyWord, integer, 43]
-|  |  |  [id, v, 43]
-|  |  |  [id, id, 43]
-|  |  [integerKeyWord, integer, 43]
-|  |  local var + stat block
-|  |  |  local var
-|  |  |  |  [id, barr1, 45]
-|  |  |  |  [integerKeyWord, integer, 45]
-|  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 45]
-|  |  |  local var
-|  |  |  |  [id, barr2, 46]
+|  |  |  |  [id, ax, 46]
 |  |  |  |  [integerKeyWord, integer, 46]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 46]
+|  |  |  |  |  [integerType, 7, 46]
 |  |  |  local var
-|  |  |  |  [id, barr3, 47]
+|  |  |  |  [id, ab, 47]
 |  |  |  |  [integerKeyWord, integer, 47]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 47]
+|  |  |  |  |  [integerType, 6, 47]
+|  |  |  local var
+|  |  |  |  [id, ac, 48]
+|  |  |  |  [integerKeyWord, integer, 48]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 48]
+|  func def
+|  |  [id, tryMethod, 51]
+|  |  func params
+|  |  |  [id, l, 51]
+|  |  |  [integerKeyWord, integer, 51]
+|  |  |  [id, v, 51]
+|  |  |  [id, id, 51]
+|  |  [integerKeyWord, integer, 51]
+|  |  local var + stat block
+|  |  |  local var
+|  |  |  |  [id, barr1, 53]
+|  |  |  |  [integerKeyWord, integer, 53]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 7, 53]
+|  |  |  local var
+|  |  |  |  [id, barr2, 54]
+|  |  |  |  [integerKeyWord, integer, 54]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 6, 54]
+|  |  |  local var
+|  |  |  |  [id, barr3, 55]
+|  |  |  |  [integerKeyWord, integer, 55]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 55]
 ]
