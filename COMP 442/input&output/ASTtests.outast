@@ -9,18 +9,20 @@
 |  |  |  |  [id, x, 2]
 |  |  |  |  [floatKeyWord, float, 2]
 |  |  |  [floatKeyWord, float, 2]
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 3]
+|  |  |  [id, evaluate, 3]
+|  |  |  func params
+|  |  |  |  [id, q, 3]
+|  |  |  |  [integerKeyWord, integer, 3]
+|  |  |  [floatKeyWord, float, 3]
 |  class decl
-|  |  [id, LINEAR, 5]
+|  |  [id, LINEAR, 6]
 |  |  inherit lst
-|  |  |  [id, POLYNOMIAL, 5]
-|  |  memberVar decl
-|  |  |  [privateKeyWord, private, 6]
-|  |  |  [id, a, 6]
-|  |  |  [floatKeyWord, float, 6]
-|  |  |  array Size
+|  |  |  [id, POLYNOMIAL, 6]
 |  |  memberVar decl
 |  |  |  [privateKeyWord, private, 7]
-|  |  |  [id, b, 7]
+|  |  |  [id, a, 7]
 |  |  |  [floatKeyWord, float, 7]
 |  |  |  array Size
 |  |  memberVar decl
@@ -28,135 +30,140 @@
 |  |  |  [id, b, 8]
 |  |  |  [floatKeyWord, float, 8]
 |  |  |  array Size
-|  class decl
-|  |  [id, LINEAR, 11]
-|  |  inherit lst
-|  |  |  [id, POLYNOMIAL, 11]
-|  |  memberFunc decl
-|  |  |  [publicKeyWord, public, 12]
-|  |  |  [id, tryMethod, 12]
-|  |  |  func params
-|  |  |  |  [id, l, 12]
-|  |  |  |  [integerKeyWord, integer, 12]
-|  |  |  |  [id, v, 12]
-|  |  |  |  [id, id, 12]
-|  |  |  [integerKeyWord, integer, 12]
-|  class decl
-|  |  [id, QUADRATIC, 14]
-|  |  inherit lst
-|  |  |  [id, POLYNOMIAL, 14]
-|  |  memberFunc decl
-|  |  |  [publicKeyWord, public, 15]
-|  |  |  [id, undefMethod, 15]
-|  |  |  [voidKeyWord, void, 15]
 |  |  memberVar decl
-|  |  |  [publicKeyWord, public, 16]
-|  |  |  [id, x, 16]
-|  |  |  [floatKeyWord, float, 16]
+|  |  |  [privateKeyWord, private, 9]
+|  |  |  [id, b, 9]
+|  |  |  [floatKeyWord, float, 9]
 |  |  |  array Size
-|  |  |  |  [integerType, 5, 16]
+|  class decl
+|  |  [id, LINEAR, 12]
+|  |  inherit lst
+|  |  |  [id, POLYNOMIAL, 12]
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 13]
+|  |  |  [id, tryMethod, 13]
+|  |  |  func params
+|  |  |  |  [id, l, 13]
+|  |  |  |  [integerKeyWord, integer, 13]
+|  |  |  |  [id, v, 13]
+|  |  |  |  [id, id, 13]
+|  |  |  [integerKeyWord, integer, 13]
+|  class decl
+|  |  [id, QUADRATIC, 15]
+|  |  inherit lst
+|  |  |  [id, POLYNOMIAL, 15]
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 16]
+|  |  |  [id, undefMethod, 16]
+|  |  |  [voidKeyWord, void, 16]
 |  |  memberVar decl
 |  |  |  [publicKeyWord, public, 17]
-|  |  |  [id, y, 17]
-|  |  |  [integerKeyWord, integer, 17]
+|  |  |  [id, x, 17]
+|  |  |  [floatKeyWord, float, 17]
 |  |  |  array Size
-|  |  |  |  [integerType, 2, 17]
+|  |  |  |  [integerType, 5, 17]
 |  |  memberVar decl
 |  |  |  [publicKeyWord, public, 18]
-|  |  |  [id, z, 18]
-|  |  |  [id, id, 18]
+|  |  |  [id, y, 18]
+|  |  |  [integerKeyWord, integer, 18]
 |  |  |  array Size
-|  |  |  |  [integerType, 7, 18]
-|  class decl
-|  |  [id, QUAD, 22]
-|  |  inherit lst
-|  |  |  [id, QUADRATIC, 22]
+|  |  |  |  [integerType, 2, 18]
 |  |  memberVar decl
-|  |  |  [privateKeyWord, private, 23]
-|  |  |  [id, a, 23]
-|  |  |  [floatKeyWord, float, 23]
+|  |  |  [publicKeyWord, public, 19]
+|  |  |  [id, z, 19]
+|  |  |  [id, id, 19]
+|  |  |  array Size
+|  |  |  |  [integerType, 7, 19]
+|  class decl
+|  |  [id, QUAD, 23]
+|  |  inherit lst
+|  |  |  [id, QUADRATIC, 23]
+|  |  memberVar decl
+|  |  |  [privateKeyWord, private, 24]
+|  |  |  [id, a, 24]
+|  |  |  [floatKeyWord, float, 24]
 |  |  |  array Size
 |  class decl
-|  |  [id, RANDO, 26]
+|  |  [id, RANDO, 27]
 |  |  inherit lst
 |  |  memberFunc decl
-|  |  |  [privateKeyWord, private, 27]
-|  |  |  [id, rando, 27]
-|  |  |  [voidKeyWord, void, 27]
+|  |  |  [privateKeyWord, private, 28]
+|  |  |  [id, rando, 28]
+|  |  |  [voidKeyWord, void, 28]
 |  func def
-|  |  [id, undeclMethod, 31]
+|  |  [id, undeclMethod, 32]
 |  |  func params
-|  |  |  [id, arr, 31]
-|  |  |  [integerKeyWord, integer, 31]
-|  |  |  [id, size, 31]
-|  |  |  [integerKeyWord, integer, 31]
-|  |  [voidKeyWord, void, 31]
+|  |  |  [id, arr, 32]
+|  |  |  [integerKeyWord, integer, 32]
+|  |  |  [id, size, 32]
+|  |  |  [integerKeyWord, integer, 32]
+|  |  [voidKeyWord, void, 32]
 |  |  local var + stat block
-|  |  |  local var
-|  |  |  |  [id, n, 33]
-|  |  |  |  [integerKeyWord, integer, 33]
-|  |  |  |  array Size
 |  |  |  local var
 |  |  |  |  [id, n, 34]
 |  |  |  |  [integerKeyWord, integer, 34]
 |  |  |  |  array Size
 |  |  |  local var
-|  |  |  |  [id, i, 35]
+|  |  |  |  [id, n, 35]
 |  |  |  |  [integerKeyWord, integer, 35]
 |  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, i, 36]
+|  |  |  |  [integerKeyWord, integer, 36]
+|  |  |  |  array Size
 |  |  |  stat
-|  |  |  |  [id, n, 36]
+|  |  |  |  [id, n, 37]
 |  |  |  stat
-|  |  |  |  [id, i, 37]
+|  |  |  |  [id, i, 38]
 |  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  write block
-|  |  |  |  |  [id, i, 40]
-|  |  |  |  |  [plus, +, 40]
+|  |  |  |  |  [id, i, 41]
+|  |  |  |  |  [plus, +, 41]
 |  func def
-|  |  [id, tryMethod, 44]
+|  |  [id, tryMethod, 45]
 |  |  func params
-|  |  |  [id, l, 44]
-|  |  |  [integerKeyWord, integer, 44]
-|  |  |  [id, v, 44]
-|  |  |  [id, id, 44]
-|  |  [integerKeyWord, integer, 44]
+|  |  |  [id, l, 45]
+|  |  |  [integerKeyWord, integer, 45]
+|  |  |  [id, v, 45]
+|  |  |  [id, id, 45]
+|  |  [integerKeyWord, integer, 45]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, ax, 46]
-|  |  |  |  [integerKeyWord, integer, 46]
-|  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 46]
-|  |  |  local var
-|  |  |  |  [id, ab, 47]
+|  |  |  |  [id, ax, 47]
 |  |  |  |  [integerKeyWord, integer, 47]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 47]
+|  |  |  |  |  [integerType, 7, 47]
 |  |  |  local var
-|  |  |  |  [id, ac, 48]
+|  |  |  |  [id, ab, 48]
 |  |  |  |  [integerKeyWord, integer, 48]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 48]
+|  |  |  |  |  [integerType, 6, 48]
+|  |  |  local var
+|  |  |  |  [id, ac, 49]
+|  |  |  |  [integerKeyWord, integer, 49]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 49]
 |  func def
-|  |  [id, tryMethod, 51]
+|  |  [id, tryMethod, 52]
 |  |  func params
-|  |  |  [id, s, 51]
-|  |  |  [id, id, 51]
-|  |  [integerKeyWord, integer, 51]
+|  |  |  [id, s, 52]
+|  |  |  [id, id, 52]
+|  |  [integerKeyWord, integer, 52]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, barr1, 53]
-|  |  |  |  [integerKeyWord, integer, 53]
-|  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 53]
-|  |  |  local var
-|  |  |  |  [id, barr2, 54]
+|  |  |  |  [id, barr1, 54]
 |  |  |  |  [integerKeyWord, integer, 54]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 54]
+|  |  |  |  |  [integerType, 7, 54]
 |  |  |  local var
-|  |  |  |  [id, barr3, 55]
+|  |  |  |  [id, barr2, 55]
 |  |  |  |  [integerKeyWord, integer, 55]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 55]
+|  |  |  |  |  [integerType, 6, 55]
+|  |  |  local var
+|  |  |  |  [id, barr3, 56]
+|  |  |  |  [integerKeyWord, integer, 56]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 56]
 ]

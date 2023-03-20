@@ -1,5 +1,6 @@
 class POLYNOMIAL {
   public function evaluate: (x: float) => float;
+  public function evaluate: (q: integer) => float;
 };
 
 class LINEAR isa POLYNOMIAL {

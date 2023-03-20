@@ -126,6 +126,7 @@ public class TypeCheckingVisitor{
     public void visit(MemberFuncDefNode node) {
         // 6.2 Undefined member function definition: function
         boolean isdeclared_6_2 = false;
+
         for(ASTNode childofProgNode : node.parentNode.parentNode.childrenNodes){
             if(childofProgNode.semanticConcept.equals("func def")){
                 String funcDef = (((Token) childofProgNode.childrenNodes.get(0).semanticConcept).getLexeme());
@@ -147,6 +148,29 @@ public class TypeCheckingVisitor{
         }
         if(isdeclared_6_2 == false){
             p_error+="6.2 Undefined member function definition: function "
+                    + ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme()
+                    +", line "+((Token) node.childrenNodes.get(1).semanticConcept).getPosition()+"\n";
+        }
+
+        // 9.2 Overloading member function
+        int cntoverloaded =0;
+        for(ASTNode child : node.parentNode.childrenNodes){
+            if(child instanceof MemberFuncDefNode){
+                String funcnamefromlist = ((Token)child.childrenNodes.get(1).semanticConcept).getLexeme();
+                String nodefuncname = ((Token)node.childrenNodes.get(1).semanticConcept).getLexeme();
+                if(nodefuncname.equals(funcnamefromlist) && child.childrenNodes.size()>=4){
+                    String funcDefParamList = child.childrenNodes.get(2).m_symtabentry.toString();
+                    String nodeParamList =node.childrenNodes.get(2).m_symtabentry.toString();
+                    if(funcDefParamList.equals(nodeParamList)){
+
+                    }else{
+                        cntoverloaded ++;
+                    }
+                }
+            }
+        }
+        if(cntoverloaded >0 ){
+            p_error+="[warning] 9.2 Overloading member function "
                     + ((Token) node.childrenNodes.get(1).semanticConcept).getLexeme()
                     +", line "+((Token) node.childrenNodes.get(1).semanticConcept).getPosition()+"\n";
         }
