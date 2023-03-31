@@ -55,10 +55,7 @@ public class ASTNode {
         return tree.toString();
     }
 
-    public void accept(SymbolTableVisitor stv){
-        stv.visit(this);
-    }
-    public void accept(TypeCheckingVisitor tcv){
-        tcv.visit(this);
-    }
+    public void accept(SymbolTableVisitor stv){stv.visit(this);}
+    public void accept(TypeCheckingVisitor tcv){tcv.visit(this);}
+    public void accept(ComputeMemorySizeVisitor cmsv){cmsv.visit(this);}
 }

@@ -1,5 +1,6 @@
 package ASTNodes;
 
+import SymbolTables.ComputeMemorySizeVisitor;
 import SymbolTables.SymbolTableVisitor;
 import SymbolTables.TypeCheckingVisitor;
 
@@ -16,6 +17,9 @@ public class StatNode extends ASTNode {
 	}
 	public void accept(TypeCheckingVisitor tcv){
 		tcv.visit(this);
+	}
+	public void accept(ComputeMemorySizeVisitor cmsv){
+		cmsv.visit(this);
 	}
 	
 }

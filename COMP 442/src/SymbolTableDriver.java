@@ -1,13 +1,12 @@
 import ASTNodes.ASTNode;
 import LexerComponents.Token;
-import SymbolTables.ComputeMemorySizeVisitor;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.PrintWriter;
 import java.util.Stack;
 
-public class Driver {
+public class SymbolTableDriver {
 
     public static void main(String[] args) {
         // Open Stream to File
@@ -49,10 +48,6 @@ public class Driver {
 
             //Type Check AST
             stc.typeCheckSymbolTables(fileName, ASTStackWithSymbolTables);
-
-            // Compute Memory Size of Nodes
-            ComputeMemorySizeVisitor cmsv = new ComputeMemorySizeVisitor();
-            ASTStackWithSymbolTables.firstElement().accept(cmsv);
 
         } catch (Exception e) {
             System.out.print(e.getMessage());

@@ -10,10 +10,11 @@ public class StatBlockNode extends ASTNode {
 			super(parentNode, childrenNodes, semanticConcept, treeDepth);
 		}
 	
-	public void accept(SymbolTableVisitor p_visitor) {
-		p_visitor.visit(this);
-	}
+	public void accept(SymbolTableVisitor p_visitor) {p_visitor.visit(this);}
 	public void accept(TypeCheckingVisitor tcv){
 		tcv.visit(this);
+	}
+	public void accept(ComputeMemorySizeVisitor cmsv){
+		cmsv.visit(this);
 	}
 }

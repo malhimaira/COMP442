@@ -11,6 +11,9 @@ public class SymbolTableEntry {
 
     public SymbolTable     m_subtable   = null;
 
+    // Memory allocation size
+    public int m_size = 0;
+
     public SymbolTableEntry() {}
 
     public SymbolTableEntry(String p_kind, String p_type, String p_name, SymbolTable p_subtable){
