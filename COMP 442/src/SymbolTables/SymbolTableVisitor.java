@@ -3,6 +3,8 @@ package SymbolTables;
 import ASTNodes.*;
 import LexerComponents.*;
 
+import java.util.Vector;
+
 public class SymbolTableVisitor{
 
     public SymbolTableVisitor() {}
@@ -117,13 +119,28 @@ public class SymbolTableVisitor{
 
     public void visit(VarDeclNode node){
         //System.out.println("var decl node");
-            node.m_symtabentry = new VarEntry(""+node.semanticConcept, ""+((Token)node.childrenNodes.get(1).semanticConcept).getLexeme(), ((Token)node.childrenNodes.get(0).semanticConcept).getLexeme());
+
+        // get array dimensions, if multi dim  vector size >1
+        Vector<Integer> dimlist = new Vector<Integer>();
+        for (ASTNode dim : node.childrenNodes.get(2).childrenNodes){
+            Integer dimval = Integer.parseInt(((Token)dim.semanticConcept).getLexeme());
+            dimlist.add(dimval);
+        }
+            node.m_symtabentry = new VarEntry(""+node.semanticConcept, ""+((Token)node.childrenNodes.get(1).semanticConcept).getLexeme(), ((Token)node.childrenNodes.get(0).semanticConcept).getLexeme(), dimlist);
             node.m_symtab.addEntry(node.m_symtabentry);
     }
 
     public void visit(MemberVarDeclNode node){
         //System.out.println("var decl node");
-        node.m_symtabentry = new VarEntry("data", ((Token)node.childrenNodes.get(2).semanticConcept).getLexeme(), ""+((Token)node.childrenNodes.get(1).semanticConcept).getLexeme(), ((Token)node.childrenNodes.get(0).semanticConcept).getLexeme());
+
+        // get array dimensions, if multi dim  vector size >1
+        Vector<Integer> dimlist = new Vector<Integer>();
+        for (ASTNode dim : node.childrenNodes.get(3).childrenNodes){
+            Integer dimval = Integer.parseInt(((Token)dim.semanticConcept).getLexeme());
+            dimlist.add(dimval);
+        }
+
+        node.m_symtabentry = new VarEntry("data", ((Token)node.childrenNodes.get(2).semanticConcept).getLexeme(), ""+((Token)node.childrenNodes.get(1).semanticConcept).getLexeme(), ((Token)node.childrenNodes.get(0).semanticConcept).getLexeme(), dimlist);
         node.m_symtab.addEntry(node.m_symtabentry);
     }
 
@@ -167,6 +184,13 @@ public class SymbolTableVisitor{
             child.accept(this);
         }
 
+    }
+
+    public void visit(ArraySizeNode node){
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
     }
 
 }

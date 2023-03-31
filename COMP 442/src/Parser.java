@@ -154,7 +154,7 @@ public class Parser {
                     switch (top) {
                         case "SACT1" -> this.makeNode(previousToken);
                         case "SACT2" -> this.makeNull();
-                        case "SACT3" -> this.makeFamily("array Size");
+                        case "SACT3" -> this.makeFamily(new ArraySizeNode(null,null, "array Size", 0));
                         case "SACT4" -> this.makeFamily(new VarDeclNode(null,null, "local var", 0));
                         case "SACT5" -> this.makeFamily(new ClassDeclNode(null,null, "class decl", 0));
                         case "SACT6" -> this.makeFamily(new MemberVarDeclNode(null,null, "memberVar decl", 0));

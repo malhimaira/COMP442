@@ -8,8 +8,16 @@ public class VarEntry extends SymbolTableEntry {
 		super(p_kind, p_type, p_name, null);
 	}
 
+	public VarEntry(String p_kind, String p_type, String p_name, Vector<Integer> p_dims){
+		super(p_kind, p_type, p_name, null, p_dims);
+	}
+
 	public VarEntry(String p_kind, String p_type, String p_name, String p_encap){
 		super(p_kind, p_type, p_name, null, p_encap);
+	}
+
+	public VarEntry(String p_kind, String p_type, String p_name, String p_encap, Vector<Integer> p_dims){
+		super(p_kind, p_type, p_name, null, p_encap, p_dims);
 	}
 		
 	public String toString(){

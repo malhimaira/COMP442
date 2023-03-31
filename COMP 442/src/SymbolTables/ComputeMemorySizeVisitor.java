@@ -7,15 +7,30 @@ public class ComputeMemorySizeVisitor {
 
     public ComputeMemorySizeVisitor() {}
 
-    public int sizeOfEntry(ASTNode p_node) {
+    public int sizeOfEntry(ASTNode node) {
         int size = 0;
-        if(p_node.m_symtabentry.m_type.equals("integer"))
+        if(node.m_symtabentry.m_type.equals("integer"))
             size = 4;
-        else if(p_node.m_symtabentry.m_type.equals("float"))
+        else if(node.m_symtabentry.m_type.equals("float"))
             size = 8;
-        else if (p_node.m_symtabentry.m_type.equals("id")) {
+        else if (node.m_symtabentry.m_type.equals("id")) {
             size = 4;
         }
+        VarEntry varEntry = (VarEntry) node.m_symtabentry;
+        if(!varEntry.m_dims.isEmpty())
+            for(Integer dim : varEntry.m_dims)
+                size *= dim;
+
+        return size;
+    }
+
+    public int sizeOfTypeNode(ASTNode node) {
+        int size = 0;
+        // id  case -> 32 bit
+        if(node.semanticConcept == "")
+            size = 4;
+        else if(node.semanticConcept == "float")
+            size = 8;
         return size;
     }
 
@@ -43,6 +58,9 @@ public class ComputeMemorySizeVisitor {
     }
 
     public void visit(VarDeclNode node) {
+        for (ASTNode child : node.childrenNodes ) {
+            child.accept(this);
+        }
         node.m_symtabentry.m_size = this.sizeOfEntry(node);
     }
 
@@ -65,14 +83,17 @@ public class ComputeMemorySizeVisitor {
     }
 
     public void visit(MemberVarDeclNode node){
-
+        for (ASTNode child : node.childrenNodes ) {
+            child.accept(this);
+        }
+        node.m_symtabentry.m_size = this.sizeOfEntry(node);
     }
 
     public void visit(MemberFuncDefNode node) {
         for (ASTNode child : node.childrenNodes) {
             child.accept(this);
         }
-        node.m_symtabentry.m_size = this.sizeOfEntry(node);
+//        node.m_symtabentry.m_size = this.sizeOfEntry(node);
     }
 
 }
