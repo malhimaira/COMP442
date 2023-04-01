@@ -1,0 +1,31 @@
+[prog
+|  func def
+|  |  [id, main, 1]
+|  |  [voidKeyWord, void, 1]
+|  |  local var + stat block
+|  |  |  local var
+|  |  |  |  [id, arr, 3]
+|  |  |  |  [integerKeyWord, integer, 3]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 7, 3]
+|  |  |  stat
+|  |  |  |  [id, arr, 4]
+|  |  |  stat
+|  |  |  |  [id, arr, 5]
+|  |  |  stat
+|  |  |  |  [id, arr, 6]
+|  |  |  stat
+|  |  |  |  [id, arr, 7]
+|  |  |  stat
+|  |  |  |  [id, arr, 8]
+|  |  |  stat
+|  |  |  |  [id, arr, 9]
+|  |  |  stat
+|  |  |  |  [id, arr, 10]
+|  |  |  stat
+|  |  |  |  [id, printarray, 11]
+|  |  |  stat
+|  |  |  |  [id, bubbleSort, 13]
+|  |  |  stat
+|  |  |  |  [id, printArray, 14]
+]

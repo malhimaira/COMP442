@@ -11,13 +11,13 @@
 |    |    =====================================================
 |    |    | table: evaluate                                   |
 |    |    =====================================================
-|    |    | param     | x         | float     |        |
+|    |    | param     | x         | float     | 0         |        |
 |    |    =====================================================
 |    | function  | evaluate  |           | (integer) float| public     |
 |    |    =====================================================
 |    |    | table: evaluate                                   |
 |    |    =====================================================
-|    |    | param     | q         | integer   |        |
+|    |    | param     | q         | integer   | 0         |        |
 |    |    =====================================================
 |    =====================================================
 | class     | LINEAR                                |
@@ -25,9 +25,9 @@
 |    | table: LINEAR                                     |
 |    =====================================================
 |    | inherit   | POLYNOMIAL |
-|    | data      | a         | float     | private |
-|    | data      | b         | float     | private |
-|    | data      | b         | float     | private |
+|    | data      | a         | float     | 8         | private |
+|    | data      | b         | float     | 8         | private |
+|    | data      | b         | float     | 8         | private |
 |    =====================================================
 | class     | LINEAR                                |
 |    =====================================================
@@ -38,8 +38,8 @@
 |    |    =====================================================
 |    |    | table: tryMethod                                  |
 |    |    =====================================================
-|    |    | param     | l         | integer   |        |
-|    |    | param     | v         | id        |        |
+|    |    | param     | l         | integer   | 0         |        |
+|    |    | param     | v         | id        | 0         |        |
 |    |    =====================================================
 |    =====================================================
 | class     | QUADRATIC                             |
@@ -56,12 +56,12 @@
 |    |    =====================================================
 |    |    | table: tryMethod                                  |
 |    |    =====================================================
-|    |    | param     | l         | integer   |        |
-|    |    | param     | v         | id        |        |
+|    |    | param     | l         | integer   | 0         |        |
+|    |    | param     | v         | id        | 0         |        |
 |    |    =====================================================
-|    | data      | x         | float     | public |
-|    | data      | y         | integer   | public |
-|    | data      | z         | id        | public |
+|    | data      | x         | float     | 40        | public |
+|    | data      | y         | integer   | 8         | public |
+|    | data      | z         | id        | 28        | public |
 |    =====================================================
 | class     | QUAD                                  |
 |    =====================================================
@@ -72,8 +72,8 @@
 |    |    =====================================================
 |    |    | table: tryMethod                                  |
 |    |    =====================================================
-|    |    | param     | l         | integer   |        |
-|    |    | param     | v         | id        |        |
+|    |    | param     | l         | integer   | 0         |        |
+|    |    | param     | v         | id        | 0         |        |
 |    |    =====================================================
 |    =====================================================
 | class     | RANDO                                 |
@@ -91,30 +91,30 @@
 |    =====================================================
 |    | table: undeclMethod                               |
 |    =====================================================
-|    | param     | arr       | integer   |        |
-|    | param     | size      | integer   |        |
-|    | local var | n         | integer   |        |
-|    | local var | n         | integer   |        |
-|    | local var | i         | integer   |        |
+|    | param     | arr       | integer   | 0         |        |
+|    | param     | size      | integer   | 0         |        |
+|    | local var | n         | integer   | 4         |        |
+|    | local var | n         | integer   | 4         |        |
+|    | local var | i         | integer   | 4         |        |
 |    =====================================================
 | function  | tryMethod |           | (integer, id) integer|            |
 |    =====================================================
 |    | table: tryMethod                                  |
 |    =====================================================
-|    | param     | l         | integer   |        |
-|    | param     | v         | id        |        |
-|    | local var | undecCls  | BLOCK     |        |
-|    | local var | ax        | integer   |        |
-|    | local var | ab        | integer   |        |
-|    | local var | ac        | integer   |        |
+|    | param     | l         | integer   | 0         |        |
+|    | param     | v         | id        | 0         |        |
+|    | local var | undecCls  | BLOCK     | 0         |        |
+|    | local var | ax        | integer   | 28        |        |
+|    | local var | ab        | integer   | 24        |        |
+|    | local var | ac        | integer   | 8         |        |
 |    =====================================================
 | function  | tryMethod |           | (id) integer|            |
 |    =====================================================
 |    | table: tryMethod                                  |
 |    =====================================================
-|    | param     | s         | id        |        |
-|    | local var | barr1     | integer   |        |
-|    | local var | barr2     | integer   |        |
-|    | local var | barr3     | integer   |        |
+|    | param     | s         | id        | 0         |        |
+|    | local var | barr1     | integer   | 28        |        |
+|    | local var | barr2     | integer   | 24        |        |
+|    | local var | barr3     | integer   | 8         |        |
 |    =====================================================
 =====================================================

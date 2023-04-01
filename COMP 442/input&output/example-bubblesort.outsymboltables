@@ -6,26 +6,26 @@
 |    =====================================================
 |    | table: bubbleSort                                 |
 |    =====================================================
-|    | param     | arr       | integer   |        |
-|    | param     | size      | integer   |        |
-|    | local var | n         | integer   |        |
-|    | local var | i         | integer   |        |
-|    | local var | j         | integer   |        |
-|    | local var | temp      | integer   |        |
+|    | param     | arr       | integer   | 0         |        |
+|    | param     | size      | integer   | 0         |        |
+|    | local var | n         | integer   | 4         |        |
+|    | local var | i         | integer   | 4         |        |
+|    | local var | j         | integer   | 4         |        |
+|    | local var | temp      | integer   | 4         |        |
 |    =====================================================
 | function  | printArray|           | (integer, integer) void|            |
 |    =====================================================
 |    | table: printArray                                 |
 |    =====================================================
-|    | param     | arr       | integer   |        |
-|    | param     | size      | integer   |        |
-|    | local var | n         | integer   |        |
-|    | local var | i         | integer   |        |
+|    | param     | arr       | integer   | 0         |        |
+|    | param     | size      | integer   | 0         |        |
+|    | local var | n         | integer   | 4         |        |
+|    | local var | i         | integer   | 4         |        |
 |    =====================================================
 | function  | main      |           |           |            |
 |    =====================================================
 |    | table: main                                       |
 |    =====================================================
-|    | local var | arr       | integer   |        |
+|    | local var | arr       | integer   | 28        |        |
 |    =====================================================
 =====================================================

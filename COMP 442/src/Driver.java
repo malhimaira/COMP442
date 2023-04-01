@@ -42,17 +42,19 @@ public class Driver {
             // Generate ASTNodes.AST's text file
             p.writeASTTreeToFile();
 
-            //Generate Symbol Tables and write to file
+            //Generate Symbol Tables
             SymbolTableCreation stc = new SymbolTableCreation();
             Stack<ASTNode> ASTStackWithSymbolTables = stc.generateSymbolTables(ASTstack);
-            stc.writeSymblTablesToFile(fileName, ASTStackWithSymbolTables);
-
-            //Type Check AST
-            stc.typeCheckSymbolTables(fileName, ASTStackWithSymbolTables);
 
             // Compute Memory Size of Nodes
             ComputeMemorySizeVisitor cmsv = new ComputeMemorySizeVisitor();
             ASTStackWithSymbolTables.firstElement().accept(cmsv);
+
+            // write symbol tables to file
+            stc.writeSymblTablesToFile(fileName, ASTStackWithSymbolTables);
+
+            //Type Check AST
+            stc.typeCheckSymbolTables(fileName, ASTStackWithSymbolTables);
 
         } catch (Exception e) {
             System.out.print(e.getMessage());
