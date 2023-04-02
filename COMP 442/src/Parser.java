@@ -173,8 +173,8 @@ public class Parser {
                         case "SACT19" -> this.makeFamily("then block");
                         case "SACT20" -> this.makeFamily("else stat");
                         case "SACT21" -> this.makeFamily(new ProgNode(null,null, "prog", 0));
-                        case "SACT23" -> this.makeFamily("assign op");
                         case "SACT22" -> this.makeFamily("add op");
+                        case "SACT23" -> this.makeFamily("assign op");
                         case "SACT24" -> this.makeFamily("multi op");
                     }
                     s1.pop();

@@ -18,9 +18,11 @@
 |  |  |  |  array Size
 |  |  |  stat
 |  |  |  |  [id, x, 6]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, z, 7]
-|  |  |  |  [plus, +, 7]
+|  |  |  |  assign op
+|  |  |  |  |  [plus, +, 7]
 |  |  |  stat
 |  |  |  |  [id, printarray, 8]
 |  |  |  stat

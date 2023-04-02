@@ -126,15 +126,18 @@
 |  |  |  |  array Size
 |  |  |  stat
 |  |  |  |  [id, n, 38]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, i, 39]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, cookie, 40]
 |  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  write block
 |  |  |  |  |  [id, i, 43]
-|  |  |  |  |  [plus, +, 43]
+|  |  |  |  |  assign op
+|  |  |  |  |  |  [plus, +, 43]
 |  func def
 |  |  [id, tryMethod, 47]
 |  |  func params

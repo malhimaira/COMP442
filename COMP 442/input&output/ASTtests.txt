@@ -40,7 +40,7 @@ function undeclMethod(arr: integer[], size: integer) => void
   cookie();
   while (i<n) {
     write(arr[i]);
-      i = i+1;
+    i = i+1;
   };
 }
 

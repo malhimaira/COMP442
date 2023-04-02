@@ -26,29 +26,46 @@
 |  |  |  |  array Size
 |  |  |  stat
 |  |  |  |  [id, n, 8]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, i, 9]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, j, 10]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, temp, 11]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  while block
-|  |  |  |  |  [minus, -, 12]
+|  |  |  |  |  add op
+|  |  |  |  |  |  [minus, -, 12]
 |  |  |  |  |  while block
-|  |  |  |  |  |  [minus, -, 13]
-|  |  |  |  |  |  [minus, -, 13]
+|  |  |  |  |  |  add op
+|  |  |  |  |  |  |  [minus, -, 13]
+|  |  |  |  |  |  add op
+|  |  |  |  |  |  |  [minus, -, 13]
 |  |  |  |  |  |  if block
-|  |  |  |  |  |  |  [plus, +, 14]
+|  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  [plus, +, 14]
 |  |  |  |  |  |  |  [id, temp, 17]
+|  |  |  |  |  |  |  assign op
 |  |  |  |  |  |  |  [id, arr, 18]
-|  |  |  |  |  |  |  [plus, +, 18]
+|  |  |  |  |  |  |  assign op
+|  |  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  |  [plus, +, 18]
 |  |  |  |  |  |  |  [id, arr, 19]
-|  |  |  |  |  |  |  [plus, +, 19]
+|  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  [plus, +, 19]
+|  |  |  |  |  |  |  assign op
 |  |  |  |  |  |  [id, j, 21]
-|  |  |  |  |  |  [plus, +, 21]
+|  |  |  |  |  |  assign op
+|  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  [plus, +, 21]
 |  |  |  |  |  [id, i, 23]
-|  |  |  |  |  [plus, +, 23]
+|  |  |  |  |  assign op
+|  |  |  |  |  |  add op
+|  |  |  |  |  |  |  [plus, +, 23]
 |  func def
 |  |  [id, printArray, 28]
 |  |  func params
@@ -68,13 +85,17 @@
 |  |  |  |  array Size
 |  |  |  stat
 |  |  |  |  [id, n, 32]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, i, 33]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  write block
 |  |  |  |  |  [id, i, 36]
-|  |  |  |  |  [plus, +, 36]
+|  |  |  |  |  assign op
+|  |  |  |  |  |  add op
+|  |  |  |  |  |  |  [plus, +, 36]
 |  func def
 |  |  [id, main, 41]
 |  |  [voidKeyWord, void, 41]
@@ -86,18 +107,25 @@
 |  |  |  |  |  [integerType, 7, 43]
 |  |  |  stat
 |  |  |  |  [id, arr, 44]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, arr, 45]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, arr, 46]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, arr, 47]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, arr, 48]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, arr, 49]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, arr, 50]
+|  |  |  |  assign op
 |  |  |  stat
 |  |  |  |  [id, printarray, 51]
 |  |  |  stat
