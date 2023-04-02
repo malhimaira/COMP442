@@ -8,24 +8,23 @@
 |  |  |  |  [integerKeyWord, integer, 3]
 |  |  |  |  array Size
 |  |  |  |  |  [integerType, 7, 3]
+|  |  |  local var
+|  |  |  |  [id, z, 4]
+|  |  |  |  [integerKeyWord, integer, 4]
+|  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, x, 5]
+|  |  |  |  [integerKeyWord, integer, 5]
+|  |  |  |  array Size
 |  |  |  stat
-|  |  |  |  [id, arr, 4]
+|  |  |  |  [id, x, 6]
 |  |  |  stat
-|  |  |  |  [id, arr, 5]
+|  |  |  |  [id, z, 7]
+|  |  |  |  [plus, +, 7]
 |  |  |  stat
-|  |  |  |  [id, arr, 6]
+|  |  |  |  [id, printarray, 8]
 |  |  |  stat
-|  |  |  |  [id, arr, 7]
+|  |  |  |  [id, bubbleSort, 10]
 |  |  |  stat
-|  |  |  |  [id, arr, 8]
-|  |  |  stat
-|  |  |  |  [id, arr, 9]
-|  |  |  stat
-|  |  |  |  [id, arr, 10]
-|  |  |  stat
-|  |  |  |  [id, printarray, 11]
-|  |  |  stat
-|  |  |  |  [id, bubbleSort, 13]
-|  |  |  stat
-|  |  |  |  [id, printArray, 14]
+|  |  |  |  [id, printArray, 11]
 ]
