@@ -81,6 +81,9 @@
 |  local var + stat block
 |  |  stat
 |  |  |  return stat
+|  |  |  |  expr
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  [integerType, 0, 24]
 , func def
 |  [id, QUADRATIC, 27]
 |  [id, evaluate, 27]
@@ -95,14 +98,42 @@
 |  |  |  array Size
 |  |  stat
 |  |  |  [id, result, 31]
+|  |  |  assign op
+|  |  |  |  [equals, =, 31]
+|  |  |  |  expr
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  [id, a, 31]
 |  |  stat
 |  |  |  [id, result, 32]
-|  |  |  [plus, +, 32]
+|  |  |  assign op
+|  |  |  |  [equals, =, 32]
+|  |  |  |  expr
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  [id, result, 32]
+|  |  |  |  |  |  multi op
+|  |  |  |  |  |  |  [multiply, *, 32]
+|  |  |  |  |  |  |  [id, x, 32]
+|  |  |  |  |  |  add op
+|  |  |  |  |  |  |  [plus, +, 32]
+|  |  |  |  |  |  |  [id, b, 32]
 |  |  stat
 |  |  |  [id, result, 33]
-|  |  |  [plus, +, 33]
+|  |  |  assign op
+|  |  |  |  [equals, =, 33]
+|  |  |  |  expr
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  [id, result, 33]
+|  |  |  |  |  |  multi op
+|  |  |  |  |  |  |  [multiply, *, 33]
+|  |  |  |  |  |  |  [id, x, 33]
+|  |  |  |  |  |  add op
+|  |  |  |  |  |  |  [plus, +, 33]
+|  |  |  |  |  |  |  [id, c, 33]
 |  |  stat
 |  |  |  return stat
+|  |  |  |  expr
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  [id, result, 34]
 , null, [id, QUADRATIC, 37]
 , func params
 |  [id, A, 37]

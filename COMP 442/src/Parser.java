@@ -176,6 +176,11 @@ public class Parser {
                         case "SACT22" -> this.makeFamily("add op");
                         case "SACT23" -> this.makeFamily("assign op");
                         case "SACT24" -> this.makeFamily("multi op");
+                        case "SACT25" -> this.makeFamily("arithm expr");
+                        case "SACT26" -> this.makeFamily("expr");
+                        case "SACT27" -> this.makeFamily("factor");
+                        case "SACT28" -> this.makeFamily("indice");
+                        case "SACT29" -> this.makeFamily("rel expr");
                     }
                     s1.pop();
                     top = s1.peek();
