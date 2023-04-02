@@ -1,5 +1,6 @@
 package ASTNodes;
 
+import CodeGeneration.TagsBasedCodeGenerationVisitor;
 import SymbolTables.ComputeMemorySizeVisitor;
 import SymbolTables.SymbolTableVisitor;
 import SymbolTables.TypeCheckingVisitor;
@@ -22,4 +23,5 @@ public class MemberFuncDefNode extends ASTNode {
     public void accept(ComputeMemorySizeVisitor cmsv){
         cmsv.visit(this);
     }
+    public void accept(TagsBasedCodeGenerationVisitor tbcgv) {tbcgv.visit(this);}
 }

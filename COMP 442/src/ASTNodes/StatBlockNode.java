@@ -1,5 +1,6 @@
 package ASTNodes;
 
+import CodeGeneration.TagsBasedCodeGenerationVisitor;
 import SymbolTables.*;
 
 import java.util.ArrayList;
@@ -17,4 +18,5 @@ public class StatBlockNode extends ASTNode {
 	public void accept(ComputeMemorySizeVisitor cmsv){
 		cmsv.visit(this);
 	}
+	public void accept(TagsBasedCodeGenerationVisitor tbcgv) {tbcgv.visit(this);}
 }

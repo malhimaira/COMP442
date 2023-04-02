@@ -1,5 +1,6 @@
 package ASTNodes;
 
+import CodeGeneration.TagsBasedCodeGenerationVisitor;
 import SymbolTables.*;
 import java.util.ArrayList;
 
@@ -58,4 +59,5 @@ public class ASTNode {
     public void accept(SymbolTableVisitor stv){stv.visit(this);}
     public void accept(TypeCheckingVisitor tcv){tcv.visit(this);}
     public void accept(ComputeMemorySizeVisitor cmsv){cmsv.visit(this);}
+    public void accept(TagsBasedCodeGenerationVisitor tbcgv) {tbcgv.visit(this);}
 }
