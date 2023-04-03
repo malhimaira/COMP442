@@ -22,39 +22,48 @@
 |  |  |  |  |  [equals, =, 6]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 7, 6]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 7, 6]
 |  |  |  stat
 |  |  |  |  [id, z, 7]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 7]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [id, x, 7]
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, x, 7]
 |  |  |  |  |  |  |  add op
 |  |  |  |  |  |  |  |  [plus, +, 7]
-|  |  |  |  |  |  |  |  [integerType, 1, 7]
+|  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  [integerType, 1, 7]
 |  |  |  stat
 |  |  |  |  [id, printarray, 8]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [id, arr, 8]
+|  |  |  |  |  |  id
+|  |  |  |  |  |  |  [id, arr, 8]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 7, 8]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 7, 8]
 |  |  |  stat
 |  |  |  |  [id, bubbleSort, 10]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [id, arr, 10]
+|  |  |  |  |  |  id
+|  |  |  |  |  |  |  [id, arr, 10]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 7, 10]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 7, 10]
 |  |  |  stat
 |  |  |  |  [id, printArray, 11]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [id, arr, 11]
+|  |  |  |  |  |  id
+|  |  |  |  |  |  |  [id, arr, 11]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 7, 11]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 7, 11]
 ]

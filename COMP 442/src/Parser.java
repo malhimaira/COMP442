@@ -168,19 +168,21 @@ public class Parser {
                         case "SACT14" -> this.makeFamily("if block");
                         case "SACT15" -> this.makeFamily("while block");
                         case "SACT16" -> this.makeFamily("read block");
-                        case "SACT17" -> this.makeFamily("write block");
+                        case "SACT17" -> this.makeFamily(new WriteNode(null,null, "write block", 0));
                         case "SACT18" -> this.makeFamily("return stat");
                         case "SACT19" -> this.makeFamily("then block");
                         case "SACT20" -> this.makeFamily("else stat");
                         case "SACT21" -> this.makeFamily(new ProgNode(null,null, "prog", 0));
-                        case "SACT22" -> this.makeFamily("add op");
-                        case "SACT23" -> this.makeFamily("assign op");
-                        case "SACT24" -> this.makeFamily("multi op");
-                        case "SACT25" -> this.makeFamily("arithm expr");
-                        case "SACT26" -> this.makeFamily("expr");
+                        case "SACT22" -> this.makeFamily(new AddOpNode(null,null, "add op", 0));
+                        case "SACT23" -> this.makeFamily(new AssignOpNode(null,null, "assign op", 0));
+                        case "SACT24" -> this.makeFamily(new MultOpNode(null,null, "multi op", 0));
+                        case "SACT25" -> this.makeFamily(new ArithmNode(null,null, "arithm expr", 0));
+                        case "SACT26" -> this.makeFamily(new ExprNode(null,null, "expr", 0));
                         case "SACT27" -> this.makeFamily("factor");
                         case "SACT28" -> this.makeFamily("indice");
-                        case "SACT29" -> this.makeFamily("rel expr");
+                        case "SACT29" -> this.makeFamily(new RelExprNode(null,null, "rel expr", 0));
+                        case "SACT30" -> this.makeFamily(new NumNode(null,null, "num", 0));
+                        case "SACT31" -> this.makeFamily(new IdNode(null,null, "id", 0));
                     }
                     s1.pop();
                     top = s1.peek();

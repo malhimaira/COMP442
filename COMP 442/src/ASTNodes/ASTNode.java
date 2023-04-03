@@ -15,6 +15,9 @@ public class ASTNode {
     public  SymbolTable      m_symtab             = null;
     public  SymbolTableEntry m_symtabentry        = null;
 
+    // Code Generation - mood code variabe name
+    public  String      m_moonVarName        = new String();
+
     public ASTNode(ASTNode parentNode, ArrayList<ASTNode> childrenNodes, Object semanticConcept, int treeDepth){
         this.parentNode = parentNode;
         this.childrenNodes = childrenNodes;

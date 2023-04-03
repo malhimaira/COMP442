@@ -1,4 +1,5 @@
 import ASTNodes.ASTNode;
+import CodeGeneration.TagsBasedCodeGenerationVisitor;
 import LexerComponents.Token;
 import SymbolTables.ComputeMemorySizeVisitor;
 
@@ -55,6 +56,11 @@ public class Driver {
 
             //Type Check AST
             stc.typeCheckSymbolTables(fileName, ASTStackWithSymbolTables);
+
+            // Code Generation Visitor
+            PrintWriter tbcgPrinter = new PrintWriter(new File("COMP 442/input&output/" + fileName+ ".m"));
+            TagsBasedCodeGenerationVisitor tbcgv = new TagsBasedCodeGenerationVisitor(tbcgPrinter);
+            ASTStackWithSymbolTables.firstElement().accept(tbcgv);
 
         } catch (Exception e) {
             System.out.print(e.getMessage());

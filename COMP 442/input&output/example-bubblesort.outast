@@ -30,122 +30,151 @@
 |  |  |  |  |  [equals, =, 8]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [id, size, 8]
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, size, 8]
 |  |  |  stat
 |  |  |  |  [id, i, 9]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 9]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 0, 9]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 0, 9]
 |  |  |  stat
 |  |  |  |  [id, j, 10]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 10]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 0, 10]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 0, 10]
 |  |  |  stat
 |  |  |  |  [id, temp, 11]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 11]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 0, 11]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 0, 11]
 |  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  rel expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [id, i, 12]
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, i, 12]
 |  |  |  |  |  |  [lessThan, <, 12]
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [id, n, 12]
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, n, 12]
 |  |  |  |  |  |  |  add op
 |  |  |  |  |  |  |  |  [minus, -, 12]
-|  |  |  |  |  |  |  |  [integerType, 1, 12]
+|  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  [integerType, 1, 12]
 |  |  |  |  |  while block
 |  |  |  |  |  |  rel expr
 |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  [id, j, 13]
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, j, 13]
 |  |  |  |  |  |  |  [lessThan, <, 13]
 |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  [id, n, 13]
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, n, 13]
 |  |  |  |  |  |  |  |  add op
 |  |  |  |  |  |  |  |  |  [minus, -, 13]
-|  |  |  |  |  |  |  |  |  [id, i, 13]
+|  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  [id, i, 13]
 |  |  |  |  |  |  |  |  add op
 |  |  |  |  |  |  |  |  |  [minus, -, 13]
-|  |  |  |  |  |  |  |  |  [integerType, 1, 13]
+|  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  [integerType, 1, 13]
 |  |  |  |  |  |  if block
 |  |  |  |  |  |  |  rel expr
 |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  [id, arr, 14]
+|  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  [id, arr, 14]
 |  |  |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  |  |  [id, j, 14]
+|  |  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  |  [id, j, 14]
 |  |  |  |  |  |  |  |  [greaterThan, >, 14]
 |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  [id, arr, 14]
+|  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  [id, arr, 14]
 |  |  |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  |  |  [id, j, 14]
+|  |  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  |  [id, j, 14]
 |  |  |  |  |  |  |  |  |  |  |  add op
 |  |  |  |  |  |  |  |  |  |  |  |  [plus, +, 14]
-|  |  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 14]
+|  |  |  |  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 14]
 |  |  |  |  |  |  |  [id, temp, 17]
 |  |  |  |  |  |  |  assign op
 |  |  |  |  |  |  |  |  [equals, =, 17]
 |  |  |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  |  [id, arr, 17]
+|  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  [id, arr, 17]
 |  |  |  |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  |  |  |  [id, j, 17]
+|  |  |  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  |  |  [id, j, 17]
 |  |  |  |  |  |  |  [id, arr, 18]
 |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  [id, j, 18]
+|  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  [id, j, 18]
 |  |  |  |  |  |  |  assign op
 |  |  |  |  |  |  |  |  [equals, =, 18]
 |  |  |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  |  [id, arr, 18]
+|  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  [id, arr, 18]
 |  |  |  |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  |  |  |  [id, j, 18]
+|  |  |  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  |  |  [id, j, 18]
 |  |  |  |  |  |  |  |  |  |  |  |  add op
 |  |  |  |  |  |  |  |  |  |  |  |  |  [plus, +, 18]
-|  |  |  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 18]
+|  |  |  |  |  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 18]
 |  |  |  |  |  |  |  [id, arr, 19]
 |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  [id, j, 19]
+|  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  [id, j, 19]
 |  |  |  |  |  |  |  |  |  add op
 |  |  |  |  |  |  |  |  |  |  [plus, +, 19]
-|  |  |  |  |  |  |  |  |  |  [integerType, 1, 19]
+|  |  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 19]
 |  |  |  |  |  |  |  assign op
 |  |  |  |  |  |  |  |  [equals, =, 19]
 |  |  |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  |  [id, temp, 19]
+|  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  [id, temp, 19]
 |  |  |  |  |  |  [id, j, 21]
 |  |  |  |  |  |  assign op
 |  |  |  |  |  |  |  [equals, =, 21]
 |  |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  [id, j, 21]
+|  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  [id, j, 21]
 |  |  |  |  |  |  |  |  |  add op
 |  |  |  |  |  |  |  |  |  |  [plus, +, 21]
-|  |  |  |  |  |  |  |  |  |  [integerType, 1, 21]
+|  |  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 21]
 |  |  |  |  |  [id, i, 23]
 |  |  |  |  |  assign op
 |  |  |  |  |  |  [equals, =, 23]
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  [id, i, 23]
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, i, 23]
 |  |  |  |  |  |  |  |  add op
 |  |  |  |  |  |  |  |  |  [plus, +, 23]
-|  |  |  |  |  |  |  |  |  [integerType, 1, 23]
+|  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  [integerType, 1, 23]
 |  func def
 |  |  [id, printArray, 28]
 |  |  func params
@@ -169,38 +198,46 @@
 |  |  |  |  |  [equals, =, 32]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [id, size, 32]
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, size, 32]
 |  |  |  stat
 |  |  |  |  [id, i, 33]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 33]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 0, 33]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 0, 33]
 |  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  rel expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [id, i, 34]
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, i, 34]
 |  |  |  |  |  |  [lessThan, <, 34]
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [id, n, 34]
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, n, 34]
 |  |  |  |  |  write block
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  [id, arr, 35]
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, arr, 35]
 |  |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  |  [id, i, 35]
+|  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  [id, i, 35]
 |  |  |  |  |  [id, i, 36]
 |  |  |  |  |  assign op
 |  |  |  |  |  |  [equals, =, 36]
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  [id, i, 36]
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, i, 36]
 |  |  |  |  |  |  |  |  add op
 |  |  |  |  |  |  |  |  |  [plus, +, 36]
-|  |  |  |  |  |  |  |  |  [integerType, 1, 36]
+|  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  [integerType, 1, 36]
 |  func def
 |  |  [id, main, 41]
 |  |  [voidKeyWord, void, 41]
@@ -214,94 +251,114 @@
 |  |  |  |  [id, arr, 44]
 |  |  |  |  indice
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 0, 44]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 0, 44]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 44]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 64, 44]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 64, 44]
 |  |  |  stat
 |  |  |  |  [id, arr, 45]
 |  |  |  |  indice
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 1, 45]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 1, 45]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 45]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 34, 45]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 34, 45]
 |  |  |  stat
 |  |  |  |  [id, arr, 46]
 |  |  |  |  indice
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 2, 46]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 2, 46]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 46]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 25, 46]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 25, 46]
 |  |  |  stat
 |  |  |  |  [id, arr, 47]
 |  |  |  |  indice
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 3, 47]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 3, 47]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 47]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 12, 47]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 12, 47]
 |  |  |  stat
 |  |  |  |  [id, arr, 48]
 |  |  |  |  indice
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 4, 48]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 4, 48]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 48]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 22, 48]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 22, 48]
 |  |  |  stat
 |  |  |  |  [id, arr, 49]
 |  |  |  |  indice
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 5, 49]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 5, 49]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 49]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 11, 49]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 11, 49]
 |  |  |  stat
 |  |  |  |  [id, arr, 50]
 |  |  |  |  indice
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 6, 50]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 6, 50]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 50]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 90, 50]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 90, 50]
 |  |  |  stat
 |  |  |  |  [id, printarray, 51]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [id, arr, 51]
+|  |  |  |  |  |  id
+|  |  |  |  |  |  |  [id, arr, 51]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 7, 51]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 7, 51]
 |  |  |  stat
 |  |  |  |  [id, bubbleSort, 52]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [id, arr, 52]
+|  |  |  |  |  |  id
+|  |  |  |  |  |  |  [id, arr, 52]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 7, 52]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 7, 52]
 |  |  |  stat
 |  |  |  |  [id, printarray, 53]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [id, arr, 53]
+|  |  |  |  |  |  id
+|  |  |  |  |  |  |  [id, arr, 53]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
-|  |  |  |  |  |  [integerType, 7, 53]
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 7, 53]
 ]

@@ -39,8 +39,10 @@ public class TagsBasedCodeGenerationVisitor {
         m_moonExecCode += m_mooncodeindent + "hlt\n";
 
         // print to file
-        moonCodePrintWriter.write(this.m_moonExecCode);
-        moonCodePrintWriter.write(this.m_moonDataCode);
+        moonCodePrintWriter.println(this.m_moonExecCode);
+        moonCodePrintWriter.println(this.m_moonDataCode);
+
+        moonCodePrintWriter.close();
     }
 
     public void visit(ClassDeclNode node) {

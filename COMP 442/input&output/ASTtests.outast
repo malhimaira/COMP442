@@ -130,40 +130,48 @@
 |  |  |  |  |  [equals, =, 38]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [id, size, 38]
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, size, 38]
 |  |  |  stat
 |  |  |  |  [id, i, 39]
 |  |  |  |  assign op
 |  |  |  |  |  [equals, =, 39]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [integerType, 0, 39]
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 0, 39]
 |  |  |  stat
 |  |  |  |  [id, cookie, 40]
 |  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  rel expr
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [id, i, 41]
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, i, 41]
 |  |  |  |  |  |  [lessThan, <, 41]
 |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  [id, n, 41]
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, n, 41]
 |  |  |  |  |  write block
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  [id, arr, 42]
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, arr, 42]
 |  |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  |  [id, i, 42]
+|  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  [id, i, 42]
 |  |  |  |  |  [id, i, 43]
 |  |  |  |  |  assign op
 |  |  |  |  |  |  [equals, =, 43]
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  [id, i, 43]
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, i, 43]
 |  |  |  |  |  |  |  |  add op
 |  |  |  |  |  |  |  |  |  [plus, +, 43]
-|  |  |  |  |  |  |  |  |  [integerType, 1, 43]
+|  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  [integerType, 1, 43]
 |  func def
 |  |  [id, tryMethod, 47]
 |  |  func params
