@@ -7,7 +7,15 @@ import java.util.Vector;
 
 public class SymbolTableVisitor{
 
+    public Integer m_tempVarNum     = 0;
+
     public SymbolTableVisitor() {}
+
+    public String moonCodeTempVarRegname(){
+        m_tempVarNum++;
+        return "t" + m_tempVarNum.toString();
+    }
+
 
     public void visit(ASTNode node) {
 //        System.out.println("symbol table entry string");
@@ -20,8 +28,6 @@ public class SymbolTableVisitor{
             child.m_symtab = node.m_symtab;
             child.accept(this);
         }
-
-        // TODO print to file
     }
 
     public void visit(ClassDeclNode node) {
@@ -34,7 +40,6 @@ public class SymbolTableVisitor{
         node.m_symtab.addEntry(node.m_symtabentry);
         node.m_symtab = localtable;
 
-        //TODO: children node loop
         for (ASTNode child : node.childrenNodes ) {
             child.m_symtab = node.m_symtab;
             child.accept(this);
@@ -42,6 +47,10 @@ public class SymbolTableVisitor{
     }
 
     public void visit(InheritListNode node){
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
         if(node.childrenNodes.size()!=0){
             String fname =  ((Token) node.childrenNodes.get(0).semanticConcept).getLexeme();
             node.m_symtabentry = new InheritListEntry("","",fname,null);
@@ -85,7 +94,6 @@ public class SymbolTableVisitor{
         node.m_symtab.addEntry(node.m_symtabentry);
         node.m_symtab = localtable;
 
-        // TODO children loop
         for (ASTNode child : node.childrenNodes ) {
             child.m_symtab = node.m_symtab;
             child.accept(this);
@@ -117,9 +125,20 @@ public class SymbolTableVisitor{
         }
     }
 
+    public void visit(StatNode node){
+//        System.out.println("stat block");
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
+    }
+
     public void visit(VarDeclNode node){
         //System.out.println("var decl node");
-
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
         // get array dimensions, if multi dim  vector size >1
         Vector<Integer> dimlist = new Vector<Integer>();
         for (ASTNode dim : node.childrenNodes.get(2).childrenNodes){
@@ -132,7 +151,10 @@ public class SymbolTableVisitor{
 
     public void visit(MemberVarDeclNode node){
         //System.out.println("var decl node");
-
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
         // get array dimensions, if multi dim  vector size >1
         Vector<Integer> dimlist = new Vector<Integer>();
         for (ASTNode dim : node.childrenNodes.get(3).childrenNodes){
@@ -178,7 +200,6 @@ public class SymbolTableVisitor{
         node.m_symtab.addEntry(node.m_symtabentry);
         node.m_symtab = localtable;
 
-        // TODO children loop
         for (ASTNode child : node.childrenNodes ) {
             child.m_symtab = node.m_symtab;
             child.accept(this);
@@ -186,11 +207,73 @@ public class SymbolTableVisitor{
 
     }
 
+    public void visit(WriteNode node){
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
+    }
+
     public void visit(ArraySizeNode node){
         for (ASTNode child : node.childrenNodes ) {
             child.m_symtab = node.m_symtab;
             child.accept(this);
         }
+    }
+
+    public void visit(IdNode node){
+        node.m_moonVarName = ((Token)node.childrenNodes.get(0).semanticConcept).getLexeme();
+        node.m_symtabentry = new VarEntry("idvalLoad", ""+((Token) node.childrenNodes.get(0).semanticConcept).getTokenType(), node.m_moonVarName);
+        node.m_symtab.addEntry(node.m_symtabentry);
+    }
+
+    public void visit(NumNode node){
+        node.m_moonVarName =this.moonCodeTempVarRegname();
+        node.m_symtabentry = new VarEntry("litvalLoad", ""+((Token) node.childrenNodes.get(0).semanticConcept).getTokenType(), node.m_moonVarName);
+        node.m_symtab.addEntry(node.m_symtabentry);
+    }
+
+    public void visit(ArithmNode node){
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
+    }
+
+    public void visit(ExprNode node){
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
+    }
+
+    public void visit(AssignOpNode node){
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
+    }
+
+    public void visit(MultOpNode node){
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
+        String tempvarname = this.moonCodeTempVarRegname();
+        node.m_moonVarName = tempvarname;
+        node.m_symtabentry = new VarEntry("tempRegStr", ((Token)node.childrenNodes.get(1).childrenNodes.get(0).semanticConcept).getTokenType().toString(), node.m_moonVarName);
+        node.m_symtab.addEntry(node.m_symtabentry);
+    }
+
+    public void visit(AddOpNode node){
+        for (ASTNode child : node.childrenNodes ) {
+            child.m_symtab = node.m_symtab;
+            child.accept(this);
+        }
+        String tempvarname = this.moonCodeTempVarRegname();
+        node.m_moonVarName = tempvarname;
+        node.m_symtabentry = new VarEntry("tempRegStr", ((Token)node.childrenNodes.get(1).childrenNodes.get(0).semanticConcept).getTokenType().toString(), node.m_moonVarName);
+        node.m_symtab.addEntry(node.m_symtabentry);
     }
 
 }

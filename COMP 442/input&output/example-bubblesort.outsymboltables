@@ -12,6 +12,10 @@
 |    | local var | i         | integer   | 4         |        |
 |    | local var | j         | integer   | 4         |        |
 |    | local var | temp      | integer   | 4         |        |
+|    | idvalLoad | size      | id        | 0         |        |
+|    | litvalLoad| t1        | integerType| 0         |        |
+|    | litvalLoad| t2        | integerType| 0         |        |
+|    | litvalLoad| t3        | integerType| 0         |        |
 |    =====================================================
 | function  | printArray|           | (integer, integer) void|            |
 |    =====================================================
@@ -21,11 +25,26 @@
 |    | param     | size      | integer   | 0         |        |
 |    | local var | n         | integer   | 4         |        |
 |    | local var | i         | integer   | 4         |        |
+|    | idvalLoad | size      | id        | 0         |        |
+|    | litvalLoad| t4        | integerType| 0         |        |
 |    =====================================================
 | function  | main      |           |           |            |
 |    =====================================================
 |    | table: main                                       |
 |    =====================================================
 |    | local var | arr       | integer   | 28        |        |
+|    | litvalLoad| t5        | integerType| 0         |        |
+|    | litvalLoad| t6        | integerType| 0         |        |
+|    | litvalLoad| t7        | integerType| 0         |        |
+|    | litvalLoad| t8        | integerType| 0         |        |
+|    | litvalLoad| t9        | integerType| 0         |        |
+|    | litvalLoad| t10       | integerType| 0         |        |
+|    | litvalLoad| t11       | integerType| 0         |        |
+|    | idvalLoad | arr       | id        | 0         |        |
+|    | litvalLoad| t12       | integerType| 0         |        |
+|    | idvalLoad | arr       | id        | 0         |        |
+|    | litvalLoad| t13       | integerType| 0         |        |
+|    | idvalLoad | arr       | id        | 0         |        |
+|    | litvalLoad| t14       | integerType| 0         |        |
 |    =====================================================
 =====================================================

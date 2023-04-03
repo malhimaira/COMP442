@@ -96,4 +96,50 @@ public class ComputeMemorySizeVisitor {
 //        node.m_symtabentry.m_size = this.sizeOfEntry(node);
     }
 
+    public void visit(ArithmNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
+    }
+
+    public void visit(ExprNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
+    }
+
+    public void visit(AssignOpNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
+    }
+
+    public void visit(AddOpNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
+    }
+
+    public void visit(MultOpNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
+    }
+
+    public void visit(WriteNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
+    }
+
+    public void visit(NumNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
+    }
+
+    public void visit(IdNode node) {
+
+    }
+
 }

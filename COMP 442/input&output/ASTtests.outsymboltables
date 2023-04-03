@@ -96,6 +96,8 @@
 |    | local var | n         | integer   | 4         |        |
 |    | local var | n         | integer   | 4         |        |
 |    | local var | i         | integer   | 4         |        |
+|    | idvalLoad | size      | id        | 0         |        |
+|    | litvalLoad| t1        | integerType| 0         |        |
 |    =====================================================
 | function  | tryMethod |           | (integer, id) integer|            |
 |    =====================================================
