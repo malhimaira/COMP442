@@ -18,16 +18,35 @@ public class ParserDriver {
 
             // Open print writer for errors
             PrintWriter printWriterErrors = new PrintWriter(new File("COMP 442/input&output/"+fileName + ".outlexerrors"));
-            PrintWriter pwError = new PrintWriter(new File("COMP 442/input&output/" + fileName+ ".outerrors"));
+            PrintWriter printWriterTokens = new PrintWriter(new File("COMP 442/input&output/"+fileName + ".outlextokens"));
 
             // Open Lexer
             Lexer lexer = new Lexer(fileInputStream, printWriterErrors);
 
             Token token;
+            int lastRowChecked = 1;
+            boolean firstcheck = true;
+            // Loop to print tokens
+            while ((token = lexer.getNextTokenForPrint()) != null) {
+                if (firstcheck == true) {
+                    printWriterTokens.write("" + token);
+                    firstcheck = false;
+                } else if (lastRowChecked == token.getPosition().getRow()) {
+                    printWriterTokens.write(" " + token);
+                } else {
+                    lastRowChecked= token.getPosition().getRow();
+                    printWriterTokens.write("\n" + token);
+                }
+            }
+            lexer.getNextTokenForPrint();
+            printWriterTokens.close();
 
             //Open Parser
             Parser p = new Parser();
             p.Parser(fileName);
+
+            PrintWriter pwError = new PrintWriter(new File("COMP 442/input&output/" + fileName+ ".outerrors"));
+
 
             // Parse Tokens
             p.parse(pwError, lexer);

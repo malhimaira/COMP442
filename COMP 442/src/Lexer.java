@@ -570,6 +570,20 @@ public class Lexer {
         return token;
     }
 
+    public Token getNextTokenForPrint() {
+        Token token = null;
+        if (countTokens != TokenSequence.size()) {
+            token = TokenSequence.get(countTokens);
+            countTokens++;
+            return token;
+        }
+        else
+        {
+            countTokens=0;
+        }
+        return token;
+    }
+
     public void printErrorTokens(String invalidLexeme, String type, int row) {
         if (type.equals("character")) {
             this.printWriterErrors.write("Lexical error: Invalid character: \"" + invalidLexeme + "\": line " + row + ".\n");
