@@ -80,6 +80,7 @@ public class Parser {
             "errorTokenId",
             "errorTokenNumber",
             "errorTokenChar",
+            "errorTokenUnendingBlock",
             "epsilon",
             "EOF"
     };
@@ -203,7 +204,7 @@ public class Parser {
                 }
 
                 //System.out.println( lookahead.length > 0);
-
+                // terminal token case
                 if (Arrays.asList(terminals).contains(top)) {
                     if (top.equals(token.getTokenType().name())) {
 
@@ -223,20 +224,22 @@ public class Parser {
                         return false;
 
                     }
-
+                // non terminal token case found
                 } else if (lookahead.length > 0) {
 
                     var nT = s1.pop(); //pop nonterminal
 
+                    //push onto stack backwards
                     Collections.reverse(Arrays.asList(lookahead));
                     //System.out.println(lookahead.length);
                     for (var i : lookahead) {
                         s1.push(convertTerminals(i));
 
                     }
-
+                    // reverse again to print
                     Collections.reverse(Arrays.asList(lookahead));
 
+                    // create string to print
                     if (nT == null) {
                         nT = "!";
                     }
@@ -277,16 +280,6 @@ public class Parser {
         // Generate Symbol Table and Semantic Analysis
 
         return true;
-    }
-
-
-
-    public void traverseASTTree() {
-
-    }
-
-    public void printSymbolTable() {
-
     }
 
     public ASTNode makeNull() {
