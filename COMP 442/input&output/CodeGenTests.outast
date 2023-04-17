@@ -4,66 +4,25 @@
 |  |  [voidKeyWord, void, 1]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, arr, 3]
+|  |  |  |  [id, x, 3]
 |  |  |  |  [integerKeyWord, integer, 3]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 3]
-|  |  |  local var
-|  |  |  |  [id, z, 4]
-|  |  |  |  [integerKeyWord, integer, 4]
-|  |  |  |  array Size
-|  |  |  local var
-|  |  |  |  [id, x, 5]
-|  |  |  |  [integerKeyWord, integer, 5]
-|  |  |  |  array Size
 |  |  |  stat
-|  |  |  |  [id, x, 6]
+|  |  |  |  [id, x, 4]
 |  |  |  |  assign op
-|  |  |  |  |  [equals, =, 6]
+|  |  |  |  |  [equals, =, 4]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 7, 6]
+|  |  |  |  |  |  |  |  [integerType, 5, 4]
+|  |  |  |  |  |  |  multi op
+|  |  |  |  |  |  |  |  [multiply, *, 4]
+|  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  [integerType, 3, 4]
 |  |  |  stat
-|  |  |  |  [id, z, 7]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 7]
+|  |  |  |  write block
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, x, 7]
-|  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  [plus, +, 7]
-|  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  [integerType, 1, 7]
-|  |  |  stat
-|  |  |  |  [id, printarray, 8]
-|  |  |  |  expr
-|  |  |  |  |  arithm expr
-|  |  |  |  |  |  id
-|  |  |  |  |  |  |  [id, arr, 8]
-|  |  |  |  expr
-|  |  |  |  |  arithm expr
-|  |  |  |  |  |  num
-|  |  |  |  |  |  |  [integerType, 7, 8]
-|  |  |  stat
-|  |  |  |  [id, bubbleSort, 10]
-|  |  |  |  expr
-|  |  |  |  |  arithm expr
-|  |  |  |  |  |  id
-|  |  |  |  |  |  |  [id, arr, 10]
-|  |  |  |  expr
-|  |  |  |  |  arithm expr
-|  |  |  |  |  |  num
-|  |  |  |  |  |  |  [integerType, 7, 10]
-|  |  |  stat
-|  |  |  |  [id, printArray, 11]
-|  |  |  |  expr
-|  |  |  |  |  arithm expr
-|  |  |  |  |  |  id
-|  |  |  |  |  |  |  [id, arr, 11]
-|  |  |  |  expr
-|  |  |  |  |  arithm expr
-|  |  |  |  |  |  num
-|  |  |  |  |  |  |  [integerType, 7, 11]
+|  |  |  |  |  |  |  |  [id, x, 5]
 ]

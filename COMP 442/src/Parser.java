@@ -179,7 +179,7 @@ public class Parser {
                         case "SACT25" -> this.makeFamily(new ArithmNode(null,null, "arithm expr", 0));
                         case "SACT26" -> this.makeFamily(new ExprNode(null,null, "expr", 0));
                         case "SACT27" -> this.makeFamily("factor");
-                        case "SACT28" -> this.makeFamily("indice");
+                        case "SACT28" -> this.makeFamily(new IndiceNode(null,null, "indice", 0));
                         case "SACT29" -> this.makeFamily(new RelExprNode(null,null, "rel expr", 0));
                         case "SACT30" -> this.makeFamily(new NumNode(null,null, "num", 0));
                         case "SACT31" -> this.makeFamily(new IdNode(null,null, "id", 0));

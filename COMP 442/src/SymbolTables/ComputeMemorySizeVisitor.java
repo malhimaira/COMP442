@@ -42,7 +42,7 @@ public class ComputeMemorySizeVisitor {
         for (ASTNode child : node.childrenNodes) {
             child.accept(this);
         }
-//        System.out.println("here");
+        System.out.println("Memory Size Computation complete");
     }
 
     public void visit(ClassDeclNode node) {
@@ -96,6 +96,18 @@ public class ComputeMemorySizeVisitor {
 //        node.m_symtabentry.m_size = this.sizeOfEntry(node);
     }
 
+    public void visit(ArraySizeNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
+    }
+
+    public void visit(IndiceNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
+    }
+
     public void visit(ArithmNode node) {
         for (ASTNode child : node.childrenNodes) {
             child.accept(this);
@@ -139,7 +151,15 @@ public class ComputeMemorySizeVisitor {
     }
 
     public void visit(IdNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
+    }
 
+    public void visit(InheritListNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
     }
 
 }

@@ -6,18 +6,10 @@
 |    =====================================================
 |    | table: main                                       |
 |    =====================================================
-|    | local var | arr       | integer   | 28        |        |
-|    | local var | z         | integer   | 4         |        |
 |    | local var | x         | integer   | 4         |        |
 |    | litvalLoad| t1        | integerType| 0         |        |
-|    | idvalLoad | x         | id        | 0         |        |
 |    | litvalLoad| t2        | integerType| 0         |        |
 |    | tempRegStr| t3        | integerType| 0         |        |
-|    | idvalLoad | arr       | id        | 0         |        |
-|    | litvalLoad| t4        | integerType| 0         |        |
-|    | idvalLoad | arr       | id        | 0         |        |
-|    | litvalLoad| t5        | integerType| 0         |        |
-|    | idvalLoad | arr       | id        | 0         |        |
-|    | litvalLoad| t6        | integerType| 0         |        |
+|    | idvalLoad | x         | id        | 0         |        |
 |    =====================================================
 =====================================================

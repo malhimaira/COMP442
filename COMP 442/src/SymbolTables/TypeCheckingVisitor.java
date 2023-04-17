@@ -14,13 +14,14 @@ public class TypeCheckingVisitor{
     }
 
     public void visit(ASTNode node) {
-        System.out.println("type checking visit");
+        //System.out.println("type checking visit");
     }
 
     public void visit(ProgNode node) {
         for (ASTNode child : node.childrenNodes) {
             child.accept(this);
         }
+        System.out.println("Type Check complete");
         semanticErrorWriter.write(p_error);
 
     }
@@ -133,7 +134,10 @@ public class TypeCheckingVisitor{
     }
 
     public void visit(StatNode node) {
-        System.out.println("stat node");
+        //System.out.println("stat node");
+        for (ASTNode child : node.childrenNodes ) {
+            child.accept(this);
+        }
     }
 
     public void visit(StatBlockNode node){
@@ -248,6 +252,22 @@ public class TypeCheckingVisitor{
         //check if it inherits
         String inheritedClassName = ((Token)node.parentNode.childrenNodes.get(1).childrenNodes.get(0).semanticConcept).getLexeme();
         if(!inheritedClassName.equals("none")){}
+    }
+
+    public void visit(InheritListNode node) {
+
+    }
+
+    public void visit(ArraySizeNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
+    }
+
+    public void visit(IndiceNode node) {
+        for (ASTNode child : node.childrenNodes) {
+            child.accept(this);
+        }
     }
 
     public void visit(ArithmNode node) {

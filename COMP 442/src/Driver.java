@@ -58,7 +58,7 @@ public class Driver {
             stc.typeCheckSymbolTables(fileName, ASTStackWithSymbolTables);
 
             // Code Generation Visitor
-            PrintWriter tbcgPrinter = new PrintWriter(new File("COMP 442/input&output/" + fileName+ ".m"));
+            PrintWriter tbcgPrinter = new PrintWriter(new File("COMP 442/mooncode/" + fileName+ ".m"));
             TagsBasedCodeGenerationVisitor tbcgv = new TagsBasedCodeGenerationVisitor(tbcgPrinter);
             ASTStackWithSymbolTables.firstElement().accept(tbcgv);
 

@@ -1,12 +1,6 @@
 function main() => void
 {
-  localvar arr: integer[7];                                // 1.1
-  localvar z: integer;                                     // 1.1
-  localvar x: integer;                                     // 1.1
-  x = 7;
-  z = x+1;
-  printarray(arr, 7);                                      // 2.1, 2.2
-  /* assumes that the array is passed as a reference */
-  bubbleSort(arr, 7);                                      // 2.1, 2.2
-  printArray(arr, 7);                                      // 2.1, 2.2
+  localvar x: integer;
+  x = 5 * 3;
+  write(x);
 }

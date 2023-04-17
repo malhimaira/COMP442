@@ -28,6 +28,7 @@ public class SymbolTableVisitor{
             child.m_symtab = node.m_symtab;
             child.accept(this);
         }
+        System.out.println("Symbol Table generation complete");
     }
 
     public void visit(ClassDeclNode node) {
