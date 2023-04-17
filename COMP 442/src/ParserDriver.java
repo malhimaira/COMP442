@@ -19,6 +19,7 @@ public class ParserDriver {
             // Open print writer for errors
             PrintWriter printWriterErrors = new PrintWriter(new File("COMP 442/input&output/"+fileName + ".outlexerrors"));
             PrintWriter printWriterTokens = new PrintWriter(new File("COMP 442/input&output/"+fileName + ".outlextokens"));
+            PrintWriter pwError = new PrintWriter(new File("COMP 442/input&output/" + fileName+ ".outerrors"));
 
             // Open Lexer
             Lexer lexer = new Lexer(fileInputStream, printWriterErrors);
@@ -44,9 +45,6 @@ public class ParserDriver {
             //Open Parser
             Parser p = new Parser();
             p.Parser(fileName);
-
-            PrintWriter pwError = new PrintWriter(new File("COMP 442/input&output/" + fileName+ ".outerrors"));
-
 
             // Parse Tokens
             p.parse(pwError, lexer);

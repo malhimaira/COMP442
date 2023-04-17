@@ -12,6 +12,7 @@ public class Lexer {
 
     private ArrayList<Token> TokenSequence;
     private int countTokens;
+    private int countTokensForPrint;
     private int lastline;
     public static ArrayList<String> reservedWords = new ArrayList<String>(Arrays.asList("integer", "float", "void", "class", "self",
             "isa", "while", "if", "then", "else", "read", "write", "return", "localvar", "constructor",
@@ -25,6 +26,7 @@ public class Lexer {
             TokenSequence = new ArrayList<>(10);
             this.printWriterErrors = printWriterErrors;
             countTokens = 0;
+            countTokensForPrint =0;
             int countRowLine = 1;
             int nextChar;
             int currentPointerChar;
@@ -572,14 +574,10 @@ public class Lexer {
 
     public Token getNextTokenForPrint() {
         Token token = null;
-        if (countTokens != TokenSequence.size()) {
-            token = TokenSequence.get(countTokens);
-            countTokens++;
+        if (countTokensForPrint != TokenSequence.size()) {
+            token = TokenSequence.get(countTokensForPrint);
+            countTokensForPrint++;
             return token;
-        }
-        else
-        {
-            countTokens=0;
         }
         return token;
     }
