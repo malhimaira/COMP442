@@ -52,4 +52,4 @@
 [id, y, 64] [equals, =, 64] [integerType, 2, 64] [semicolon, ;, 64]
 [returnKeyWord, return, 65] [id, getcookie, 65] [openBracketRound, (, 65] [id, y, 65] [closeBracketRound, ), 65] [semicolon, ;, 65] [closedBracketCurly, }, 65]
 [inlineComment, // example of bad spacing for punctuation, 67]
-[publicKeyWord, public, 69] [floatKeyWord, float, 69] [id, cookie, 69] [openBracketRound, (, 69] [id, y, 69] [equals, =, 69] [integerType, 3, 69] [closeBracketRound, ), 69] [openBracketCurly, {, 69] [id, y, 69] [equals, =, 69] [integerType, 2, 69] [semicolon, ;, 69] [returnKeyWord, return, 69] [id, getcookie, 69] [openBracketRound, (, 69] [id, y, 69] [closeBracketRound, ), 69] [semicolon, ;, 69] [closedBracketCurly, }, 69]
+[publicKeyWord, public, 69] [floatKeyWord, float, 69] [id, cookie, 69] [openBracketRound, (, 69] [id, y, 69] [equals, =, 69] [integerType, 3, 69] [closeBracketRound, ), 69] [openBracketCurly, {, 69] [id, y, 69] [equals, =, 69] [integerType, 2, 69] [semicolon, ;, 69] [returnKeyWord, return, 69] [id, getcookie, 69] [openBracketRound, (, 69] [id, y, 69] [closeBracketRound, ), 69] [semicolon, ;, 69] [closedBracketCurly, }, 69] [EOF, EOF, 69]

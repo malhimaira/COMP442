@@ -156,10 +156,11 @@ public class Lexer {
                     else if ((char) nextChar == '*') {
                         lastCharsRead = "/*";
                         boolean checkIfBlockEnded = false;
+                        int countImbr =1;
                         // store initial row for token of block comment
                         int initialRow = countRowLine;
 
-                        while (!checkIfBlockEnded) {
+                        while (!checkIfBlockEnded && countImbr != 0) {
                             nextChar = fileInputStream.read();
                             if ((char) nextChar == '\r') {
                                 continue;
@@ -169,20 +170,28 @@ public class Lexer {
                                 lastCharsRead += "\\n";
                                 continue;
                             }
-//                            if ((char) nextChar == '\\') {
-//                                lastCharsRead += "\\";
-//                                lastCharsRead += "\\n";
-//                                continue;
-//                            }
+                            if((char) nextChar == '/') {
+                                nextChar = fileInputStream.read();
+                                if((char) nextChar == '*') {
+                                    lastCharsRead += "/*";
+                                    countImbr++;
+                                    continue;
+                                }
+                                else{
+                                    lastCharsRead += "/";
+                                    continue;
+                                }
+                            }
                             // finds a *
                             if ((char) nextChar == '*') {
                                 lastCharsRead += "*";
                                 nextChar = fileInputStream.read();
                                 // finds the '*/'
                                 if ((char) nextChar == '/') {
+                                    countImbr--;
                                     // found end of comment
                                     lastCharsRead += "/";
-                                    break;
+                                    continue;
                                 }
                             }
                             lastCharsRead += (char) nextChar;
@@ -523,7 +532,7 @@ public class Lexer {
 
     public boolean validateId(String lastCharRead) {
         try {
-            if (Character.isDigit(lastCharRead.charAt(0)) || (char) (lastCharRead.charAt(0)) == '_') {
+            if (lastCharRead.equals("") || Character.isDigit(lastCharRead.charAt(0)) || (char) (lastCharRead.charAt(0)) == '_') {
                 return false;
             } else {
                 return true;
