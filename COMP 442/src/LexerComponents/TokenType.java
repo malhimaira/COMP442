@@ -54,6 +54,7 @@ public enum TokenType {
     errorTokenId,
     errorTokenNumber,
     errorTokenChar,
+    errorTokenUnendingBlock,
     epsilon,
     EOF
     }

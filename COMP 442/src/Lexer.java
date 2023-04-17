@@ -159,9 +159,15 @@ public class Lexer {
                         int countImbr =1;
                         // store initial row for token of block comment
                         int initialRow = countRowLine;
-
+                        boolean eofFound = false;
                         while (!checkIfBlockEnded && countImbr != 0) {
                             nextChar = fileInputStream.read();
+                            if(nextChar == -1){
+                                eofFound = true;
+                                printErrorTokens(lastCharsRead, "unendingBlock", countRowLine);
+                                lastCharsRead ="";
+                                break;
+                            }
                             if ((char) nextChar == '\r') {
                                 continue;
                             }
@@ -196,6 +202,10 @@ public class Lexer {
                             }
                             lastCharsRead += (char) nextChar;
                         }
+                        if(eofFound){
+                            break;
+                        }
+
                         TokenSequence.add(new Token(lastCharsRead, TokenType.blockComment, new Position(initialRow)));
                         lastCharsRead = "";
                     }
@@ -570,6 +580,10 @@ public class Lexer {
         } else if (type.equals("identifier")) {
             this.printWriterErrors.write("Lexical error: Invalid identifier: \"" + invalidLexeme + "\": line " + row + ".\n");
             TokenSequence.add(new ErrorToken(invalidLexeme, TokenType.errorTokenId, new Position(row)));
+        }
+        else if(type.equals("unendingBlock")){
+            this.printWriterErrors.write("Lexical error: Invalid Unending Block Comment error, missing '*/' : \"" + invalidLexeme + "\": line " + row + ".\n");
+            TokenSequence.add(new ErrorToken(invalidLexeme, TokenType.errorTokenUnendingBlock, new Position(row)));
         }
     }
 }

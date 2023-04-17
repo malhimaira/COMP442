@@ -17,3 +17,4 @@ Lexical error: Invalid character: "$": line 47.
 Lexical error: Invalid character: "'": line 47.
 Lexical error: Invalid character: "\": line 47.
 Lexical error: Invalid character: "~": line 47.
+Lexical error: Invalid Unending Block Comment error, missing '*/' : "/* rt wfre g ea fra E2345R WQSEQ 2EQWDCD\nDFG\nR\nFINAL DNS STATE DNDN $ @ WGS\n": line 90.

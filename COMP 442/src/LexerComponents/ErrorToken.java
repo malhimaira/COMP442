@@ -11,6 +11,8 @@ public class ErrorToken extends Token {
             this.toPrint = "invalidnum";
         } else if (tokenType == TokenType.errorTokenId) {
             this.toPrint = "invalidid";
+        } else if (tokenType == TokenType.errorTokenUnendingBlock) {
+            this.toPrint = "invalidUnendingBlockComment";
         }
     }
     public String toString(){
