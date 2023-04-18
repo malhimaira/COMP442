@@ -1,0 +1,140 @@
+Lexical error: Invalid number: "123.43450": line 3.
+Lexical error: Invalid number: "0345.1233": line 4.
+Lexical error: Invalid number: "123.1e+": line 7.
+Lexical error: Invalid number: "123.10e": line 8.
+Lexical error: Invalid number: "123.1e+": line 9.
+Lexical error: Invalid number: "123.1e098": line 10.
+Lexical error: Invalid number: "123.1e": line 11.
+Lexical error: Invalid number: "123.e": line 12.
+Lexical error: Invalid number: "05.80": line 13.
+Lexical error: Invalid number: "09876": line 32.
+Lexical error: Invalid identifier: "_gggsg": line 42.
+Lexical error: Invalid identifier: "9a96": line 43.
+Lexical error: Invalid identifier: "_8sbna": line 44.
+Lexical error: Invalid character: "@": line 47.
+Lexical error: Invalid character: "#": line 47.
+Lexical error: Invalid character: "$": line 47.
+Lexical error: Invalid character: "'": line 47.
+Lexical error: Invalid character: "\": line 47.
+Lexical error: Invalid character: "~": line 47.
+Lexical error: Invalid Unending Block Comment error, missing '*/' : "/* rt wfre g ea fra E2345R WQSEQ 2EQWDCD\nDFG\nR\nFINAL DNS STATE DNDN $ @ WGS\n": line 90.
+Syntax Error : semicolon token on line 3
+Syntax Error : comma token on line 4
+Syntax Error : floatType token on line 5
+Syntax Error : floatType token on line 6
+Syntax Error : semicolon token on line 7
+Syntax Error : semicolon token on line 8
+Syntax Error : floatType token on line 16
+Syntax Error : floatType token on line 17
+Syntax Error : floatType token on line 18
+Syntax Error : floatType token on line 19
+Syntax Error : floatType token on line 20
+Syntax Error : floatType token on line 21
+Syntax Error : floatType token on line 22
+Syntax Error : floatType token on line 23
+Syntax Error : floatType token on line 24
+Syntax Error : integerType token on line 27
+Syntax Error : integerType token on line 28
+Syntax Error : integerType token on line 29
+Syntax Error : id token on line 35
+Syntax Error : semicolon token on line 35
+Syntax Error : id token on line 36
+Syntax Error : id token on line 37
+Syntax Error : id token on line 38
+Syntax Error : id token on line 39
+Syntax Error : semicolon token on line 42
+Syntax Error : semicolon token on line 43
+Syntax Error : comma token on line 44
+Syntax Error : id token on line 50
+Syntax Error : id token on line 50
+Syntax Error : equals token on line 50
+Syntax Error : integerType token on line 50
+Syntax Error : semicolon token on line 50
+Syntax Error : id token on line 51
+Syntax Error : id token on line 51
+Syntax Error : equals token on line 51
+Syntax Error : integerType token on line 51
+Syntax Error : semicolon token on line 51
+Syntax Error : id token on line 52
+Syntax Error : id token on line 52
+Syntax Error : equals token on line 52
+Syntax Error : integerType token on line 52
+Syntax Error : semicolon token on line 52
+Syntax Error : floatKeyWord token on line 54
+Syntax Error : openBracketSquare token on line 54
+Syntax Error : closeBracketSquare token on line 54
+Syntax Error : id token on line 54
+Syntax Error : equals token on line 54
+Syntax Error : id token on line 54
+Syntax Error : period token on line 54
+Syntax Error : integerType token on line 54
+Syntax Error : comma token on line 54
+Syntax Error : floatType token on line 54
+Syntax Error : comma token on line 54
+Syntax Error : floatType token on line 54
+Syntax Error : closeBracketSquare token on line 54
+Syntax Error : floatKeyWord token on line 55
+Syntax Error : openBracketSquare token on line 55
+Syntax Error : closeBracketSquare token on line 55
+Syntax Error : id token on line 55
+Syntax Error : equals token on line 55
+Syntax Error : openBracketSquare token on line 55
+Syntax Error : floatType token on line 55
+Syntax Error : comma token on line 55
+Syntax Error : floatType token on line 55
+Syntax Error : comma token on line 55
+Syntax Error : floatType token on line 55
+Syntax Error : closeBracketSquare token on line 55
+Syntax Error : id token on line 58
+Syntax Error : period token on line 58
+Syntax Error : id token on line 58
+Syntax Error : semicolon token on line 58
+Syntax Error : id token on line 59
+Syntax Error : id token on line 59
+Syntax Error : equals token on line 59
+Syntax Error : id token on line 59
+Syntax Error : period token on line 59
+Syntax Error : id token on line 59
+Syntax Error : openBracketRound token on line 59
+Syntax Error : closeBracketRound token on line 59
+Syntax Error : semicolon token on line 59
+Syntax Error : publicKeyWord token on line 63
+Syntax Error : floatKeyWord token on line 63
+Syntax Error : id token on line 63
+Syntax Error : openBracketRound token on line 63
+Syntax Error : id token on line 63
+Syntax Error : equals token on line 63
+Syntax Error : integerType token on line 63
+Syntax Error : closeBracketRound token on line 63
+Syntax Error : openBracketCurly token on line 63
+Syntax Error : id token on line 64
+Syntax Error : equals token on line 64
+Syntax Error : integerType token on line 64
+Syntax Error : semicolon token on line 64
+Syntax Error : returnKeyWord token on line 65
+Syntax Error : id token on line 65
+Syntax Error : openBracketRound token on line 65
+Syntax Error : id token on line 65
+Syntax Error : closeBracketRound token on line 65
+Syntax Error : semicolon token on line 65
+Syntax Error : closedBracketCurly token on line 65
+Syntax Error : publicKeyWord token on line 69
+Syntax Error : floatKeyWord token on line 69
+Syntax Error : id token on line 69
+Syntax Error : openBracketRound token on line 69
+Syntax Error : id token on line 69
+Syntax Error : equals token on line 69
+Syntax Error : integerType token on line 69
+Syntax Error : closeBracketRound token on line 69
+Syntax Error : openBracketCurly token on line 69
+Syntax Error : id token on line 69
+Syntax Error : equals token on line 69
+Syntax Error : integerType token on line 69
+Syntax Error : semicolon token on line 69
+Syntax Error : returnKeyWord token on line 69
+Syntax Error : id token on line 69
+Syntax Error : openBracketRound token on line 69
+Syntax Error : id token on line 69
+Syntax Error : closeBracketRound token on line 69
+Syntax Error : semicolon token on line 69
+Syntax Error : closedBracketCurly token on line 69
