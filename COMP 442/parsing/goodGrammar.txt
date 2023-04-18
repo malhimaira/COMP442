@@ -189,3 +189,35 @@ VARIDNEST2 -> REPTIDNEST1  .
 
 VISIBILITY -> public  .
 VISIBILITY -> private  .
+
+SACT1 ->  .
+SACT2 ->  .
+SACT3 ->  .
+SACT4 ->  .
+SACT5 ->  .
+SACT6 ->  .
+SACT7 ->  .
+SACT8 ->  .
+SACT9 ->  .
+SACT10 ->  .
+SACT11 ->  .
+SACT12 ->  .
+SACT13 ->  .
+SACT14 ->  .
+SACT15 ->  .
+SACT16 ->  .
+SACT17 ->  .
+SACT18 ->  .
+SACT19 ->  .
+SACT20 ->  .
+SACT21 ->  .
+SACT22 ->  .
+SACT23 ->  .
+SACT24 ->  .
+SACT25 ->  .
+SACT26 ->  .
+SACT27 ->  .
+SACT28 ->  .
+SACT29 ->  .
+SACT30 ->  .
+SACT31 ->  .

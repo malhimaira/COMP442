@@ -1,269 +1,335 @@
 [prog
 |  func def
-|  |  [id, printArray, 1]
-|  |  [voidKeyWord, void, 1]
+|  |  [id, printArray, 2]
+|  |  [voidKeyWord, void, 2]
 |  |  local var + stat block
-|  |  |  local var
-|  |  |  |  [id, n, 3]
-|  |  |  |  [integerKeyWord, integer, 3]
-|  |  |  |  array Size
-|  |  |  local var
-|  |  |  |  [id, i, 4]
-|  |  |  |  [integerKeyWord, integer, 4]
-|  |  |  |  array Size
 |  |  |  stat
-|  |  |  |  [id, n, 5]
+|  |  |  |  [id, arr, 4]
+|  |  |  |  indice
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  id
+|  |  |  |  |  |  |  [id, j, 4]
 |  |  |  |  assign op
-|  |  |  |  |  [equals, =, 5]
+|  |  |  |  |  [equals, =, 4]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, size, 5]
+|  |  |  |  |  |  |  |  [id, arr, 4]
+|  |  |  |  |  |  |  indice
+|  |  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  [id, j, 4]
+|  |  |  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  |  |  [plus, +, 4]
+|  |  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 4]
+|  |  |  local var
+|  |  |  |  [id, intEx, 6]
+|  |  |  |  [integerKeyWord, integer, 6]
+|  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, i, 7]
+|  |  |  |  [integerKeyWord, integer, 7]
+|  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, floatEx, 8]
+|  |  |  |  [floatKeyWord, float, 8]
+|  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, idEx, 9]
+|  |  |  |  [id, id, 9]
+|  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, f1, 10]
+|  |  |  |  [id, LINEAR, 10]
+|  |  |  |  expr
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [integerType, 2, 10]
+|  |  |  |  expr
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [floatType, 3.5, 10]
+|  |  |  local var
+|  |  |  |  [id, f2, 11]
+|  |  |  |  [id, QUADRATIC, 11]
+|  |  |  |  expr
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  factor
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [floatType, 2.0, 11]
+|  |  |  |  expr
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [floatType, 1.0, 11]
+|  |  |  |  expr
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  num
+|  |  |  |  |  |  |  [floatType, 0.0, 11]
+|  |  |  local var
+|  |  |  |  [id, c1, 12]
+|  |  |  |  [id, QUADRATIC, 12]
 |  |  |  stat
-|  |  |  |  [id, i, 6]
+|  |  |  |  [id, floatEx, 13]
 |  |  |  |  assign op
-|  |  |  |  |  [equals, =, 6]
+|  |  |  |  |  [equals, =, 13]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 0, 6]
+|  |  |  |  |  |  |  |  [floatType, 0.1, 13]
+|  |  |  stat
+|  |  |  |  [id, i, 14]
+|  |  |  |  assign op
+|  |  |  |  |  [equals, =, 14]
+|  |  |  |  |  expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 0, 14]
+|  |  |  stat
+|  |  |  |  [id, idEx, 15]
+|  |  |  |  assign op
+|  |  |  |  |  [equals, =, 15]
+|  |  |  |  |  expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, abc_1abc, 15]
+|  |  |  stat
+|  |  |  |  [id, intEx, 16]
+|  |  |  |  assign op
+|  |  |  |  |  [equals, =, 16]
+|  |  |  |  |  expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, i, 16]
+|  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  [plus, +, 16]
+|  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  [integerType, 2, 16]
 |  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  rel expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, i, 7]
-|  |  |  |  |  |  [lessThan, <, 7]
+|  |  |  |  |  |  |  |  [id, i, 17]
+|  |  |  |  |  |  [lessThan, <, 17]
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, n, 7]
+|  |  |  |  |  |  |  |  [id, intEx, 17]
 |  |  |  |  |  write block
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, arr, 8]
+|  |  |  |  |  |  |  |  |  [id, arr, 18]
 |  |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  |  [id, i, 8]
-|  |  |  |  |  [id, i, 9]
+|  |  |  |  |  |  |  |  |  |  |  [id, i, 18]
+|  |  |  |  |  [id, i, 19]
 |  |  |  |  |  assign op
-|  |  |  |  |  |  [equals, =, 9]
+|  |  |  |  |  |  [equals, =, 19]
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, i, 9]
+|  |  |  |  |  |  |  |  |  [id, i, 19]
 |  |  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  |  [plus, +, 9]
+|  |  |  |  |  |  |  |  |  [plus, +, 19]
 |  |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  |  [integerType, 1, 9]
+|  |  |  |  |  |  |  |  |  |  [integerType, 1, 19]
 |  func def
-|  |  [id, bubbleSort, 13]
+|  |  [id, bubbleSort, 23]
 |  |  func params
-|  |  |  [id, arr, 13]
-|  |  |  [integerKeyWord, integer, 13]
-|  |  |  [id, size, 13]
-|  |  |  [integerKeyWord, integer, 13]
-|  |  [voidKeyWord, void, 13]
+|  |  |  [id, arr, 23]
+|  |  |  [integerKeyWord, integer, 23]
+|  |  |  [id, size, 23]
+|  |  |  [integerKeyWord, integer, 23]
+|  |  [voidKeyWord, void, 23]
 |  |  local var + stat block
-|  |  |  local var
-|  |  |  |  [id, n, 15]
-|  |  |  |  [integerKeyWord, integer, 15]
-|  |  |  |  array Size
-|  |  |  local var
-|  |  |  |  [id, i, 16]
-|  |  |  |  [integerKeyWord, integer, 16]
-|  |  |  |  array Size
-|  |  |  local var
-|  |  |  |  [id, j, 17]
-|  |  |  |  [integerKeyWord, integer, 17]
-|  |  |  |  array Size
-|  |  |  local var
-|  |  |  |  [id, temp, 18]
-|  |  |  |  [integerKeyWord, integer, 18]
-|  |  |  |  array Size
 |  |  |  stat
-|  |  |  |  [id, n, 19]
+|  |  |  |  [id, n, 25]
 |  |  |  |  assign op
-|  |  |  |  |  [equals, =, 19]
+|  |  |  |  |  [equals, =, 25]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, size, 19]
+|  |  |  |  |  |  |  |  [id, size, 25]
 |  |  |  stat
-|  |  |  |  [id, i, 20]
+|  |  |  |  [id, i, 26]
 |  |  |  |  assign op
-|  |  |  |  |  [equals, =, 20]
+|  |  |  |  |  [equals, =, 26]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 0, 20]
+|  |  |  |  |  |  |  |  [integerType, 0, 26]
 |  |  |  stat
-|  |  |  |  [id, j, 21]
+|  |  |  |  [id, j, 27]
 |  |  |  |  assign op
-|  |  |  |  |  [equals, =, 21]
+|  |  |  |  |  [equals, =, 27]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 0, 21]
+|  |  |  |  |  |  |  |  [integerType, 0, 27]
 |  |  |  stat
-|  |  |  |  [id, temp, 22]
+|  |  |  |  [id, temp, 28]
 |  |  |  |  assign op
-|  |  |  |  |  [equals, =, 22]
+|  |  |  |  |  [equals, =, 28]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 0, 22]
+|  |  |  |  |  |  |  |  [integerType, 1, 28]
+|  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  [plus, +, 28]
+|  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  [integerType, 2, 28]
+|  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  [minus, -, 28]
+|  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  [integerType, 3, 28]
+|  |  |  |  |  |  |  |  multi op
+|  |  |  |  |  |  |  |  |  [multiply, *, 28]
+|  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  [integerType, 4, 28]
+|  |  |  |  |  |  |  |  multi op
+|  |  |  |  |  |  |  |  |  [divide, /, 28]
+|  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  [integerType, 8, 28]
 |  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  rel expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, i, 23]
-|  |  |  |  |  |  [lessThan, <, 23]
+|  |  |  |  |  |  |  |  [id, i, 29]
+|  |  |  |  |  |  [not, not, 29]
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, n, 23]
+|  |  |  |  |  |  |  |  [id, n, 29]
 |  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  [minus, -, 23]
+|  |  |  |  |  |  |  |  [minus, -, 29]
 |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  [integerType, 1, 23]
+|  |  |  |  |  |  |  |  |  [integerType, 1, 29]
 |  |  |  |  |  while block
 |  |  |  |  |  |  rel expr
 |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, j, 24]
-|  |  |  |  |  |  |  [lessThan, <, 24]
+|  |  |  |  |  |  |  |  |  [id, j, 31]
+|  |  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  |  [plus, +, 31]
+|  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  [integerType, 2, 31]
+|  |  |  |  |  |  |  [lessThanOrEqualTo, <=, 31]
 |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, n, 24]
+|  |  |  |  |  |  |  |  |  [id, n, 31]
 |  |  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  |  [minus, -, 24]
+|  |  |  |  |  |  |  |  |  [minus, -, 31]
 |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  [id, i, 24]
+|  |  |  |  |  |  |  |  |  |  [id, i, 31]
+|  |  |  |  |  |  |  |  |  multi op
+|  |  |  |  |  |  |  |  |  |  [multiply, *, 31]
+|  |  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 31]
+|  |  |  |  |  |  |  |  |  multi op
+|  |  |  |  |  |  |  |  |  |  [divide, /, 31]
+|  |  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  |  [integerType, 3, 31]
 |  |  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  |  [minus, -, 24]
-|  |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  |  [integerType, 1, 24]
+|  |  |  |  |  |  |  |  |  [plus, +, 31]
+|  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  [id, i, 31]
 |  |  |  |  |  |  if block
 |  |  |  |  |  |  |  rel expr
 |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  [id, arr, 25]
+|  |  |  |  |  |  |  |  |  |  [id, arr, 32]
 |  |  |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  |  |  [id, j, 25]
-|  |  |  |  |  |  |  |  [greaterThan, >, 25]
+|  |  |  |  |  |  |  |  |  |  |  |  [id, j, 32]
+|  |  |  |  |  |  |  |  [greaterThan, >, 32]
 |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  [id, arr, 25]
+|  |  |  |  |  |  |  |  |  |  [id, arr, 32]
 |  |  |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  |  |  [id, j, 25]
+|  |  |  |  |  |  |  |  |  |  |  |  [id, j, 32]
 |  |  |  |  |  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  |  |  |  |  [plus, +, 25]
+|  |  |  |  |  |  |  |  |  |  |  |  [plus, +, 32]
 |  |  |  |  |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 25]
-|  |  |  |  |  |  |  [id, temp, 28]
+|  |  |  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 32]
+|  |  |  |  |  |  |  [id, temp, 35]
 |  |  |  |  |  |  |  assign op
-|  |  |  |  |  |  |  |  [equals, =, 28]
+|  |  |  |  |  |  |  |  [equals, =, 35]
 |  |  |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  |  [id, arr, 28]
+|  |  |  |  |  |  |  |  |  |  |  [id, arr, 35]
 |  |  |  |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  |  |  |  [id, j, 28]
-|  |  |  |  |  |  |  [id, arr, 29]
+|  |  |  |  |  |  |  |  |  |  |  |  |  [id, j, 35]
+|  |  |  |  |  |  |  |  |  |  indice
+|  |  |  |  |  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  |  |  [id, i, 35]
+|  |  |  |  |  |  |  [id, arr, 36]
 |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  [id, j, 29]
+|  |  |  |  |  |  |  |  |  |  [id, j, 36]
 |  |  |  |  |  |  |  assign op
-|  |  |  |  |  |  |  |  [equals, =, 29]
+|  |  |  |  |  |  |  |  [equals, =, 36]
 |  |  |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  |  [id, arr, 29]
+|  |  |  |  |  |  |  |  |  |  |  [id, arr, 36]
 |  |  |  |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  |  |  |  [id, j, 29]
+|  |  |  |  |  |  |  |  |  |  |  |  |  [id, j, 36]
 |  |  |  |  |  |  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  |  |  |  |  |  [plus, +, 29]
+|  |  |  |  |  |  |  |  |  |  |  |  |  [plus, +, 36]
 |  |  |  |  |  |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 29]
-|  |  |  |  |  |  |  [id, arr, 30]
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 36]
+|  |  |  |  |  |  |  [id, arr, 37]
 |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  [id, j, 30]
+|  |  |  |  |  |  |  |  |  |  [id, j, 37]
 |  |  |  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  |  |  [plus, +, 30]
+|  |  |  |  |  |  |  |  |  |  [plus, +, 37]
 |  |  |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 30]
+|  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 37]
 |  |  |  |  |  |  |  assign op
-|  |  |  |  |  |  |  |  [equals, =, 30]
+|  |  |  |  |  |  |  |  [equals, =, 37]
 |  |  |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  |  [id, temp, 30]
-|  |  |  |  |  |  [id, j, 32]
+|  |  |  |  |  |  |  |  |  |  |  [id, temp, 37]
+|  |  |  |  |  |  [id, j, 39]
 |  |  |  |  |  |  assign op
-|  |  |  |  |  |  |  [equals, =, 32]
+|  |  |  |  |  |  |  [equals, =, 39]
 |  |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  [id, j, 32]
+|  |  |  |  |  |  |  |  |  |  [id, j, 39]
 |  |  |  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  |  |  [plus, +, 32]
+|  |  |  |  |  |  |  |  |  |  [plus, +, 39]
 |  |  |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 32]
-|  |  |  |  |  [id, i, 34]
+|  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 39]
+|  |  |  |  |  [id, i, 41]
 |  |  |  |  |  assign op
-|  |  |  |  |  |  [equals, =, 34]
+|  |  |  |  |  |  [equals, =, 41]
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, i, 34]
+|  |  |  |  |  |  |  |  |  [id, i, 41]
 |  |  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  |  [plus, +, 34]
+|  |  |  |  |  |  |  |  |  [plus, +, 41]
 |  |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  |  [integerType, 1, 34]
+|  |  |  |  |  |  |  |  |  |  [integerType, 1, 41]
 |  class decl
-|  |  [id, POLYNOMIAL, 38]
+|  |  [id, POLYNOMIAL, 45]
 |  |  inherit lst
-|  |  memberFunc decl
-|  |  |  [publicKeyWord, public, 39]
-|  |  |  [id, evaluate, 39]
-|  |  |  func params
-|  |  |  |  [id, x, 39]
-|  |  |  |  [floatKeyWord, float, 39]
-|  |  |  [floatKeyWord, float, 39]
-|  class decl
-|  |  [id, LINEAR, 42]
-|  |  inherit lst
-|  |  |  [id, POLYNOMIAL, 42]
-|  |  memberVar decl
-|  |  |  [privateKeyWord, private, 43]
-|  |  |  [id, a, 43]
-|  |  |  [floatKeyWord, float, 43]
-|  |  |  array Size
-|  |  memberVar decl
-|  |  |  [privateKeyWord, private, 44]
-|  |  |  [id, b, 44]
-|  |  |  [floatKeyWord, float, 44]
-|  |  |  array Size
-|  |  memberFunc decl
-|  |  |  [publicKeyWord, public, 45]
-|  |  |  func params
-|  |  |  |  [id, A, 45]
-|  |  |  |  [floatKeyWord, float, 45]
-|  |  |  |  [id, B, 45]
-|  |  |  |  [floatKeyWord, float, 45]
 |  |  memberFunc decl
 |  |  |  [publicKeyWord, public, 46]
 |  |  |  [id, evaluate, 46]
@@ -271,395 +337,191 @@
 |  |  |  |  [id, x, 46]
 |  |  |  |  [floatKeyWord, float, 46]
 |  |  |  [floatKeyWord, float, 46]
-|  class decl
-|  |  [id, QUADRATIC, 49]
-|  |  inherit lst
-|  |  |  [id, POLYNOMIAL, 49]
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 47]
+|  |  |  [id, evaluate, 47]
+|  |  |  func params
+|  |  |  |  [id, q, 47]
+|  |  |  |  [integerKeyWord, integer, 47]
+|  |  |  [floatKeyWord, float, 47]
+|  |  memberVar decl
+|  |  |  [privateKeyWord, private, 48]
+|  |  |  [id, a, 48]
+|  |  |  [floatKeyWord, float, 48]
+|  |  |  array Size
+|  |  memberVar decl
+|  |  |  [privateKeyWord, private, 49]
+|  |  |  [id, b, 49]
+|  |  |  [floatKeyWord, float, 49]
+|  |  |  array Size
 |  |  memberVar decl
 |  |  |  [privateKeyWord, private, 50]
-|  |  |  [id, a, 50]
+|  |  |  [id, b, 50]
 |  |  |  [floatKeyWord, float, 50]
 |  |  |  array Size
+|  class decl
+|  |  [id, QUADRATIC, 53]
+|  |  inherit lst
+|  |  |  [id, POLYNOMIAL, 53]
 |  |  memberVar decl
-|  |  |  [privateKeyWord, private, 51]
-|  |  |  [id, b, 51]
-|  |  |  [floatKeyWord, float, 51]
-|  |  |  array Size
-|  |  memberVar decl
-|  |  |  [privateKeyWord, private, 52]
-|  |  |  [id, c, 52]
-|  |  |  [floatKeyWord, float, 52]
-|  |  |  array Size
-|  |  memberFunc decl
-|  |  |  [publicKeyWord, public, 53]
-|  |  |  func params
-|  |  |  |  [id, A, 53]
-|  |  |  |  [floatKeyWord, float, 53]
-|  |  |  |  [id, B, 53]
-|  |  |  |  [floatKeyWord, float, 53]
-|  |  |  |  [id, C, 53]
-|  |  |  |  [floatKeyWord, float, 53]
-|  |  memberFunc decl
-|  |  |  [publicKeyWord, public, 54]
-|  |  |  [id, evaluate, 54]
-|  |  |  func params
-|  |  |  |  [id, x, 54]
-|  |  |  |  [floatKeyWord, float, 54]
+|  |  |  [privateKeyWord, private, 54]
+|  |  |  [id, a, 54]
 |  |  |  [floatKeyWord, float, 54]
+|  |  |  array Size
+|  |  memberVar decl
+|  |  |  [privateKeyWord, private, 55]
+|  |  |  [id, b, 55]
+|  |  |  [floatKeyWord, float, 55]
+|  |  |  array Size
+|  |  memberVar decl
+|  |  |  [privateKeyWord, private, 56]
+|  |  |  [id, c, 56]
+|  |  |  [floatKeyWord, float, 56]
+|  |  |  array Size
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 58]
+|  |  |  func params
+|  |  |  |  [id, A, 58]
+|  |  |  |  [floatKeyWord, float, 58]
+|  |  |  |  [id, B, 58]
+|  |  |  |  [floatKeyWord, float, 58]
+|  |  |  |  [id, C, 58]
+|  |  |  |  [floatKeyWord, float, 58]
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 60]
+|  |  |  [id, evaluate, 60]
+|  |  |  func params
+|  |  |  |  [id, x, 60]
+|  |  |  |  [floatKeyWord, float, 60]
+|  |  |  [floatKeyWord, float, 60]
 |  func def
-|  |  [id, POLYNOMIAL, 58]
-|  |  [id, evaluate, 58]
+|  |  [id, POLYNOMIAL, 64]
+|  |  [id, evaluate, 64]
 |  |  func params
-|  |  |  [id, x, 58]
-|  |  |  [floatKeyWord, float, 58]
-|  |  [floatKeyWord, float, 58]
+|  |  |  [id, x, 64]
+|  |  |  [floatKeyWord, float, 64]
+|  |  [floatKeyWord, float, 64]
 |  |  local var + stat block
 |  |  |  stat
 |  |  |  |  return stat
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 0, 60]
+|  |  |  |  |  |  |  |  [integerType, 0, 66]
 |  func def
-|  |  [id, QUADRATIC, 63]
-|  |  [id, evaluate, 63]
+|  |  [id, QUADRATIC, 69]
 |  |  func params
-|  |  |  [id, x, 63]
-|  |  |  [floatKeyWord, float, 63]
-|  |  [floatKeyWord, float, 63]
+|  |  |  [id, A, 69]
+|  |  |  [floatKeyWord, float, 69]
+|  |  |  [id, B, 69]
+|  |  |  [floatKeyWord, float, 69]
+|  |  |  [id, C, 69]
+|  |  |  [floatKeyWord, float, 69]
+|  |  local var + stat block
+|  func def
+|  |  [id, LINEAR, 74]
+|  |  [id, evaluate, 74]
+|  |  func params
+|  |  |  [id, x, 74]
+|  |  |  [floatKeyWord, float, 74]
+|  |  [floatKeyWord, float, 74]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, result, 65]
-|  |  |  |  [floatKeyWord, float, 65]
+|  |  |  |  [id, result, 76]
+|  |  |  |  [floatKeyWord, float, 76]
 |  |  |  |  array Size
 |  |  |  stat
-|  |  |  |  [id, result, 67]
+|  |  |  |  [id, result, 77]
 |  |  |  |  assign op
-|  |  |  |  |  [equals, =, 67]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, a, 67]
-|  |  |  stat
-|  |  |  |  [id, result, 68]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 68]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, result, 68]
-|  |  |  |  |  |  |  multi op
-|  |  |  |  |  |  |  |  [multiply, *, 68]
-|  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, x, 68]
-|  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  [plus, +, 68]
-|  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, b, 68]
-|  |  |  stat
-|  |  |  |  [id, result, 69]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 69]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, result, 69]
-|  |  |  |  |  |  |  multi op
-|  |  |  |  |  |  |  |  [multiply, *, 69]
-|  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, x, 69]
-|  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  [plus, +, 69]
-|  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, c, 69]
-|  |  |  stat
-|  |  |  |  return stat
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, result, 70]
-|  func def
-|  |  [id, QUADRATIC, 73]
-|  |  func params
-|  |  |  [id, A, 73]
-|  |  |  [floatKeyWord, float, 73]
-|  |  |  [id, B, 73]
-|  |  |  [floatKeyWord, float, 73]
-|  |  |  [id, C, 73]
-|  |  |  [floatKeyWord, float, 73]
-|  |  local var + stat block
-|  func def
-|  |  [id, LINEAR, 78]
-|  |  func params
-|  |  |  [id, A, 78]
-|  |  |  [floatKeyWord, float, 78]
-|  |  |  [id, B, 78]
-|  |  |  [floatKeyWord, float, 78]
-|  |  local var + stat block
-|  func def
-|  |  [id, LINEAR, 83]
-|  |  [id, evaluate, 83]
-|  |  func params
-|  |  |  [id, x, 83]
-|  |  |  [floatKeyWord, float, 83]
-|  |  [floatKeyWord, float, 83]
-|  |  local var + stat block
-|  |  |  local var
-|  |  |  |  [id, result, 85]
-|  |  |  |  [floatKeyWord, float, 85]
-|  |  |  |  array Size
-|  |  |  stat
-|  |  |  |  [id, result, 86]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 86]
+|  |  |  |  |  [equals, =, 77]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [floatType, 0.0, 86]
+|  |  |  |  |  |  |  |  [floatType, 0.0, 77]
 |  |  |  stat
-|  |  |  |  [id, result, 87]
+|  |  |  |  [id, result, 78]
 |  |  |  |  assign op
-|  |  |  |  |  [equals, =, 87]
+|  |  |  |  |  [equals, =, 78]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, a, 87]
+|  |  |  |  |  |  |  |  [id, a, 78]
 |  |  |  |  |  |  |  multi op
-|  |  |  |  |  |  |  |  [multiply, *, 87]
+|  |  |  |  |  |  |  |  [multiply, *, 78]
 |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, x, 87]
+|  |  |  |  |  |  |  |  |  [id, x, 78]
 |  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  [plus, +, 87]
+|  |  |  |  |  |  |  |  [plus, +, 78]
 |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, b, 87]
+|  |  |  |  |  |  |  |  |  [id, b, 78]
 |  |  |  stat
 |  |  |  |  return stat
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, result, 88]
+|  |  |  |  |  |  |  |  [id, result, 80]
 |  func def
-|  |  [id, main, 92]
-|  |  [voidKeyWord, void, 92]
+|  |  [id, main, 84]
+|  |  [voidKeyWord, void, 84]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, f1, 94]
-|  |  |  |  [id, LINEAR, 94]
+|  |  |  |  [id, f1, 86]
+|  |  |  |  [id, LINEAR, 86]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
 |  |  |  |  |  |  num
-|  |  |  |  |  |  |  [integerType, 2, 94]
+|  |  |  |  |  |  |  [integerType, 2, 86]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
 |  |  |  |  |  |  num
-|  |  |  |  |  |  |  [floatType, 3.5, 94]
+|  |  |  |  |  |  |  [floatType, 3.5, 86]
 |  |  |  local var
-|  |  |  |  [id, f2, 95]
-|  |  |  |  [id, QUADRATIC, 95]
+|  |  |  |  [id, f2, 87]
+|  |  |  |  [id, QUADRATIC, 87]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
 |  |  |  |  |  |  factor
 |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [floatType, 2.0, 95]
+|  |  |  |  |  |  |  |  [floatType, 2.0, 87]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
 |  |  |  |  |  |  num
-|  |  |  |  |  |  |  [floatType, 1.0, 95]
+|  |  |  |  |  |  |  [floatType, 1.0, 87]
 |  |  |  |  expr
 |  |  |  |  |  arithm expr
 |  |  |  |  |  |  num
-|  |  |  |  |  |  |  [floatType, 0.0, 95]
+|  |  |  |  |  |  |  [floatType, 0.0, 87]
 |  |  |  local var
-|  |  |  |  [id, counter, 96]
-|  |  |  |  [integerKeyWord, integer, 96]
+|  |  |  |  [id, counter, 88]
+|  |  |  |  [integerKeyWord, integer, 88]
 |  |  |  |  array Size
 |  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  rel expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, counter, 98]
-|  |  |  |  |  |  [lessThanOrEqualTo, <=, 98]
+|  |  |  |  |  |  |  |  [id, counter, 90]
+|  |  |  |  |  |  [lessThanOrEqualTo, <=, 90]
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 10, 98]
+|  |  |  |  |  |  |  |  [integerType, 10, 90]
+|  |  |  |  |  read block
 |  |  |  |  |  write block
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, counter, 100]
-|  |  |  |  |  write block
-|  |  |  |  |  |  expr
-|  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, f1, 101]
+|  |  |  |  |  |  |  |  |  [id, f1, 94]
 |  |  |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  |  [id, counter, 101]
+|  |  |  |  |  |  |  |  |  |  |  [id, counter, 94]
 |  |  |  |  |  write block
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, f2, 102]
+|  |  |  |  |  |  |  |  |  [id, f2, 95]
 |  |  |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  |  [id, counter, 102]
-|  func def
-|  |  [id, testingtCool, 236]
-|  |  [voidKeyWord, void, 236]
-|  |  local var + stat block
-|  |  |  local var
-|  |  |  |  [id, cool, 239]
-|  |  |  |  [integerKeyWord, integer, 239]
-|  |  |  |  array Size
-|  |  |  local var
-|  |  |  |  [id, jonathan, 240]
-|  |  |  |  [integerKeyWord, integer, 240]
-|  |  |  |  array Size
-|  |  |  local var
-|  |  |  |  [id, comp, 241]
-|  |  |  |  [integerKeyWord, integer, 241]
-|  |  |  |  array Size
-|  |  |  stat
-|  |  |  |  [id, cool, 243]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 243]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, cool, 243]
-|  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  [minus, -, 243]
-|  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  [integerType, 1, 243]
-|  |  |  stat
-|  |  |  |  [id, cool, 244]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 244]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, cool, 244]
-|  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  [plus, +, 244]
-|  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  [integerType, 1, 244]
-|  |  |  stat
-|  |  |  |  [id, cool, 245]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 245]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, cool, 245]
-|  |  |  |  |  |  [greaterThan, >, 245]
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 99, 245]
-|  |  |  stat
-|  |  |  |  [id, cool, 246]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 246]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, cool, 246]
-|  |  |  |  |  |  [lessThan, <, 246]
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 99, 246]
-|  func def
-|  |  [id, testingtCool, 249]
-|  |  [voidKeyWord, void, 249]
-|  |  local var + stat block
-|  |  |  local var
-|  |  |  |  [id, cool, 252]
-|  |  |  |  [integerKeyWord, integer, 252]
-|  |  |  |  array Size
-|  |  |  local var
-|  |  |  |  [id, mai, 253]
-|  |  |  |  [integerKeyWord, integer, 253]
-|  |  |  |  array Size
-|  |  |  local var
-|  |  |  |  [id, comp, 254]
-|  |  |  |  [integerKeyWord, integer, 254]
-|  |  |  |  array Size
-|  |  |  stat
-|  |  |  |  [id, cool, 256]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 256]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, cool, 256]
-|  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  [minus, -, 256]
-|  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  [integerType, 1, 256]
-|  |  |  stat
-|  |  |  |  [id, cool, 257]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 257]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, cool, 257]
-|  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  [plus, +, 257]
-|  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  [integerType, 1, 257]
-|  |  |  stat
-|  |  |  |  [id, cool, 258]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 258]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, cool, 258]
-|  |  |  |  |  |  [greaterThan, >, 258]
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 99, 258]
-|  |  |  stat
-|  |  |  |  [id, cool, 259]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 259]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, cool, 259]
-|  |  |  |  |  |  [lessThan, <, 259]
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 99, 259]
-|  |  |  stat
-|  |  |  |  [id, cool, 260]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 260]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, comp, 260]
-|  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  [plus, +, 260]
-|  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, mai, 260]
-|  |  |  stat
-|  |  |  |  [id, mai, 261]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 261]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, comp, 261]
-|  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  [plus, +, 261]
-|  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, cool, 261]
-|  |  |  |  |  |  |  |  multi op
-|  |  |  |  |  |  |  |  |  [multiply, *, 261]
-|  |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  |  [integerType, 5, 261]
+|  |  |  |  |  |  |  |  |  |  |  [id, counter, 95]
 ]
