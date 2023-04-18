@@ -1,21 +1,63 @@
-function printArray() => void
-{
+class POLYNOMIAL {
+  public function evaluate: (x: float) => float;
+  public function evaluate: (q: integer) => float;
+};
+
+class LINEAR isa POLYNOMIAL {
+  private attribute a: float function
+  private attribute b: float;
+  private attribute b: float;
+};
+
+class LINEAR isa POLYNOMIAL {
+    public function tryMethod: (l: integer, v: id) => integer;
+};
+class QUADRATIC isa POLYNOMIAL {
+    public function undefMethod: () => void;
+    public function tryMethod: (l: integer, v: id) => integer;
+    public attribute $x: float[5];
+    public attribute y: integer[2];
+    public attribute z: id[7];
+
+};
+
+class QUAD isa QUADRATIC {
   public function tryMethod: (l: integer, v: id) => integer;
-// 3.2.1 2 3
-  localvar intEx$: integer function
-// 3.1.1 (can also add invalid char to see errors)
-  localvar intEx: integer;
-  localvar i: integer;
-  i = 0.0;
-  idEx = abc_1abc;
-  intEx = i+2;
-  // 3.1.9
-  arr[j] = arr[j+1];
-  while (i<intEx) {
-    write(arr[i]);
-      i = i+1;
-  };
-}
+};
+
 class RANDO {
   private function rando: () => void;
 };
+
+/* print the array */
+function undeclMethod(arr: integer[], size: integer) => void
+{
+  localvar n: integer;
+  localvar n: integer;
+  localvar i: integer;
+  n = size;
+  i = 0;
+  cookie();
+  while (i<n) {
+    write(arr[i]);
+    i = i+1;
+  };
+}
+
+function tryMethod(l: integer, v: id) => integer
+{
+  localvar undecCls: BLOCK;
+  localvar ax: integer[7];
+  localvar ab: integer[6];
+  localvar ac: integer[2];
+}
+
+function tryMethod(s: id) => integer
+{
+  localvar barr1: integer[7];
+  localvar barr2: integer[6];
+  localvar barr3: integer[2];
+}
+
+
+

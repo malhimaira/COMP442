@@ -1,109 +1,220 @@
 [prog
+|  class decl
+|  |  [id, POLYNOMIAL, 1]
+|  |  inherit lst
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 2]
+|  |  |  [id, evaluate, 2]
+|  |  |  func params
+|  |  |  |  [id, x, 2]
+|  |  |  |  [floatKeyWord, float, 2]
+|  |  |  [floatKeyWord, float, 2]
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 3]
+|  |  |  [id, evaluate, 3]
+|  |  |  func params
+|  |  |  |  [id, q, 3]
+|  |  |  |  [integerKeyWord, integer, 3]
+|  |  |  [floatKeyWord, float, 3]
+|  class decl
+|  |  [id, LINEAR, 6]
+|  |  inherit lst
+|  |  |  [id, POLYNOMIAL, 6]
+|  |  memberVar decl
+|  |  |  [privateKeyWord, private, 7]
+|  |  |  [id, a, 7]
+|  |  |  [floatKeyWord, float, 7]
+|  |  |  array Size
+|  |  memberVar decl
+|  |  |  [privateKeyWord, private, 9]
+|  |  |  [id, b, 9]
+|  |  |  [floatKeyWord, float, 9]
+|  |  |  array Size
+|  class decl
+|  |  [id, LINEAR, 12]
+|  |  inherit lst
+|  |  |  [id, POLYNOMIAL, 12]
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 13]
+|  |  |  [id, tryMethod, 13]
+|  |  |  func params
+|  |  |  |  [id, l, 13]
+|  |  |  |  [integerKeyWord, integer, 13]
+|  |  |  |  [id, v, 13]
+|  |  |  |  [id, id, 13]
+|  |  |  [integerKeyWord, integer, 13]
+|  class decl
+|  |  [id, QUADRATIC, 15]
+|  |  inherit lst
+|  |  |  [id, POLYNOMIAL, 15]
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 16]
+|  |  |  [id, undefMethod, 16]
+|  |  |  [voidKeyWord, void, 16]
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 17]
+|  |  |  [id, tryMethod, 17]
+|  |  |  func params
+|  |  |  |  [id, l, 17]
+|  |  |  |  [integerKeyWord, integer, 17]
+|  |  |  |  [id, v, 17]
+|  |  |  |  [id, id, 17]
+|  |  |  [integerKeyWord, integer, 17]
+|  |  memberVar decl
+|  |  |  [publicKeyWord, public, 18]
+|  |  |  [id, x, 18]
+|  |  |  [floatKeyWord, float, 18]
+|  |  |  array Size
+|  |  |  |  [integerType, 5, 18]
+|  |  memberVar decl
+|  |  |  [publicKeyWord, public, 19]
+|  |  |  [id, y, 19]
+|  |  |  [integerKeyWord, integer, 19]
+|  |  |  array Size
+|  |  |  |  [integerType, 2, 19]
+|  |  memberVar decl
+|  |  |  [publicKeyWord, public, 20]
+|  |  |  [id, z, 20]
+|  |  |  [id, id, 20]
+|  |  |  array Size
+|  |  |  |  [integerType, 7, 20]
+|  class decl
+|  |  [id, QUAD, 24]
+|  |  inherit lst
+|  |  |  [id, QUADRATIC, 24]
+|  |  memberFunc decl
+|  |  |  [publicKeyWord, public, 25]
+|  |  |  [id, tryMethod, 25]
+|  |  |  func params
+|  |  |  |  [id, l, 25]
+|  |  |  |  [integerKeyWord, integer, 25]
+|  |  |  |  [id, v, 25]
+|  |  |  |  [id, id, 25]
+|  |  |  [integerKeyWord, integer, 25]
+|  class decl
+|  |  [id, RANDO, 28]
+|  |  inherit lst
+|  |  memberFunc decl
+|  |  |  [privateKeyWord, private, 29]
+|  |  |  [id, rando, 29]
+|  |  |  [voidKeyWord, void, 29]
 |  func def
-|  |  [id, printArray, 1]
-|  |  [voidKeyWord, void, 1]
+|  |  [id, undeclMethod, 33]
+|  |  func params
+|  |  |  [id, arr, 33]
+|  |  |  [integerKeyWord, integer, 33]
+|  |  |  [id, size, 33]
+|  |  |  [integerKeyWord, integer, 33]
+|  |  [voidKeyWord, void, 33]
 |  |  local var + stat block
-|  |  |  stat
-|  |  |  |  [id, tryMethod, 3]
-|  |  |  |  expr
-|  |  |  |  |  arithm expr
-|  |  |  |  |  |  id
-|  |  |  |  |  |  |  [id, l, 3]
-|  |  |  |  expr
-|  |  |  |  |  arithm expr
-|  |  |  |  |  |  id
-|  |  |  |  |  |  |  [id, v, 3]
 |  |  |  local var
-|  |  |  |  [id, intEx, 5]
-|  |  |  |  [integerKeyWord, integer, 5]
+|  |  |  |  [id, n, 35]
+|  |  |  |  [integerKeyWord, integer, 35]
 |  |  |  |  array Size
 |  |  |  local var
-|  |  |  |  [id, i, 8]
-|  |  |  |  [integerKeyWord, integer, 8]
+|  |  |  |  [id, n, 36]
+|  |  |  |  [integerKeyWord, integer, 36]
+|  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, i, 37]
+|  |  |  |  [integerKeyWord, integer, 37]
 |  |  |  |  array Size
 |  |  |  stat
-|  |  |  |  [id, i, 9]
+|  |  |  |  [id, n, 38]
 |  |  |  |  assign op
-|  |  |  |  |  [equals, =, 9]
+|  |  |  |  |  [equals, =, 38]
+|  |  |  |  |  expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, size, 38]
+|  |  |  stat
+|  |  |  |  [id, i, 39]
+|  |  |  |  assign op
+|  |  |  |  |  [equals, =, 39]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [floatType, 0.0, 9]
+|  |  |  |  |  |  |  |  [integerType, 0, 39]
 |  |  |  stat
-|  |  |  |  [id, idEx, 10]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 10]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, abc_1abc, 10]
-|  |  |  stat
-|  |  |  |  [id, intEx, 11]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 11]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, i, 11]
-|  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  [plus, +, 11]
-|  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  [integerType, 2, 11]
-|  |  |  stat
-|  |  |  |  [id, arr, 13]
-|  |  |  |  indice
-|  |  |  |  |  arithm expr
-|  |  |  |  |  |  id
-|  |  |  |  |  |  |  [id, j, 13]
-|  |  |  |  assign op
-|  |  |  |  |  [equals, =, 13]
-|  |  |  |  |  expr
-|  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, arr, 13]
-|  |  |  |  |  |  |  indice
-|  |  |  |  |  |  |  |  arithm expr
-|  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  [id, j, 13]
-|  |  |  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  |  |  [plus, +, 13]
-|  |  |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 13]
+|  |  |  |  [id, cookie, 40]
 |  |  |  stat
 |  |  |  |  while block
 |  |  |  |  |  rel expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, i, 14]
-|  |  |  |  |  |  [lessThan, <, 14]
+|  |  |  |  |  |  |  |  [id, i, 41]
+|  |  |  |  |  |  [lessThan, <, 41]
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, intEx, 14]
+|  |  |  |  |  |  |  |  [id, n, 41]
 |  |  |  |  |  write block
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, arr, 15]
+|  |  |  |  |  |  |  |  |  [id, arr, 42]
 |  |  |  |  |  |  |  |  indice
 |  |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  |  |  [id, i, 15]
-|  |  |  |  |  [id, i, 16]
+|  |  |  |  |  |  |  |  |  |  |  [id, i, 42]
+|  |  |  |  |  [id, i, 43]
 |  |  |  |  |  assign op
-|  |  |  |  |  |  [equals, =, 16]
+|  |  |  |  |  |  [equals, =, 43]
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  |  [id, i, 16]
+|  |  |  |  |  |  |  |  |  [id, i, 43]
 |  |  |  |  |  |  |  |  add op
-|  |  |  |  |  |  |  |  |  [plus, +, 16]
+|  |  |  |  |  |  |  |  |  [plus, +, 43]
 |  |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  |  [integerType, 1, 16]
-|  class decl
-|  |  [id, RANDO, 19]
-|  |  inherit lst
-|  |  memberFunc decl
-|  |  |  [privateKeyWord, private, 20]
-|  |  |  [id, rando, 20]
-|  |  |  [voidKeyWord, void, 20]
+|  |  |  |  |  |  |  |  |  |  [integerType, 1, 43]
+|  func def
+|  |  [id, tryMethod, 47]
+|  |  func params
+|  |  |  [id, l, 47]
+|  |  |  [integerKeyWord, integer, 47]
+|  |  |  [id, v, 47]
+|  |  |  [id, id, 47]
+|  |  [integerKeyWord, integer, 47]
+|  |  local var + stat block
+|  |  |  local var
+|  |  |  |  [id, undecCls, 49]
+|  |  |  |  [id, BLOCK, 49]
+|  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, ax, 50]
+|  |  |  |  [integerKeyWord, integer, 50]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 7, 50]
+|  |  |  local var
+|  |  |  |  [id, ab, 51]
+|  |  |  |  [integerKeyWord, integer, 51]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 6, 51]
+|  |  |  local var
+|  |  |  |  [id, ac, 52]
+|  |  |  |  [integerKeyWord, integer, 52]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 52]
+|  func def
+|  |  [id, tryMethod, 55]
+|  |  func params
+|  |  |  [id, s, 55]
+|  |  |  [id, id, 55]
+|  |  [integerKeyWord, integer, 55]
+|  |  local var + stat block
+|  |  |  local var
+|  |  |  |  [id, barr1, 57]
+|  |  |  |  [integerKeyWord, integer, 57]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 7, 57]
+|  |  |  local var
+|  |  |  |  [id, barr2, 58]
+|  |  |  |  [integerKeyWord, integer, 58]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 6, 58]
+|  |  |  local var
+|  |  |  |  [id, barr3, 59]
+|  |  |  |  [integerKeyWord, integer, 59]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 59]
 ]
