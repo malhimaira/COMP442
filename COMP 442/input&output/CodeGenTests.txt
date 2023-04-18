@@ -1,6 +1,7 @@
 function main() => void
 {
   localvar x: integer;
+  localvar y: float;
   x = 5 * 3;
   write(x);
 }

@@ -7,22 +7,26 @@
 |  |  |  |  [id, x, 3]
 |  |  |  |  [integerKeyWord, integer, 3]
 |  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, y, 4]
+|  |  |  |  [floatKeyWord, float, 4]
+|  |  |  |  array Size
 |  |  |  stat
-|  |  |  |  [id, x, 4]
+|  |  |  |  [id, x, 5]
 |  |  |  |  assign op
-|  |  |  |  |  [equals, =, 4]
+|  |  |  |  |  [equals, =, 5]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 5, 4]
+|  |  |  |  |  |  |  |  [integerType, 5, 5]
 |  |  |  |  |  |  |  multi op
-|  |  |  |  |  |  |  |  [multiply, *, 4]
+|  |  |  |  |  |  |  |  [multiply, *, 5]
 |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  [integerType, 3, 4]
+|  |  |  |  |  |  |  |  |  [integerType, 3, 5]
 |  |  |  stat
 |  |  |  |  write block
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, x, 5]
+|  |  |  |  |  |  |  |  [id, x, 6]
 ]

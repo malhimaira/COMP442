@@ -7,6 +7,7 @@
 |    | table: main                                       |
 |    =====================================================
 |    | local var | x         | integer   | 4         |        |
+|    | local var | y         | float     | 8         |        |
 |    | litvalLoad| t1        | integerType| 0         |        |
 |    | litvalLoad| t2        | integerType| 0         |        |
 |    | tempRegStr| t3        | integerType| 0         |        |

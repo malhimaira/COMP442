@@ -247,11 +247,13 @@ public class Parser {
                     var tempLine = "";
 
                     for (var i : lookahead) {
-                        tempLine += " " + i;
+                        if(!i.contains("SACT")){
+                            tempLine += " " + i;
+                        }
 
                     }
-
-                    line = line.replace(nT, tempLine).replace("&epsilon", "");
+                    String regexTempNT = "\\b"+nT+"\\b";
+                    line = line.replaceAll(regexTempNT, tempLine).replace("&epsilon", "");
                     //write to file
 
                     output += "START => " + line + "\n";
