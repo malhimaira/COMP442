@@ -2,7 +2,7 @@
 [openBracketCurly, {, 2]
 [inlineComment, // 3.2.1 2 3, 3]
 [localvarKeyWord, localvar, 4] [id, intEx, 4] [colon, :, 4] [integerKeyWord, integer, 4] [functionKeyWord, function, 4]
-[inlineComment, // 3.1.1, 5]
+[inlineComment, // 3.1.1 (can also add invalid char to see errors), 5]
 [localvarKeyWord, localvar, 6] [id, intEx, 6] [colon, :, 6] [integerKeyWord, integer, 6] [semicolon, ;, 6]
 [localvarKeyWord, localvar, 7] [id, i, 7] [colon, :, 7] [integerKeyWord, integer, 7] [semicolon, ;, 7]
 [localvarKeyWord, localvar, 8] [id, floatEx, 8] [colon, :, 8] [floatKeyWord, float, 8] [semicolon, ;, 8]

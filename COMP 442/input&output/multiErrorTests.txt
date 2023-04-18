@@ -1,0 +1,21 @@
+function printArray() => void
+{
+  public function tryMethod: (l: integer, v: id) => integer;
+// 3.2.1 2 3
+  localvar intEx$: integer function
+// 3.1.1 (can also add invalid char to see errors)
+  localvar intEx: integer;
+  localvar i: integer;
+  i = 0.0;
+  idEx = abc_1abc;
+  intEx = i+2;
+  // 3.1.9
+  arr[j] = arr[j+1];
+  while (i<intEx) {
+    write(arr[i]);
+      i = i+1;
+  };
+}
+class RANDO {
+  private function rando: () => void;
+};

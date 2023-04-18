@@ -5,6 +5,7 @@ import SymbolTables.ComputeMemorySizeVisitor;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.Stack;
 
@@ -21,12 +22,14 @@ public class Driver {
             String fileName = filetoRead.substring(0, fileExtensionIndex);
 
             // Open print writer for errors
-            PrintWriter printWriterErrors = new PrintWriter(new File("COMP 442/input&output/"+fileName + ".outlexerrors"));
+            File f = new File("COMP 442/input&output/"+fileName + ".errors");
+            PrintWriter printWriterLexErrors = new PrintWriter(new FileOutputStream(f));
+            PrintWriter printWriterSyntaxErrors = new PrintWriter(new FileOutputStream(f, true));
+            PrintWriter printWriterSemanticErrors = new PrintWriter(new FileOutputStream(f, true));
             PrintWriter printWriterTokens = new PrintWriter(new File("COMP 442/input&output/"+fileName + ".outlextokens"));
-            PrintWriter pwError = new PrintWriter(new File("COMP 442/input&output/" + fileName+ ".outerrors"));
 
             // Open Lexer
-            Lexer lexer = new Lexer(fileInputStream, printWriterErrors);
+            Lexer lexer = new Lexer(fileInputStream, printWriterLexErrors);
 
             Token token;
             int lastRowChecked = 1;
@@ -51,7 +54,7 @@ public class Driver {
             p.Parser(fileName);
 
             // Parse Tokens and fill ASTNodes.AST
-            p.parse(pwError, lexer);
+            p.parse(printWriterSyntaxErrors, lexer);
             // System.out.println(p.output);
 
             // AST Stack
@@ -72,7 +75,7 @@ public class Driver {
             stc.writeSymblTablesToFile(fileName, ASTStackWithSymbolTables);
 
             //Type Check AST
-            stc.typeCheckSymbolTables(fileName, ASTStackWithSymbolTables);
+            stc.typeCheckSymbolTables(fileName, ASTStackWithSymbolTables, printWriterSemanticErrors);
 
             // Code Generation Visitor
             PrintWriter tbcgPrinter = new PrintWriter(new File("COMP 442/mooncode/" + fileName+ ".m"));

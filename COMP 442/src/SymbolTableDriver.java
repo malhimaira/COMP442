@@ -22,6 +22,7 @@ public class SymbolTableDriver {
             PrintWriter printWriterErrors = new PrintWriter(new File("COMP 442/input&output/"+fileName + ".outlexerrors"));
             PrintWriter printWriterTokens = new PrintWriter(new File("COMP 442/input&output/"+fileName + ".outlextokens"));
             PrintWriter pwError = new PrintWriter(new File("COMP 442/input&output/" + fileName+ ".outerrors"));
+            PrintWriter semanticErrorWriter = new PrintWriter("COMP 442/input&output/" + fileName + ".outsemanticerrors");
 
             // Open Lexer
             Lexer lexer = new Lexer(fileInputStream, printWriterErrors);
@@ -64,7 +65,7 @@ public class SymbolTableDriver {
             stc.writeSymblTablesToFile(fileName, ASTStackWithSymbolTables);
 
             //Type Check AST
-            stc.typeCheckSymbolTables(fileName, ASTStackWithSymbolTables);
+            stc.typeCheckSymbolTables(fileName, ASTStackWithSymbolTables, semanticErrorWriter);
 
         } catch (Exception e) {
             System.out.print(e.getMessage());

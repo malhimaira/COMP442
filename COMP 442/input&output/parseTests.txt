@@ -1,7 +1,7 @@
 function printArray() => void
 {
 // 3.2.1 2 3
-// localvar intEx: integer function
+  localvar intEx: integer function
 // 3.1.1
   localvar intEx: integer;
   localvar i: integer;

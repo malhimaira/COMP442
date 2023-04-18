@@ -1,0 +1,18 @@
+6.2 Undefined member function definition: function evaluate, line 2
+[warning] 9.2 Overloading member function evaluate, line 2
+6.2 Undefined member function definition: function evaluate, line 3
+[warning] 9.2 Overloading member function evaluate, line 3
+8.3 Mulitply declared data member in class: data b, line 8
+8.3 Mulitply declared data member in class: data b, line 9
+8.1 Multiply declared class: class LINEAR, line 6
+8.1 Multiply declared class: class LINEAR, line 12
+6.2 Undefined member function definition: function undefMethod, line 16
+[warning] 9.3 Overridding member function tryMethod, line 25
+6.2 Undefined member function definition: function rando, line 29
+8.4 Mulitply declared identifier in function: identifier n, line 35
+8.4 Mulitply declared identifier in function: identifier n, line 36
+6.1 Undeclared member function definition: function undeclMethod, line 33
+11.5 Undeclared Class: class BLOCK, line 49
+[warning] 9.1 Overload free function: function tryMethod, line 47
+6.1 Undeclared member function definition: function tryMethod, line 55
+[warning] 9.1 Overload free function: function tryMethod, line 55

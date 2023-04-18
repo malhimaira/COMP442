@@ -1,0 +1,109 @@
+[prog
+|  func def
+|  |  [id, printArray, 1]
+|  |  [voidKeyWord, void, 1]
+|  |  local var + stat block
+|  |  |  stat
+|  |  |  |  [id, tryMethod, 3]
+|  |  |  |  expr
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  id
+|  |  |  |  |  |  |  [id, l, 3]
+|  |  |  |  expr
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  id
+|  |  |  |  |  |  |  [id, v, 3]
+|  |  |  local var
+|  |  |  |  [id, intEx, 5]
+|  |  |  |  [integerKeyWord, integer, 5]
+|  |  |  |  array Size
+|  |  |  local var
+|  |  |  |  [id, i, 8]
+|  |  |  |  [integerKeyWord, integer, 8]
+|  |  |  |  array Size
+|  |  |  stat
+|  |  |  |  [id, i, 9]
+|  |  |  |  assign op
+|  |  |  |  |  [equals, =, 9]
+|  |  |  |  |  expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [floatType, 0.0, 9]
+|  |  |  stat
+|  |  |  |  [id, idEx, 10]
+|  |  |  |  assign op
+|  |  |  |  |  [equals, =, 10]
+|  |  |  |  |  expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, abc_1abc, 10]
+|  |  |  stat
+|  |  |  |  [id, intEx, 11]
+|  |  |  |  assign op
+|  |  |  |  |  [equals, =, 11]
+|  |  |  |  |  expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, i, 11]
+|  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  [plus, +, 11]
+|  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  [integerType, 2, 11]
+|  |  |  stat
+|  |  |  |  [id, arr, 13]
+|  |  |  |  indice
+|  |  |  |  |  arithm expr
+|  |  |  |  |  |  id
+|  |  |  |  |  |  |  [id, j, 13]
+|  |  |  |  assign op
+|  |  |  |  |  [equals, =, 13]
+|  |  |  |  |  expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, arr, 13]
+|  |  |  |  |  |  |  indice
+|  |  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  [id, j, 13]
+|  |  |  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  |  |  [plus, +, 13]
+|  |  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 13]
+|  |  |  stat
+|  |  |  |  while block
+|  |  |  |  |  rel expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, i, 14]
+|  |  |  |  |  |  [lessThan, <, 14]
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, intEx, 14]
+|  |  |  |  |  write block
+|  |  |  |  |  |  expr
+|  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, arr, 15]
+|  |  |  |  |  |  |  |  indice
+|  |  |  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  [id, i, 15]
+|  |  |  |  |  [id, i, 16]
+|  |  |  |  |  assign op
+|  |  |  |  |  |  [equals, =, 16]
+|  |  |  |  |  |  expr
+|  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, i, 16]
+|  |  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  |  [plus, +, 16]
+|  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  [integerType, 1, 16]
+|  class decl
+|  |  [id, RANDO, 19]
+|  |  inherit lst
+|  |  memberFunc decl
+|  |  |  [privateKeyWord, private, 20]
+|  |  |  [id, rando, 20]
+|  |  |  [voidKeyWord, void, 20]
+]

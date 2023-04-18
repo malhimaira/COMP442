@@ -564,10 +564,12 @@ public class Lexer {
 
     public Token getNextToken() {
         Token token = null;
-        if (countTokens != TokenSequence.size()) {
+        while (countTokens != TokenSequence.size()) {
             token = TokenSequence.get(countTokens);
             countTokens++;
-            return token;
+            if(!(token instanceof ErrorToken)){
+                return token;
+            }
         }
         return token;
     }

@@ -1,0 +1,15 @@
+Lexical error: Invalid character: "$": line 5.
+Syntax Error : publicKeyWord token on line 3
+Syntax Error : functionKeyWord token on line 3
+Syntax Error : colon token on line 3
+Syntax Error : colon token on line 3
+Syntax Error : integerKeyWord token on line 3
+Syntax Error : colon token on line 3
+Syntax Error : id token on line 3
+Syntax Error : lambdaExpression token on line 3
+Syntax Error : integerKeyWord token on line 3
+Syntax Error : functionKeyWord token on line 5
+Syntax Error : localvarKeyWord token on line 7
+Syntax Error : id token on line 7
+Syntax Error : colon token on line 7
+Syntax Error : integerKeyWord token on line 7

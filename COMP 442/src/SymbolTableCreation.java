@@ -7,6 +7,7 @@ import java.util.Stack;
 
 public class SymbolTableCreation {
 
+
     public SymbolTableCreation() {}
 
     public Stack<ASTNode> generateSymbolTables(Stack<ASTNode> ASTStack) {
@@ -15,12 +16,11 @@ public class SymbolTableCreation {
         return ASTStack;
     }
 
-    public void typeCheckSymbolTables(String filename, Stack<ASTNode> ASTStack) {
+    public void typeCheckSymbolTables(String filename, Stack<ASTNode> ASTStack, PrintWriter printErrorWriter) {
         try {
-            PrintWriter semanticErrorWriter = new PrintWriter("COMP 442/input&output/" + filename + ".outsemanticerrors");
-            TypeCheckingVisitor tcv = new TypeCheckingVisitor(semanticErrorWriter);
+            TypeCheckingVisitor tcv = new TypeCheckingVisitor(printErrorWriter);
             ASTStack.firstElement().accept(tcv);
-            semanticErrorWriter.close();
+            printErrorWriter.close();
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
