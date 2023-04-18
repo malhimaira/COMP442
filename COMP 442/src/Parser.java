@@ -13,7 +13,6 @@ public class Parser {
 
     Map<String, String> hash = new HashMap<>();
     String output = "";
-    boolean hasError = false;
 
     Stack<String> s1 = new Stack<>();
     private ArrayList<String> nullable = new ArrayList<>();
@@ -23,8 +22,6 @@ public class Parser {
 
     FileWriter ASTFileWriter;
     Stack<ASTNode> ASTstack = new Stack<>();
-
-    ArrayList<SymbolTable> symbolTableList = new ArrayList<>();
 
     String[] terminals = {
             "id",
@@ -90,7 +87,7 @@ public class Parser {
 
         filename = filetoRead;
 
-        //addFirstFollow();
+        addFirstFollow();
 
         String table = "COMP 442/parsing/parsingTable.csv";
         String line;
@@ -101,27 +98,21 @@ public class Parser {
             var headers = br.readLine().split(",");
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(commaDel);
-                //nonvalues[0]);
                 for (int col = 0; col < values.length; col++) {
                     hash.put(convertTerminals(values[0]) + "," + convertTerminals(headers[col]), values[col]);
                 }
-
                 row++;
             }
-            //System.out.println(hash);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public boolean parse(PrintWriter pwError, Lexer lex) {
         try {
-            //System.out.println("test");
-
             PrintWriter pwDerivations = new PrintWriter("COMP 442/input&output/" + filename + ".outderivation");
 
-            s1.push("$");//
+            s1.push("$");
             s1.push("START");
 
             Token token = lex.getNextToken();
@@ -130,11 +121,8 @@ public class Parser {
             String top;
             String[] lookahead;
 
-            //System.out.println(token);
-
             var line = "START";
             while (!s1.peek().equals("$") && !s1.peek().equals("EOF")) {
-                //System.out.println(s1);
 
                 while (token.getTokenType() == TokenType.blockComment || token.getTokenType() == TokenType.inlineComment) {
                     previousToken = token;
@@ -196,14 +184,13 @@ public class Parser {
                 var tempLookahead = hash.get(top + "," + token.getTokenType());
 
 
-                if (tempLookahead != null) {
+                if (tempLookahead != null && !tempLookahead.equals("") ) {
                     lookahead = tempLookahead.split("→")[1].trim().split(" ");
 
                 } else {
                     lookahead = new String[]{};
                 }
 
-                //System.out.println( lookahead.length > 0);
                 // terminal token case
                 if (Arrays.asList(terminals).contains(top)) {
                     if (top.equals(token.getTokenType().name())) {
@@ -220,8 +207,7 @@ public class Parser {
 
                         // handle error
                         skipError(token, pwError, lex);
-                        hasError = true;
-                        return false;
+                        token = lex.getNextToken();
 
                     }
                 // non terminal token case found
@@ -231,7 +217,6 @@ public class Parser {
 
                     //push onto stack backwards
                     Collections.reverse(Arrays.asList(lookahead));
-                    //System.out.println(lookahead.length);
                     for (var i : lookahead) {
                         s1.push(convertTerminals(i));
 
@@ -254,18 +239,13 @@ public class Parser {
                     }
                     String regexTempNT = "\\b"+nT+"\\b";
                     line = line.replaceAll(regexTempNT, tempLine).replace("&epsilon", "");
-                    //write to file
 
+                    // append yo string for print
                     output += "START => " + line + "\n";
 
                 } else {
-                    // handle error
-                    // System.out.println(token.getTokenType().name());
-                    System.out.println("Error:" + top);
                     skipError(token, pwError, lex);
-                    hasError = true;
-                    return false;
-
+                    token = lex.getNextToken();
                 }
 
             }
@@ -276,11 +256,6 @@ public class Parser {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
-        //System.out.println(ASTNodes.AST.treeToString());
-
-        // Generate Symbol Table and Semantic Analysis
-
         return true;
     }
 
@@ -407,6 +382,9 @@ public class Parser {
                     return "openBracketCurly";
                 }
                 case "NEQ" -> {
+                    return "angleBrackets";
+                }
+                case "NOT" -> {
                     return "not";
                 }
                 case "RSQBR" -> {
@@ -539,23 +517,12 @@ public class Parser {
     }
 
     private Token skipError(Token lookahead, PrintWriter pwError, Lexer lex) {
-        System.out.println("syntax error at " + lookahead.getPosition() + "\n");
-        pwError.write("syntax error at " + lookahead.getPosition() + "\n");
+        pwError.write("Syntax Error : " + lookahead.getTokenType() +" token on line "+ lookahead.getPosition() + "\n");
         String top = s1.peek();
-        Token token = lookahead;
-
-        if (followSet.get(top).contains(token.getTokenType())) {
+        if (followSet.get(top).contains(lookahead.getTokenType())) {
             s1.pop();
-        } else {
-            while (!firstSet.get(top).contains(token.getTokenType())
-                    || (!(firstSet.get(top).contains("&epsilon")
-                    && followSet.get(top).contains(token.getTokenType()))
-            )) {
-                token = lex.getNextToken();
-            }
         }
-
-        return token;
+        return lookahead;
     }
 
     private void addFirstFollow() {
@@ -577,7 +544,7 @@ public class Parser {
                 String[] followSplit = initialSplit[2].split(" ");
 
                 ArrayList<TokenType> firstVal = new ArrayList<>();
-                for (int i = 0; i < firstSplit.length; i++) {
+                for (int i = 0; i < firstSplit.length & i < followSplit.length; i++) {
                     if (firstSplit[i].contains("∅") || followSplit[i].contains("EOF")) {
                         firstVal.add(TokenType.epsilon);
                     } else {
@@ -591,7 +558,9 @@ public class Parser {
 
                             case "LCURBR" -> firstVal.add(TokenType.openBracketCurly);
 
-                            case "NEQ" -> firstVal.add(TokenType.not);
+                            case "NEQ" -> firstVal.add(TokenType.angleBrackets);
+
+                            case "NOT" -> firstVal.add(TokenType.not);
 
                             case "RSQBR" -> firstVal.add(TokenType.closeBracketSquare);
 
@@ -600,6 +569,10 @@ public class Parser {
                             case "FLOATLIT" -> firstVal.add(TokenType.floatType);
 
                             case "INTLIT" -> firstVal.add(TokenType.integerType);
+
+                            case "INTEGER" -> firstVal.add(TokenType.integerKeyWord);
+
+                            case "FLOAT" -> firstVal.add(TokenType.floatKeyWord);
 
                             case "ARROW" -> firstVal.add(TokenType.lambdaExpression);
 
@@ -661,6 +634,16 @@ public class Parser {
 
                             case "PRIVATE" -> firstVal.add(TokenType.privateKeyWord);
 
+                            case "OR" -> firstVal.add(TokenType.or);
+
+                            case "AND" -> firstVal.add(TokenType.and);
+
+                            case "ID" -> firstVal.add(TokenType.id);
+
+                            case "COMMA" -> firstVal.add(TokenType.comma);
+
+                            case "COLON" -> firstVal.add(TokenType.colon);
+
                             case " " -> firstVal.add(TokenType.epsilon);
 
                             default -> firstVal.add(TokenType.valueOf(valueToAdd.toUpperCase()));
@@ -670,7 +653,6 @@ public class Parser {
                     }
                 }
                 firstSet.put(key, firstVal);
-
 
                 ArrayList<TokenType> followVal = new ArrayList<>();
                 for (String s : followSplit) {
@@ -687,7 +669,9 @@ public class Parser {
 
                             case "LCURBR" -> followVal.add(TokenType.openBracketCurly);
 
-                            case "NEQ" -> followVal.add(TokenType.not);
+                            case "NEQ" -> followVal.add(TokenType.angleBrackets);
+
+                            case "NOT" -> followVal.add(TokenType.not);
 
                             case "RSQBR" -> followVal.add(TokenType.closeBracketSquare);
 
@@ -696,6 +680,10 @@ public class Parser {
                             case "FLOATLIT" -> followVal.add(TokenType.floatType);
 
                             case "INTLIT" -> followVal.add(TokenType.integerType);
+
+                            case "INTEGER" -> followVal.add(TokenType.integerKeyWord);
+
+                            case "FLOAT" -> followVal.add(TokenType.floatKeyWord);
 
                             case "ARROW" -> followVal.add(TokenType.lambdaExpression);
 
@@ -743,6 +731,8 @@ public class Parser {
 
                             case "DIV" -> followVal.add(TokenType.divide);
 
+                            case "COMMA" -> followVal.add(TokenType.comma);
+
                             case "MULT" -> followVal.add(TokenType.multiply);
 
                             case "ATTRIBUTE" -> followVal.add(TokenType.attributeKeyWord);
@@ -754,6 +744,14 @@ public class Parser {
                             case "LOCALVAR" -> followVal.add(TokenType.localvarKeyWord);
 
                             case "CLASS" -> followVal.add(TokenType.classKeyWord);
+
+                            case "OR" -> followVal.add(TokenType.or);
+
+                            case "AND" -> followVal.add(TokenType.and);
+
+                            case "ID" -> followVal.add(TokenType.id);
+
+                            case "COLON" -> followVal.add(TokenType.colon);
 
                             case "PRIVATE" -> followVal.add(TokenType.privateKeyWord);
 

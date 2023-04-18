@@ -64,7 +64,3 @@ APARAMS,id intlit floatlit lpar not plus minus,rpar,yes,no
 VARIDNEST,dot,rpar dot,no,no
 REPTIDNEST1,lsqbr,equal semi mult div and dot rsqbr eq neq lt gt leq geq plus minus or comma rpar,yes,no
 VISIBILITY,public private,attribute function constructorkeyword,no,no
-SACT1,∅,colon,yes,no
-SACT2,∅,rpar lcurbr comma lpar lsqbr semi,yes,no
-SACT3,∅,semi,yes,no
-SACT4,∅,semi,yes,no
