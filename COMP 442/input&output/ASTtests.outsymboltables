@@ -93,11 +93,14 @@
 |    =====================================================
 |    | param     | arr       | integer   | 0         |        |
 |    | param     | size      | integer   | 0         |        |
-|    | local var | n         | integer   | 4         |        |
+|    | local var | n         | float     | 8         |        |
 |    | local var | n         | integer   | 4         |        |
 |    | local var | i         | integer   | 4         |        |
 |    | idvalLoad | size      | id        | 0         |        |
 |    | litvalLoad| t1        | integerType| 0         |        |
+|    | idvalLoad | j         | id        | 0         |        |
+|    | litvalLoad| t2        | integerType| 0         |        |
+|    | tempRegStr| t3        | integerType| 0         |        |
 |    =====================================================
 | function  | tryMethod |           | (integer, id) integer|            |
 |    =====================================================
@@ -106,7 +109,8 @@
 |    | param     | l         | integer   | 0         |        |
 |    | param     | v         | id        | 0         |        |
 |    | local var | undecCls  | BLOCK     | 0         |        |
-|    | local var | ax        | integer   | 28        |        |
+|    | local var | blckarr   | BLOCK     | 0         |        |
+|    | local var | ax        | float     | 56        |        |
 |    | local var | ab        | integer   | 24        |        |
 |    | local var | ac        | integer   | 8         |        |
 |    =====================================================
@@ -118,5 +122,12 @@
 |    | local var | barr1     | integer   | 28        |        |
 |    | local var | barr2     | integer   | 24        |        |
 |    | local var | barr3     | integer   | 8         |        |
+|    | litvalLoad| t4        | integerType| 0         |        |
+|    =====================================================
+| function  | main      |           |           |            |
+|    =====================================================
+|    | table: main                                       |
+|    =====================================================
+|    | local var | barr1     | integer   | 28        |        |
 |    =====================================================
 =====================================================

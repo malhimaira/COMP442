@@ -324,28 +324,6 @@ public class Parser {
         return parentNode;
     }
 
-    public ASTNode makeFamily(Object semanticConcept, int countPop) {
-        ArrayList<ASTNode> childrenNodes = new ArrayList<>();
-
-        // pop as many nodes as there are children to form tree
-        for (int i = 0; i < countPop; i++) {
-            childrenNodes.add(ASTstack.pop());
-        }
-
-        ASTNode parentNode = new ASTNode(null, childrenNodes, semanticConcept, 0);
-
-        // set the parent node in each of the children nodes of a specific node
-        for (var child : parentNode.childrenNodes) {
-            child.setParentNode(parentNode);
-        }
-        parentNode.fixTreeDepth();
-        // stack requires reverse ordering
-        Collections.reverse(childrenNodes);
-        // add
-        ASTstack.push(parentNode);
-        return parentNode;
-    }
-
     public void writeASTTreeToFile(){
         // Generate ASTNodes.AST File
         try {

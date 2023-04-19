@@ -114,7 +114,7 @@
 |  |  local var + stat block
 |  |  |  local var
 |  |  |  |  [id, n, 35]
-|  |  |  |  [integerKeyWord, integer, 35]
+|  |  |  |  [floatKeyWord, float, 35]
 |  |  |  |  array Size
 |  |  |  local var
 |  |  |  |  [id, n, 36]
@@ -147,11 +147,31 @@
 |  |  |  |  |  rel expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, i, 41]
-|  |  |  |  |  |  [lessThan, <, 41]
+|  |  |  |  |  |  |  |  [id, j, 41]
+|  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  [plus, +, 41]
+|  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  [integerType, 2, 41]
+|  |  |  |  |  |  [lessThanOrEqualTo, <=, 41]
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
 |  |  |  |  |  |  |  |  [id, n, 41]
+|  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  [minus, -, 41]
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, i, 41]
+|  |  |  |  |  |  |  |  multi op
+|  |  |  |  |  |  |  |  |  [multiply, *, 41]
+|  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  [integerType, 1, 41]
+|  |  |  |  |  |  |  |  multi op
+|  |  |  |  |  |  |  |  |  [divide, /, 41]
+|  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  [integerType, 3, 41]
+|  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  [plus, +, 41]
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, i, 41]
 |  |  |  |  |  write block
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
@@ -161,65 +181,186 @@
 |  |  |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  |  |  id
 |  |  |  |  |  |  |  |  |  |  |  [id, i, 42]
-|  |  |  |  |  [id, i, 43]
-|  |  |  |  |  assign op
-|  |  |  |  |  |  [equals, =, 43]
+|  |  |  |  |  write block
 |  |  |  |  |  |  expr
 |  |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  |  id
 |  |  |  |  |  |  |  |  |  [id, i, 43]
 |  |  |  |  |  |  |  |  add op
 |  |  |  |  |  |  |  |  |  [plus, +, 43]
+|  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  [id, j, 43]
+|  |  |  |  |  read block
+|  |  |  |  |  [id, i, 45]
+|  |  |  |  |  assign op
+|  |  |  |  |  |  [equals, =, 45]
+|  |  |  |  |  |  expr
+|  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, i, 45]
+|  |  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  |  [plus, +, 45]
 |  |  |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  |  |  [integerType, 1, 43]
+|  |  |  |  |  |  |  |  |  |  [integerType, 1, 45]
+|  |  |  stat
+|  |  |  |  if block
+|  |  |  |  |  rel expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, arr, 47]
+|  |  |  |  |  |  |  indice
+|  |  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  [id, j, 47]
+|  |  |  |  |  |  [greaterThan, >, 47]
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, arr, 47]
+|  |  |  |  |  |  |  indice
+|  |  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  [id, j, 47]
+|  |  |  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  |  |  [plus, +, 47]
+|  |  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 47]
+|  |  |  |  |  [id, temp, 50]
+|  |  |  |  |  assign op
+|  |  |  |  |  |  [equals, =, 50]
+|  |  |  |  |  |  expr
+|  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, arr, 50]
+|  |  |  |  |  |  |  |  indice
+|  |  |  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  [id, j, 50]
+|  |  |  |  |  |  |  |  indice
+|  |  |  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  [id, i, 50]
+|  |  |  |  |  [id, arr, 51]
+|  |  |  |  |  indice
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, j, 51]
+|  |  |  |  |  assign op
+|  |  |  |  |  |  [equals, =, 51]
+|  |  |  |  |  |  expr
+|  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, arr, 51]
+|  |  |  |  |  |  |  |  indice
+|  |  |  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  |  |  [id, j, 51]
+|  |  |  |  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  |  |  |  [plus, +, 51]
+|  |  |  |  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  |  |  |  [integerType, 1, 51]
+|  |  |  |  |  [id, arr, 52]
+|  |  |  |  |  indice
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, j, 52]
+|  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  [plus, +, 52]
+|  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  [integerType, 1, 52]
+|  |  |  |  |  assign op
+|  |  |  |  |  |  [equals, =, 52]
+|  |  |  |  |  |  expr
+|  |  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  |  [id, temp, 52]
+|  |  |  stat
+|  |  |  |  [id, j, 54]
+|  |  |  |  assign op
+|  |  |  |  |  [equals, =, 54]
+|  |  |  |  |  expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, j, 54]
+|  |  |  |  |  |  |  add op
+|  |  |  |  |  |  |  |  [plus, +, 54]
+|  |  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  |  [integerType, 1, 54]
 |  func def
-|  |  [id, tryMethod, 47]
+|  |  [id, tryMethod, 57]
 |  |  func params
-|  |  |  [id, l, 47]
-|  |  |  [integerKeyWord, integer, 47]
-|  |  |  [id, v, 47]
-|  |  |  [id, id, 47]
-|  |  [integerKeyWord, integer, 47]
+|  |  |  [id, l, 57]
+|  |  |  [integerKeyWord, integer, 57]
+|  |  |  [id, v, 57]
+|  |  |  [id, id, 57]
+|  |  [integerKeyWord, integer, 57]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, undecCls, 49]
-|  |  |  |  [id, BLOCK, 49]
+|  |  |  |  [id, undecCls, 59]
+|  |  |  |  [id, BLOCK, 59]
 |  |  |  |  array Size
 |  |  |  local var
-|  |  |  |  [id, ax, 50]
-|  |  |  |  [integerKeyWord, integer, 50]
+|  |  |  |  [id, blckarr, 60]
+|  |  |  |  [id, BLOCK, 60]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 50]
+|  |  |  |  |  [integerType, 8, 60]
 |  |  |  local var
-|  |  |  |  [id, ab, 51]
-|  |  |  |  [integerKeyWord, integer, 51]
+|  |  |  |  [id, ax, 61]
+|  |  |  |  [floatKeyWord, float, 61]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 51]
+|  |  |  |  |  [integerType, 7, 61]
 |  |  |  local var
-|  |  |  |  [id, ac, 52]
-|  |  |  |  [integerKeyWord, integer, 52]
+|  |  |  |  [id, ab, 62]
+|  |  |  |  [integerKeyWord, integer, 62]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 52]
+|  |  |  |  |  [integerType, 6, 62]
+|  |  |  local var
+|  |  |  |  [id, ac, 63]
+|  |  |  |  [integerKeyWord, integer, 63]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 2, 63]
 |  func def
-|  |  [id, tryMethod, 55]
+|  |  [id, tryMethod, 66]
 |  |  func params
-|  |  |  [id, s, 55]
-|  |  |  [id, id, 55]
-|  |  [integerKeyWord, integer, 55]
+|  |  |  [id, s, 66]
+|  |  |  [id, id, 66]
+|  |  [integerKeyWord, integer, 66]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, barr1, 57]
-|  |  |  |  [integerKeyWord, integer, 57]
+|  |  |  |  [id, barr1, 68]
+|  |  |  |  [integerKeyWord, integer, 68]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 57]
+|  |  |  |  |  [integerType, 7, 68]
 |  |  |  local var
-|  |  |  |  [id, barr2, 58]
-|  |  |  |  [integerKeyWord, integer, 58]
+|  |  |  |  [id, barr2, 69]
+|  |  |  |  [integerKeyWord, integer, 69]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 58]
+|  |  |  |  |  [integerType, 6, 69]
 |  |  |  local var
-|  |  |  |  [id, barr3, 59]
-|  |  |  |  [integerKeyWord, integer, 59]
+|  |  |  |  [id, barr3, 70]
+|  |  |  |  [integerKeyWord, integer, 70]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 59]
+|  |  |  |  |  [integerType, 2, 70]
+|  |  |  stat
+|  |  |  |  [id, barr3, 71]
+|  |  |  |  assign op
+|  |  |  |  |  [equals, =, 71]
+|  |  |  |  |  expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  num
+|  |  |  |  |  |  |  |  [integerType, 6, 71]
+|  |  |  stat
+|  |  |  |  return stat
+|  |  |  |  |  expr
+|  |  |  |  |  |  arithm expr
+|  |  |  |  |  |  |  id
+|  |  |  |  |  |  |  |  [id, barr3, 72]
+|  func def
+|  |  [id, main, 75]
+|  |  [voidKeyWord, void, 75]
+|  |  local var + stat block
+|  |  |  local var
+|  |  |  |  [id, barr1, 77]
+|  |  |  |  [integerKeyWord, integer, 77]
+|  |  |  |  array Size
+|  |  |  |  |  [integerType, 7, 77]
 ]
