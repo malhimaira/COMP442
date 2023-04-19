@@ -72,6 +72,9 @@ function tryMethod(s: id) => integer
   return(barr3);
 }
 
+function tryMethod(s: id) => integer
+{}
+
 function main() => void
 {
   localvar barr1: integer[7];

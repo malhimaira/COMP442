@@ -16,5 +16,9 @@
 11.5 Undeclared Class: class BLOCK, line 60
 [warning] 9.1 Overload free function: function tryMethod, line 57
 6.1 Undeclared member function definition: function tryMethod, line 66
+8.2 Multiply declared function: function tryMethod, line 66
 [warning] 9.1 Overload free function: function tryMethod, line 66
-6.1 Undeclared member function definition: function main, line 75
+6.1 Undeclared member function definition: function tryMethod, line 75
+8.2 Multiply declared function: function tryMethod, line 75
+[warning] 9.1 Overload free function: function tryMethod, line 75
+6.1 Undeclared member function definition: function main, line 78

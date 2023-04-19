@@ -355,12 +355,19 @@
 |  |  |  |  |  |  |  id
 |  |  |  |  |  |  |  |  [id, barr3, 72]
 |  func def
-|  |  [id, main, 75]
-|  |  [voidKeyWord, void, 75]
+|  |  [id, tryMethod, 75]
+|  |  func params
+|  |  |  [id, s, 75]
+|  |  |  [id, id, 75]
+|  |  [integerKeyWord, integer, 75]
+|  |  local var + stat block
+|  func def
+|  |  [id, main, 78]
+|  |  [voidKeyWord, void, 78]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, barr1, 77]
-|  |  |  |  [integerKeyWord, integer, 77]
+|  |  |  |  [id, barr1, 80]
+|  |  |  |  [integerKeyWord, integer, 80]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 77]
+|  |  |  |  |  [integerType, 7, 80]
 ]
