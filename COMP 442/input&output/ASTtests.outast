@@ -319,55 +319,59 @@
 |  |  |  |  array Size
 |  |  |  |  |  [integerType, 2, 63]
 |  func def
-|  |  [id, tryMethod, 66]
+|  |  [id, main, 66]
+|  |  [voidKeyWord, void, 66]
+|  |  local var + stat block
+|  func def
+|  |  [id, tryMethod, 69]
 |  |  func params
-|  |  |  [id, s, 66]
-|  |  |  [id, id, 66]
-|  |  [integerKeyWord, integer, 66]
+|  |  |  [id, s, 69]
+|  |  |  [id, id, 69]
+|  |  [integerKeyWord, integer, 69]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, barr1, 68]
-|  |  |  |  [integerKeyWord, integer, 68]
+|  |  |  |  [id, barr1, 71]
+|  |  |  |  [integerKeyWord, integer, 71]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 68]
+|  |  |  |  |  [integerType, 7, 71]
 |  |  |  local var
-|  |  |  |  [id, barr2, 69]
-|  |  |  |  [integerKeyWord, integer, 69]
+|  |  |  |  [id, barr2, 72]
+|  |  |  |  [integerKeyWord, integer, 72]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 6, 69]
+|  |  |  |  |  [integerType, 6, 72]
 |  |  |  local var
-|  |  |  |  [id, barr3, 70]
-|  |  |  |  [integerKeyWord, integer, 70]
+|  |  |  |  [id, barr3, 73]
+|  |  |  |  [integerKeyWord, integer, 73]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 2, 70]
+|  |  |  |  |  [integerType, 2, 73]
 |  |  |  stat
-|  |  |  |  [id, barr3, 71]
+|  |  |  |  [id, barr3, 74]
 |  |  |  |  assign op
-|  |  |  |  |  [equals, =, 71]
+|  |  |  |  |  [equals, =, 74]
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  num
-|  |  |  |  |  |  |  |  [integerType, 6, 71]
+|  |  |  |  |  |  |  |  [integerType, 6, 74]
 |  |  |  stat
 |  |  |  |  return stat
 |  |  |  |  |  expr
 |  |  |  |  |  |  arithm expr
 |  |  |  |  |  |  |  id
-|  |  |  |  |  |  |  |  [id, barr3, 72]
+|  |  |  |  |  |  |  |  [id, barr3, 75]
 |  func def
-|  |  [id, tryMethod, 75]
+|  |  [id, tryMethod, 78]
 |  |  func params
-|  |  |  [id, s, 75]
-|  |  |  [id, id, 75]
-|  |  [integerKeyWord, integer, 75]
+|  |  |  [id, s, 78]
+|  |  |  [id, id, 78]
+|  |  [integerKeyWord, integer, 78]
 |  |  local var + stat block
 |  func def
-|  |  [id, main, 78]
-|  |  [voidKeyWord, void, 78]
+|  |  [id, main, 81]
+|  |  [voidKeyWord, void, 81]
 |  |  local var + stat block
 |  |  |  local var
-|  |  |  |  [id, barr1, 80]
-|  |  |  |  [integerKeyWord, integer, 80]
+|  |  |  |  [id, barr1, 83]
+|  |  |  |  [integerKeyWord, integer, 83]
 |  |  |  |  array Size
-|  |  |  |  |  [integerType, 7, 80]
+|  |  |  |  |  [integerType, 7, 83]
 ]

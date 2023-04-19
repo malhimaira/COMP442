@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 public class TypeCheckingVisitor{
     public PrintWriter semanticErrorWriter;
     public String p_error="";
+    public boolean foundMain = false;
+    public int countMain = 0;
 
     public TypeCheckingVisitor(PrintWriter semanticErrorWriter) {
         this.semanticErrorWriter = semanticErrorWriter;
@@ -19,8 +21,24 @@ public class TypeCheckingVisitor{
 
     public void visit(ProgNode node) {
         for (ASTNode child : node.childrenNodes) {
+            // 15.2 non-existing main function
+            // 15.3 duplicate main function
+            String checkForMain = ((Token) child.childrenNodes.get(0).semanticConcept).getLexeme();
+            if (child instanceof FuncDefNode && checkForMain.equals("main")) {
+                foundMain = true;
+                countMain++;
+                if (countMain > 1) {
+                    p_error += "15.3 Duplicate main function "
+                            + ", line " + ((Token) child.childrenNodes.get(0).semanticConcept).getPosition() + "\n";
+
+                }
+            }
             child.accept(this);
         }
+            if(foundMain == false && countMain ==0){
+            p_error += "15.2 Non-existing main function "+"\n";
+        }
+
         System.out.println("Type Check complete");
         semanticErrorWriter.write(p_error);
 
@@ -54,7 +72,7 @@ public class TypeCheckingVisitor{
         }
 
         // 6.1 check for undeclared member function definition
-        if(node.foundMember == false){
+        if(node.foundMember == false && !((Token) node.childrenNodes.get(0).semanticConcept).getLexeme().equals("main")){
             p_error += "6.1 Undeclared member function definition: function "
                     +((Token) node.childrenNodes.get(0).semanticConcept).getLexeme()
                     +", line "+((Token) node.childrenNodes.get(0).semanticConcept).getPosition()+"\n";
