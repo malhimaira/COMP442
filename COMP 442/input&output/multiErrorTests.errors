@@ -21,3 +21,4 @@ Syntax Error : floatKeyWord token on line 8
 [warning] 9.1 Overload free function: function tryMethod, line 47
 6.1 Undeclared member function definition: function tryMethod, line 55
 [warning] 9.1 Overload free function: function tryMethod, line 55
+15.2 Non-existing main function 
